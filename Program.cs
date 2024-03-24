@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
+using MusicPlayer.MusicApi;
+using MusicPlayer.Utils;
 
 namespace MusicPlayer
 {
@@ -11,9 +12,13 @@ namespace MusicPlayer
         [STAThread]
         private static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            var api = new ZingMp3Api();
+            var response = ZingMp3ApiUtils.GetSong(api, "Z7U00WDE");
+            Console.WriteLine(response);
+
+            // Application.EnableVisualStyles();
+            // Application.SetCompatibleTextRenderingDefault(false);
+            // Application.Run(new Form1());
         }
     }
 }
