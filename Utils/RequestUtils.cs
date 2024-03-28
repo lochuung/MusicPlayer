@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MusicPlayer.MusicApi;
 using Newtonsoft.Json;
 using RestSharp;
@@ -35,12 +36,15 @@ namespace MusicPlayer.Utils
             {
                 // json parse
                 dynamic json = JsonConvert.DeserializeObject(response.Content);
-                if (json.err == 0)
-                {
-                    return json.data.ToString();
-                }
+                if (json.err == 0) return json.data.ToString();
 
                 Console.WriteLine(json.msg);
+                var tryAgain = await GetResponse(api, path, qs);
+                return tryAgain;
+            }
+
+            if (ReloadConnection())
+            {
                 var tryAgain = await GetResponse(api, path, qs);
                 return tryAgain;
             }
@@ -62,11 +66,24 @@ namespace MusicPlayer.Utils
                 var setCookieHeader = from x in response.Headers
                     where x.Name.ToLower().Equals("set-cookie")
                     select x.Value;
-                
+
                 return setCookieHeader.ToList()[1].ToString();
             }
 
+            if (ReloadConnection())
+            {
+                var tryAgain = await GetCookie(api);
+                return tryAgain;
+            }
+
             throw new Exception(response.ErrorMessage);
+        }
+
+        private static bool ReloadConnection()
+        {
+            var dialogResult = MessageBox.Show("Connection lost. Try again?", "Connection lost",
+                MessageBoxButtons.OK);
+            return dialogResult == DialogResult.OK;
         }
     }
 }

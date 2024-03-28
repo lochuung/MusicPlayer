@@ -11,10 +11,13 @@ namespace MusicPlayer
         [STAThread]
         private static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
+
+            // ZingMp3Api api = new ZingMp3Api();
+            // var result = ZingMp3ApiUtils.GetSong(api, "Z7Z7A7F0");
+            // Console.WriteLine(result);
         }
     }
 }
