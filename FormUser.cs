@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Licensing;
+using Bunifu.UI.WinForms.BunifuButton;
 
 namespace MusicPlayer
 {
@@ -15,6 +17,10 @@ namespace MusicPlayer
         public FormUser()
         {
             InitializeComponent();
+
+            BunifuButton bunifuButton = new BunifuButton();
+            pnlHeader.Controls.Add(bunifuButton);
+
         }
 
        
