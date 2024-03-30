@@ -221,12 +221,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormUser.cs">
+    <Compile Include="Admin\Uc_AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Uc_AddUser.Designer.cs">
+      <DependentUpon>Uc_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Uc_Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Uc_Profile.Designer.cs">
+      <DependentUpon>Uc_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Uc_ViewUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Uc_ViewUser.Designer.cs">
+      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUser.Designer.cs">
-      <DependentUpon>FormUser.cs</DependentUpon>
+    <Compile Include="FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,8 +276,17 @@
     <Compile Include="View\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormUser.resx">
-      <DependentUpon>FormUser.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\Uc_AddUser.resx">
+      <DependentUpon>Uc_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Uc_Profile.resx">
+      <DependentUpon>Uc_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Uc_ViewUser.resx">
+      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

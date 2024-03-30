@@ -29,6 +29,7 @@ namespace MusicPlayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.panelAdmin = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
@@ -38,6 +39,13 @@ namespace MusicPlayer
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uc_Profile1 = new MusicPlayer.Admin.Uc_Profile();
+            this.uc_ViewUser1 = new MusicPlayer.Admin.Uc_ViewUser();
+            this.uc_AddUser1 = new MusicPlayer.Admin.Uc_AddUser();
             this.panelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -68,11 +76,12 @@ namespace MusicPlayer
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLogOut.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnLogOut.Location = new System.Drawing.Point(3, 488);
+            this.btnLogOut.Location = new System.Drawing.Point(-9, 487);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(314, 49);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Thoát";
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnProfile
             // 
@@ -90,6 +99,7 @@ namespace MusicPlayer
             this.btnProfile.Size = new System.Drawing.Size(314, 49);
             this.btnProfile.TabIndex = 6;
             this.btnProfile.Text = "Profile";
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnViewUser
             // 
@@ -108,6 +118,7 @@ namespace MusicPlayer
             this.btnViewUser.Size = new System.Drawing.Size(312, 49);
             this.btnViewUser.TabIndex = 3;
             this.btnViewUser.Text = "Danh sách ";
+            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
             // btnAddUser
             // 
@@ -126,6 +137,7 @@ namespace MusicPlayer
             this.btnAddUser.Size = new System.Drawing.Size(323, 49);
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.Text = "Thêm";
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // label1
             // 
@@ -162,17 +174,61 @@ namespace MusicPlayer
             this.guna2PictureBox2.TabIndex = 2;
             this.guna2PictureBox2.TabStop = false;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this.panelAdmin;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.guna2PictureBox2;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.TargetControl = this.guna2PictureBox2;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.TargetControl = this.guna2PictureBox2;
+            // 
+            // uc_Profile1
+            // 
+            this.uc_Profile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uc_Profile1.Location = new System.Drawing.Point(311, 0);
+            this.uc_Profile1.Name = "uc_Profile1";
+            this.uc_Profile1.Size = new System.Drawing.Size(1121, 800);
+            this.uc_Profile1.TabIndex = 5;
+            // 
+            // uc_ViewUser1
+            // 
+            this.uc_ViewUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uc_ViewUser1.Location = new System.Drawing.Point(311, 0);
+            this.uc_ViewUser1.Name = "uc_ViewUser1";
+            this.uc_ViewUser1.Size = new System.Drawing.Size(1121, 800);
+            this.uc_ViewUser1.TabIndex = 4;
+            // 
+            // uc_AddUser1
+            // 
+            this.uc_AddUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uc_AddUser1.Location = new System.Drawing.Point(311, 0);
+            this.uc_AddUser1.Name = "uc_AddUser1";
+            this.uc_AddUser1.Size = new System.Drawing.Size(1121, 800);
+            this.uc_AddUser1.TabIndex = 3;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 721);
+            this.Controls.Add(this.uc_Profile1);
+            this.Controls.Add(this.uc_ViewUser1);
+            this.Controls.Add(this.uc_AddUser1);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.panelAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.panelAdmin.ResumeLayout(false);
             this.panelAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -191,5 +247,12 @@ namespace MusicPlayer
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Admin.Uc_AddUser uc_AddUser1;
+        private Admin.Uc_ViewUser uc_ViewUser1;
+        private Admin.Uc_Profile uc_Profile1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
     }
 }

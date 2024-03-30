@@ -7,22 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Licensing;
-using Bunifu.UI.WinForms.BunifuButton;
 
 namespace MusicPlayer
 {
-    public partial class FormUser : Form
+    public partial class FormUsers : Form
     {
-        public FormUser()
+        public FormUsers()
         {
             InitializeComponent();
-
-            BunifuButton bunifuButton = new BunifuButton();
-            pnlHeader.Controls.Add(bunifuButton);
-
         }
-
-       
     }
 }
