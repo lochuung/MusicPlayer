@@ -27,7 +27,7 @@ namespace MusicPlayer.Admin
                 {
                     con.Open();
 
-                    if(txbHoTenAU.Text == "" ||
+                    if (txbHoTenAU.Text == "" ||
                     txbEmailAU.Text == "" ||
                     txbSoDienThoaiAU.Text == "" ||
                     !txbSoDienThoaiAU.Text.StartsWith("0") ||
@@ -37,6 +37,12 @@ namespace MusicPlayer.Admin
                     {
                         MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clearAll();
+                    }
+                    else if(ptbEmailAu.ImageLocation == @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png" ||
+                             ptbNhapLaiMatKhau.ImageLocation == @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png" ||
+                             ptbSoDienThoaiAu.ImageLocation == @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png")
+                    {
+                        MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -69,21 +75,6 @@ namespace MusicPlayer.Admin
 
         }
 
-       /* private void ptbNhapLaiMatKhau_Click(object sender, EventArgs e)
-        {
-            if(txbMatKhauAU.Text == txbNhapLaiMatKhauAU.Text)
-            {
-                ptbNhapLaiMatKhau.Image = Image.FromFile(@"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png");
-            }
-        }
-*/
-        private void ptbNhapLaiMatKhau_Click_1(object sender, EventArgs e)
-        {
-            if (txbMatKhauAU.Text == txbNhapLaiMatKhauAU.Text)
-            {
-                ptbNhapLaiMatKhau.Image = Image.FromFile(@"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png");
-            }
-        }
         public void clearAll()
         {
             txbHoTenAU.Clear();
@@ -93,6 +84,68 @@ namespace MusicPlayer.Admin
             txbSoDienThoaiAU.Clear();
             dtAU.ResetText();
             cbVaiTroAU.SelectedIndex = -1;
+        }
+
+        private void txbNhapLaiMatKhauAU_TextChanged(object sender, EventArgs e)
+        {
+            if (txbNhapLaiMatKhauAU.Text != txbMatKhauAU.Text || txbNhapLaiMatKhauAU.Text == "")
+            {
+                ptbNhapLaiMatKhau.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png";
+            }
+            else
+            {
+                ptbNhapLaiMatKhau.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png";
+            }
+        }
+
+        private void txbEmailAU_TextChanged(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                String query = @"select * from ThongTinUsers where Email = @Email";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Email", txbEmailAU.Text);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if(reader.Read() || txbEmailAU.Text == "")
+                        {
+                            ptbEmailAu.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png";
+                        }
+                        else
+                        {
+                            ptbEmailAu.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png";
+                        }
+                    }
+                }
+            }
+        }
+
+        private void txbSoDienThoaiAU_TextChanged(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                String query = @"select * from ThongTinUsers where SoDienThoai = @SoDienThoai";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SoDienThoai", txbSoDienThoaiAU.Text);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read() || txbSoDienThoaiAU.Text == "")
+                        {
+                            ptbSoDienThoaiAu.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\error.png";
+                        }
+                        else
+                        {
+                            ptbSoDienThoaiAu.ImageLocation = @"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png";
+                        }
+                    }
+                }
+            }
         }
     }
 }

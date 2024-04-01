@@ -33,9 +33,6 @@ namespace MusicPlayer.Admin
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uc_AddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ptbNgaySinh = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ptbSoDienThoai = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ptbEmail = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txbSoDienThoaiAU = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbHoTenAU = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,13 +50,14 @@ namespace MusicPlayer.Admin
             this.label3 = new System.Windows.Forms.Label();
             this.btnDangKyAU = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ptbEmailAu = new System.Windows.Forms.PictureBox();
+            this.ptbSoDienThoaiAu = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbNgaySinh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEmail)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,9 +74,8 @@ namespace MusicPlayer.Admin
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.Controls.Add(this.ptbNgaySinh);
-            this.guna2Panel1.Controls.Add(this.ptbSoDienThoai);
-            this.guna2Panel1.Controls.Add(this.ptbEmail);
+            this.guna2Panel1.Controls.Add(this.ptbSoDienThoaiAu);
+            this.guna2Panel1.Controls.Add(this.ptbEmailAu);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.txbSoDienThoaiAU);
             this.guna2Panel1.Controls.Add(this.txbHoTenAU);
@@ -88,33 +85,6 @@ namespace MusicPlayer.Admin
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(374, 498);
             this.guna2Panel1.TabIndex = 11;
-            // 
-            // ptbNgaySinh
-            // 
-            this.ptbNgaySinh.ImageRotate = 0F;
-            this.ptbNgaySinh.Location = new System.Drawing.Point(323, 191);
-            this.ptbNgaySinh.Name = "ptbNgaySinh";
-            this.ptbNgaySinh.Size = new System.Drawing.Size(23, 21);
-            this.ptbNgaySinh.TabIndex = 17;
-            this.ptbNgaySinh.TabStop = false;
-            // 
-            // ptbSoDienThoai
-            // 
-            this.ptbSoDienThoai.ImageRotate = 0F;
-            this.ptbSoDienThoai.Location = new System.Drawing.Point(323, 379);
-            this.ptbSoDienThoai.Name = "ptbSoDienThoai";
-            this.ptbSoDienThoai.Size = new System.Drawing.Size(23, 21);
-            this.ptbSoDienThoai.TabIndex = 16;
-            this.ptbSoDienThoai.TabStop = false;
-            // 
-            // ptbEmail
-            // 
-            this.ptbEmail.ImageRotate = 0F;
-            this.ptbEmail.Location = new System.Drawing.Point(323, 284);
-            this.ptbEmail.Name = "ptbEmail";
-            this.ptbEmail.Size = new System.Drawing.Size(23, 21);
-            this.ptbEmail.TabIndex = 15;
-            this.ptbEmail.TabStop = false;
             // 
             // label2
             // 
@@ -153,6 +123,7 @@ namespace MusicPlayer.Admin
             this.txbSoDienThoaiAU.SelectedText = "";
             this.txbSoDienThoaiAU.Size = new System.Drawing.Size(291, 48);
             this.txbSoDienThoaiAU.TabIndex = 9;
+            this.txbSoDienThoaiAU.TextChanged += new System.EventHandler(this.txbSoDienThoaiAU_TextChanged);
             // 
             // txbHoTenAU
             // 
@@ -211,6 +182,7 @@ namespace MusicPlayer.Admin
             this.txbEmailAU.SelectedText = "";
             this.txbEmailAU.Size = new System.Drawing.Size(291, 48);
             this.txbEmailAU.TabIndex = 8;
+            this.txbEmailAU.TextChanged += new System.EventHandler(this.txbEmailAU_TextChanged);
             // 
             // dtAU
             // 
@@ -245,9 +217,9 @@ namespace MusicPlayer.Admin
             this.ptbNhapLaiMatKhau.Location = new System.Drawing.Point(388, 154);
             this.ptbNhapLaiMatKhau.Name = "ptbNhapLaiMatKhau";
             this.ptbNhapLaiMatKhau.Size = new System.Drawing.Size(33, 28);
+            this.ptbNhapLaiMatKhau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbNhapLaiMatKhau.TabIndex = 12;
             this.ptbNhapLaiMatKhau.TabStop = false;
-            this.ptbNhapLaiMatKhau.Click += new System.EventHandler(this.ptbNhapLaiMatKhau_Click_1);
             // 
             // txbNhapLaiMatKhauAU
             // 
@@ -275,6 +247,7 @@ namespace MusicPlayer.Admin
             this.txbNhapLaiMatKhauAU.SelectedText = "";
             this.txbNhapLaiMatKhauAU.Size = new System.Drawing.Size(202, 48);
             this.txbNhapLaiMatKhauAU.TabIndex = 11;
+            this.txbNhapLaiMatKhauAU.TextChanged += new System.EventHandler(this.txbNhapLaiMatKhauAU_TextChanged);
             // 
             // txbMatKhauAU
             // 
@@ -345,7 +318,7 @@ namespace MusicPlayer.Admin
             // 
             // cbVaiTroAU
             // 
-            this.cbVaiTroAU.BackColor = System.Drawing.Color.Transparent;
+            this.cbVaiTroAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbVaiTroAU.BorderColor = System.Drawing.Color.Black;
             this.cbVaiTroAU.BorderRadius = 5;
             this.cbVaiTroAU.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -353,8 +326,8 @@ namespace MusicPlayer.Admin
             this.cbVaiTroAU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbVaiTroAU.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbVaiTroAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbVaiTroAU.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbVaiTroAU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbVaiTroAU.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVaiTroAU.ForeColor = System.Drawing.Color.Black;
             this.cbVaiTroAU.ItemHeight = 30;
             this.cbVaiTroAU.Items.AddRange(new object[] {
             "Admin",
@@ -400,6 +373,24 @@ namespace MusicPlayer.Admin
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // ptbEmailAu
+            // 
+            this.ptbEmailAu.Location = new System.Drawing.Point(315, 277);
+            this.ptbEmailAu.Name = "ptbEmailAu";
+            this.ptbEmailAu.Size = new System.Drawing.Size(33, 28);
+            this.ptbEmailAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbEmailAu.TabIndex = 11;
+            this.ptbEmailAu.TabStop = false;
+            // 
+            // ptbSoDienThoaiAu
+            // 
+            this.ptbSoDienThoaiAu.Location = new System.Drawing.Point(315, 372);
+            this.ptbSoDienThoaiAu.Name = "ptbSoDienThoaiAu";
+            this.ptbSoDienThoaiAu.Size = new System.Drawing.Size(33, 28);
+            this.ptbSoDienThoaiAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSoDienThoaiAu.TabIndex = 12;
+            this.ptbSoDienThoaiAu.TabStop = false;
+            // 
             // Uc_AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -414,14 +405,13 @@ namespace MusicPlayer.Admin
             this.Size = new System.Drawing.Size(1121, 800);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbNgaySinh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEmail)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,9 +421,6 @@ namespace MusicPlayer.Admin
 
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbNgaySinh;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbSoDienThoai;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbEmail;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txbSoDienThoaiAU;
         private Guna.UI2.WinForms.Guna2TextBox txbHoTenAU;
@@ -451,5 +438,7 @@ namespace MusicPlayer.Admin
         private Guna.UI2.WinForms.Guna2Button btnDangKyAU;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox ptbNhapLaiMatKhau;
+        private System.Windows.Forms.PictureBox ptbSoDienThoaiAu;
+        private System.Windows.Forms.PictureBox ptbEmailAu;
     }
 }
