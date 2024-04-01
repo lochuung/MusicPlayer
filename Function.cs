@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace ManagerMusic
 {
-    class Function
-    {
+     public class Function
+     {
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            con.ConnectionString = "data source = Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True ";
             return con;
         }
         public DataSet getData(String query)

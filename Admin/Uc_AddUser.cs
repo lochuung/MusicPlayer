@@ -12,6 +12,7 @@ namespace MusicPlayer.Admin
 {
     public partial class Uc_AddUser : UserControl
     {
+        
         public Uc_AddUser()
         {
             InitializeComponent();
@@ -20,27 +21,50 @@ namespace MusicPlayer.Admin
         private void btnDangKyAU_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-
-                string query = @"INSERT INTO ThongTinUsers ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro]) 
-                    VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau, @VaiTro)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
+                    con.Open();
+
+                    if(txbHoTenAU.Text == "" ||
+                    txbEmailAU.Text == "" ||
+                    txbSoDienThoaiAU.Text == "" ||
+                    !txbSoDienThoaiAU.Text.StartsWith("0") ||
+                    txbMatKhauAU.Text == "" ||
+                    cbVaiTroAU.SelectedItem == null ||
+                    txbMatKhauAU.Text != txbNhapLaiMatKhauAU.Text)
+                    {
+                        MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearAll();
+                    }
+                    else
+                    {
+                        string query = @"INSERT INTO ThongTinUsers ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro]) 
+                                       VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau, @VaiTro)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+
+                            cmd.Parameters.AddWithValue("@HoTen", txbHoTenAU.Text);
+                            cmd.Parameters.AddWithValue("@NamSinh", dtAU.Text);
+                            cmd.Parameters.AddWithValue("@Email", txbEmailAU.Text);
+                            cmd.Parameters.AddWithValue("@SoDienThoai", txbSoDienThoaiAU.Text);
+                            cmd.Parameters.AddWithValue("@MatKhau", txbMatKhauAU.Text);
+                            cmd.Parameters.AddWithValue("@VaiTro", cbVaiTroAU.SelectedItem.ToString());
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Đăng ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearAll();
+                    }
                     
-                    cmd.Parameters.AddWithValue("@HoTen", txbHoTenAU.Text);
-                    cmd.Parameters.AddWithValue("@NamSinh", dtAU.Text);
-                    cmd.Parameters.AddWithValue("@Email", txbEmailAU.Text);
-                    cmd.Parameters.AddWithValue("@SoDienThoai", txbSoDienThoaiAU.Text);
-                    cmd.Parameters.AddWithValue("@MatKhau", txbMatKhauAU.Text);
-                    cmd.Parameters.AddWithValue("@VaiTro", cbVaiTroAU.SelectedItem.ToString());
-
-                    cmd.ExecuteNonQuery();
                 }
-
-                MessageBox.Show("Đăng ký thành công !");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -59,6 +83,16 @@ namespace MusicPlayer.Admin
             {
                 ptbNhapLaiMatKhau.Image = Image.FromFile(@"C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\Picture\check.png");
             }
+        }
+        public void clearAll()
+        {
+            txbHoTenAU.Clear();
+            txbEmailAU.Clear();
+            txbMatKhauAU.Clear();
+            txbNhapLaiMatKhauAU.Clear();
+            txbSoDienThoaiAU.Clear();
+            dtAU.ResetText();
+            cbVaiTroAU.SelectedIndex = -1;
         }
     }
 }

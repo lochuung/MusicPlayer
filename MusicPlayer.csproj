@@ -239,6 +239,7 @@
     <Compile Include="Admin\Uc_ViewUser.Designer.cs">
       <DependentUpon>Uc_ViewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bin.cs" />
     <Compile Include="FormUsers.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
+
 namespace MusicPlayer.Admin
 {
+    
     public partial class Uc_ViewUser : UserControl
     {
         
@@ -20,6 +21,7 @@ namespace MusicPlayer.Admin
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
         String currentUser = "";
+
         void loadData()
         {
             command = connection.CreateCommand();
@@ -49,6 +51,7 @@ namespace MusicPlayer.Admin
 
         private void Uc_ViewUser_Load(object sender, EventArgs e)
         {
+            
             connection = new SqlConnection(str);
             connection.Open();
             loadData();
