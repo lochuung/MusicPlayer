@@ -63,7 +63,7 @@ namespace MusicPlayer.Admin
         {
             if (MessageBox.Show("Bạn có chắc chắn xoá ?", "Xoá thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                // Kiểm tra currentUser và userName đã được khởi tạo
+  
                 if (!string.IsNullOrEmpty(currentUser) && !string.IsNullOrEmpty(userName))
                 {
                     if (currentUser != userName)
