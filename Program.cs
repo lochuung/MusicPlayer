@@ -13,7 +13,7 @@ namespace MusicPlayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAdmin());
+            Application.Run(new MainForm());
 
             // ZingMp3Api api = new ZingMp3Api();
             // var result = ZingMp3ApiUtils.GetSong(api, "Z7Z7A7F0");
