@@ -36,16 +36,19 @@
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExitMainForm = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-5, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(671, 704);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(612, 717);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -53,8 +56,8 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(743, 475);
+            this.linkLabel1.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(762, 483);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(180, 54);
             this.linkLabel1.TabIndex = 14;
@@ -74,7 +77,7 @@
             this.btnDangKy.ForeColor = System.Drawing.Color.Black;
             this.btnDangKy.HoverState.BorderColor = System.Drawing.Color.Teal;
             this.btnDangKy.HoverState.FillColor = System.Drawing.Color.Teal;
-            this.btnDangKy.Location = new System.Drawing.Point(686, 385);
+            this.btnDangKy.Location = new System.Drawing.Point(699, 395);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(285, 57);
             this.btnDangKy.TabIndex = 13;
@@ -94,7 +97,7 @@
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.HoverState.BorderColor = System.Drawing.Color.Teal;
             this.btnDangNhap.HoverState.FillColor = System.Drawing.Color.Teal;
-            this.btnDangNhap.Location = new System.Drawing.Point(686, 288);
+            this.btnDangNhap.Location = new System.Drawing.Point(699, 281);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(285, 57);
             this.btnDangNhap.TabIndex = 12;
@@ -104,10 +107,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(694, 133);
+            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(690, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 42);
+            this.label1.Size = new System.Drawing.Size(271, 49);
             this.label1.TabIndex = 11;
             this.label1.Text = "TÀI KHOẢN";
             // 
@@ -118,24 +121,37 @@
             this.btnExitMainForm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnExitMainForm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExitMainForm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExitMainForm.FillColor = System.Drawing.Color.White;
+            this.btnExitMainForm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnExitMainForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExitMainForm.ForeColor = System.Drawing.Color.White;
-            this.btnExitMainForm.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExitMainForm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnExitMainForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitMainForm.Image")));
             this.btnExitMainForm.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExitMainForm.Location = new System.Drawing.Point(1021, 0);
+            this.btnExitMainForm.Location = new System.Drawing.Point(1022, 0);
             this.btnExitMainForm.Name = "btnExitMainForm";
             this.btnExitMainForm.Size = new System.Drawing.Size(71, 53);
             this.btnExitMainForm.TabIndex = 15;
             this.btnExitMainForm.Click += new System.EventHandler(this.btnExitMainForm_Click);
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(103, 154);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(387, 298);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 16;
+            this.guna2PictureBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1092, 701);
+            this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.btnExitMainForm);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnDangKy);
@@ -147,6 +163,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +177,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnExitMainForm;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }

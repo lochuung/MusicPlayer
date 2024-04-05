@@ -33,6 +33,8 @@ namespace MusicPlayer.Admin
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uc_AddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.ptbSoDienThoaiAu = new System.Windows.Forms.PictureBox();
+            this.ptbEmailAu = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txbSoDienThoaiAU = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbHoTenAU = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,14 +52,12 @@ namespace MusicPlayer.Admin
             this.label3 = new System.Windows.Forms.Label();
             this.btnDangKyAU = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ptbEmailAu = new System.Windows.Forms.PictureBox();
-            this.ptbSoDienThoaiAu = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).BeginInit();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +65,7 @@ namespace MusicPlayer.Admin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(351, 96);
+            this.label1.Location = new System.Drawing.Point(372, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(377, 37);
             this.label1.TabIndex = 2;
@@ -85,6 +85,24 @@ namespace MusicPlayer.Admin
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(374, 498);
             this.guna2Panel1.TabIndex = 11;
+            // 
+            // ptbSoDienThoaiAu
+            // 
+            this.ptbSoDienThoaiAu.Location = new System.Drawing.Point(315, 372);
+            this.ptbSoDienThoaiAu.Name = "ptbSoDienThoaiAu";
+            this.ptbSoDienThoaiAu.Size = new System.Drawing.Size(33, 28);
+            this.ptbSoDienThoaiAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSoDienThoaiAu.TabIndex = 12;
+            this.ptbSoDienThoaiAu.TabStop = false;
+            // 
+            // ptbEmailAu
+            // 
+            this.ptbEmailAu.Location = new System.Drawing.Point(315, 277);
+            this.ptbEmailAu.Name = "ptbEmailAu";
+            this.ptbEmailAu.Size = new System.Drawing.Size(33, 28);
+            this.ptbEmailAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbEmailAu.TabIndex = 11;
+            this.ptbEmailAu.TabStop = false;
             // 
             // label2
             // 
@@ -112,8 +130,8 @@ namespace MusicPlayer.Admin
             this.txbSoDienThoaiAU.ForeColor = System.Drawing.Color.Black;
             this.txbSoDienThoaiAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbSoDienThoaiAU.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbSoDienThoaiAU.IconLeft")));
-            this.txbSoDienThoaiAU.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.txbSoDienThoaiAU.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txbSoDienThoaiAU.IconLeftOffset = new System.Drawing.Point(2, 0);
+            this.txbSoDienThoaiAU.IconLeftSize = new System.Drawing.Size(22, 22);
             this.txbSoDienThoaiAU.Location = new System.Drawing.Point(17, 352);
             this.txbSoDienThoaiAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSoDienThoaiAU.Name = "txbSoDienThoaiAU";
@@ -138,12 +156,12 @@ namespace MusicPlayer.Admin
             this.txbHoTenAU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbHoTenAU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txbHoTenAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbHoTenAU.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbHoTenAU.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbHoTenAU.ForeColor = System.Drawing.Color.Black;
             this.txbHoTenAU.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txbHoTenAU.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbHoTenAU.IconLeft")));
-            this.txbHoTenAU.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.txbHoTenAU.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txbHoTenAU.IconLeftOffset = new System.Drawing.Point(2, 0);
+            this.txbHoTenAU.IconLeftSize = new System.Drawing.Size(22, 22);
             this.txbHoTenAU.Location = new System.Drawing.Point(17, 69);
             this.txbHoTenAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHoTenAU.Name = "txbHoTenAU";
@@ -171,8 +189,8 @@ namespace MusicPlayer.Admin
             this.txbEmailAU.ForeColor = System.Drawing.Color.Black;
             this.txbEmailAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbEmailAU.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbEmailAU.IconLeft")));
-            this.txbEmailAU.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.txbEmailAU.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txbEmailAU.IconLeftOffset = new System.Drawing.Point(2, 0);
+            this.txbEmailAU.IconLeftSize = new System.Drawing.Size(22, 22);
             this.txbEmailAU.Location = new System.Drawing.Point(17, 257);
             this.txbEmailAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbEmailAU.Name = "txbEmailAU";
@@ -355,41 +373,23 @@ namespace MusicPlayer.Admin
             this.btnDangKyAU.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDangKyAU.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDangKyAU.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangKyAU.FillColor = System.Drawing.Color.PeachPuff;
+            this.btnDangKyAU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDangKyAU.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKyAU.ForeColor = System.Drawing.Color.Black;
             this.btnDangKyAU.Image = ((System.Drawing.Image)(resources.GetObject("btnDangKyAU.Image")));
             this.btnDangKyAU.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangKyAU.ImageOffset = new System.Drawing.Point(4, 0);
-            this.btnDangKyAU.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangKyAU.Location = new System.Drawing.Point(708, 575);
+            this.btnDangKyAU.ImageOffset = new System.Drawing.Point(2, 0);
+            this.btnDangKyAU.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnDangKyAU.Location = new System.Drawing.Point(712, 597);
             this.btnDangKyAU.Name = "btnDangKyAU";
             this.btnDangKyAU.Size = new System.Drawing.Size(210, 55);
             this.btnDangKyAU.TabIndex = 17;
-            this.btnDangKyAU.Text = "  Đăng ký";
+            this.btnDangKyAU.Text = "   Đăng ký";
             this.btnDangKyAU.Click += new System.EventHandler(this.btnDangKyAU_Click);
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // ptbEmailAu
-            // 
-            this.ptbEmailAu.Location = new System.Drawing.Point(315, 277);
-            this.ptbEmailAu.Name = "ptbEmailAu";
-            this.ptbEmailAu.Size = new System.Drawing.Size(33, 28);
-            this.ptbEmailAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbEmailAu.TabIndex = 11;
-            this.ptbEmailAu.TabStop = false;
-            // 
-            // ptbSoDienThoaiAu
-            // 
-            this.ptbSoDienThoaiAu.Location = new System.Drawing.Point(315, 372);
-            this.ptbSoDienThoaiAu.Name = "ptbSoDienThoaiAu";
-            this.ptbSoDienThoaiAu.Size = new System.Drawing.Size(33, 28);
-            this.ptbSoDienThoaiAu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbSoDienThoaiAu.TabIndex = 12;
-            this.ptbSoDienThoaiAu.TabStop = false;
             // 
             // Uc_AddUser
             // 
@@ -405,13 +405,13 @@ namespace MusicPlayer.Admin
             this.Size = new System.Drawing.Size(1121, 800);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEmailAu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSoDienThoaiAu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

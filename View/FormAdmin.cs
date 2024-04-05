@@ -48,5 +48,7 @@ namespace MusicPlayer
             uc_Profile1.Visible = true;
             uc_Profile1.BringToFront();
         }
+
+
     }
 }
