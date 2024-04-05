@@ -61,7 +61,7 @@ namespace MusicPlayer
                             {
                                 FormAdmin formAdmin = new FormAdmin();
                                 formAdmin.Show();
-                                // this.Hide();
+                                this.Hide();
                             }
                             else if (vaiTro == @"User")
                             {
