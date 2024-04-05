@@ -20,7 +20,7 @@ namespace MusicPlayer.Admin
 
         private void btnDangKyAU_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -46,7 +46,7 @@ namespace MusicPlayer.Admin
                     }
                     else
                     {
-                        string query = @"INSERT INTO ThongTinUsers ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro]) 
+                        string query = @"INSERT INTO Users ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro]) 
                                        VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau, @VaiTro)";
 
                         using (SqlCommand cmd = new SqlCommand(query, con))
@@ -100,11 +100,11 @@ namespace MusicPlayer.Admin
 
         private void txbEmailAU_TextChanged(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                String query = @"select * from ThongTinUsers where Email = @Email";
+                String query = @"select * from Users where Email = @Email";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Email", txbEmailAU.Text);
@@ -125,11 +125,11 @@ namespace MusicPlayer.Admin
 
         private void txbSoDienThoaiAU_TextChanged(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                String query = @"select * from ThongTinUsers where SoDienThoai = @SoDienThoai";
+                String query = @"select * from Users where SoDienThoai = @SoDienThoai";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@SoDienThoai", txbSoDienThoaiAU.Text);

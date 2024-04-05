@@ -71,7 +71,7 @@ namespace MusicPlayer.Admin
             this.guna2PictureBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(67)))), ((int)(((byte)(190)))));
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(128, 192);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(135, 199);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(255, 241);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,13 +80,15 @@ namespace MusicPlayer.Admin
             // 
             // lblHoTenPF
             // 
-            this.lblHoTenPF.AutoSize = true;
             this.lblHoTenPF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoTenPF.Location = new System.Drawing.Point(198, 474);
             this.lblHoTenPF.Name = "lblHoTenPF";
             this.lblHoTenPF.Size = new System.Drawing.Size(110, 26);
             this.lblHoTenPF.TabIndex = 6;
             this.lblHoTenPF.Text = "Họ và tên";
+            this.lblHoTenPF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHoTenPF.TextAlignChanged += new System.EventHandler(this.lblHoTenPF_TextAlignChanged);
+            this.lblHoTenPF.Click += new System.EventHandler(this.lblHoTenPF_Click);
             // 
             // btnCapNhatPF
             // 
@@ -354,6 +356,7 @@ namespace MusicPlayer.Admin
             this.Controls.Add(this.label1);
             this.Name = "Uc_Profile";
             this.Size = new System.Drawing.Size(1121, 800);
+            this.Enter += new System.EventHandler(this.Uc_Profile_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);

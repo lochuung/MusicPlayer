@@ -17,7 +17,7 @@ namespace MusicPlayer.Admin
         
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+        string str = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
         String currentUser = "";
@@ -25,7 +25,7 @@ namespace MusicPlayer.Admin
         void loadData()
         {
             command = connection.CreateCommand();
-            command.CommandText = "select * from ThongTinUsers ";
+            command.CommandText = "select * from Users ";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
@@ -38,7 +38,7 @@ namespace MusicPlayer.Admin
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "DELETE FROM ThongTinUsers WHERE username = @UserName";
+                    command.CommandText = "DELETE FROM Users WHERE username = @UserName";
                     command.Parameters.AddWithValue("@UserName", userName);
                     command.ExecuteNonQuery();
                 }
@@ -66,24 +66,46 @@ namespace MusicPlayer.Admin
         {
             if (MessageBox.Show("Bạn có chắc chắn xoá ?", "Xoá thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-  
-                if (!string.IsNullOrEmpty(currentUser) && !string.IsNullOrEmpty(userName))
+                string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    if (currentUser != userName)
+                    con.Open();
+                    string emailToDelete = "abcdxyz"; 
+                    string query = "DELETE FROM users WHERE Email = @Email";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        connection = new SqlConnection(str);
-                        connection.Open();
-                        deleteData();
-                        loadData();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng xoá lại \n Hồ sơ sửa bạn!", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        cmd.Parameters.AddWithValue("@Email", emailToDelete);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Đã xóa người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có người dùng nào được xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
-                else
+            }
+        }
+
+        private void txbMatKhauAU_TextChanged(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                String query = @"Select * from users where Email like @Email";
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    MessageBox.Show("Không thể xoá vì thông tin người dùng không hợp lệ!", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmd.Parameters.AddWithValue("@Email", txbTimKiemAU.Text + "%");
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        guna2DataGridView1.DataSource = dataTable;
+                    }
                 }
             }
         }

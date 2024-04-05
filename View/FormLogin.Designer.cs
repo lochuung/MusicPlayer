@@ -30,7 +30,6 @@ namespace MusicPlayer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.label4 = new System.Windows.Forms.Label();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.txbPassWord = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbUserName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -38,19 +37,9 @@ namespace MusicPlayer
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExitDangNhap = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Gray;
-            this.label4.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(116, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(379, 33);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Đăng nhập vào FineMusic";
             // 
             // btnDangNhap
             // 
@@ -96,6 +85,7 @@ namespace MusicPlayer
             // 
             // txbUserName
             // 
+            this.txbUserName.BackColor = System.Drawing.Color.White;
             this.txbUserName.BorderRadius = 10;
             this.txbUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbUserName.DefaultText = "";
@@ -131,6 +121,7 @@ namespace MusicPlayer
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(137, 268);
@@ -142,9 +133,10 @@ namespace MusicPlayer
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(137, 145);
+            this.label1.Location = new System.Drawing.Point(137, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 23);
             this.label1.TabIndex = 9;
@@ -169,14 +161,26 @@ namespace MusicPlayer
             this.btnExitDangNhap.TabIndex = 16;
             this.btnExitDangNhap.Click += new System.EventHandler(this.btnExitDangNhap_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(194, 2);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(232, 126);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 17;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(610, 510);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.btnExitDangNhap);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txbPassWord);
             this.Controls.Add(this.txbUserName);
@@ -187,14 +191,13 @@ namespace MusicPlayer
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private Guna.UI2.WinForms.Guna2TextBox txbPassWord;
         private Guna.UI2.WinForms.Guna2TextBox txbUserName;
@@ -202,5 +205,6 @@ namespace MusicPlayer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnExitDangNhap;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

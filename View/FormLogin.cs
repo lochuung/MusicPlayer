@@ -13,9 +13,11 @@ namespace MusicPlayer
 {
     public partial class FormLogin : Form
     {
+        
         public FormLogin()
         {
             InitializeComponent();
+            
         }
 
         private void btnExitDangNhap_Click(object sender, EventArgs e)
@@ -39,11 +41,11 @@ namespace MusicPlayer
                 txbUserName.Clear();
                 txbPassWord.Clear();
             }*/
-            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = string.Format("SELECT * FROM ThongTinUsers WHERE Email = '{0}' AND MatKhau = '{1}'", txbUserName.Text, txbPassWord.Text);
+                string query = string.Format("SELECT * FROM Users WHERE Email = '{0}' AND MatKhau = '{1}'", txbUserName.Text, txbPassWord.Text);
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {

@@ -35,7 +35,7 @@ namespace MusicPlayer.Admin
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbMatKhauAU = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txbTimKiemAU = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnTaiLaiVU = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaVU = new Guna.UI2.WinForms.Guna2Button();
@@ -55,38 +55,40 @@ namespace MusicPlayer.Admin
             this.label1.Text = "TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txbMatKhauAU
+            // txbTimKiemAU
             // 
-            this.txbMatKhauAU.BorderColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.BorderRadius = 5;
-            this.txbMatKhauAU.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbMatKhauAU.DefaultText = "";
-            this.txbMatKhauAU.DisabledState.BorderColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.DisabledState.FillColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbMatKhauAU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txbMatKhauAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbMatKhauAU.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbMatKhauAU.ForeColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbMatKhauAU.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbMatKhauAU.IconLeft")));
-            this.txbMatKhauAU.IconLeftOffset = new System.Drawing.Point(4, 0);
-            this.txbMatKhauAU.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txbMatKhauAU.Location = new System.Drawing.Point(711, 73);
-            this.txbMatKhauAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txbMatKhauAU.Name = "txbMatKhauAU";
-            this.txbMatKhauAU.PasswordChar = '\0';
-            this.txbMatKhauAU.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txbMatKhauAU.PlaceholderText = "Tìm kiếm ..........";
-            this.txbMatKhauAU.SelectedText = "";
-            this.txbMatKhauAU.Size = new System.Drawing.Size(286, 48);
-            this.txbMatKhauAU.TabIndex = 19;
+            this.txbTimKiemAU.BorderColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.BorderRadius = 5;
+            this.txbTimKiemAU.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbTimKiemAU.DefaultText = "";
+            this.txbTimKiemAU.DisabledState.BorderColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbTimKiemAU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txbTimKiemAU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbTimKiemAU.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbTimKiemAU.ForeColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbTimKiemAU.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbTimKiemAU.IconLeft")));
+            this.txbTimKiemAU.IconLeftOffset = new System.Drawing.Point(4, 0);
+            this.txbTimKiemAU.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txbTimKiemAU.Location = new System.Drawing.Point(711, 73);
+            this.txbTimKiemAU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txbTimKiemAU.Name = "txbTimKiemAU";
+            this.txbTimKiemAU.PasswordChar = '\0';
+            this.txbTimKiemAU.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txbTimKiemAU.PlaceholderText = "Tìm kiếm ..........";
+            this.txbTimKiemAU.SelectedText = "";
+            this.txbTimKiemAU.Size = new System.Drawing.Size(286, 48);
+            this.txbTimKiemAU.TabIndex = 19;
+            this.txbTimKiemAU.TextChanged += new System.EventHandler(this.txbMatKhauAU_TextChanged);
             // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -107,9 +109,9 @@ namespace MusicPlayer.Admin
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.guna2DataGridView1.Location = new System.Drawing.Point(75, 140);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
             this.guna2DataGridView1.Size = new System.Drawing.Size(949, 482);
@@ -119,7 +121,7 @@ namespace MusicPlayer.Admin
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.LightSkyBlue;
             this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -190,7 +192,7 @@ namespace MusicPlayer.Admin
             this.Controls.Add(this.btnXoaVU);
             this.Controls.Add(this.btnTaiLaiVU);
             this.Controls.Add(this.guna2DataGridView1);
-            this.Controls.Add(this.txbMatKhauAU);
+            this.Controls.Add(this.txbTimKiemAU);
             this.Controls.Add(this.label1);
             this.Name = "Uc_ViewUser";
             this.Size = new System.Drawing.Size(1121, 800);
@@ -204,7 +206,7 @@ namespace MusicPlayer.Admin
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txbMatKhauAU;
+        private Guna.UI2.WinForms.Guna2TextBox txbTimKiemAU;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2Button btnTaiLaiVU;
         private Guna.UI2.WinForms.Guna2Button btnXoaVU;

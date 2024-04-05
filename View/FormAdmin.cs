@@ -12,10 +12,12 @@ namespace MusicPlayer
 {
     public partial class FormAdmin : Form
     {
+        String user = "";
         public FormAdmin()
         {
             InitializeComponent();
         }
+       
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             uc_AddUser1.Visible = false;
