@@ -36,7 +36,7 @@ namespace MusicPlayer
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddUser = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -58,7 +58,7 @@ namespace MusicPlayer
             this.panelAdmin.Controls.Add(this.btnProfile);
             this.panelAdmin.Controls.Add(this.btnViewUser);
             this.panelAdmin.Controls.Add(this.btnAddUser);
-            this.panelAdmin.Controls.Add(this.label1);
+            this.panelAdmin.Controls.Add(this.lblUserName);
             this.panelAdmin.Controls.Add(this.guna2PictureBox1);
             this.panelAdmin.Location = new System.Drawing.Point(0, 0);
             this.panelAdmin.Name = "panelAdmin";
@@ -139,16 +139,17 @@ namespace MusicPlayer
             this.btnAddUser.Text = "Thêm";
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(102, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Admin";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Location = new System.Drawing.Point(107, 174);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(86, 29);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "Admin";
+            this.lblUserName.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2PictureBox1
             // 
@@ -245,7 +246,7 @@ namespace MusicPlayer
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Button btnViewUser;
         private Guna.UI2.WinForms.Guna2Button btnAddUser;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Admin.Uc_AddUser uc_AddUser1;

@@ -13,11 +13,15 @@ namespace MusicPlayer.Admin
 {
     public partial class Uc_Profile : UserControl
     {
-        public string UserNameFormLogin { get; set; }
+        /*public string UserNameFormLogin { get; set; }*/
         public Uc_Profile()
         {
             InitializeComponent();
         }
+        /*public void InitializeProfile(string email)
+        {
+            lblHoTenPF.Text = email;
+        }*/
 
         public String Email
         {
@@ -26,29 +30,32 @@ namespace MusicPlayer.Admin
 
         private void lblHoTenPF_Click(object sender, EventArgs e)
         {
-            string email = lblHoTenPF.Text;
-
+            /*string email = "";
+            email = GetUserName()*/
+        }
+       /* private String GetUserName(string email, string password)
+        {
             string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+            string HoTen = "";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "SELECT HoTen FROM users WHERE Email = @Email";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                string query = "select HoTen from users where Email = @Email AND MatKhau = @MatKhau";
+                using (SqlCommand cmd = new SqlCommand(query,con))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
-
+                    cmd.Parameters.AddWithValue("@MatKhau", password);
                     object result = cmd.ExecuteScalar();
-                    if (result != null)
                     {
-                        string hoTen = result.ToString();
-                        lblHoTenPF.Text = hoTen; 
+                        if(result != null)
+                        {
+                            HoTen = result.ToString();
+                        }
                     }
-                   
                 }
             }
-        }
-
+            return HoTen;
+        }*/
 
         private void lblHoTenPF_TextAlignChanged(object sender, EventArgs e)
         {

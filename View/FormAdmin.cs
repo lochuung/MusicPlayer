@@ -13,11 +13,22 @@ namespace MusicPlayer
     public partial class FormAdmin : Form
     {
         String user = "";
+
         public FormAdmin()
         {
             InitializeComponent();
         }
-       
+      /* public string Email
+        {
+            get { return user.ToString(); }
+        }
+        public FormAdmin(String userName)
+        {
+            InitializeComponent();
+            lblUserName.Text = userName;
+            user = userName;
+            uc_Profile1.Email = Email;
+        }*/
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             uc_AddUser1.Visible = false;
@@ -49,6 +60,9 @@ namespace MusicPlayer
             uc_Profile1.BringToFront();
         }
 
-
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

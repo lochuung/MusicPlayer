@@ -19,12 +19,18 @@ namespace MusicPlayer
             InitializeComponent();
             
         }
-
+       /* public event EventHandler<string> UserLoggedIn;
+        protected virtual void onUserLoggedIn(string email)
+        {
+            UserLoggedIn?.Invoke(this, email);
+        }*/
         private void btnExitDangNhap_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
             mainForm.Show();
             this.Hide();
+            string userEmail = "Ex";
+            onUserLoggedIn(userEmail);
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

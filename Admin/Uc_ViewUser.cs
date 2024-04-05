@@ -20,7 +20,7 @@ namespace MusicPlayer.Admin
         string str = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
-        String currentUser = "";
+       
 
         void loadData()
         {
@@ -31,19 +31,7 @@ namespace MusicPlayer.Admin
             adapter.Fill(table);
             guna2DataGridView1.DataSource = table;
         }
-        String userName;
-        void deleteData()
-        {
-            if (connection != null)
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "DELETE FROM Users WHERE username = @UserName";
-                    command.Parameters.AddWithValue("@UserName", userName);
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
+        
         public Uc_ViewUser()
         {
             InitializeComponent();
@@ -61,34 +49,41 @@ namespace MusicPlayer.Admin
         {
             loadData();
         }
-
+ 
         private void btnXoaVU_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn xoá ?", "Xoá thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa các dòng được chọn?", "Xóa thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string emailToDelete = "abcdxyz"; 
-                    string query = "DELETE FROM users WHERE Email = @Email";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", emailToDelete);
-                        int rowsAffected = cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
+                    foreach (DataGridViewRow row in guna2DataGridView1.SelectedRows)
+                    {
+              
+                        if (!row.IsNewRow)
                         {
-                            MessageBox.Show("Đã xóa người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không có người dùng nào được xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string emailToDelete = row.Cells["Email"].Value.ToString(); 
+
+                            string query = "DELETE FROM users WHERE Email = @Email";
+
+                            using (SqlCommand cmd = new SqlCommand(query, con))
+                            {
+                                cmd.Parameters.AddWithValue("@Email", emailToDelete);
+                                cmd.ExecuteNonQuery(); 
+                            }
+
+                            guna2DataGridView1.Rows.Remove(row); 
                         }
                     }
+
+                    MessageBox.Show("Đã xóa thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
+
 
         private void txbMatKhauAU_TextChanged(object sender, EventArgs e)
         {
@@ -108,6 +103,11 @@ namespace MusicPlayer.Admin
                     }
                 }
             }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
