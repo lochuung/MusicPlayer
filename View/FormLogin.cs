@@ -29,8 +29,8 @@ namespace MusicPlayer
             MainForm mainForm = new MainForm();
             mainForm.Show();
             this.Hide();
-            string userEmail = "Ex";
-            onUserLoggedIn(userEmail);
+           /* string userEmail = "Ex";
+            onUserLoggedIn(userEmail);*/
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -64,10 +64,12 @@ namespace MusicPlayer
                         if (reader.Read())
                         {
                             string vaiTro = reader["VaiTro"].ToString();
+                            string hoTen = reader["HoTen"].ToString();
                             /*MessageBox.Show(vaiTro.Count().ToString());*/
                             if (vaiTro == @"Admin")
                             {
-                                FormAdmin formAdmin = new FormAdmin();
+                                FormAdmin formAdmin = new FormAdmin(hoTen);
+                                
                                 formAdmin.Show();
                                 this.Hide();
                             }

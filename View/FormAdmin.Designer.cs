@@ -198,7 +198,7 @@ namespace MusicPlayer
             this.uc_Profile1.Name = "uc_Profile1";
             this.uc_Profile1.Size = new System.Drawing.Size(1121, 800);
             this.uc_Profile1.TabIndex = 5;
-            this.uc_Profile1.UserNameFormLogin = null;
+
             // 
             // uc_ViewUser1
             // 

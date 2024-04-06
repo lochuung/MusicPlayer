@@ -13,21 +13,21 @@ namespace MusicPlayer.Admin
 {
     public partial class Uc_Profile : UserControl
     {
-        /*public string UserNameFormLogin { get; set; }*/
+        
         public Uc_Profile()
         {
             InitializeComponent();
         }
-        /*public void InitializeProfile(string email)
+        public Uc_Profile(string hoTen)
         {
-            lblHoTenPF.Text = email;
-        }*/
-
-        public String Email
-        {
-            set { lblHoTenPF.Text = value; }
+            InitializeComponent();
+            lblHoTenPF.Text = hoTen;
         }
-
+       public void UpdateName(string hoTen)
+        {
+            lblHoTenPF.Text = hoTen;
+        }
+     
         private void lblHoTenPF_Click(object sender, EventArgs e)
         {
             /*string email = "";
