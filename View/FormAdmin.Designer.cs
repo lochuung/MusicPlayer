@@ -174,6 +174,7 @@ namespace MusicPlayer
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 2;
             this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // guna2Elipse1
             // 
@@ -198,7 +199,6 @@ namespace MusicPlayer
             this.uc_Profile1.Name = "uc_Profile1";
             this.uc_Profile1.Size = new System.Drawing.Size(1121, 800);
             this.uc_Profile1.TabIndex = 5;
-
             // 
             // uc_ViewUser1
             // 
