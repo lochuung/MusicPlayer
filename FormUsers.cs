@@ -12,9 +12,16 @@ namespace MusicPlayer
 {
     public partial class FormUsers : Form
     {
+        private string hoTen;
+
         public FormUsers()
         {
             InitializeComponent();
+        }
+
+        public FormUsers(string hoTen)
+        {
+            this.hoTen = hoTen;
         }
     }
 }

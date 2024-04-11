@@ -47,7 +47,7 @@ namespace MusicPlayer
                 txbUserName.Clear();
                 txbPassWord.Clear();
             }*/
-            string connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+            string connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -57,28 +57,14 @@ namespace MusicPlayer
                 {
                     //cmd.Parameters.AddWithValue("@Email", txbUserName.Text);
                     //cmd.Parameters.AddWithValue("@MatKhau", txbPassWord.Text);
-                    
-
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            string vaiTro = reader["VaiTro"].ToString();
-                            string hoTen = reader["HoTen"].ToString();
-                            /*MessageBox.Show(vaiTro.Count().ToString());*/
-                            if (vaiTro == @"Admin")
-                            {
-                                FormAdmin formAdmin = new FormAdmin(hoTen);
-                                
-                                formAdmin.Show();
-                                this.Hide();
-                            }
-                            else if (vaiTro == @"User")
-                            {
-                                FormUsers formUsers = new FormUsers();
-                                formUsers.Show();
-                                this.Hide();
-                            }
+                            string HoTen = reader["HoTen"].ToString();
+                            FormUsers formUsers = new FormUsers(HoTen);
+                            formUsers.Show();
+                            this.Hide();
                         }
                         else
                         {
