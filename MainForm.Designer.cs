@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -111,7 +110,7 @@
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(729, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 42);
+            this.label1.Size = new System.Drawing.Size(271, 49);
             this.label1.TabIndex = 11;
             this.label1.Text = "TÀI KHOẢN";
             // 
@@ -146,10 +145,6 @@
             this.guna2PictureBox2.TabIndex = 16;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // bunifuSnackbar1
-            // 
-            
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,6 +178,5 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnExitMainForm;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
- 
     }
 }
