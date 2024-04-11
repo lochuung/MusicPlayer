@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExitMainForm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +110,7 @@
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(729, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 48);
+            this.label1.Size = new System.Drawing.Size(242, 43);
             this.label1.TabIndex = 11;
             this.label1.Text = "TÀI KHOẢN";
             // 
@@ -146,36 +145,12 @@
             this.guna2PictureBox2.TabIndex = 16;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // bunifuDatePicker1
-            // 
-            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDatePicker1.BorderRadius = 1;
-            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.DisplayWeekNumbers = false;
-            this.bunifuDatePicker1.DPHeight = 0;
-            this.bunifuDatePicker1.FillDatePicker = false;
-            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
-            this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(167, 111);
-            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(0, 32);
-            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
-            this.bunifuDatePicker1.TabIndex = 17;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1092, 701);
-            this.Controls.Add(this.bunifuDatePicker1);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.btnExitMainForm);
             this.Controls.Add(this.linkLabel1);
@@ -203,6 +178,5 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnExitMainForm;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
     }
 }
