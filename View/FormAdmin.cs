@@ -1,51 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 namespace MusicPlayer
 {
     public partial class FormAdmin : Form
     {
+        private string hoTen;
 
-        string hoTen;
         public FormAdmin()
         {
             InitializeComponent();
-            
         }
-       
-        public FormAdmin(String hoTen)
+
+        public FormAdmin(string hoTen)
         {
             InitializeComponent();
             this.hoTen = hoTen;
             lblUserName.Text = hoTen;
         }
+
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             uc_AddUser1.Visible = false;
             uc_ViewUser1.Visible = false;
             uc_Profile1.Visible = false;
-           /* string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\ViewUserFM.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                string query = "select HoTen from users where Email = @Email and MatKhau = @MatKhau";
-                using (SqlCommand cmd = new SqlCommand(query,con))
-                {
-                    using(SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        *//*cmd.Parameters.AddWithValue("@Email", )
-                        if(reader.Read)*//*
-                    }
-                }
-            }*/
+            /* string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tuong\OneDrive\Documents\LapTrinhWinProJect\ManagerMusic\ViewUserFM.mdf;Integrated Security=True;Connect Timeout=30";
+             using (SqlConnection con = new SqlConnection(connectionString))
+             {
+                 con.Open();
+                 string query = "select HoTen from users where Email = @Email and MatKhau = @MatKhau";
+                 using (SqlCommand cmd = new SqlCommand(query,con))
+                 {
+                     using(SqlDataReader reader = cmd.ExecuteReader())
+                     {
+                         */ /*cmd.Parameters.AddWithValue("@Email", )
+                         if(reader.Read)*/ /*
+                     }
+                 }
+             }*/
         }
+
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             uc_AddUser1.Visible = true;
@@ -54,9 +48,9 @@ namespace MusicPlayer
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            var mainForm = new MainForm();
             mainForm.Show();
-            this.Hide();
+            Hide();
         }
 
         private void btnViewUser_Click(object sender, EventArgs e)
@@ -73,12 +67,10 @@ namespace MusicPlayer
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

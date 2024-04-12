@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MusicPlayer
 {
@@ -9,25 +10,24 @@ namespace MusicPlayer
             InitializeComponent();
         }
 
-       
 
-        private void btnDangNhap_Click(object sender, System.EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
+            var formLogin = new FormLogin();
             formLogin.Show();
-            this.Hide();
+            Hide();
         }
 
-        private void btnExitMainForm_Click(object sender, System.EventArgs e)
+        private void btnExitMainForm_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnDangKy_Click(object sender, System.EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
-            FormRegister formRegister = new FormRegister();
+            var formRegister = new FormRegister();
             formRegister.Show();
-            this.Hide();
+            Hide();
         }
     }
 }

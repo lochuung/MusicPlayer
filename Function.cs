@@ -1,37 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
 using System.Windows.Forms;
 
 namespace ManagerMusic
 {
-     public class Function
-     {
+    public class Function
+    {
         protected SqlConnection getConnection()
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source = Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True ";
+            var con = new SqlConnection();
+            con.ConnectionString =
+                "data source = Data Source=LAPTOP-3N644IDG;Initial Catalog=UsersMusicManagement;Integrated Security=True ";
             return con;
         }
-        public DataSet getData(String query)
+
+        public DataSet getData(string query)
         {
-            SqlConnection con = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
+            var con = new SqlConnection();
+            var cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = query;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataSet();
             da.Fill(ds);
             return ds;
         }
-        public void setData(String query, String msg)
+
+        public void setData(string query, string msg)
         {
-            SqlConnection con = getConnection();
-            SqlCommand cmd = new SqlCommand();
+            var con = getConnection();
+            var cmd = new SqlCommand();
             cmd.Connection = con;
             con.Open();
             cmd.CommandText = query;

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MusicPlayer.MusicApi;
 
 namespace MusicPlayer.Utils
@@ -33,29 +34,27 @@ namespace MusicPlayer.Utils
 
         private static readonly string MV_PATH = "/api/v2/page/get/video";
 
-        public static string GetSong(ZingMp3Api api, string id)
+        public static async Task<string> GetSong(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
                 { "id", id },
                 { "sig", HashingUtils.HashParam(SONG_PATH, api, id) }
             };
-            return RequestUtils.GetResponse(api, SONG_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, SONG_PATH, param);
         }
 
-        public static string GetPlaylistDetail(ZingMp3Api api, string id)
+        public static async Task<string> GetPlaylistDetail(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
                 { "id", id },
                 { "sig", HashingUtils.HashParam(PLAYLIST_DETAIL_PATH, api, id) }
             };
-            return RequestUtils.GetResponse(api, PLAYLIST_DETAIL_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, PLAYLIST_DETAIL_PATH, param);
         }
 
-        public static string GetHome(ZingMp3Api api)
+        public static async Task<string> GetHome(ZingMp3Api api)
         {
             var param = new Dictionary<string, string>
             {
@@ -64,52 +63,48 @@ namespace MusicPlayer.Utils
                 { "count", "30" },
                 { "sig", HashingUtils.HashParamNoId(HOME_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, HOME_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, HOME_PATH, param);
         }
 
-        public static string GetTop100(ZingMp3Api api)
+        public static async Task<string> GetTop100(ZingMp3Api api)
         {
             var param = new Dictionary<string, string>
             {
                 { "sig", HashingUtils.HashParamNoId(TOP100_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, TOP100_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, TOP100_PATH, param);
         }
 
-        public static string GetChartHome(ZingMp3Api api)
+        public static async Task<string> GetChartHome(ZingMp3Api api)
         {
             var param = new Dictionary<string, string>
             {
                 { "sig", HashingUtils.HashParamNoId(CHART_HOME_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, CHART_HOME_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, CHART_HOME_PATH, param);
         }
 
-        public static string GetNewReleaseChart(ZingMp3Api api)
+        public static async Task<string> GetNewReleaseChart(ZingMp3Api api)
         {
             var param = new Dictionary<string, string>
             {
                 { "sig", HashingUtils.HashParamNoId(NEW_RELEASE_CHART_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, NEW_RELEASE_CHART_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, NEW_RELEASE_CHART_PATH, param);
         }
 
-        public static string GetSongInfo(ZingMp3Api api, string id)
+        public static async Task<string> GetSongInfo(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
                 { "id", id },
                 { "sig", HashingUtils.HashParam(SONG_INFO_PATH, api, id) }
             };
-            return RequestUtils.GetResponse(api, SONG_INFO_PATH, param)
-                .Result;
+            var response = await RequestUtils.GetResponse(api, SONG_INFO_PATH, param);
+            return response;
         }
 
-        public static string GetArtistSongList(ZingMp3Api api, string id, int page, int count)
+        public static async Task<string> GetArtistSongList(ZingMp3Api api, string id, int page, int count)
         {
             var param = new Dictionary<string, string>
             {
@@ -124,44 +119,40 @@ namespace MusicPlayer.Utils
                         count.ToString())
                 }
             };
-            return RequestUtils.GetResponse(api, ARTIST_SONG_LIST_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, ARTIST_SONG_LIST_PATH, param);
         }
 
-        public static string GetArtist(ZingMp3Api api, string name)
+        public static async Task<string> GetArtist(ZingMp3Api api, string name)
         {
             var param = new Dictionary<string, string>
             {
                 { "alias", name },
                 { "sig", HashingUtils.HashParamNoId(ARTIST_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, ARTIST_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, ARTIST_PATH, param);
         }
 
-        public static string GetLyric(ZingMp3Api api, string id)
+        public static async Task<string> GetLyric(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
                 { "id", id },
                 { "sig", HashingUtils.HashParam(LYRIC_PATH, api, id) }
             };
-            return RequestUtils.GetResponse(api, LYRIC_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, LYRIC_PATH, param);
         }
 
-        public static string Search(ZingMp3Api api, string keyword)
+        public static async Task<string> Search(ZingMp3Api api, string keyword)
         {
             var param = new Dictionary<string, string>
             {
                 { "q", keyword },
                 { "sig", HashingUtils.HashParamNoId(SEARCH_PATH, api) }
             };
-            return RequestUtils.GetResponse(api, SEARCH_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, SEARCH_PATH, param);
         }
 
-        public static string GetMvList(ZingMp3Api api, string id, int page, int count)
+        public static async Task<string> GetMvList(ZingMp3Api api, string id, int page, int count)
         {
             var param = new Dictionary<string, string>
             {
@@ -172,11 +163,10 @@ namespace MusicPlayer.Utils
                 { "sort", "listen" },
                 { "sig", HashingUtils.HashListMv(MV_LIST_PATH, api, id, "genre", page.ToString(), count.ToString()) }
             };
-            return RequestUtils.GetResponse(api, MV_LIST_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, MV_LIST_PATH, param);
         }
 
-        public static string GetMvCategory(ZingMp3Api api, string id)
+        public static async Task<string> GetMvCategory(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
@@ -184,19 +174,17 @@ namespace MusicPlayer.Utils
                 { "type", "video" },
                 { "sig", HashingUtils.HashCategoryMv(MV_CATEGORY_PATH, api, id, "video") }
             };
-            return RequestUtils.GetResponse(api, MV_CATEGORY_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, MV_CATEGORY_PATH, param);
         }
 
-        public static string GetMv(ZingMp3Api api, string id)
+        public static async Task<string> GetMv(ZingMp3Api api, string id)
         {
             var param = new Dictionary<string, string>
             {
                 { "id", id },
                 { "sig", HashingUtils.HashParam(MV_PATH, api, id) }
             };
-            return RequestUtils.GetResponse(api, MV_PATH, param)
-                .Result;
+            return await RequestUtils.GetResponse(api, MV_PATH, param);
         }
     }
 }
