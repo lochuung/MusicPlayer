@@ -68,6 +68,9 @@ namespace MusicPlayer
                     }
                 }
             }
+            LoadFormUsers load = new LoadFormUsers();
+            load.Show();
+            this.Hide();
         }
 
         public void clearAll()

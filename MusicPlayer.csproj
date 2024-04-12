@@ -279,6 +279,12 @@
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Function.cs" />
+    <Compile Include="LoadFormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadFormUsers.Designer.cs">
+      <DependentUpon>LoadFormUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadFormUsers.resx">
+      <DependentUpon>LoadFormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
