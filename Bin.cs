@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MusicPlayer
+﻿namespace MusicPlayer
 {
-    class Bin
+    internal class Bin
     {
         /*using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                string query = @"INSERT INTO ThongTinUsers ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro]) 
+                string query = @"INSERT INTO ThongTinUsers ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau],[VaiTro])
                     VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau, @VaiTro)";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
