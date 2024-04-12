@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json.Nodes;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicPlayer.MusicApi;
 using NAudio.Wave;
@@ -24,14 +25,15 @@ namespace MusicPlayer
 
         public FormUsers()
         {
-            this.api = new ZingMp3Api(this);
             InitializeComponent();
+            api = new ZingMp3Api();
         }
 
         public FormUsers(string hoTen)
         {
             this.hoTen = hoTen;
-            this.api = new ZingMp3Api(this);
+            api = new ZingMp3Api();
+            InitializeComponent();
         }
 
         private void btnExitMainForm_Click(object sender, EventArgs e)
@@ -79,20 +81,20 @@ namespace MusicPlayer
             {
                 MessageBox.Show("Vui lòng chọn bài hát để phát");
             }
-            LoadSongData();
-            playingBtn_Click(sender, e);
             if (waveOut.PlaybackState == PlaybackState.Stopped)
             {
+                LoadSongData();
                 LoadStreaming();
+                pauseButton.Visible = true;
+                playMusicBtn.Visible = false;
             }
             else if (waveOut.PlaybackState == PlaybackState.Paused)
             {
                 waveOut.Play();
+                pauseButton.Visible = true;
+                playMusicBtn.Visible = false;
             }
-            else if (waveOut.PlaybackState == PlaybackState.Playing)
-            {
-                waveOut.Pause();
-            }
+            playingBtn_Click(sender, e);
         }
 
         private async void LoadSongData()
@@ -129,11 +131,11 @@ namespace MusicPlayer
         {
             string streaming = await api.GetStreamingUrl(songId);
             reader = new MediaFoundationReader(streaming);
+            waveOut.Init(reader);
             streamingThread = new Thread(() =>
             {
-                waveOut.Init(reader);
                 waveOut.Play();
-                while (waveOut.PlaybackState == PlaybackState.Playing)
+                while (waveOut.PlaybackState != PlaybackState.Stopped)
                 {
                     musicSlider.Invoke(new Action(() =>
                     {
@@ -154,6 +156,25 @@ namespace MusicPlayer
         private void pauseButton_Click(object sender, EventArgs e)
         {
             waveOut.Pause();
+            pauseButton.Visible = false;
+            playMusicBtn.Visible = true;
+        }
+
+        private void muteBtn_Click(object sender, EventArgs e)
+        {
+            waveOut.Volume = 0;
+            volumeSlider.Value = 0;
+        }
+
+        private void maxVolumeBtn_Click(object sender, EventArgs e)
+        {
+            waveOut.Volume = 1;
+            volumeSlider.Value = 100;
+        }
+
+        private void volumeSlider_Scroll(object sender, Utilities.BunifuSlider.BunifuHScrollBar.ScrollEventArgs e)
+        {
+            waveOut.Volume = volumeSlider.Value / 100f;
         }
     }
 }

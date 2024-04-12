@@ -70,9 +70,9 @@ namespace MusicPlayer
             this.thumbnail = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton6 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.muteBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.volumeSlider = new Bunifu.UI.WinForms.BunifuHSlider();
-            this.bunifuImageButton5 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.maxVolumeBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton4 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pauseButton = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -1006,9 +1006,9 @@ namespace MusicPlayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.panel1.Controls.Add(this.bunifuImageButton6);
+            this.panel1.Controls.Add(this.muteBtn);
             this.panel1.Controls.Add(this.volumeSlider);
-            this.panel1.Controls.Add(this.bunifuImageButton5);
+            this.panel1.Controls.Add(this.maxVolumeBtn);
             this.panel1.Controls.Add(this.bunifuImageButton4);
             this.panel1.Controls.Add(this.bunifuImageButton2);
             this.panel1.Controls.Add(this.pauseButton);
@@ -1020,39 +1020,40 @@ namespace MusicPlayer
             this.panel1.Size = new System.Drawing.Size(848, 59);
             this.panel1.TabIndex = 3;
             // 
-            // bunifuImageButton6
+            // muteBtn
             // 
-            this.bunifuImageButton6.ActiveImage = null;
-            this.bunifuImageButton6.AllowAnimations = true;
-            this.bunifuImageButton6.AllowBuffering = false;
-            this.bunifuImageButton6.AllowToggling = false;
-            this.bunifuImageButton6.AllowZooming = false;
-            this.bunifuImageButton6.AllowZoomingOnFocus = false;
-            this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton6.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.ErrorImage")));
-            this.bunifuImageButton6.FadeWhenInactive = false;
-            this.bunifuImageButton6.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
-            this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.ImageLocation = null;
-            this.bunifuImageButton6.ImageMargin = 0;
-            this.bunifuImageButton6.ImageSize = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton6.ImageZoomSize = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton6.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.InitialImage")));
-            this.bunifuImageButton6.Location = new System.Drawing.Point(670, 15);
-            this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Rotation = 0;
-            this.bunifuImageButton6.ShowActiveImage = true;
-            this.bunifuImageButton6.ShowCursorChanges = false;
-            this.bunifuImageButton6.ShowImageBorders = false;
-            this.bunifuImageButton6.ShowSizeMarkers = false;
-            this.bunifuImageButton6.Size = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton6.TabIndex = 8;
-            this.bunifuImageButton6.ToolTipText = "";
-            this.bunifuImageButton6.WaitOnLoad = false;
-            this.bunifuImageButton6.Zoom = 0;
-            this.bunifuImageButton6.ZoomSpeed = 10;
+            this.muteBtn.ActiveImage = null;
+            this.muteBtn.AllowAnimations = true;
+            this.muteBtn.AllowBuffering = false;
+            this.muteBtn.AllowToggling = false;
+            this.muteBtn.AllowZooming = false;
+            this.muteBtn.AllowZoomingOnFocus = false;
+            this.muteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.muteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.muteBtn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("muteBtn.ErrorImage")));
+            this.muteBtn.FadeWhenInactive = false;
+            this.muteBtn.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.muteBtn.Image = ((System.Drawing.Image)(resources.GetObject("muteBtn.Image")));
+            this.muteBtn.ImageActive = null;
+            this.muteBtn.ImageLocation = null;
+            this.muteBtn.ImageMargin = 0;
+            this.muteBtn.ImageSize = new System.Drawing.Size(29, 29);
+            this.muteBtn.ImageZoomSize = new System.Drawing.Size(29, 29);
+            this.muteBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("muteBtn.InitialImage")));
+            this.muteBtn.Location = new System.Drawing.Point(670, 15);
+            this.muteBtn.Name = "muteBtn";
+            this.muteBtn.Rotation = 0;
+            this.muteBtn.ShowActiveImage = true;
+            this.muteBtn.ShowCursorChanges = false;
+            this.muteBtn.ShowImageBorders = false;
+            this.muteBtn.ShowSizeMarkers = false;
+            this.muteBtn.Size = new System.Drawing.Size(29, 29);
+            this.muteBtn.TabIndex = 8;
+            this.muteBtn.ToolTipText = "";
+            this.muteBtn.WaitOnLoad = false;
+            this.muteBtn.Zoom = 0;
+            this.muteBtn.ZoomSpeed = 10;
+            this.muteBtn.Click += new System.EventHandler(this.muteBtn_Click);
             // 
             // volumeSlider
             // 
@@ -1101,41 +1102,43 @@ namespace MusicPlayer
             this.volumeSlider.ThumbMargin = 1;
             this.volumeSlider.ThumbSize = Bunifu.UI.WinForms.BunifuHSlider.ThumbSizes.Medium;
             this.volumeSlider.ThumbStyle = Bunifu.UI.WinForms.BunifuHSlider.ThumbStyles.Outline;
-            this.volumeSlider.Value = 50;
+            this.volumeSlider.Value = 100;
+            this.volumeSlider.Scroll += new System.EventHandler<Utilities.BunifuSlider.BunifuHScrollBar.ScrollEventArgs>(this.volumeSlider_Scroll);
             // 
-            // bunifuImageButton5
+            // maxVolumeBtn
             // 
-            this.bunifuImageButton5.ActiveImage = null;
-            this.bunifuImageButton5.AllowAnimations = true;
-            this.bunifuImageButton5.AllowBuffering = false;
-            this.bunifuImageButton5.AllowToggling = false;
-            this.bunifuImageButton5.AllowZooming = false;
-            this.bunifuImageButton5.AllowZoomingOnFocus = false;
-            this.bunifuImageButton5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.ErrorImage")));
-            this.bunifuImageButton5.FadeWhenInactive = false;
-            this.bunifuImageButton5.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
-            this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.ImageLocation = null;
-            this.bunifuImageButton5.ImageMargin = 0;
-            this.bunifuImageButton5.ImageSize = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton5.ImageZoomSize = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton5.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.InitialImage")));
-            this.bunifuImageButton5.Location = new System.Drawing.Point(807, 15);
-            this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Rotation = 0;
-            this.bunifuImageButton5.ShowActiveImage = true;
-            this.bunifuImageButton5.ShowCursorChanges = false;
-            this.bunifuImageButton5.ShowImageBorders = false;
-            this.bunifuImageButton5.ShowSizeMarkers = false;
-            this.bunifuImageButton5.Size = new System.Drawing.Size(29, 29);
-            this.bunifuImageButton5.TabIndex = 6;
-            this.bunifuImageButton5.ToolTipText = "";
-            this.bunifuImageButton5.WaitOnLoad = false;
-            this.bunifuImageButton5.Zoom = 0;
-            this.bunifuImageButton5.ZoomSpeed = 10;
+            this.maxVolumeBtn.ActiveImage = null;
+            this.maxVolumeBtn.AllowAnimations = true;
+            this.maxVolumeBtn.AllowBuffering = false;
+            this.maxVolumeBtn.AllowToggling = false;
+            this.maxVolumeBtn.AllowZooming = false;
+            this.maxVolumeBtn.AllowZoomingOnFocus = false;
+            this.maxVolumeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.maxVolumeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.maxVolumeBtn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("maxVolumeBtn.ErrorImage")));
+            this.maxVolumeBtn.FadeWhenInactive = false;
+            this.maxVolumeBtn.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.maxVolumeBtn.Image = ((System.Drawing.Image)(resources.GetObject("maxVolumeBtn.Image")));
+            this.maxVolumeBtn.ImageActive = null;
+            this.maxVolumeBtn.ImageLocation = null;
+            this.maxVolumeBtn.ImageMargin = 0;
+            this.maxVolumeBtn.ImageSize = new System.Drawing.Size(29, 29);
+            this.maxVolumeBtn.ImageZoomSize = new System.Drawing.Size(29, 29);
+            this.maxVolumeBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("maxVolumeBtn.InitialImage")));
+            this.maxVolumeBtn.Location = new System.Drawing.Point(807, 15);
+            this.maxVolumeBtn.Name = "maxVolumeBtn";
+            this.maxVolumeBtn.Rotation = 0;
+            this.maxVolumeBtn.ShowActiveImage = true;
+            this.maxVolumeBtn.ShowCursorChanges = false;
+            this.maxVolumeBtn.ShowImageBorders = false;
+            this.maxVolumeBtn.ShowSizeMarkers = false;
+            this.maxVolumeBtn.Size = new System.Drawing.Size(29, 29);
+            this.maxVolumeBtn.TabIndex = 6;
+            this.maxVolumeBtn.ToolTipText = "";
+            this.maxVolumeBtn.WaitOnLoad = false;
+            this.maxVolumeBtn.Zoom = 0;
+            this.maxVolumeBtn.ZoomSpeed = 10;
+            this.maxVolumeBtn.Click += new System.EventHandler(this.maxVolumeBtn_Click);
             // 
             // bunifuImageButton4
             // 
@@ -1157,7 +1160,7 @@ namespace MusicPlayer
             this.bunifuImageButton4.ImageSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton4.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton4.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.InitialImage")));
-            this.bunifuImageButton4.Location = new System.Drawing.Point(143, 15);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(121, 15);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Rotation = 0;
             this.bunifuImageButton4.ShowActiveImage = true;
@@ -1191,7 +1194,7 @@ namespace MusicPlayer
             this.bunifuImageButton2.ImageSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton2.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton2.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.InitialImage")));
-            this.bunifuImageButton2.Location = new System.Drawing.Point(7, 15);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(18, 15);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Rotation = 0;
             this.bunifuImageButton2.ShowActiveImage = true;
@@ -1225,7 +1228,7 @@ namespace MusicPlayer
             this.pauseButton.ImageSize = new System.Drawing.Size(36, 36);
             this.pauseButton.ImageZoomSize = new System.Drawing.Size(36, 36);
             this.pauseButton.InitialImage = ((System.Drawing.Image)(resources.GetObject("pauseButton.InitialImage")));
-            this.pauseButton.Location = new System.Drawing.Point(45, 11);
+            this.pauseButton.Location = new System.Drawing.Point(64, 12);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Rotation = 0;
             this.pauseButton.ShowActiveImage = true;
@@ -1235,6 +1238,7 @@ namespace MusicPlayer
             this.pauseButton.Size = new System.Drawing.Size(36, 36);
             this.pauseButton.TabIndex = 3;
             this.pauseButton.ToolTipText = "";
+            this.pauseButton.Visible = false;
             this.pauseButton.WaitOnLoad = false;
             this.pauseButton.Zoom = 0;
             this.pauseButton.ZoomSpeed = 10;
@@ -1260,7 +1264,7 @@ namespace MusicPlayer
             this.playMusicBtn.ImageSize = new System.Drawing.Size(36, 36);
             this.playMusicBtn.ImageZoomSize = new System.Drawing.Size(36, 36);
             this.playMusicBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("playMusicBtn.InitialImage")));
-            this.playMusicBtn.Location = new System.Drawing.Point(91, 12);
+            this.playMusicBtn.Location = new System.Drawing.Point(64, 12);
             this.playMusicBtn.Name = "playMusicBtn";
             this.playMusicBtn.Rotation = 0;
             this.playMusicBtn.ShowActiveImage = true;
@@ -1382,8 +1386,8 @@ namespace MusicPlayer
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton2;
         private Bunifu.UI.WinForms.BunifuImageButton pauseButton;
         private Bunifu.UI.WinForms.BunifuImageButton playMusicBtn;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton5;
-        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton6;
+        private Bunifu.UI.WinForms.BunifuImageButton maxVolumeBtn;
+        private Bunifu.UI.WinForms.BunifuImageButton muteBtn;
         private Bunifu.UI.WinForms.BunifuHSlider volumeSlider;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Label label3;
