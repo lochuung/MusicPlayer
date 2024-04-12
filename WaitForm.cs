@@ -23,7 +23,7 @@ namespace WaitFormExample
             InitializeComponent();
             if (parent != null)
             {
-                this.StartPosition = FormStartPosition.Manual;
+                this.StartPosition = FormStartPosition.CenterParent;
                 this.Location = new Point(parent.Location.X + parent.Width / 2 - this.Width / 2,
                     parent.Location.Y + parent.Height / 2 - this.Height / 2);
             }
@@ -40,5 +40,7 @@ namespace WaitFormExample
                 label1.Image.Dispose();
             }
         }
+
+      
     }
 }
