@@ -75,6 +75,7 @@ namespace MusicPlayer
 
         private void playMusicBtn_Click(object sender, EventArgs e)
         {
+            
             if (songId == null || songId.Length == 0)
             {
                 MessageBox.Show("Vui lòng chọn bài hát để phát");
@@ -154,6 +155,16 @@ namespace MusicPlayer
         private void pauseButton_Click(object sender, EventArgs e)
         {
             waveOut.Pause();
+        }
+
+        private async void FormUsers_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
