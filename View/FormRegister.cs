@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicPlayer
@@ -20,17 +13,17 @@ namespace MusicPlayer
 
         private void btnExitFormRegister_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            var mainForm = new MainForm();
             mainForm.Show();
-            this.Hide();
+            Hide();
         }
 
         private void btnDangKyTaiKhoan_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
+            var connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (var con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     if (txbHoTen.Text == "" ||
@@ -39,17 +32,17 @@ namespace MusicPlayer
                         txbMatKhauDangKy.Text == "" ||
                         txbMatKhauDangKy.Text != txbNhapLaiMatKhau.Text)
                     {
-                        MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                         ClearAll();
                     }
                     else
                     {
-                        string query = @"INSERT INTO Users ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau]) 
+                        var query = @"INSERT INTO Users ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau]) 
                                        VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau)";
 
-                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        using (var cmd = new SqlCommand(query, con))
                         {
-
                             cmd.Parameters.AddWithValue("@HoTen", txbHoTen.Text);
                             cmd.Parameters.AddWithValue("@Email", txbEmail.Text);
                             cmd.Parameters.AddWithValue("@NamSinh", dtRegister.Text);
@@ -58,7 +51,8 @@ namespace MusicPlayer
                             cmd.ExecuteNonQuery();
                         }
 
-                        MessageBox.Show("Đăng ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng ký thành công !", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                         ClearAll();
                     }
                 }
@@ -68,6 +62,7 @@ namespace MusicPlayer
                 MessageBox.Show("Tên đăng nhập đã tồn tại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void ClearAll()
         {
             txbHoTen.Clear();
@@ -82,6 +77,5 @@ namespace MusicPlayer
         {
             Application.Exit();
         }
-
     }
 }

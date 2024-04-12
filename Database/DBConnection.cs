@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
+using MusicPlayer.Properties;
+
 namespace MusicPlayer.Database
 {
-    class DBConnection
+    internal class DBConnection
     {
-        SqlConnection connection = new SqlConnection(Properties.Settings.Default.connStr);
-        SqlCommand command;
-        SqlDataAdapter adapter = new SqlDataAdapter();
-        DataTable table = new DataTable();
-        String currentUser = "";
+        private SqlDataAdapter adapter = new SqlDataAdapter();
+        private SqlCommand command;
+        private SqlConnection connection = new SqlConnection(Settings.Default.connStr);
+        private string currentUser = "";
+        private DataTable table = new DataTable();
     }
 }
