@@ -30,16 +30,16 @@ namespace MusicPlayer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsers));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges26 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges27 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges28 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges29 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges30 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.playingBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.indicator = new Bunifu.UI.WinForms.BunifuShapes();
@@ -58,6 +58,11 @@ namespace MusicPlayer
             this.bunifuFormDock1 = new Bunifu.UI.WinForms.BunifuFormDock();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.dtgBaiHat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgCaSi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -73,6 +78,12 @@ namespace MusicPlayer
             this.thumbnail = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.smallThumbnail = new System.Windows.Forms.PictureBox();
+            this.artistsPlayerLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.songPlayerLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.endTimeLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.currentTimeLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.muteBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.volumeSlider = new Bunifu.UI.WinForms.BunifuHSlider();
             this.maxVolumeBtn = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -81,21 +92,18 @@ namespace MusicPlayer
             this.pauseButton = new Bunifu.UI.WinForms.BunifuImageButton();
             this.playMusicBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.musicSlider = new Bunifu.UI.WinForms.BunifuHSlider();
-            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.dtgBaiHat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgCaSi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtgThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.bunifuPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
+            this.bunifuPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.smallThumbnail)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSideBar
@@ -137,11 +145,11 @@ namespace MusicPlayer
             this.playingBtn.ColorContrastOnClick = 45;
             this.playingBtn.ColorContrastOnHover = 45;
             this.playingBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.playingBtn.CustomizableEdges = borderEdges1;
+            borderEdges25.BottomLeft = true;
+            borderEdges25.BottomRight = true;
+            borderEdges25.TopLeft = true;
+            borderEdges25.TopRight = true;
+            this.playingBtn.CustomizableEdges = borderEdges25;
             this.playingBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.playingBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.playingBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -243,11 +251,11 @@ namespace MusicPlayer
             this.bunifuButton6.ColorContrastOnClick = 45;
             this.bunifuButton6.ColorContrastOnHover = 45;
             this.bunifuButton6.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton6.CustomizableEdges = borderEdges2;
+            borderEdges26.BottomLeft = true;
+            borderEdges26.BottomRight = true;
+            borderEdges26.TopLeft = true;
+            borderEdges26.TopRight = true;
+            this.bunifuButton6.CustomizableEdges = borderEdges26;
             this.bunifuButton6.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton6.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton6.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -332,11 +340,11 @@ namespace MusicPlayer
             this.searchBtn.ColorContrastOnClick = 45;
             this.searchBtn.ColorContrastOnHover = 45;
             this.searchBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.searchBtn.CustomizableEdges = borderEdges3;
+            borderEdges27.BottomLeft = true;
+            borderEdges27.BottomRight = true;
+            borderEdges27.TopLeft = true;
+            borderEdges27.TopRight = true;
+            this.searchBtn.CustomizableEdges = borderEdges27;
             this.searchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.searchBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.searchBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -422,11 +430,11 @@ namespace MusicPlayer
             this.playlistBtn.ColorContrastOnClick = 45;
             this.playlistBtn.ColorContrastOnHover = 45;
             this.playlistBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.playlistBtn.CustomizableEdges = borderEdges4;
+            borderEdges28.BottomLeft = true;
+            borderEdges28.BottomRight = true;
+            borderEdges28.TopLeft = true;
+            borderEdges28.TopRight = true;
+            this.playlistBtn.CustomizableEdges = borderEdges28;
             this.playlistBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.playlistBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.playlistBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -512,11 +520,11 @@ namespace MusicPlayer
             this.releaseBtn.ColorContrastOnClick = 45;
             this.releaseBtn.ColorContrastOnHover = 45;
             this.releaseBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.releaseBtn.CustomizableEdges = borderEdges5;
+            borderEdges29.BottomLeft = true;
+            borderEdges29.BottomRight = true;
+            borderEdges29.TopLeft = true;
+            borderEdges29.TopRight = true;
+            this.releaseBtn.CustomizableEdges = borderEdges29;
             this.releaseBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.releaseBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.releaseBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -602,11 +610,11 @@ namespace MusicPlayer
             this.trendingBtn.ColorContrastOnClick = 45;
             this.trendingBtn.ColorContrastOnHover = 45;
             this.trendingBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.trendingBtn.CustomizableEdges = borderEdges6;
+            borderEdges30.BottomLeft = true;
+            borderEdges30.BottomRight = true;
+            borderEdges30.TopLeft = true;
+            borderEdges30.TopRight = true;
+            this.trendingBtn.CustomizableEdges = borderEdges30;
             this.trendingBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.trendingBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.trendingBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -826,7 +834,7 @@ namespace MusicPlayer
             this.bunifuPages1.PageName = "tabPage1";
             this.bunifuPages1.PageTitle = "Top Trending";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(848, 632);
+            this.bunifuPages1.Size = new System.Drawing.Size(848, 560);
             this.bunifuPages1.TabIndex = 2;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -852,17 +860,107 @@ namespace MusicPlayer
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(840, 603);
+            this.tabPage1.Size = new System.Drawing.Size(840, 531);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Top Trending";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // bunifuDataGridView1
+            // 
+            this.bunifuDataGridView1.AllowCustomTheming = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.bunifuDataGridView1.ColumnHeadersHeight = 40;
+            this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgBaiHat,
+            this.dtgCaSi,
+            this.dtgTheLoai,
+            this.dtgThoiGian});
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.Name = null;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
+            this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
+            this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(3, 6);
+            this.bunifuDataGridView1.Name = "bunifuDataGridView1";
+            this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
+            this.bunifuDataGridView1.RowTemplate.Height = 40;
+            this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(834, 591);
+            this.bunifuDataGridView1.TabIndex = 0;
+            this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
+            this.bunifuDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellContentClick);
+            // 
+            // dtgBaiHat
+            // 
+            this.dtgBaiHat.HeaderText = "BÀI HÁT";
+            this.dtgBaiHat.MinimumWidth = 6;
+            this.dtgBaiHat.Name = "dtgBaiHat";
+            // 
+            // dtgCaSi
+            // 
+            this.dtgCaSi.HeaderText = "CA SĨ";
+            this.dtgCaSi.MinimumWidth = 6;
+            this.dtgCaSi.Name = "dtgCaSi";
+            // 
+            // dtgTheLoai
+            // 
+            this.dtgTheLoai.HeaderText = "THỂ LOẠI";
+            this.dtgTheLoai.MinimumWidth = 6;
+            this.dtgTheLoai.Name = "dtgTheLoai";
+            // 
+            // dtgThoiGian
+            // 
+            this.dtgThoiGian.HeaderText = "THỜI GIAN";
+            this.dtgThoiGian.MinimumWidth = 6;
+            this.dtgThoiGian.Name = "dtgThoiGian";
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(840, 603);
+            this.tabPage2.Size = new System.Drawing.Size(840, 531);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "New Release";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -872,7 +970,7 @@ namespace MusicPlayer
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(840, 603);
+            this.tabPage3.Size = new System.Drawing.Size(840, 531);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Playlists";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -882,7 +980,7 @@ namespace MusicPlayer
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(840, 603);
+            this.tabPage5.Size = new System.Drawing.Size(840, 531);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Search";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -901,7 +999,7 @@ namespace MusicPlayer
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(840, 603);
+            this.tabPage6.Size = new System.Drawing.Size(840, 531);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Playing";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1016,7 +1114,12 @@ namespace MusicPlayer
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.bunifuPanel2);
+            this.panel1.Controls.Add(this.artistsPlayerLabel);
+            this.panel1.Controls.Add(this.songPlayerLabel);
+            this.panel1.Controls.Add(this.endTimeLabel);
+            this.panel1.Controls.Add(this.currentTimeLabel);
             this.panel1.Controls.Add(this.muteBtn);
             this.panel1.Controls.Add(this.volumeSlider);
             this.panel1.Controls.Add(this.maxVolumeBtn);
@@ -1026,10 +1129,91 @@ namespace MusicPlayer
             this.panel1.Controls.Add(this.playMusicBtn);
             this.panel1.Controls.Add(this.musicSlider);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(252, 691);
+            this.panel1.Location = new System.Drawing.Point(252, 619);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(848, 59);
+            this.panel1.Size = new System.Drawing.Size(848, 131);
             this.panel1.TabIndex = 3;
+            // 
+            // bunifuPanel2
+            // 
+            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
+            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BorderRadius = 3;
+            this.bunifuPanel2.BorderThickness = 1;
+            this.bunifuPanel2.Controls.Add(this.smallThumbnail);
+            this.bunifuPanel2.Location = new System.Drawing.Point(22, 21);
+            this.bunifuPanel2.Name = "bunifuPanel2";
+            this.bunifuPanel2.ShowBorders = true;
+            this.bunifuPanel2.Size = new System.Drawing.Size(71, 95);
+            this.bunifuPanel2.TabIndex = 20;
+            // 
+            // smallThumbnail
+            // 
+            this.smallThumbnail.Location = new System.Drawing.Point(0, 0);
+            this.smallThumbnail.Name = "smallThumbnail";
+            this.smallThumbnail.Size = new System.Drawing.Size(78, 100);
+            this.smallThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.smallThumbnail.TabIndex = 0;
+            this.smallThumbnail.TabStop = false;
+            // 
+            // artistsPlayerLabel
+            // 
+            this.artistsPlayerLabel.AllowParentOverrides = false;
+            this.artistsPlayerLabel.AutoEllipsis = false;
+            this.artistsPlayerLabel.CursorType = null;
+            this.artistsPlayerLabel.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.artistsPlayerLabel.Location = new System.Drawing.Point(103, 49);
+            this.artistsPlayerLabel.Name = "artistsPlayerLabel";
+            this.artistsPlayerLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.artistsPlayerLabel.Size = new System.Drawing.Size(0, 0);
+            this.artistsPlayerLabel.TabIndex = 12;
+            this.artistsPlayerLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.artistsPlayerLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // songPlayerLabel
+            // 
+            this.songPlayerLabel.AllowParentOverrides = false;
+            this.songPlayerLabel.AutoEllipsis = false;
+            this.songPlayerLabel.CursorType = null;
+            this.songPlayerLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.songPlayerLabel.Location = new System.Drawing.Point(99, 27);
+            this.songPlayerLabel.Name = "songPlayerLabel";
+            this.songPlayerLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.songPlayerLabel.Size = new System.Drawing.Size(0, 0);
+            this.songPlayerLabel.TabIndex = 11;
+            this.songPlayerLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.songPlayerLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // endTimeLabel
+            // 
+            this.endTimeLabel.AllowParentOverrides = false;
+            this.endTimeLabel.AutoEllipsis = false;
+            this.endTimeLabel.CursorType = null;
+            this.endTimeLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.endTimeLabel.Location = new System.Drawing.Point(624, 83);
+            this.endTimeLabel.Name = "endTimeLabel";
+            this.endTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.endTimeLabel.Size = new System.Drawing.Size(0, 0);
+            this.endTimeLabel.TabIndex = 10;
+            this.endTimeLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.endTimeLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // currentTimeLabel
+            // 
+            this.currentTimeLabel.AllowParentOverrides = false;
+            this.currentTimeLabel.AutoEllipsis = false;
+            this.currentTimeLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.currentTimeLabel.CursorType = System.Windows.Forms.Cursors.Default;
+            this.currentTimeLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.currentTimeLabel.Location = new System.Drawing.Point(157, 83);
+            this.currentTimeLabel.Name = "currentTimeLabel";
+            this.currentTimeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.currentTimeLabel.Size = new System.Drawing.Size(0, 0);
+            this.currentTimeLabel.TabIndex = 9;
+            this.currentTimeLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.currentTimeLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // muteBtn
             // 
@@ -1051,7 +1235,7 @@ namespace MusicPlayer
             this.muteBtn.ImageSize = new System.Drawing.Size(29, 29);
             this.muteBtn.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.muteBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("muteBtn.InitialImage")));
-            this.muteBtn.Location = new System.Drawing.Point(670, 15);
+            this.muteBtn.Location = new System.Drawing.Point(711, 79);
             this.muteBtn.Name = "muteBtn";
             this.muteBtn.Rotation = 0;
             this.muteBtn.ShowActiveImage = true;
@@ -1086,9 +1270,9 @@ namespace MusicPlayer
             this.volumeSlider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.volumeSlider.DrawThickBorder = false;
             this.volumeSlider.DurationBeforeShrink = 2000;
-            this.volumeSlider.ElapsedColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.volumeSlider.ElapsedColor = System.Drawing.Color.Silver;
             this.volumeSlider.LargeChange = 10;
-            this.volumeSlider.Location = new System.Drawing.Point(706, 15);
+            this.volumeSlider.Location = new System.Drawing.Point(746, 78);
             this.volumeSlider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.volumeSlider.Maximum = 100;
             this.volumeSlider.Minimum = 0;
@@ -1101,7 +1285,7 @@ namespace MusicPlayer
             this.volumeSlider.ScrollBarBorderColor = System.Drawing.Color.White;
             this.volumeSlider.ScrollBarColor = System.Drawing.Color.White;
             this.volumeSlider.ShrinkSizeLimit = 3;
-            this.volumeSlider.Size = new System.Drawing.Size(94, 31);
+            this.volumeSlider.Size = new System.Drawing.Size(55, 31);
             this.volumeSlider.SliderColor = System.Drawing.Color.White;
             this.volumeSlider.SliderStyle = Bunifu.UI.WinForms.BunifuHSlider.SliderStyles.Thin;
             this.volumeSlider.SliderThumbStyle = Utilities.BunifuSlider.BunifuHScrollBar.SliderThumbStyles.Circular;
@@ -1136,7 +1320,7 @@ namespace MusicPlayer
             this.maxVolumeBtn.ImageSize = new System.Drawing.Size(29, 29);
             this.maxVolumeBtn.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.maxVolumeBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("maxVolumeBtn.InitialImage")));
-            this.maxVolumeBtn.Location = new System.Drawing.Point(807, 15);
+            this.maxVolumeBtn.Location = new System.Drawing.Point(808, 79);
             this.maxVolumeBtn.Name = "maxVolumeBtn";
             this.maxVolumeBtn.Rotation = 0;
             this.maxVolumeBtn.ShowActiveImage = true;
@@ -1171,7 +1355,7 @@ namespace MusicPlayer
             this.bunifuImageButton4.ImageSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton4.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton4.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.InitialImage")));
-            this.bunifuImageButton4.Location = new System.Drawing.Point(121, 15);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(471, 43);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Rotation = 0;
             this.bunifuImageButton4.ShowActiveImage = true;
@@ -1205,7 +1389,7 @@ namespace MusicPlayer
             this.bunifuImageButton2.ImageSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton2.ImageZoomSize = new System.Drawing.Size(29, 29);
             this.bunifuImageButton2.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.InitialImage")));
-            this.bunifuImageButton2.Location = new System.Drawing.Point(18, 15);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(367, 44);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Rotation = 0;
             this.bunifuImageButton2.ShowActiveImage = true;
@@ -1239,7 +1423,7 @@ namespace MusicPlayer
             this.pauseButton.ImageSize = new System.Drawing.Size(36, 36);
             this.pauseButton.ImageZoomSize = new System.Drawing.Size(36, 36);
             this.pauseButton.InitialImage = ((System.Drawing.Image)(resources.GetObject("pauseButton.InitialImage")));
-            this.pauseButton.Location = new System.Drawing.Point(64, 12);
+            this.pauseButton.Location = new System.Drawing.Point(416, 40);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Rotation = 0;
             this.pauseButton.ShowActiveImage = true;
@@ -1275,7 +1459,7 @@ namespace MusicPlayer
             this.playMusicBtn.ImageSize = new System.Drawing.Size(36, 36);
             this.playMusicBtn.ImageZoomSize = new System.Drawing.Size(36, 36);
             this.playMusicBtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("playMusicBtn.InitialImage")));
-            this.playMusicBtn.Location = new System.Drawing.Point(64, 12);
+            this.playMusicBtn.Location = new System.Drawing.Point(416, 40);
             this.playMusicBtn.Name = "playMusicBtn";
             this.playMusicBtn.Rotation = 0;
             this.playMusicBtn.ShowActiveImage = true;
@@ -1310,9 +1494,9 @@ namespace MusicPlayer
             this.musicSlider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.musicSlider.DrawThickBorder = false;
             this.musicSlider.DurationBeforeShrink = 2000;
-            this.musicSlider.ElapsedColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.musicSlider.ElapsedColor = System.Drawing.Color.Silver;
             this.musicSlider.LargeChange = 10;
-            this.musicSlider.Location = new System.Drawing.Point(199, 15);
+            this.musicSlider.Location = new System.Drawing.Point(199, 79);
             this.musicSlider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.musicSlider.Maximum = 100;
             this.musicSlider.Minimum = 0;
@@ -1325,7 +1509,7 @@ namespace MusicPlayer
             this.musicSlider.ScrollBarBorderColor = System.Drawing.Color.White;
             this.musicSlider.ScrollBarColor = System.Drawing.Color.White;
             this.musicSlider.ShrinkSizeLimit = 3;
-            this.musicSlider.Size = new System.Drawing.Size(461, 31);
+            this.musicSlider.Size = new System.Drawing.Size(422, 31);
             this.musicSlider.SliderColor = System.Drawing.Color.White;
             this.musicSlider.SliderStyle = Bunifu.UI.WinForms.BunifuHSlider.SliderStyles.Thin;
             this.musicSlider.SliderThumbStyle = Utilities.BunifuSlider.BunifuHScrollBar.SliderThumbStyles.Circular;
@@ -1333,102 +1517,12 @@ namespace MusicPlayer
             this.musicSlider.TabIndex = 0;
             this.musicSlider.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.musicSlider.ThumbFillColor = System.Drawing.SystemColors.Control;
-            this.musicSlider.ThumbLength = 45;
+            this.musicSlider.ThumbLength = 41;
             this.musicSlider.ThumbMargin = 1;
             this.musicSlider.ThumbSize = Bunifu.UI.WinForms.BunifuHSlider.ThumbSizes.Medium;
             this.musicSlider.ThumbStyle = Bunifu.UI.WinForms.BunifuHSlider.ThumbStyles.Outline;
             this.musicSlider.Value = 0;
             this.musicSlider.Scroll += new System.EventHandler<Utilities.BunifuSlider.BunifuHScrollBar.ScrollEventArgs>(this.musicSlider_Scroll);
-            // 
-            // bunifuDataGridView1
-            // 
-            this.bunifuDataGridView1.AllowCustomTheming = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuDataGridView1.ColumnHeadersHeight = 40;
-            this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dtgBaiHat,
-            this.dtgCaSi,
-            this.dtgTheLoai,
-            this.dtgThoiGian});
-            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.CurrentTheme.Name = null;
-            this.bunifuDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
-            this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
-            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
-            this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(3, 6);
-            this.bunifuDataGridView1.Name = "bunifuDataGridView1";
-            this.bunifuDataGridView1.RowHeadersVisible = false;
-            this.bunifuDataGridView1.RowHeadersWidth = 51;
-            this.bunifuDataGridView1.RowTemplate.Height = 40;
-            this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(834, 591);
-            this.bunifuDataGridView1.TabIndex = 0;
-            this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue;
-            this.bunifuDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellContentClick);
-            // 
-            // dtgBaiHat
-            // 
-            this.dtgBaiHat.HeaderText = "BÀI HÁT";
-            this.dtgBaiHat.MinimumWidth = 6;
-            this.dtgBaiHat.Name = "dtgBaiHat";
-            // 
-            // dtgCaSi
-            // 
-            this.dtgCaSi.HeaderText = "CA SĨ";
-            this.dtgCaSi.MinimumWidth = 6;
-            this.dtgCaSi.Name = "dtgCaSi";
-            // 
-            // dtgTheLoai
-            // 
-            this.dtgTheLoai.HeaderText = "THỂ LOẠI";
-            this.dtgTheLoai.MinimumWidth = 6;
-            this.dtgTheLoai.Name = "dtgTheLoai";
-            // 
-            // dtgThoiGian
-            // 
-            this.dtgThoiGian.HeaderText = "THỜI GIAN";
-            this.dtgThoiGian.MinimumWidth = 6;
-            this.dtgThoiGian.Name = "dtgThoiGian";
             // 
             // FormUsers
             // 
@@ -1451,12 +1545,15 @@ namespace MusicPlayer
             this.pnlHeader.PerformLayout();
             this.bunifuPages1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.bunifuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
+            this.panel1.PerformLayout();
+            this.bunifuPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.smallThumbnail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1509,5 +1606,11 @@ namespace MusicPlayer
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgCaSi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtgThoiGian;
+        private Bunifu.UI.WinForms.BunifuLabel currentTimeLabel;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
+        private System.Windows.Forms.PictureBox smallThumbnail;
+        private Bunifu.UI.WinForms.BunifuLabel artistsPlayerLabel;
+        private Bunifu.UI.WinForms.BunifuLabel songPlayerLabel;
+        private Bunifu.UI.WinForms.BunifuLabel endTimeLabel;
     }
 }

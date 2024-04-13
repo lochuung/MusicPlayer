@@ -126,6 +126,10 @@ namespace MusicPlayer
             genreLabel.Text = genresString;
             composerLabel.Text = composersString;
             this.thumbnail.Load(thumbnail);
+            thumbnail = songInfo.thumbnail;
+            smallThumbnail.Load(thumbnail);
+            songPlayerLabel.Text = songName;
+            artistsPlayerLabel.Text = artists;
         }
 
         private async void LoadStreaming()
@@ -142,6 +146,8 @@ namespace MusicPlayer
                     {
                         musicSlider.Maximum = (int) reader.TotalTime.TotalSeconds;
                         musicSlider.Value = (int) reader.CurrentTime.TotalSeconds;
+                        currentTimeLabel.Text = reader.CurrentTime.ToString("mm\\:ss");
+                        endTimeLabel.Text = reader.TotalTime.ToString("mm\\:ss");
                     }));
                     Thread.Sleep(1000);
                 }

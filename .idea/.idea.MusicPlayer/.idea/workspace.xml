@@ -8,11 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40d49c60-5231-45aa-abf2-add1b03046ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/4c3b2371-2caa-4a3a-94b6-8f2aa0c9b135.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0c9ae22d-3ed5-440c-8428-e9be655a288d.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0d2456c2-cb2e-4008-81a3-61b19c7bffa1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/29941efb-6d8b-41b2-a2f2-5ddec8638cf2.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/7d3cdd23-0fe5-486c-b899-89aca4ae4222.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/e96986b1-b602-4a9f-814e-f2c920f995a3.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/ZingMp3Api.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/ZingMp3Api.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FormUsers.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FormUsers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FormUsers.resx" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.resx" afterDir="false" />
@@ -105,6 +108,8 @@
       <workItem from="1712901343123" duration="1069000" />
       <workItem from="1712902890871" duration="4535000" />
       <workItem from="1712924496330" duration="2466000" />
+      <workItem from="1712927086944" duration="105000" />
+      <workItem from="1712970132143" duration="2033000" />
     </task>
     <servers />
   </component>
