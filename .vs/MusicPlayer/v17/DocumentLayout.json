@@ -3,48 +3,8 @@
   "WorkspaceRootPath": "D:\\.University\\DBMS\\MusicPlayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\formusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|d:\\.university\\dbms\\musicplayer\\formusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:formusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\formusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:formusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|d:\\.university\\dbms\\musicplayer\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\waitform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:waitform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\waitform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:waitform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\api\\zingmp3api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:api\\zingmp3api.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,44 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WaitForm.cs [Design]",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.cs",
-              "RelativeDocumentMoniker": "WaitForm.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.cs [Design]",
-              "RelativeToolTip": "WaitForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:16:00.439Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:09:44.56Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T02:35:28.006Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -101,95 +25,8 @@
               "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\FormUsers.cs [Design]",
               "RelativeToolTip": "FormUsers.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T02:57:33.803Z",
+              "WhenOpened": "2024-04-13T01:02:20.814Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormUsers.cs",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\FormUsers.cs",
-              "RelativeDocumentMoniker": "FormUsers.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\FormUsers.cs",
-              "RelativeToolTip": "FormUsers.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAIAwwJgAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T05:44:15.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WaitForm.Designer.cs",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.Designer.cs",
-              "RelativeDocumentMoniker": "WaitForm.Designer.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.Designer.cs",
-              "RelativeToolTip": "WaitForm.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:15:52.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "packages.config",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\packages.config",
-              "RelativeDocumentMoniker": "packages.config",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\packages.config",
-              "RelativeToolTip": "packages.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-04-12T06:18:25.301Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WaitForm.resx",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.resx",
-              "RelativeDocumentMoniker": "WaitForm.resx",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.resx",
-              "RelativeToolTip": "WaitForm.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-04-12T06:18:39.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "WaitForm.cs",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.cs",
-              "RelativeDocumentMoniker": "WaitForm.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\WaitForm.cs",
-              "RelativeToolTip": "WaitForm.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAIA/wCoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:15:45.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ZingMp3Api.cs",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\Api\\ZingMp3Api.cs",
-              "RelativeDocumentMoniker": "Api\\ZingMp3Api.cs",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\Api\\ZingMp3Api.cs",
-              "RelativeToolTip": "Api\\ZingMp3Api.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T05:54:10.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB8AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-04-12T02:40:19.741Z",
-              "EditorCaption": ""
             }
           ]
         }
