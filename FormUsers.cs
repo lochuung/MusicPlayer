@@ -4,12 +4,17 @@ using System.Net;
 using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using MusicPlayer.Model;
 using MusicPlayer.MusicApi;
+using MusicPlayer.Utils;
 using NAudio.Wave;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Utilities.BunifuCheckBox.Transitions;
+using WaitFormExample;
+using Image = System.Drawing.Image;
 
 namespace MusicPlayer
 {
@@ -17,8 +22,12 @@ namespace MusicPlayer
     {
         private string hoTen;
         
+        List<Music> musicList = new List<Music>();
+        
+        private int currentSongIndex = 0;
+        
         private ZingMp3Api api;
-        private readonly string songId = "Z7U00WDE";
+        private Music currentMusic;
         private MediaFoundationReader reader;
         private WaveOut waveOut = new WaveOut();
         Thread streamingThread;
@@ -49,41 +58,59 @@ namespace MusicPlayer
         {
             indicator.Top = trendingBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(0);
+            titleLabel.Text = "Top Trending";
         }
 
         private void releaseBtn_Click(object sender, EventArgs e)
         {
             indicator.Top = releaseBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(1);
+            titleLabel.Text = "Các bài hát mới phát hành";
         }
 
         private void playlistBtn_Click(object sender, EventArgs e)
         {
             indicator.Top = playlistBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(2);
+            titleLabel.Text = "Playlist nhạc";
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
             indicator.Top = searchBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(3);
+            titleLabel.Text = "Tìm kiếm";
         }
 
         private void playingBtn_Click(object sender, EventArgs e)
         {
             indicator.Top = playingBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(4);
+            titleLabel.Text = "Phát nhạc";
         }
 
         private void playMusicBtn_Click(object sender, EventArgs e)
         {
             
-            if (songId == null || songId.Length == 0)
+            if (currentMusic == null)
             {
                 MessageBox.Show("Vui lòng chọn bài hát để phát");
+                return;
             }
+            PlayMusic();
+            
+            playingBtn_Click(sender, e);
+        }
+
+        private void PlayMusic()
+        {
+            
             if (waveOut.PlaybackState == PlaybackState.Stopped)
             {
+                if (streamingThread != null)
+                {
+                    streamingThread.Abort();
+                }
                 LoadSongData();
                 LoadStreaming();
                 pauseButton.Visible = true;
@@ -95,46 +122,28 @@ namespace MusicPlayer
                 pauseButton.Visible = true;
                 playMusicBtn.Visible = false;
             }
-            playingBtn_Click(sender, e);
         }
 
         private async void LoadSongData()
         {
-            dynamic songInfo = JsonConvert.DeserializeObject(await api.GetSongInfo(songId));
-            string songName = songInfo.title;
-            string artists = songInfo.artistsNames;
-            string thumbnail = songInfo.thumbnailM;
-            
-            JArray genres = songInfo.genres;
-            string genresString = "";
-            foreach (dynamic genre in genres)
-            {
-                genresString += genre.name + ", ";
-            }
-            genresString = genresString.Substring(0, genresString.Length - 2);
-            
-            JArray composers = songInfo.composers;
-            string composersString = "";
-            foreach (dynamic composer in composers)
-            {
-                composersString += composer.name + ", ";
-            }
-            composersString = composersString.Substring(0, composersString.Length - 2);
-            
-            songNameLabel.Text = songName;
-            singerNameLabel.Text = artists;
-            genreLabel.Text = genresString;
-            composerLabel.Text = composersString;
-            this.thumbnail.Load(thumbnail);
-            thumbnail = songInfo.thumbnail;
-            smallThumbnail.Load(thumbnail);
-            songPlayerLabel.Text = songName;
-            artistsPlayerLabel.Text = artists;
+            songNameLabel.Text = currentMusic.Title;
+            singerNameLabel.Text = currentMusic.Artists;
+            genreLabel.Text = currentMusic.Genres;
+            composerLabel.Text = currentMusic.Composers;
+            this.thumbnail.Load(currentMusic.ThumbnailM);
+            smallThumbnail.Load(currentMusic.Thumbnail);
+            songPlayerLabel.Text = currentMusic.Title;
+            artistsPlayerLabel.Text = currentMusic.Artists;
         }
 
         private async void LoadStreaming()
         {
-            string streaming = await api.GetStreamingUrl(songId);
+            // reset slider
+            musicSlider.Value = 0;
+            currentTimeLabel.Text = "00:00";
+            endTimeLabel.Text = "00:00";
+            
+            string streaming = await api.GetStreamingUrl(currentMusic.Id);
             reader = new MediaFoundationReader(streaming);
             waveOut.Init(reader);
             streamingThread = new Thread(() =>
@@ -151,6 +160,17 @@ namespace MusicPlayer
                     }));
                     Thread.Sleep(1000);
                 }
+                
+                // Load next song
+                currentSongIndex++;
+                if (currentSongIndex >= musicList.Count)
+                {
+                    currentSongIndex = 0;
+                }
+
+                currentMusic = musicList[currentSongIndex];
+                LoadSongData();
+                LoadStreaming();
             });
             streamingThread.Start();
         }
@@ -186,12 +206,84 @@ namespace MusicPlayer
 
         private async void FormUsers_Load(object sender, EventArgs e)
         {
+            musicList = await api.GetTrendingSongs();
+            musicGridView.Rows.Add(musicList.Count - 1);
             
-
+            api.WaitForm.Show();
+            
+            // create multiple threads to load images, load song info, to make it faster
+            List<Thread> threads = new List<Thread>();
+            for (int i = 0; i < musicList.Count; i++)
+            {
+                int index = i;
+                Thread loadImagesThread = new Thread(() =>
+                {
+                    DataGridViewImageCell cell = new DataGridViewImageCell();
+                    cell.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    var thmb = RequestUtils.GetStreamFromUrl(musicList[index].Thumbnail);
+                    musicList[index].ThumbnailStream = thmb.Result;
+                    cell.Value = Image.FromStream(thmb.Result);
+                    musicGridView.Rows[index].Cells[1] = cell;
+                    
+                    // load genres and composers
+                    var music = musicList[index];
+                    dynamic songInfo = JsonConvert.DeserializeObject(api.GetSongInfo(music.Id).Result);
+                    string genresString = "";
+                    if (songInfo.genres != null)
+                    {
+                        JArray genres = songInfo.genres;
+                        foreach (dynamic genre in genres)
+                        {
+                            genresString += genre.name.ToString() + ", ";
+                        }
+                        music.Genres = genresString.Substring(0, genresString.Length - 2);
+                    }
+                
+                    if (songInfo.composers != null)
+                    {
+                        JArray composers = songInfo.composers;
+                        string composersString = "";
+                        foreach (dynamic composer in composers)
+                        {
+                            composersString += composer.name.ToString() + ", ";
+                        }
+                        music.Composers = composersString.Substring(0, composersString.Length - 2);
+                    }
+                });
+                threads.Add(loadImagesThread);
+                loadImagesThread.Start();
+            }
+            
+            // load data
+            for (int i = 0; i < musicList.Count; i++)
+            {
+                var music = musicList[i];
+                
+                musicGridView.Rows[i].Cells[0].Value = i + 1;
+                musicGridView.Rows[i].Cells[2].Value = music.Title;
+                musicGridView.Rows[i].Cells[3].Value = music.Artists;
+                musicGridView.Rows[i].Cells[4].Value = music.Album.Title;
+            }
+            
+            musicGridView.ClearSelection();
+            
+            api.WaitForm.Hide();
         }
-        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void trendingGridView_SelectionChanged(object sender, EventArgs e)
         {
-            
+            var rowsCount = musicGridView.SelectedRows.Count;
+            if (rowsCount == 0 || rowsCount > 1) return;
+
+            var row = musicGridView.SelectedRows[0];
+            if (row == null) return;
+            currentMusic = musicList[row.Index];
+            currentSongIndex = row.Index;
+            if (waveOut.PlaybackState != PlaybackState.Stopped)
+            {
+                waveOut.Stop();
+            }
+            PlayMusic();
         }
     }
 }
