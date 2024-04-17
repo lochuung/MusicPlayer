@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using MusicPlayer.Model;
 using MusicPlayer.MusicApi;
 using MusicPlayer.Utils;
@@ -144,9 +145,11 @@ namespace MusicPlayer
             artistsPlayerLabel.Text = currentMusic.Artists;
             
             // hightlight current song and clear highlight of other songs
+            // default theme color
+            var color = musicGridView.RowsDefaultCellStyle.BackColor;
             for (int i = 0; i < musicGridView.Rows.Count; i++)
             {
-                musicGridView.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                musicGridView.Rows[i].DefaultCellStyle.BackColor = color;
             }
             musicGridView.Rows[currentSongIndex].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
         }
@@ -292,6 +295,12 @@ namespace MusicPlayer
         {
             var rowsCount = musicGridView.SelectedRows.Count;
             if (rowsCount == 0 || rowsCount > 1) return;
+            if (currentMusic == null)
+            {
+                currentMusic = musicList[musicGridView.SelectedRows[0].Index];
+                currentSongIndex = musicGridView.SelectedRows[0].Index;
+                return;
+            }
 
             var row = musicGridView.SelectedRows[0];
             if (row == null) return;

@@ -8,16 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40d49c60-5231-45aa-abf2-add1b03046ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ModelView/MusicPlayerModelView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/8fd153f6-a6be-4a8c-8e1f-417b0ed6de26.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormUsers.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FormUsers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FormUsers.resx" beforeDir="false" afterPath="$PROJECT_DIR$/FormUsers.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicPlayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MusicPlayer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/licenses.licx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/licenses.licx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +106,7 @@
       <workItem from="1712970132143" duration="2033000" />
       <workItem from="1713277621724" duration="6082000" />
       <workItem from="1713283788824" duration="4528000" />
-      <workItem from="1713315934151" duration="5141000" />
+      <workItem from="1713315934151" duration="5784000" />
     </task>
     <servers />
   </component>
