@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MusicPlayer.Model;
 using MusicPlayer.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -46,6 +48,12 @@ namespace MusicPlayer.MusicApi
 
         public string Ctime { get; set; }
 
+        public WaitForm WaitForm
+        {
+            get => waitForm;
+            set => waitForm = value;
+        }
+
         public async Task<string> GetSongInfo(string id)
         {
             waitForm.Show();
@@ -64,6 +72,32 @@ namespace MusicPlayer.MusicApi
             
             waitForm.Hide();
             return streamingUrl;
+        }
+        
+        public async Task<List<Music>> GetTrendingSongs()
+        {
+            waitForm.Show();
+            var response = await ZingMp3ApiUtils.GetChartHome(this);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
+            JArray songArray = responseDeserializeObject.RTChart.items;
+            List<Music> musics = new List<Music>();
+            
+            foreach (dynamic song in songArray)
+            {
+                Music music = new Music();
+                music.Id = song.encodeId;
+                music.Title = song.title;
+                music.Artists = song.artistsNames;
+                music.ThumbnailM = song.thumbnailM;
+                music.Thumbnail = song.thumbnail;
+                music.Album = new Album();
+                music.Album.Id = song.album.encodeId;
+                music.Album.Title = song.album.title;
+                musics.Add(music);  
+            }
+            
+            waitForm.Hide();
+            return musics;
         }
     }
 }
