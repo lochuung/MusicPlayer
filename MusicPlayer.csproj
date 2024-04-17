@@ -501,6 +501,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Api\ZingMp3Api.cs" />
+    <Compile Include="ModelView\MusicPlayerModelView.cs" />
     <Compile Include="Model\Album.cs" />
     <Compile Include="Model\Music.cs" />
     <Compile Include="Program.cs" />

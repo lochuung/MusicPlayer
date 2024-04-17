@@ -30,7 +30,7 @@ namespace MusicPlayer
         private Music currentMusic;
         private MediaFoundationReader reader;
         private WaveOut waveOut = new WaveOut();
-        Thread streamingThread;
+        private Thread streamingThread;
 
         public FormUsers()
         {
@@ -44,6 +44,8 @@ namespace MusicPlayer
             api = new ZingMp3Api();
             InitializeComponent();
         }
+        
+        
 
         private void btnExitMainForm_Click(object sender, EventArgs e)
         {
@@ -65,14 +67,14 @@ namespace MusicPlayer
         {
             indicator.Top = releaseBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(1);
-            titleLabel.Text = "Các bài hát mới phát hành";
+            titleLabel.Text = "Mới phát hành";
         }
 
         private void playlistBtn_Click(object sender, EventArgs e)
         {
             indicator.Top = playlistBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(2);
-            titleLabel.Text = "Playlist nhạc";
+            titleLabel.Text = "Playlists";
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -87,6 +89,13 @@ namespace MusicPlayer
             indicator.Top = playingBtn.Top + indicator.Size.Height - 2;
             bunifuPages1.SetPage(4);
             titleLabel.Text = "Phát nhạc";
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            indicator.Top = homeBtn.Top + indicator.Size.Height - 2;
+            bunifuPages1.SetPage(5);
+            titleLabel.Text = "Trang chủ";
         }
 
         private void playMusicBtn_Click(object sender, EventArgs e)
@@ -104,7 +113,6 @@ namespace MusicPlayer
 
         private void PlayMusic()
         {
-            
             if (waveOut.PlaybackState == PlaybackState.Stopped)
             {
                 if (streamingThread != null)
@@ -134,6 +142,13 @@ namespace MusicPlayer
             smallThumbnail.Load(currentMusic.Thumbnail);
             songPlayerLabel.Text = currentMusic.Title;
             artistsPlayerLabel.Text = currentMusic.Artists;
+            
+            // hightlight current song and clear highlight of other songs
+            for (int i = 0; i < musicGridView.Rows.Count; i++)
+            {
+                musicGridView.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            }
+            musicGridView.Rows[currentSongIndex].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
         }
 
         private async void LoadStreaming()
@@ -207,8 +222,14 @@ namespace MusicPlayer
         private async void FormUsers_Load(object sender, EventArgs e)
         {
             musicList = await api.GetTrendingSongs();
-            musicGridView.Rows.Add(musicList.Count - 1);
-            
+            LoadMultipleSongData();
+            musicGridView.ClearSelection();
+        }
+
+        private void LoadMultipleSongData()
+        {
+            musicGridView.Rows.Clear();
+            musicGridView.Rows.Add(musicList.Count);
             api.WaitForm.Show();
             
             // create multiple threads to load images, load song info, to make it faster
@@ -264,9 +285,6 @@ namespace MusicPlayer
                 musicGridView.Rows[i].Cells[3].Value = music.Artists;
                 musicGridView.Rows[i].Cells[4].Value = music.Album.Title;
             }
-            
-            musicGridView.ClearSelection();
-            
             api.WaitForm.Hide();
         }
 
@@ -284,6 +302,45 @@ namespace MusicPlayer
                 waveOut.Stop();
             }
             PlayMusic();
+            // unselect all rows
+            musicGridView.ClearSelection();
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            currentSongIndex++;
+            if (currentSongIndex >= musicList.Count)
+            {
+                currentSongIndex = 0;
+            }
+
+            currentMusic = musicList[currentSongIndex];
+            if (waveOut.PlaybackState != PlaybackState.Stopped)
+            {
+                waveOut.Stop();
+            }
+            PlayMusic();
+        }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            currentSongIndex--;
+            if (currentSongIndex < 0)
+            {
+                currentSongIndex = musicList.Count - 1;
+            }
+
+            currentMusic = musicList[currentSongIndex];
+            if (waveOut.PlaybackState != PlaybackState.Stopped)
+            {
+                waveOut.Stop();
+            }
+            PlayMusic();
+        }
+
+        private void smallThumbnail_Click(object sender, EventArgs e)
+        {
+            playingBtn_Click(sender, e);
         }
     }
 }
