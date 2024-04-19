@@ -8,11 +8,11 @@ namespace MusicPlayer.Admin
     public partial class Uc_ViewUser : UserControl
     {
         private readonly SqlDataAdapter adapter = new SqlDataAdapter();
+        private readonly string str = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
+        private readonly DataTable table = new DataTable();
         private SqlCommand command;
 
         private SqlConnection connection;
-        private readonly string str = @"Data Source=LAPTOP-3N644IDG;Initial Catalog=MuSicFM;Integrated Security=True";
-        private readonly DataTable table = new DataTable();
 
         public Uc_ViewUser()
         {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicPlayer.Model;
@@ -13,11 +12,9 @@ namespace MusicPlayer.MusicApi
 {
     public class ZingMp3Api
     {
-        private WaitForm waitForm = new WaitForm();
         public ZingMp3Api()
         {
-            
-            waitForm.StartPosition = FormStartPosition.CenterScreen;
+            WaitForm.StartPosition = FormStartPosition.CenterScreen;
             Url = "https://zingmp3.vn";
             Version = "1.6.34";
             SecretKey = "2aa2d1c561e809b267f3638c4a307aab";
@@ -48,43 +45,39 @@ namespace MusicPlayer.MusicApi
 
         public string Ctime { get; set; }
 
-        public WaitForm WaitForm
-        {
-            get => waitForm;
-            set => waitForm = value;
-        }
+        public WaitForm WaitForm { get; set; } = new WaitForm();
 
         public async Task<string> GetSongInfo(string id)
         {
-            waitForm.Show();
+            WaitForm.Show();
             var response = await ZingMp3ApiUtils.GetSongInfo(this, id);
-            waitForm.Hide();
+            WaitForm.Hide();
             return response;
         }
-        
+
         public async Task<string> GetStreamingUrl(string id)
         {
-            waitForm.Show();
-            
-            string response = await ZingMp3ApiUtils.GetSong(this, id);
-            JObject json = JObject.Parse(response);
-            string streamingUrl = json["128"].ToString();
-            
-            waitForm.Hide();
+            WaitForm.Show();
+
+            var response = await ZingMp3ApiUtils.GetSong(this, id);
+            var json = JObject.Parse(response);
+            var streamingUrl = json["128"].ToString();
+
+            WaitForm.Hide();
             return streamingUrl;
         }
-        
+
         public async Task<List<Music>> GetTrendingSongs()
         {
-            waitForm.Show();
+            WaitForm.Show();
             var response = await ZingMp3ApiUtils.GetChartHome(this);
             dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
             JArray songArray = responseDeserializeObject.RTChart.items;
-            List<Music> musics = new List<Music>();
-            
+            var musics = new List<Music>();
+
             foreach (dynamic song in songArray)
             {
-                Music music = new Music();
+                var music = new Music();
                 music.Id = song.encodeId;
                 music.Title = song.title;
                 music.Artists = song.artistsNames;
@@ -93,10 +86,10 @@ namespace MusicPlayer.MusicApi
                 music.Album = new Album();
                 music.Album.Id = song.album.encodeId;
                 music.Album.Title = song.album.title;
-                musics.Add(music);  
+                musics.Add(music);
             }
-            
-            waitForm.Hide();
+
+            WaitForm.Hide();
             return musics;
         }
     }

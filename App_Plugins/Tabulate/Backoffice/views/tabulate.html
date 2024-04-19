@@ -1,32 +1,33 @@
-<div class="tabulate" ng-controller="Tabulate.Controller as vm" ng-class="{'no-settings': vm.noConfig, 'wide' : model.config.wide}">
+<div class="tabulate" ng-class="{'no-settings': vm.noConfig, 'wide' : model.config.wide}"
+     ng-controller="Tabulate.Controller as vm">
 
     <umb-editor-sub-header appearance="white">
         <umb-editor-sub-header-content-left ng-show="model.value.data.length > model.value.settings.numPerPage">
             <div class="umb-mini-search">
-                <umb-icon icon="icon-search" class="icon umb-icon" ng-click="vm.setPaging()"></umb-icon>
-                <input type="text"
-                        class="form-control search-input"
-                        ng-model="vm.pagination.search"
-                        ng-disabled="vm.noConfig"
-                        ng-change="vm.setPaging()"
-                        placeholder="Type to search..."
-                        no-dirty-check />
+                <umb-icon class="icon umb-icon" icon="icon-search" ng-click="vm.setPaging()"></umb-icon>
+                <input class="form-control search-input"
+                       ng-change="vm.setPaging()"
+                       ng-disabled="vm.noConfig"
+                       ng-model="vm.pagination.search"
+                       no-dirty-check
+                       placeholder="Type to search..."
+                       type="text"/>
             </div>
         </umb-editor-sub-header-content-left>
         <umb-editor-sub-header-content-right>
-            <umb-button type="button"
+            <umb-button button-style="default"
                         icon="icon-settings"
-                        button-style="default"
                         label-key="general_settings"
                         ng-click="vm.openSettings()"
-                        ng-hide="vm.mapsLoaded === 'show' || vm.hideSettings">
+                        ng-hide="vm.mapsLoaded === 'show' || vm.hideSettings"
+                        type="button">
             </umb-button>
-            <umb-button type="button"
+            <umb-button button-style="danger"
                         icon="icon-trash"
-                        button-style="danger"
                         label-key="general_delete"
                         ng-click="vm.noConfig || vm.clearModel()"
-                        ng-hide="vm.noConfig">
+                        ng-hide="vm.noConfig"
+                        type="button">
             </umb-button>
         </umb-editor-sub-header-content-right>
     </umb-editor-sub-header>
@@ -34,34 +35,43 @@
     <div class="umb-table" ng-class="{'manual-sort': vm.manualSort, 'list-view' : model.value.settings.isListView}">
         <div class="umb-table-head" ng-if="model.value.settings.isListView">
             <div class="umb-table-row">
-                <div class="umb-table-cell" ng-repeat="c in model.value.settings.columns" ng-bind="c.displayName"></div>
+                <div class="umb-table-cell" ng-bind="c.displayName" ng-repeat="c in model.value.settings.columns"></div>
                 <div class="umb-table-cell umb-table-cell__actions">
                     <localize key="general_actions"></localize>
                 </div>
             </div>
         </div>
-        <div class="umb-table-body" ui-sortable="vm.sortOptions" ng-model="vm.pagination.items" ng-hide="vm.noConfig">
-            <div class="umb-table-row" ng-class="{'disabled' : o.disabled}" ng-repeat="o in vm.pagination.items track by $index">
-                <div class="umb-table-cell" ng-class="{'umb-table__name' : $first}" ng-repeat="c in model.value.settings.columns" ng-show="model.value.settings.isListView">
-                    <a ng-if="$first" class="umb-table-body__link" title="Edit" href="" ng-click="vm.editRow(o._guid)" ng-bind="o._label" ng-model="o._label"></a>
-                    <span ng-if="!$first" ng-bind-html="o[c.displayName] | umbWordLimit"></span>
+        <div class="umb-table-body" ng-hide="vm.noConfig" ng-model="vm.pagination.items" ui-sortable="vm.sortOptions">
+            <div class="umb-table-row" ng-class="{'disabled' : o.disabled}"
+                 ng-repeat="o in vm.pagination.items track by $index">
+                <div class="umb-table-cell" ng-class="{'umb-table__name' : $first}"
+                     ng-repeat="c in model.value.settings.columns" ng-show="model.value.settings.isListView">
+                    <a class="umb-table-body__link" href="" ng-bind="o._label" ng-click="vm.editRow(o._guid)"
+                       ng-if="$first"
+                       ng-model="o._label" title="Edit"></a>
+                    <span ng-bind-html="o[c.displayName] | umbWordLimit" ng-if="!$first"></span>
                 </div>
 
                 <div class="umb-table-cell umb-table__name f-1" ng-show="!model.value.settings.isListView">
-                    <a class="umb-table-body__link" title="Edit" href="" ng-click="vm.editRow(o._guid)" ng-bind="o._label" ng-model="o._label"></a>
+                    <a class="umb-table-body__link" href="" ng-bind="o._label" ng-click="vm.editRow(o._guid)"
+                       ng-model="o._label" title="Edit"></a>
                 </div>
 
                 <div class="umb-table-cell umb-table-cell__actions">
                     <div class="umb-node-preview__actions">
-                        <button type="button" class="umb-node-preview__action sort-handle" ng-show="vm.manualSort">
-                            <umb-icon icon="icon-navigation-vertical" ng-if="model.value.settings.isListView"></umb-icon>
+                        <button class="umb-node-preview__action sort-handle" ng-show="vm.manualSort" type="button">
+                            <umb-icon icon="icon-navigation-vertical"
+                                      ng-if="model.value.settings.isListView"></umb-icon>
                             <localize key="general_sort" ng-if="!model.value.settings.isListView">Sort</localize>
                         </button>
-                        <button type="button" class="umb-node-preview__action" ng-click="vm.disableRow(o._guid)">
+                        <button class="umb-node-preview__action" ng-click="vm.disableRow(o._guid)" type="button">
                             <umb-icon icon="icon-power" ng-if="model.value.settings.isListView"></umb-icon>
-                            <span ng-if="!model.value.settings.isListView" ng-bind="o.disabled ? 'Enable' : 'Disable'"></span>
+                            <span ng-bind="o.disabled ? 'Enable' : 'Disable'"
+                                  ng-if="!model.value.settings.isListView"></span>
                         </button>
-                        <button type="button" class="umb-node-preview__action umb-node-preview__action--red" ng-click="vm.removeRow(o._guid)">
+                        <button class="umb-node-preview__action umb-node-preview__action--red"
+                                ng-click="vm.removeRow(o._guid)"
+                                type="button">
                             <umb-icon icon="icon-trash" ng-if="model.value.settings.isListView"></umb-icon>
                             <localize key="general_delete" ng-if="!model.value.settings.isListView">Delete</localize>
                         </button>
@@ -72,7 +82,7 @@
     </div>
 
     <div class="add-row" ng-show="!vm.noConfig">
-        <button type="button" class="umb-node-preview-add" ng-click="vm.addRow()">
+        <button class="umb-node-preview-add" ng-click="vm.addRow()" type="button">
             <localize key="general_add">Add</localize>
         </button>
     </div>
@@ -86,11 +96,11 @@
     </umb-empty-state>
 
     <umb-pagination ng-if="vm.pagination.totalPages > 1"
-                    page-number="vm.pagination.pageNumber"
-                    total-pages="vm.pagination.totalPages"
+                    on-go-to-page="vm.goToPage"
                     on-next="vm.goToPage"
                     on-prev="vm.goToPage"
-                    on-go-to-page="vm.goToPage">
+                    page-number="vm.pagination.pageNumber"
+                    total-pages="vm.pagination.totalPages">
 
     </umb-pagination>
 
