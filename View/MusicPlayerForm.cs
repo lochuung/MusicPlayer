@@ -68,7 +68,11 @@ namespace MusicPlayer
             // genreLabel.Text = currentMusic.Genres;
             // composerLabel.Text = currentMusic.Composers;
             // this.thumbnail.Load(currentMusic.ThumbnailM);
-            thumbnailImage.Load(currentMusic.ThumbnailM);
+            Thread thread = new Thread(() =>
+            {
+                Invoke(new MethodInvoker(delegate { thumbnailImage.Load(currentMusic.ThumbnailM); }));
+            });
+            thread.Start();
 
             // hightlight current song and clear highlight of other songs
             // default theme color
@@ -91,7 +95,6 @@ namespace MusicPlayer
 
             var streaming = await api.GetStreamingUrl(currentMusic.Id);
             reader = new MediaFoundationReader(streaming);
-            
             waveOut.Init(reader);
             streamingThread = new Thread(() =>
             {
@@ -205,15 +208,20 @@ namespace MusicPlayer
             if (currentSongIndex < 0) currentSongIndex = musicList.Count - 1;
 
             currentMusic = musicList[currentSongIndex];
-            if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
-            PlayMusic();
+            Thread thread = new Thread(() =>
+            {
+                if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
+                PlayMusic();
+            });
+            thread.Start();
         }
 
         private void playBtn_Click(object sender, EventArgs e)
         {
             if (currentMusic == null) return;
             ShowPlayButton();
-            PlayMusic();
+            Thread thread = new Thread(() => { PlayMusic(); });
+            thread.Start();
         }
 
         private void ShowPlayButton()
@@ -234,8 +242,12 @@ namespace MusicPlayer
             if (currentSongIndex >= musicList.Count) currentSongIndex = 0;
 
             currentMusic = musicList[currentSongIndex];
-            if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
-            PlayMusic();
+            Thread thread = new Thread(() =>
+            {
+                if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
+                PlayMusic();
+            });
+            thread.Start();
         }
 
         private void shuffleBtn_Click(object sender, EventArgs e)

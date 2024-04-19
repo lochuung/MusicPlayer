@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/fcbb415a-5e22-4c54-be50-c98910df0b94.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/MusicPlayerForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MusicPlayerForm.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/MusicPlayerForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MusicPlayerForm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +115,7 @@
       <workItem from="1713315934151" duration="6598000" />
       <workItem from="1713345124120" duration="700000" />
       <workItem from="1713346841049" duration="611000" />
-      <workItem from="1713491027891" duration="9802000" />
+      <workItem from="1713491027891" duration="10195000" />
     </task>
     <servers />
   </component>
