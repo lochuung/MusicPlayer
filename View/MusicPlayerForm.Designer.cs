@@ -442,7 +442,7 @@
             // 
             // shuffleBtn
             // 
-            this.shuffleBtn.CheckedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.shuffleBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
             this.shuffleBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.shuffle_100px_png1;
             this.shuffleBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.shuffleBtn.Image = global::MusicPlayer.Properties.Resources.shuffle_100px;
@@ -490,7 +490,7 @@
             // 
             // repeatBtn
             // 
-            this.repeatBtn.CheckedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.repeatBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
             this.repeatBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.repeat_100px_png1;
             this.repeatBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.repeatBtn.Image = global::MusicPlayer.Properties.Resources.repeat_100px;

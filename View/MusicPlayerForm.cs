@@ -219,13 +219,13 @@ namespace MusicPlayer
         private void ShowPlayButton()
         {
             playBtn.Image = Resources.play_100px;
-            playBtn.HoverState.Image = Resources.play_100px;
+            playBtn.HoverState.Image = Resources.play_100px_png1;
         }
 
         private void ShowPauseButton()
         {
             playBtn.Image = Resources.pause_100px;
-            playBtn.HoverState.Image = Resources.pause_100px;
+            playBtn.HoverState.Image = Resources.pause_100px_png1;
         }
 
         private void nextBtn_Click(object sender, EventArgs e)
