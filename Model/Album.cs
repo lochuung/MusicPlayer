@@ -4,37 +4,21 @@ namespace MusicPlayer.Model
 {
     public class Album
     {
-        private string id;
-        private string title;
-        private List<Music> _musics;
-
         public Album()
         {
         }
 
         public Album(string id, string title, List<Music> musics)
         {
-            this.id = id;
-            this.title = title;
-            _musics = musics;
+            Id = id;
+            Title = title;
+            Musics = musics;
         }
 
-        public string Id
-        {
-            get => id;
-            set => id = value;
-        }
+        public string Id { get; set; }
 
-        public string Title
-        {
-            get => title;
-            set => title = value;
-        }
+        public string Title { get; set; }
 
-        public List<Music> Musics
-        {
-            get => _musics;
-            set => _musics = value;
-        }
+        public List<Music> Musics { get; set; }
     }
 }

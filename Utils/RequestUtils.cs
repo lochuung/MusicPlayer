@@ -86,17 +86,14 @@ namespace MusicPlayer.Utils
                 MessageBoxButtons.OK);
             return dialogResult == DialogResult.OK;
         }
-        
+
         public static async Task<Stream> GetStreamFromUrl(string url)
         {
             var client = new RestClient(url);
 
             var response = await client.ExecuteAsync(new RestRequest());
 
-            if (response.IsSuccessful)
-            {
-                return new MemoryStream(response.RawBytes);
-            }
+            if (response.IsSuccessful) return new MemoryStream(response.RawBytes);
 
             if (ReloadConnection())
             {
