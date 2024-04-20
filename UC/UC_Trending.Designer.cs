@@ -30,12 +30,15 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.promoteUC = new MusicPlayer.UC.Trending.Promote();
+            this.promote1 = new MusicPlayer.UC.Trending.Promote();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.promoteUC);
+            this.flowLayoutPanel1.Controls.Add(this.promote1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -48,6 +51,13 @@
             this.promoteUC.Name = "promoteUC";
             this.promoteUC.Size = new System.Drawing.Size(1193, 530);
             this.promoteUC.TabIndex = 0;
+            // 
+            // promote1
+            // 
+            this.promote1.Location = new System.Drawing.Point(3, 539);
+            this.promote1.Name = "promote1";
+            this.promote1.Size = new System.Drawing.Size(1193, 530);
+            this.promote1.TabIndex = 1;
             // 
             // UC_Trending
             // 
@@ -66,5 +76,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Trending.Promote promoteUC;
+        private Trending.Promote promote1;
     }
 }
