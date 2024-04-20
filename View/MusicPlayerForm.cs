@@ -14,15 +14,15 @@ namespace MusicPlayer
     {
         private static readonly UC_Home _ucHome = new UC_Home();
         private static UC_Trending _ucTrending;
-        private WaveOutEvent waveOut = new WaveOutEvent();
+        public WaveOutEvent waveOut = new WaveOutEvent();
 
         private ZingMp3Api api;
-        private Music currentMusic;
+        public Music currentMusic;
 
-        private int currentSongIndex;
+        public int currentSongIndex;
 
 
-        private List<Music> musicList = new List<Music>();
+        public List<Music> musicList = new List<Music>();
         private MediaFoundationReader reader;
         private Thread streamingThread;
 
@@ -34,7 +34,15 @@ namespace MusicPlayer
             repeatBtn.Checked = true;
         }
 
-        private void PlayMusic()
+        private async void MusicPlayerForm_Load(object sender, EventArgs e)
+        {
+            api = new ZingMp3Api();
+            musicList = await api.GetTrendingSongs();
+            currentMusic = musicList[0];
+            trendingBtn_Click(sender, e);
+        }
+
+        public void PlayMusic()
         {
             if (waveOut == null)
             {
@@ -138,6 +146,22 @@ namespace MusicPlayer
         {
             userControl.Dock = DockStyle.Fill;
             containerPanel.Controls.Clear();
+            userControl.Width = containerPanel.Width;
+            // go to flow panel in user control and set width to container panel width
+            
+            foreach (Control control in userControl.Controls)
+            {
+                if (control is FlowLayoutPanel)
+                {
+                    control.Width = containerPanel.Width;
+                    foreach (Control c in control.Controls)
+                    {
+                        c.Width = control.Width;
+                    }
+                    break;
+                }
+            }
+            
             containerPanel.Controls.Add(userControl);
             userControl.BringToFront();
         }
@@ -149,7 +173,8 @@ namespace MusicPlayer
             releaseBtn.Checked = false;
             albumBtn.Checked = false;
             searchPageBtn.Checked = false;
-            artistBtn.Checked = false;
+            songBtn.Checked = false;
+            currentListBtn.Checked = false;
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -159,9 +184,13 @@ namespace MusicPlayer
             homeBtn.Checked = true;
         }
 
-        private void trendingBtn_Click(object sender, EventArgs e)
+        private async void trendingBtn_Click(object sender, EventArgs e)
         {
-            if (_ucTrending == null) _ucTrending = new UC_Trending();
+            if (_ucTrending == null)
+            {
+                var jsonData = await api.GetTrendingData();
+                _ucTrending = new UC_Trending(jsonData);
+            }
             ChangeUserControl(_ucTrending);
             UncheckAllButton();
             trendingBtn.Checked = true;
@@ -188,7 +217,13 @@ namespace MusicPlayer
         private void artistBtn_Click(object sender, EventArgs e)
         {
             UncheckAllButton();
-            artistBtn.Checked = true;
+            songBtn.Checked = true;
+        }
+
+        private void currentListBtn_Click(object sender, EventArgs e)
+        {
+            UncheckAllButton();
+            currentListBtn.Checked = true;
         }
 
         private void btnExitMainForm_Click(object sender, EventArgs e)
@@ -277,13 +312,6 @@ namespace MusicPlayer
         {
             waveOut.Volume = 1;
             volumeTrackBar.Value = 100;
-        }
-
-        private async void MusicPlayerForm_Load(object sender, EventArgs e)
-        {
-            api = new ZingMp3Api();
-            musicList = await api.GetTrendingSongs();
-            currentMusic = musicList[0];
         }
     }
 }

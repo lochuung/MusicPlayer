@@ -28,18 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.promoteUC = new MusicPlayer.UC.Trending.Promote();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.promoteUC);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1038, 753);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // promoteUC
+            // 
+            this.promoteUC.Location = new System.Drawing.Point(3, 3);
+            this.promoteUC.Name = "promoteUC";
+            this.promoteUC.Size = new System.Drawing.Size(1193, 530);
+            this.promoteUC.TabIndex = 0;
             // 
             // UC_Trending
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UC_Trending";
-            this.Size = new System.Drawing.Size(1038, 553);
+            this.Size = new System.Drawing.Size(1038, 753);
+            this.Load += new System.EventHandler(this.UC_Trending_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Trending.Promote promoteUC;
     }
 }

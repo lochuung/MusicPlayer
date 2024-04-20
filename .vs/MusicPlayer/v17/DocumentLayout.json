@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "D:\\.University\\DBMS\\MusicPlayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|d:\\.university\\dbms\\musicplayer\\view\\musicplayerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|d:\\.university\\dbms\\musicplayer\\view\\musicplayerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:view\\musicplayerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\view\\musicplayerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:view\\musicplayerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\trending\\promote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\trending\\promote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_trending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_trending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_trending.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_trending.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|D:\\.University\\DBMS\\MusicPlayer\\uc\\uc_trending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}|MusicPlayer.csproj|solutionrelative:uc\\uc_trending.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +51,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MusicPlayerForm.cs",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\View\\MusicPlayerForm.cs",
+              "RelativeDocumentMoniker": "View\\MusicPlayerForm.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\View\\MusicPlayerForm.cs",
+              "RelativeToolTip": "View\\MusicPlayerForm.cs",
+              "ViewState": "AQIAAJwAAAAAAAAAAIAwwKEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T11:40:37.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_Item.cs",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Item.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Item.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Item.cs",
+              "RelativeToolTip": "UC\\UC_Item.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAIA/wDkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T10:33:12.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UC_Item.cs [Design]",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Item.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Item.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Item.cs [Design]",
+              "RelativeToolTip": "UC\\UC_Item.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T10:25:44.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Promote.cs [Design]",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\Trending\\Promote.cs",
+              "RelativeDocumentMoniker": "UC\\Trending\\Promote.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\Trending\\Promote.cs [Design]",
+              "RelativeToolTip": "UC\\Trending\\Promote.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T09:54:07.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Home.cs [Design]",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Home.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Home.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Home.cs [Design]",
+              "RelativeToolTip": "UC\\UC_Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T07:17:02.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UC_Trending.Designer.cs",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.Designer.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Trending.Designer.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.Designer.cs",
+              "RelativeToolTip": "UC\\UC_Trending.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T07:15:41.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MusicPlayerForm.cs [Design]",
               "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\View\\MusicPlayerForm.cs",
               "RelativeDocumentMoniker": "View\\MusicPlayerForm.cs",
               "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\View\\MusicPlayerForm.cs [Design]",
               "RelativeToolTip": "View\\MusicPlayerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T05:33:55.377Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-19T05:33:55.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_Trending.cs",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Trending.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.cs",
+              "RelativeToolTip": "UC\\UC_Trending.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAIA/wBcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T07:11:51.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_Trending.cs [Design]",
+              "DocumentMoniker": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.cs",
+              "RelativeDocumentMoniker": "UC\\UC_Trending.cs",
+              "ToolTip": "D:\\.University\\DBMS\\MusicPlayer\\UC\\UC_Trending.cs [Design]",
+              "RelativeToolTip": "UC\\UC_Trending.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T06:09:29.382Z"
             }
           ]
         }

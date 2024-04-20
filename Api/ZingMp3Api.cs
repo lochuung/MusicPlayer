@@ -67,6 +67,14 @@ namespace MusicPlayer.MusicApi
             return streamingUrl;
         }
 
+        public async Task<string> GetTrendingData()
+        {
+            WaitForm.Show();
+            var response = await ZingMp3ApiUtils.GetChartHome(this);
+            WaitForm.Hide();
+            return response;
+        }
+
         public async Task<List<Music>> GetTrendingSongs()
         {
             WaitForm.Show();
@@ -77,6 +85,7 @@ namespace MusicPlayer.MusicApi
 
             foreach (dynamic song in songArray)
             {
+                if (song.streamingStatus != 1) continue;
                 var music = new Music();
                 music.Id = song.encodeId;
                 music.Title = song.title;
