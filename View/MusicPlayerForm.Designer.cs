@@ -136,7 +136,7 @@
             this.songBtn.Text = "Bài hát hiện tại";
             this.songBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.songBtn.UseTransparentBackground = true;
-            this.songBtn.Click += new System.EventHandler(this.artistBtn_Click);
+            this.songBtn.Click += new System.EventHandler(this.songBtn_Click);
             // 
             // searchPageBtn
             // 

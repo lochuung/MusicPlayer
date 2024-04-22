@@ -500,6 +500,12 @@
     <Compile Include="UC\Trending\Ranking.Designer.cs">
       <DependentUpon>Ranking.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_CurrentSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_CurrentSong.Designer.cs">
+      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -594,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\Trending\Ranking.resx">
       <DependentUpon>Ranking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_CurrentSong.resx">
+      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>

@@ -9,20 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="40d49c60-5231-45aa-abf2-add1b03046ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0c9ae22d-3ed5-440c-8428-e9be655a288d.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0d2456c2-cb2e-4008-81a3-61b19c7bffa1.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/29941efb-6d8b-41b2-a2f2-5ddec8638cf2.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/3534ec63-41c4-41ad-9a33-097224f90e3c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/3a8bf7f6-5eff-4b10-9429-ec2f483d2b59.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/64c3ba22-1c18-41bf-86a1-b679651e1059.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/6c70c878-123b-401e-a5db-277eb905ebe0.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/80d673f0-b340-406f-972d-7641617ea770.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/8c26ded9-c9c1-463c-979e-a1d3750bbbe1.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/e96986b1-b602-4a9f-814e-f2c920f995a3.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer.csproj.dtbcache.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer.csproj.dtbcache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/812c3b22-c675-420f-949e-93e4b067bf77.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UC/UC_Item.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Item.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UC/UC_Trending.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Trending.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicPlayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MusicPlayer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/MusicPlayerForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MusicPlayerForm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +120,7 @@
       <workItem from="1713491027891" duration="13703000" />
       <workItem from="1713520498566" duration="3207000" />
       <workItem from="1713523792715" duration="3410000" />
-      <workItem from="1713773455187" duration="4802000" />
+      <workItem from="1713773455187" duration="6371000" />
     </task>
     <servers />
   </component>

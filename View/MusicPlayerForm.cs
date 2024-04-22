@@ -14,16 +14,16 @@ namespace MusicPlayer
     {
         private static readonly UC_Home _ucHome = new UC_Home();
         private static UC_Trending _ucTrending;
-        public WaveOutEvent waveOut = new WaveOutEvent();
-
+        private static UC_CurrentSong _ucCurrentSong;
+        
+        
         private ZingMp3Api api;
         public Music currentMusic;
-
         public int currentSongIndex;
-
-
         public List<Music> musicList = new List<Music>();
+        
         private MediaFoundationReader reader;
+        public WaveOutEvent waveOut = new WaveOutEvent();
         private Thread streamingThread;
         // using semaphore to avoid multiple thread access to waveOut and currentMusic, currentSongIndex
         public Semaphore semaphore = new Semaphore(2, 2);
@@ -205,7 +205,7 @@ namespace MusicPlayer
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            ChangeUserControl(new UC_Home());
+            ChangeUserControl(_ucHome);
             UncheckAllButton();
             homeBtn.Checked = true;
         }
@@ -240,8 +240,13 @@ namespace MusicPlayer
             searchPageBtn.Checked = true;
         }
 
-        private void artistBtn_Click(object sender, EventArgs e)
+        private void songBtn_Click(object sender, EventArgs e)
         {
+            if (_ucCurrentSong == null)
+            {
+                _ucCurrentSong = new UC_CurrentSong(currentMusic);
+            }
+            ChangeUserControl(_ucTrending);
             UncheckAllButton();
             songBtn.Checked = true;
         }
