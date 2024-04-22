@@ -49,12 +49,12 @@
             // 
             this.promoteUC.Location = new System.Drawing.Point(3, 3);
             this.promoteUC.Name = "promoteUC";
-            this.promoteUC.Size = new System.Drawing.Size(1193, 530);
+            this.promoteUC.Size = new System.Drawing.Size(1182, 519);
             this.promoteUC.TabIndex = 0;
             // 
             // promote1
             // 
-            this.promote1.Location = new System.Drawing.Point(3, 539);
+            this.promote1.Location = new System.Drawing.Point(3, 528);
             this.promote1.Name = "promote1";
             this.promote1.Size = new System.Drawing.Size(1193, 530);
             this.promote1.TabIndex = 1;
