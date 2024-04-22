@@ -5,32 +5,34 @@ namespace WaitFormExample
 {
     public partial class WaitForm : Form
     {
+        Form parentForm;
         public WaitForm()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        public WaitForm(Form parent)
+        public WaitForm(Form parentForm)
         {
             InitializeComponent();
-            if (parent != null)
-            {
-                StartPosition = FormStartPosition.CenterParent;
-                Location = new Point(parent.Location.X + parent.Width / 2 - Width / 2,
-                    parent.Location.Y + parent.Height / 2 - Height / 2);
-            }
-            else
-            {
-                StartPosition = FormStartPosition.CenterParent;
-            }
+            this.parentForm = parentForm;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        public void CloseWaitForm()
+        public void Show()
         {
-            DialogResult = DialogResult.OK;
-            Close();
-            if (label1.Image != null) label1.Image.Dispose();
+            // show the wait form
+            base.Show();
+            // disable the parent form
+            parentForm.Enabled = false;
+        }
+        
+        public void Hide()
+        {
+            // enable the parent form
+            parentForm.Enabled = true;
+            // hide the wait form
+            base.Hide();
         }
     }
 }

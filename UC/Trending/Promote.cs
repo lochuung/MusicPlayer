@@ -30,17 +30,17 @@ namespace MusicPlayer.UC.Trending
             EventHandler clickHandle = (sender, e) =>
             {
                 MusicPlayerForm mainForm = (MusicPlayerForm)FindForm();
+                // remove if already exist
+                mainForm.musicList = mainForm.musicList.Where(m => m.Id != music.Id).ToList();
                 mainForm.musicList.Add(music);
                 mainForm.currentMusic = music;
                 mainForm.currentSongIndex = mainForm.musicList.Count - 1;
                 
-                Thread thread = new Thread(() =>
-                {
-                    if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped) 
-                        mainForm.waveOut.Stop();
-                    mainForm.PlayMusic();
-                });
-                thread.Start();
+                mainForm.semaphore.WaitOne();
+                if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped) 
+                    mainForm.waveOut.Stop();
+                mainForm.semaphore.Release();
+                mainForm.PlayMusic();
             };
             item.Guna2Panel1.Click += clickHandle;
             item.Label13.Click += clickHandle;
