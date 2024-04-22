@@ -8,29 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40d49c60-5231-45aa-abf2-add1b03046ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MusicPlayer.csproj.DotSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/Trending/Promote.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/Trending/Promote.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/Trending/Promote.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/UC_Item.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/UC_Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC/UC_Item.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicPlayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer.csproj.dtbcache.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer.csproj.dtbcache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/1d0b3644-d239-47a0-9d93-569a1984b37d.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/3afd023d-1fe2-461d-a3a3-5c7c43207238.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/f305789e-01c9-4b45-ad15-a40ecf92f306.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/f5033d51-5851-4a13-a2c5-b7625d3054eb.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/fa0087e5-7f23-41b2-9420-2a2541efccd2.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0c9ae22d-3ed5-440c-8428-e9be655a288d.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/0d2456c2-cb2e-4008-81a3-61b19c7bffa1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/29941efb-6d8b-41b2-a2f2-5ddec8638cf2.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/3534ec63-41c4-41ad-9a33-097224f90e3c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/3a8bf7f6-5eff-4b10-9429-ec2f483d2b59.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/64c3ba22-1c18-41bf-86a1-b679651e1059.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/6c70c878-123b-401e-a5db-277eb905ebe0.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/80d673f0-b340-406f-972d-7641617ea770.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/8c26ded9-c9c1-463c-979e-a1d3750bbbe1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/FileContentIndex/e96986b1-b602-4a9f-814e-f2c920f995a3.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/MusicPlayer/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/ZingMp3Api.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/ZingMp3Api.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicPlayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MusicPlayer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UC/UC_Item.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Item.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UC/UC_Trending.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Trending.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UC/UC_Trending.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Trending.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UC/UC_Trending.resx" beforeDir="false" afterPath="$PROJECT_DIR$/UC/UC_Trending.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/MusicPlayerForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MusicPlayerForm.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/MusicPlayerForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MusicPlayerForm.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/5e/033d7e95/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1175e77e945b418ebce4dea98d1883fd5b6520/c5/f9f90068/DataGridViewBand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/68a0d19563fc4dc49c5dad092e4fde6ea000/7e/1bab93c9/WaveOut.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7114f06d16f1436ab84ff423f37f3652532c20/1c/20f5fb21/Thread.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/727b97ed55094424b4c6c72a3023f9481b200/34/97e6fd64/BunifuButton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7626cf0800fa4923b52350da686db67f19e00/73/474a3327/ReflectionHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84f5a18af2b1435cb86e09ce162e61e435f460/81/10a65a9a/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
@@ -135,6 +128,7 @@
       <workItem from="1713491027891" duration="13703000" />
       <workItem from="1713520498566" duration="3207000" />
       <workItem from="1713523792715" duration="3410000" />
+      <workItem from="1713773455187" duration="4802000" />
     </task>
     <servers />
   </component>

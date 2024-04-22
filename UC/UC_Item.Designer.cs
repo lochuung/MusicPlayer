@@ -58,9 +58,9 @@
             this.label13.Location = new System.Drawing.Point(42, 282);
             this.label13.MaximumSize = new System.Drawing.Size(260, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(260, 50);
+            this.label13.Size = new System.Drawing.Size(95, 25);
             this.label13.TabIndex = 7;
-            this.label13.Text = "ăerfawefasdrgesrfgegesrfewefweaf";
+            this.label13.Text = "Đang tải...";
             // 
             // label14
             // 
@@ -70,16 +70,16 @@
             this.label14.Location = new System.Drawing.Point(47, 335);
             this.label14.MaximumSize = new System.Drawing.Size(260, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(257, 40);
+            this.label14.Size = new System.Drawing.Size(80, 20);
             this.label14.TabIndex = 8;
-            this.label14.Text = "áefaweăefawefawefweafweawaefwaefeffweaf";
+            this.label14.Text = "Đang tải...";
             // 
             // guna2PictureBox6
             // 
             this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox6.BorderRadius = 20;
             this.guna2PictureBox6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.Image = global::MusicPlayer.Properties.Resources.a9df459bfd64368b8f5069c4685e2cc4;
+            this.guna2PictureBox6.Image = global::MusicPlayer.Properties.Resources.music_1001px;
             this.guna2PictureBox6.ImageRotate = 0F;
             this.guna2PictureBox6.Location = new System.Drawing.Point(24, 23);
             this.guna2PictureBox6.Name = "guna2PictureBox6";
