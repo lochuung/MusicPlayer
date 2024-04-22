@@ -246,7 +246,7 @@ namespace MusicPlayer
             {
                 _ucCurrentSong = new UC_CurrentSong(currentMusic);
             }
-            ChangeUserControl(_ucTrending);
+            ChangeUserControl(_ucCurrentSong);
             UncheckAllButton();
             songBtn.Checked = true;
         }
