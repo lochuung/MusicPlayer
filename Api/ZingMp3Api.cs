@@ -12,9 +12,14 @@ namespace MusicPlayer.MusicApi
 {
     public class ZingMp3Api
     {
-        public ZingMp3Api()
+        public ZingMp3Api() : this(null)
         {
-            WaitForm.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        public ZingMp3Api(MusicPlayerForm musicPlayerForm)
+        {
+            MusicPlayerForm = musicPlayerForm;
+            WaitForm = new WaitForm(musicPlayerForm);
             Url = "https://zingmp3.vn";
             Version = "1.6.34";
             SecretKey = "2aa2d1c561e809b267f3638c4a307aab";
@@ -45,7 +50,9 @@ namespace MusicPlayer.MusicApi
 
         public string Ctime { get; set; }
 
-        public WaitForm WaitForm { get; set; } = new WaitForm();
+        public WaitForm WaitForm { get; set; }
+        
+        public MusicPlayerForm MusicPlayerForm { get; set; }
 
         public async Task<string> GetSongInfo(string id)
         {
