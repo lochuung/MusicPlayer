@@ -54,11 +54,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label13.Location = new System.Drawing.Point(42, 282);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(40, 283);
             this.label13.MaximumSize = new System.Drawing.Size(260, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 25);
+            this.label13.Size = new System.Drawing.Size(102, 25);
             this.label13.TabIndex = 7;
             this.label13.Text = "Đang tải...";
             // 
@@ -66,8 +66,8 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(85)))), ((int)(((byte)(140)))));
-            this.label14.Location = new System.Drawing.Point(47, 335);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label14.Location = new System.Drawing.Point(40, 336);
             this.label14.MaximumSize = new System.Drawing.Size(260, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 20);
@@ -77,13 +77,13 @@
             // guna2PictureBox6
             // 
             this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.BorderRadius = 20;
+            this.guna2PictureBox6.BorderRadius = 30;
             this.guna2PictureBox6.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox6.Image = global::MusicPlayer.Properties.Resources.music_1001px;
             this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(24, 23);
+            this.guna2PictureBox6.Location = new System.Drawing.Point(40, 16);
             this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(276, 248);
+            this.guna2PictureBox6.Size = new System.Drawing.Size(248, 248);
             this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox6.TabIndex = 6;
             this.guna2PictureBox6.TabStop = false;

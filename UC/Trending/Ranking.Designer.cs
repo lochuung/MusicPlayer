@@ -39,12 +39,11 @@
             // 
             this.musicList.AutoScroll = true;
             this.musicList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.musicList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.musicList.Location = new System.Drawing.Point(0, 100);
             this.musicList.Name = "musicList";
+            this.musicList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.musicList.Size = new System.Drawing.Size(1193, 430);
             this.musicList.TabIndex = 10;
-            this.musicList.WrapContents = false;
             // 
             // guna2Panel1
             // 

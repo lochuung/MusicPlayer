@@ -518,6 +518,12 @@
     <Compile Include="UC\UC_Item.Designer.cs">
       <DependentUpon>UC_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_MusicItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_MusicItem.Designer.cs">
+      <DependentUpon>UC_MusicItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_Trending.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -609,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Item.resx">
       <DependentUpon>UC_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_MusicItem.resx">
+      <DependentUpon>UC_MusicItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Trending.resx">
       <DependentUpon>UC_Trending.cs</DependentUpon>

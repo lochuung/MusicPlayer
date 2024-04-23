@@ -169,9 +169,11 @@ namespace MusicPlayer
 
         private void ChangeUserControl(UserControl userControl)
         {
+            userControl.BringToFront();
+            if (containerPanel.Controls.Contains(userControl)) return;
             userControl.Dock = DockStyle.Fill;
-            containerPanel.Controls.Clear();
             userControl.Width = containerPanel.Width;
+            containerPanel.Controls.Add(userControl);
             // go to flow panel in user control and set width to container panel width
             
             foreach (Control control in userControl.Controls)
@@ -187,9 +189,6 @@ namespace MusicPlayer
                     break;
                 }
             }
-            
-            containerPanel.Controls.Add(userControl);
-            userControl.BringToFront();
         }
 
         private void UncheckAllButton()

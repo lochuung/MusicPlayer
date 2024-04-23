@@ -23,6 +23,7 @@ namespace MusicPlayer.UC
         {
             dynamic data = JsonConvert.DeserializeObject(JsonData);
             AddPromoteSongs(data.RTChart.promotes);
+            AddTrendingSongs(data.RTChart.items);
         }
         
         private void AddPromoteSongs(JArray promotes)
@@ -39,6 +40,23 @@ namespace MusicPlayer.UC
                     ThumbnailM = promote.thumbnailM
                 };
                 promoteUC.AddItem(music);
+            }
+        }
+
+        private void AddTrendingSongs(JArray trending)
+        {
+            foreach (dynamic promote in trending)
+            {
+                if (promote.streamingStatus != 1) continue;
+                var music = new Music
+                {
+                    Id = promote.encodeId,
+                    Title = promote.title,
+                    Artists = promote.artistsNames,
+                    Thumbnail = promote.thumbnail,
+                    ThumbnailM = promote.thumbnailM
+                };
+                ranking1.AddItem(music);
             }
         }
     }
