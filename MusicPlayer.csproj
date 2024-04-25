@@ -494,11 +494,17 @@
         <Compile Include="UC\CurrSong.Designer.cs">
             <DependentUpon>CurrSong.cs</DependentUpon>
         </Compile>
-        <Compile Include="UC\Trending\Promote.cs">
+        <Compile Include="UC\Trending\NormalSection.cs">
             <SubType>UserControl</SubType>
         </Compile>
-        <Compile Include="UC\Trending\Promote.Designer.cs">
-            <DependentUpon>Promote.cs</DependentUpon>
+        <Compile Include="UC\Trending\NormalSection.Designer.cs">
+            <DependentUpon>NormalSection.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\Trending\LargeSection.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\Trending\LargeSection.Designer.cs">
+            <DependentUpon>LargeSection.cs</DependentUpon>
         </Compile>
         <Compile Include="UC\Trending\Ranking.cs">
             <SubType>UserControl</SubType>
@@ -610,8 +616,11 @@
         <EmbeddedResource Include="UC\CurrSong.resx">
             <DependentUpon>CurrSong.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="UC\Trending\Promote.resx">
-            <DependentUpon>Promote.cs</DependentUpon>
+        <EmbeddedResource Include="UC\Trending\NormalSection.resx">
+            <DependentUpon>NormalSection.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\Trending\LargeSection.resx">
+            <DependentUpon>LargeSection.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="UC\Trending\Ranking.resx">
             <DependentUpon>Ranking.cs</DependentUpon>

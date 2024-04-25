@@ -1,36 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using MusicPlayer.Model;
+using NAudio.Wave;
 
 namespace MusicPlayer.UC.Trending
 {
-    public partial class Promote : UserControl
+    public partial class LargeSection : UserControl
     {
         public List<Music> PromoteMusics = new List<Music>();
 
-        public Promote()
+        public LargeSection()
         {
             InitializeComponent();
         }
 
+        public Label Title { get; set; }
+
+        public FlowLayoutPanel MusicList { get; set; }
+
         public void AddItem(Music music)
         {
             var mainForm = (MusicPlayerForm)FindForm();
-            
+
             var item = new UC_Item();
             item.SetImage(music.ThumbnailM);
             item.SetTitle(music.Title);
             item.SetArtist(music.Artists);
-            
+
             PromoteMusics.Add(music);
-            
+
             EventHandler clickHandle = (sender, e) =>
             {
                 mainForm.musicList = PromoteMusics;
-                int songIndex = PromoteMusics.Count - 1;
+                var songIndex = PromoteMusics.Count - 1;
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();
@@ -39,14 +43,11 @@ namespace MusicPlayer.UC.Trending
                     mainForm.Semaphore.Release();
 
                     mainForm.Semaphore.WaitOne();
-                    if (mainForm.waveOut.PlaybackState != NAudio.Wave.PlaybackState.Stopped)
+                    if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped)
                         mainForm.waveOut.Stop();
                     mainForm.Semaphore.Release();
                     // using main thread to play music
-                    mainForm.Invoke(new Action(() =>
-                    {
-                        mainForm.PlayMusic();
-                    }));
+                    mainForm.Invoke(new Action(() => { mainForm.PlayMusic(); }));
                 });
                 thread.Start();
             };
@@ -55,7 +56,7 @@ namespace MusicPlayer.UC.Trending
             item.Label14.Click += clickHandle;
             item.Guna2PictureBox6.Click += clickHandle;
 
-            musicList.Controls.Add(item);
+            MusicList.Controls.Add(item);
         }
     }
 }
