@@ -158,10 +158,7 @@ namespace MusicPlayer
                     currentMusic = musicList[currentSongIndex];
                     // load data and streaming at main thread
                     waveOut.Stop();
-                    Invoke(new MethodInvoker(delegate
-                    {
-                        PlayMusic();
-                    }));
+                    Invoke(new MethodInvoker(delegate { PlayMusic(); }));
                 }
             });
             streamingThread.Start();

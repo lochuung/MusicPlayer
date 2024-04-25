@@ -16,11 +16,7 @@ namespace MusicPlayer.UC.Trending
             InitializeComponent();
         }
 
-        public Label Country
-        {
-            get => country;
-            set => country = value;
-        }
+        public Label Country { get; set; }
 
         public void AddItem(Music music)
         {
@@ -50,10 +46,7 @@ namespace MusicPlayer.UC.Trending
                         mainForm.waveOut.Stop();
                     mainForm.Semaphore.Release();
                     // using main thread to play music
-                    mainForm.Invoke(new Action(() =>
-                    {
-                        mainForm.PlayMusic();
-                    }));
+                    mainForm.Invoke(new Action(() => { mainForm.PlayMusic(); }));
                 });
                 thread.Start();
             };

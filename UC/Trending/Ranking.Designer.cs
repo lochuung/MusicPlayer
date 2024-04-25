@@ -32,7 +32,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.country = new System.Windows.Forms.Label();
+            this.Country = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.country);
+            this.guna2Panel1.Controls.Add(this.Country);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -81,13 +81,13 @@
             // 
             // country
             // 
-            this.country.AutoSize = true;
-            this.country.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.country.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.country.Location = new System.Drawing.Point(669, 38);
-            this.country.Name = "country";
-            this.country.Size = new System.Drawing.Size(0, 25);
-            this.country.TabIndex = 7;
+            this.Country.AutoSize = true;
+            this.Country.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Country.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Country.Location = new System.Drawing.Point(669, 38);
+            this.Country.Name = "Country";
+            this.Country.Size = new System.Drawing.Size(0, 25);
+            this.Country.TabIndex = 7;
             // 
             // Ranking
             // 
@@ -109,6 +109,5 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label country;
     }
 }

@@ -9,7 +9,7 @@ namespace MusicPlayer.UC.Trending
 {
     public partial class LargeSection : UserControl
     {
-        public List<Music> PromoteMusics = new List<Music>();
+        public List<Music> musics = new List<Music>();
 
         public LargeSection()
         {
@@ -29,12 +29,13 @@ namespace MusicPlayer.UC.Trending
             item.SetTitle(music.Title);
             item.SetArtist(music.Artists);
 
-            PromoteMusics.Add(music);
+            musics.Add(music);
+
+            var songIndex = musics.Count - 1;
 
             EventHandler clickHandle = (sender, e) =>
             {
-                mainForm.musicList = PromoteMusics;
-                var songIndex = PromoteMusics.Count - 1;
+                mainForm.musicList = musics;
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();

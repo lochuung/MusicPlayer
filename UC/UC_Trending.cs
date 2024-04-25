@@ -69,7 +69,7 @@ namespace MusicPlayer.UC
                 };
                 topVN.AddItem(music);
             }
-            
+
             SetNonScrollable(topVN);
         }
 
@@ -91,7 +91,7 @@ namespace MusicPlayer.UC
                 };
                 topKR.AddItem(music);
             }
-            
+
             SetNonScrollable(topKR);
         }
 
@@ -113,7 +113,7 @@ namespace MusicPlayer.UC
                 };
                 top100.AddItem(music);
             }
-            
+
             SetNonScrollable(top100);
         }
 
@@ -135,6 +135,7 @@ namespace MusicPlayer.UC
                 };
                 newRelease1.AddItem(music);
             }
+
             SetNonScrollable(newRelease1);
         }
 
@@ -147,7 +148,7 @@ namespace MusicPlayer.UC
             // set height of flow layout panel
             var itemHeight = new UC_MusicItem().Height;
             var height =
-                (int)Math.Floor((double)normalSection.NewReleaseMusics.Count * itemHeight / 3.0) + itemHeight;
+                (int)Math.Floor((double)normalSection.musics.Count * itemHeight / 3.0) + itemHeight;
             normalSection.Height = height + normalSection.Guna2Panel1.Height;
             normalSection.MusicList.Height = height;
         }
