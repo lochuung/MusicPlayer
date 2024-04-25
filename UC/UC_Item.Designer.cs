@@ -28,87 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
+            this.Guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Label13 = new System.Windows.Forms.Label();
+            this.Label14 = new System.Windows.Forms.Label();
+            this.Guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Guna2PictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(250)))));
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.label13);
-            this.guna2Panel1.Controls.Add(this.label14);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 10;
-            this.guna2Panel1.Size = new System.Drawing.Size(329, 399);
-            this.guna2Panel1.TabIndex = 0;
+            this.Guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(250)))));
+            this.Guna2Panel1.BorderRadius = 10;
+            this.Guna2Panel1.Controls.Add(this.Label13);
+            this.Guna2Panel1.Controls.Add(this.Label14);
+            this.Guna2Panel1.Controls.Add(this.Guna2PictureBox6);
+            this.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Guna2Panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.Guna2Panel1.Name = "Guna2Panel1";
+            this.Guna2Panel1.ShadowDecoration.BorderRadius = 10;
+            this.Guna2Panel1.Size = new System.Drawing.Size(329, 399);
+            this.Guna2Panel1.TabIndex = 0;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(40, 283);
-            this.label13.MaximumSize = new System.Drawing.Size(260, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 25);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Đang tải...";
+            this.Label13.AutoSize = true;
+            this.Label13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.Label13.Location = new System.Drawing.Point(40, 283);
+            this.Label13.MaximumSize = new System.Drawing.Size(260, 0);
+            this.Label13.Name = "Label13";
+            this.Label13.Size = new System.Drawing.Size(102, 25);
+            this.Label13.TabIndex = 7;
+            this.Label13.Text = "Đang tải...";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label14.Location = new System.Drawing.Point(40, 336);
-            this.label14.MaximumSize = new System.Drawing.Size(260, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 20);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Đang tải...";
+            this.Label14.AutoSize = true;
+            this.Label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label14.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.Label14.Location = new System.Drawing.Point(40, 336);
+            this.Label14.MaximumSize = new System.Drawing.Size(260, 0);
+            this.Label14.Name = "Label14";
+            this.Label14.Size = new System.Drawing.Size(80, 20);
+            this.Label14.TabIndex = 8;
+            this.Label14.Text = "Đang tải...";
             // 
             // guna2PictureBox6
             // 
-            this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.BorderRadius = 30;
-            this.guna2PictureBox6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.Image = global::MusicPlayer.Properties.Resources.music_1001px;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(40, 16);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(248, 248);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 6;
-            this.guna2PictureBox6.TabStop = false;
-            this.guna2PictureBox6.Tag = "pause";
-            this.guna2PictureBox6.UseTransparentBackground = true;
+            this.Guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.Guna2PictureBox6.BorderRadius = 30;
+            this.Guna2PictureBox6.FillColor = System.Drawing.Color.Transparent;
+            this.Guna2PictureBox6.Image = global::MusicPlayer.Properties.Resources.music_1001px;
+            this.Guna2PictureBox6.ImageRotate = 0F;
+            this.Guna2PictureBox6.Location = new System.Drawing.Point(40, 16);
+            this.Guna2PictureBox6.Name = "Guna2PictureBox6";
+            this.Guna2PictureBox6.Size = new System.Drawing.Size(248, 248);
+            this.Guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Guna2PictureBox6.TabIndex = 6;
+            this.Guna2PictureBox6.TabStop = false;
+            this.Guna2PictureBox6.Tag = "pause";
+            this.Guna2PictureBox6.UseTransparentBackground = true;
             // 
             // UC_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.Guna2Panel1);
             this.Name = "UC_Item";
             this.Size = new System.Drawing.Size(329, 399);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
+            this.Guna2Panel1.ResumeLayout(false);
+            this.Guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Guna2PictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
     }
 }

@@ -1,807 +1,807 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>MusicPlayer</RootNamespace>
-    <AssemblyName>MusicPlayer</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientDependency.Core, Version=1.9.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ClientDependency.1.9.10\lib\net45\ClientDependency.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
-      <HintPath>packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Examine, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Examine.1.2.2\lib\net452\Examine.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="ImageProcessor, Version=2.9.1.225, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ImageProcessor.2.9.1\lib\net452\ImageProcessor.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LightInject.5.4.0\lib\net46\LightInject.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject.WebApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LightInject.WebApi.2.0.0\lib\net46\LightInject.WebApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
-      <HintPath>packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
-    </Reference>
-    <Reference Include="MessagePack, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
-      <HintPath>packages\MessagePack.2.2.85\lib\netstandard2.0\MessagePack.dll</HintPath>
-    </Reference>
-    <Reference Include="MessagePack.Annotations, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
-      <HintPath>packages\MessagePack.Annotations.2.2.85\lib\netstandard2.0\MessagePack.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.0-preview.2.24128.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
-    </Reference>
-    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
-      <HintPath>packages\MiniProfiler.4.0.138\lib\net461\MiniProfiler.dll</HintPath>
-    </Reference>
-    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
-      <HintPath>packages\MiniProfiler.Shared.4.0.138\lib\net461\MiniProfiler.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
-      <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
-    </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Enrichers.Process, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Enrichers.Process.2.0.2\lib\net45\Serilog.Enrichers.Process.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Enrichers.Thread.3.1.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Filters.Expressions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Filters.Expressions.2.1.0\lib\net45\Serilog.Filters.Expressions.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Formatting.Compact, Version=1.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Formatting.Compact.1.1.0\lib\net452\Serilog.Formatting.Compact.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Formatting.Compact.Reader, Version=1.0.5.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Formatting.Compact.Reader.1.0.5\lib\net45\Serilog.Formatting.Compact.Reader.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Settings.AppSettings.2.2.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Async, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.Async.1.5.0\lib\net461\Serilog.Sinks.Async.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.File.4.1.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Map, Version=1.0.2.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.Map.1.0.2\lib\netstandard2.0\Serilog.Sinks.Map.dll</HintPath>
-    </Reference>
-    <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
-      <HintPath>packages\Superpower.2.3.0\lib\net45\Superpower.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Design" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO" />
-    <Reference Include="System.Linq.Expressions" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encoding.CodePages.4.7.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks" />
-    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Tabulate.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Tabulate.NET.1.0.5\lib\Tabulate.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Tabulate.Umbraco.ValueConverters, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Tabulate.Umbraco.ValueConverters.4.1.0\lib\net472\Tabulate.Umbraco.ValueConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\UmbracoCms.Core.8.18.4\lib\net472\Umbraco.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Examine.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Web.UI.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Admin\Uc_AddUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_AddUser.Designer.cs">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.Designer.cs">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.Designer.cs">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bin.cs" />
-    <Compile Include="Database\DBConnection.cs" />
-    <Compile Include="Function.cs" />
-    <Compile Include="Api\ZingMp3Api.cs" />
-    <Compile Include="ModelView\MusicPlayerModelView.cs" />
-    <Compile Include="Model\Album.cs" />
-    <Compile Include="Model\Music.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="UC\CurrSong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\CurrSong.Designer.cs">
-      <DependentUpon>CurrSong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\Trending\Promote.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\Trending\Promote.Designer.cs">
-      <DependentUpon>Promote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\Trending\Ranking.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\Trending\Ranking.Designer.cs">
-      <DependentUpon>Ranking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_CurrentSong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_CurrentSong.Designer.cs">
-      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_Home.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_Home.Designer.cs">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_Item.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_Item.Designer.cs">
-      <DependentUpon>UC_Item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_MusicItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_MusicItem.Designer.cs">
-      <DependentUpon>UC_MusicItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_Trending.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_Trending.Designer.cs">
-      <DependentUpon>UC_Trending.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utils\HashingUtils.cs" />
-    <Compile Include="Utils\RequestUtils.cs" />
-    <Compile Include="Utils\ZingMp3ApiUtils.cs" />
-    <Compile Include="View\FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormRegister.Designer.cs">
-      <DependentUpon>FormRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormUsers.Designer.cs">
-      <DependentUpon>FormUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\LoadFormUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\LoadFormUsers.Designer.cs">
-      <DependentUpon>LoadFormUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MusicPlayerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MusicPlayerForm.Designer.cs">
-      <DependentUpon>MusicPlayerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\WaitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\WaitForm.Designer.cs">
-      <DependentUpon>WaitForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Admin\Uc_AddUser.resx">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_Profile.resx">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_ViewUser.resx">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="UC\CurrSong.resx">
-      <DependentUpon>CurrSong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\Trending\Promote.resx">
-      <DependentUpon>Promote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\Trending\Ranking.resx">
-      <DependentUpon>Ranking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_CurrentSong.resx">
-      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Home.resx">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Item.resx">
-      <DependentUpon>UC_Item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_MusicItem.resx">
-      <DependentUpon>UC_MusicItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Trending.resx">
-      <DependentUpon>UC_Trending.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormRegister.resx">
-      <DependentUpon>FormRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormUsers.resx">
-      <DependentUpon>FormUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\LoadFormUsers.resx">
-      <DependentUpon>LoadFormUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MusicPlayerForm.resx">
-      <DependentUpon>MusicPlayerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\WaitForm.resx">
-      <DependentUpon>WaitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="App_Plugins\Tabulate\Backoffice\tabulate.js.map" />
-    <None Include="App_Plugins\Tabulate\package.manifest" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Plugins\Tabulate\Backoffice\overlays\dialog.html" />
-    <Content Include="App_Plugins\Tabulate\Backoffice\overlays\mapDialog.html" />
-    <Content Include="App_Plugins\Tabulate\Backoffice\overlays\settings.html" />
-    <Content Include="App_Plugins\Tabulate\Backoffice\styles.css" />
-    <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
-    <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
-    <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
-    <None Include="Resources\home-7-128 %281%29.png" />
-    <None Include="Resources\home-7-128.png" />
-    <None Include="Resources\positive-dynamic-128 %281%29.png" />
-    <None Include="Resources\positive-dynamic-128.png" />
-    <None Include="Resources\positive-dynamic-24.png" />
-    <None Include="Resources\positive-dynamic-24 %281%29.png" />
-    <None Include="FMMusic.png" />
-    <Content Include="Images\126.gif" />
-    <Content Include="Images\next.png" />
-    <Content Include="Images\play-button.png" />
-    <Content Include="Images\play.png" />
-    <Content Include="Images\pause.png" />
-    <Content Include="Images\previous.png" />
-    <Content Include="Images\volume-mute.png" />
-    <Content Include="Images\volume-up-interface-symbol.png" />
-    <Content Include="libs\Bunifu\Bunifu.Licensing.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
-    <None Include="Resources\dashboard_layout_100px.png1.png" />
-    <None Include="Resources\Cardi_B_-_Up.png" />
-    <None Include="Resources\briefcase_300px.png" />
-    <None Include="Resources\audio_100px.png1.png" />
-    <None Include="Resources\audio_100px.png" />
-    <None Include="Resources\artworks-UeR6NTfa9JPHA0c3-7uaXOA-t500x500.png" />
-    <None Include="Resources\albums_100px.png1.png" />
-    <None Include="Resources\albums_100px.png" />
-    <None Include="Resources\add_100px.png1.png" />
-    <None Include="Resources\add_100px.png" />
-    <None Include="Resources\a9df459bfd64368b8f5069c4685e2cc4.png" />
-    <None Include="Resources\220px-Ed_Sheeran_Perfect_Single_cover.png" />
-    <None Include="Resources\91YkqYA1BWL._AC_SX522_.png" />
-    <None Include="Resources\24kGoldn_-_Mood.png" />
-    <None Include="Resources\time_machine_100px.png1.png" />
-    <None Include="Resources\time_machine_100px.png" />
-    <None Include="Resources\The_Weeknd_-_Blinding_Lights.png" />
-    <None Include="Resources\Taylor-Swift-Lover-album-art-2019-billboard-1240-compressed.png" />
-    <None Include="Resources\skip_to_start_100px.png1.png" />
-    <None Include="Resources\skip_to_start_100px.png" />
-    <None Include="Resources\shuffle_100px.png1.png" />
-    <None Include="Resources\shuffle_100px.png" />
-    <None Include="Resources\settings_100px.png1.png" />
-    <None Include="Resources\settings_100px.png" />
-    <None Include="Resources\search_100px.png1.png" />
-    <None Include="Resources\search_100px.png" />
-    <None Include="Resources\repeat_100px.png1.png" />
-    <None Include="Resources\repeat_100px.png" />
-    <None Include="Resources\radio_100px.png1.png" />
-    <None Include="Resources\radio_100px.png" />
-    <None Include="Resources\Popularsongmika.png" />
-    <None Include="Resources\pop.png" />
-    <None Include="Resources\play_100px.png1.png" />
-    <None Include="Resources\play_100px.png" />
-    <None Include="Resources\pause_100px.png1.png" />
-    <None Include="Resources\pause_100px.png" />
-    <None Include="Resources\opened_folder_100px.png1.png" />
-    <None Include="Resources\opened_folder_100px.png" />
-    <None Include="Resources\notification_100px.png1.png" />
-    <None Include="Resources\notification_100px.png" />
-    <None Include="Resources\nirvana-nevermind-1474471263.png" />
-    <None Include="Resources\mute_100px.png11.png" />
-    <None Include="Resources\mute_100px.png" />
-    <None Include="Resources\music_1001px.png" />
-    <None Include="Resources\music_100px.png11.png" />
-    <None Include="Resources\music_100px.png1.png" />
-    <None Include="Resources\music_100px.png" />
-    <None Include="Resources\migos-culture-2-album-art-2018-billboard-1240-compressed.png" />
-    <None Include="Resources\microphone_100px.png1.png" />
-    <None Include="Resources\microphone_100px.png" />
-    <None Include="Resources\love_100px.png11.png" />
-    <None Include="Resources\love_100px.png1.png" />
-    <None Include="Resources\love_100px.png" />
-    <None Include="Resources\love_100px.p11g.png" />
-    <None Include="Resources\Logo.png" />
-    <None Include="Resources\Group 18.png" />
-    <None Include="Resources\envelope_100px.png1.png" />
-    <None Include="Resources\envelope_100px.png" />
-    <None Include="Resources\end_100px.png1.png" />
-    <None Include="Resources\end_100px.png" />
-    <None Include="Resources\email_open_100px.png1.png" />
-    <None Include="Resources\email_open_100px.png" />
-    <None Include="Resources\Drivers_License_by_Olivia_Rodrigo.png" />
-    <None Include="Resources\downloading_updates_100px.png1.png" />
-    <None Include="Resources\downloading_updates_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{D387701E-9861-46B5-BAFC-5B5C33C1E6FB}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>MusicPlayer</RootNamespace>
+        <AssemblyName>MusicPlayer</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+        <NuGetPackageImportStamp>
+        </NuGetPackageImportStamp>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
-  </Target>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.Licensing.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuTextbox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+        </Reference>
+        <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+        </Reference>
+        <Reference Include="ClientDependency.Core, Version=1.9.10.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\ClientDependency.1.9.10\lib\net45\ClientDependency.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
+            <HintPath>packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
+        </Reference>
+        <Reference Include="Examine, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\Examine.1.2.2\lib\net452\Examine.dll</HintPath>
+        </Reference>
+        <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+            <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+        </Reference>
+        <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+            <HintPath>packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
+        </Reference>
+        <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+            <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+        </Reference>
+        <Reference Include="ImageProcessor, Version=2.9.1.225, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\ImageProcessor.2.9.1\lib\net452\ImageProcessor.dll</HintPath>
+        </Reference>
+        <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+            <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+        </Reference>
+        <Reference Include="LightInject, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\LightInject.5.4.0\lib\net46\LightInject.dll</HintPath>
+        </Reference>
+        <Reference Include="LightInject.Annotation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\LightInject.Annotation.1.1.0\lib\net46\LightInject.Annotation.dll</HintPath>
+        </Reference>
+        <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="LightInject.WebApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\LightInject.WebApi.2.0.0\lib\net46\LightInject.WebApi.dll</HintPath>
+        </Reference>
+        <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+            <HintPath>packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+        </Reference>
+        <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
+            <HintPath>packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
+        </Reference>
+        <Reference Include="MessagePack, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+            <HintPath>packages\MessagePack.2.2.85\lib\netstandard2.0\MessagePack.dll</HintPath>
+        </Reference>
+        <Reference Include="MessagePack.Annotations, Version=2.2.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+            <HintPath>packages\MessagePack.Annotations.2.2.85\lib\netstandard2.0\MessagePack.Annotations.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.0-preview.2.24128.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+        </Reference>
+        <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+            <HintPath>packages\MiniProfiler.4.0.138\lib\net461\MiniProfiler.dll</HintPath>
+        </Reference>
+        <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+            <HintPath>packages\MiniProfiler.Shared.4.0.138\lib\net461\MiniProfiler.Shared.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib"/>
+        <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+        </Reference>
+        <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+            <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+            <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
+        </Reference>
+        <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+            <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+        </Reference>
+        <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+            <HintPath>packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Enrichers.Process, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Enrichers.Process.2.0.2\lib\net45\Serilog.Enrichers.Process.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Enrichers.Thread.3.1.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Filters.Expressions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Filters.Expressions.2.1.0\lib\net45\Serilog.Filters.Expressions.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Formatting.Compact, Version=1.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Formatting.Compact.1.1.0\lib\net452\Serilog.Formatting.Compact.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Formatting.Compact.Reader, Version=1.0.5.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Formatting.Compact.Reader.1.0.5\lib\net45\Serilog.Formatting.Compact.Reader.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Settings.AppSettings.2.2.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Sinks.Async, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Sinks.Async.1.5.0\lib\net461\Serilog.Sinks.Async.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Sinks.File.4.1.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+        </Reference>
+        <Reference Include="Serilog.Sinks.Map, Version=1.0.2.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+            <HintPath>packages\Serilog.Sinks.Map.1.0.2\lib\netstandard2.0\Serilog.Sinks.Map.dll</HintPath>
+        </Reference>
+        <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
+            <HintPath>packages\Superpower.2.3.0\lib\net45\Superpower.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.DataAnnotations"/>
+        <Reference Include="System.Configuration"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data.Linq"/>
+        <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+            <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+            <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.Entity.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Design"/>
+        <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO"/>
+        <Reference Include="System.Linq.Expressions"/>
+        <Reference Include="System.Management"/>
+        <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics"/>
+        <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime"/>
+        <Reference Include="System.Runtime.Caching"/>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization"/>
+        <Reference Include="System.Security"/>
+        <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Text.Encoding.CodePages.4.7.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks"/>
+        <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Transactions"/>
+        <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+            <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web"/>
+        <Reference Include="System.Web.Extensions"/>
+        <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+            <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Windows.Forms.DataVisualization"/>
+        <Reference Include="System.Xml.Linq"/>
+        <Reference Include="System.Data.DataSetExtensions"/>
+        <Reference Include="Microsoft.CSharp"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Deployment"/>
+        <Reference Include="System.Drawing"/>
+        <Reference Include="System.Net.Http"/>
+        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="Tabulate.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\Tabulate.NET.1.0.5\lib\Tabulate.NET.dll</HintPath>
+        </Reference>
+        <Reference Include="Tabulate.Umbraco.ValueConverters, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\Tabulate.Umbraco.ValueConverters.4.1.0\lib\net472\Tabulate.Umbraco.ValueConverters.dll</HintPath>
+        </Reference>
+        <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\UmbracoCms.Core.8.18.4\lib\net472\Umbraco.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Examine.dll</HintPath>
+        </Reference>
+        <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+        </Reference>
+        <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>packages\UmbracoCms.Web.8.18.4\lib\net472\Umbraco.Web.UI.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Admin\Uc_AddUser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="Admin\Uc_AddUser.Designer.cs">
+            <DependentUpon>Uc_AddUser.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Admin\Uc_Profile.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="Admin\Uc_Profile.Designer.cs">
+            <DependentUpon>Uc_Profile.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Admin\Uc_ViewUser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="Admin\Uc_ViewUser.Designer.cs">
+            <DependentUpon>Uc_ViewUser.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Bin.cs"/>
+        <Compile Include="Database\DBConnection.cs"/>
+        <Compile Include="Function.cs"/>
+        <Compile Include="Api\ZingMp3Api.cs"/>
+        <Compile Include="ModelView\MusicPlayerModelView.cs"/>
+        <Compile Include="Model\Album.cs"/>
+        <Compile Include="Model\Music.cs"/>
+        <Compile Include="Program.cs"/>
+        <Compile Include="UC\CurrSong.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\CurrSong.Designer.cs">
+            <DependentUpon>CurrSong.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\Trending\Promote.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\Trending\Promote.Designer.cs">
+            <DependentUpon>Promote.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\Trending\Ranking.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\Trending\Ranking.Designer.cs">
+            <DependentUpon>Ranking.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\UC_CurrentSong.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\UC_CurrentSong.Designer.cs">
+            <DependentUpon>UC_CurrentSong.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\UC_Home.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\UC_Home.Designer.cs">
+            <DependentUpon>UC_Home.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\UC_Item.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\UC_Item.Designer.cs">
+            <DependentUpon>UC_Item.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\UC_MusicItem.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\UC_MusicItem.Designer.cs">
+            <DependentUpon>UC_MusicItem.cs</DependentUpon>
+        </Compile>
+        <Compile Include="UC\UC_Trending.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="UC\UC_Trending.Designer.cs">
+            <DependentUpon>UC_Trending.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Utils\HashingUtils.cs"/>
+        <Compile Include="Utils\RequestUtils.cs"/>
+        <Compile Include="Utils\ZingMp3ApiUtils.cs"/>
+        <Compile Include="View\FormAdmin.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\FormAdmin.Designer.cs">
+            <DependentUpon>FormAdmin.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\FormLogin.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\FormLogin.Designer.cs">
+            <DependentUpon>FormLogin.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\FormRegister.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\FormRegister.Designer.cs">
+            <DependentUpon>FormRegister.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\FormUsers.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\FormUsers.Designer.cs">
+            <DependentUpon>FormUsers.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\LoadFormUsers.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\LoadFormUsers.Designer.cs">
+            <DependentUpon>LoadFormUsers.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\MainForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\MainForm.Designer.cs">
+            <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\MusicPlayerForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\MusicPlayerForm.Designer.cs">
+            <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\WaitForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\WaitForm.Designer.cs">
+            <DependentUpon>WaitForm.cs</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Admin\Uc_AddUser.resx">
+            <DependentUpon>Uc_AddUser.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Admin\Uc_Profile.resx">
+            <DependentUpon>Uc_Profile.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Admin\Uc_ViewUser.resx">
+            <DependentUpon>Uc_ViewUser.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\licenses.licx"/>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+            <DesignTime>True</DesignTime>
+        </Compile>
+        <EmbeddedResource Include="UC\CurrSong.resx">
+            <DependentUpon>CurrSong.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\Trending\Promote.resx">
+            <DependentUpon>Promote.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\Trending\Ranking.resx">
+            <DependentUpon>Ranking.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\UC_CurrentSong.resx">
+            <DependentUpon>UC_CurrentSong.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\UC_Home.resx">
+            <DependentUpon>UC_Home.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\UC_Item.resx">
+            <DependentUpon>UC_Item.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\UC_MusicItem.resx">
+            <DependentUpon>UC_MusicItem.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="UC\UC_Trending.resx">
+            <DependentUpon>UC_Trending.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\FormAdmin.resx">
+            <DependentUpon>FormAdmin.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\FormLogin.resx">
+            <DependentUpon>FormLogin.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\FormRegister.resx">
+            <DependentUpon>FormRegister.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\FormUsers.resx">
+            <DependentUpon>FormUsers.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\LoadFormUsers.resx">
+            <DependentUpon>LoadFormUsers.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\MainForm.resx">
+            <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\MusicPlayerForm.resx">
+            <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\WaitForm.resx">
+            <DependentUpon>WaitForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <None Include="App_Plugins\Tabulate\Backoffice\tabulate.js.map"/>
+        <None Include="App_Plugins\Tabulate\package.manifest"/>
+        <None Include="packages.config"/>
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="App_Plugins\Tabulate\Backoffice\overlays\dialog.html"/>
+        <Content Include="App_Plugins\Tabulate\Backoffice\overlays\mapDialog.html"/>
+        <Content Include="App_Plugins\Tabulate\Backoffice\overlays\settings.html"/>
+        <Content Include="App_Plugins\Tabulate\Backoffice\styles.css"/>
+        <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js"/>
+        <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html"/>
+        <Content Include="App_Plugins\Tabulate\Lang\en-US.xml"/>
+        <None Include="Resources\home-7-128 %281%29.png"/>
+        <None Include="Resources\home-7-128.png"/>
+        <None Include="Resources\positive-dynamic-128 %281%29.png"/>
+        <None Include="Resources\positive-dynamic-128.png"/>
+        <None Include="Resources\positive-dynamic-24.png"/>
+        <None Include="Resources\positive-dynamic-24 %281%29.png"/>
+        <None Include="FMMusic.png"/>
+        <Content Include="Images\126.gif"/>
+        <Content Include="Images\next.png"/>
+        <Content Include="Images\play-button.png"/>
+        <Content Include="Images\play.png"/>
+        <Content Include="Images\pause.png"/>
+        <Content Include="Images\previous.png"/>
+        <Content Include="Images\volume-mute.png"/>
+        <Content Include="Images\volume-up-interface-symbol.png"/>
+        <Content Include="libs\Bunifu\Bunifu.Licensing.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll"/>
+        <Content Include="libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll"/>
+        <None Include="Resources\dashboard_layout_100px.png1.png"/>
+        <None Include="Resources\Cardi_B_-_Up.png"/>
+        <None Include="Resources\briefcase_300px.png"/>
+        <None Include="Resources\audio_100px.png1.png"/>
+        <None Include="Resources\audio_100px.png"/>
+        <None Include="Resources\artworks-UeR6NTfa9JPHA0c3-7uaXOA-t500x500.png"/>
+        <None Include="Resources\albums_100px.png1.png"/>
+        <None Include="Resources\albums_100px.png"/>
+        <None Include="Resources\add_100px.png1.png"/>
+        <None Include="Resources\add_100px.png"/>
+        <None Include="Resources\a9df459bfd64368b8f5069c4685e2cc4.png"/>
+        <None Include="Resources\220px-Ed_Sheeran_Perfect_Single_cover.png"/>
+        <None Include="Resources\91YkqYA1BWL._AC_SX522_.png"/>
+        <None Include="Resources\24kGoldn_-_Mood.png"/>
+        <None Include="Resources\time_machine_100px.png1.png"/>
+        <None Include="Resources\time_machine_100px.png"/>
+        <None Include="Resources\The_Weeknd_-_Blinding_Lights.png"/>
+        <None Include="Resources\Taylor-Swift-Lover-album-art-2019-billboard-1240-compressed.png"/>
+        <None Include="Resources\skip_to_start_100px.png1.png"/>
+        <None Include="Resources\skip_to_start_100px.png"/>
+        <None Include="Resources\shuffle_100px.png1.png"/>
+        <None Include="Resources\shuffle_100px.png"/>
+        <None Include="Resources\settings_100px.png1.png"/>
+        <None Include="Resources\settings_100px.png"/>
+        <None Include="Resources\search_100px.png1.png"/>
+        <None Include="Resources\search_100px.png"/>
+        <None Include="Resources\repeat_100px.png1.png"/>
+        <None Include="Resources\repeat_100px.png"/>
+        <None Include="Resources\radio_100px.png1.png"/>
+        <None Include="Resources\radio_100px.png"/>
+        <None Include="Resources\Popularsongmika.png"/>
+        <None Include="Resources\pop.png"/>
+        <None Include="Resources\play_100px.png1.png"/>
+        <None Include="Resources\play_100px.png"/>
+        <None Include="Resources\pause_100px.png1.png"/>
+        <None Include="Resources\pause_100px.png"/>
+        <None Include="Resources\opened_folder_100px.png1.png"/>
+        <None Include="Resources\opened_folder_100px.png"/>
+        <None Include="Resources\notification_100px.png1.png"/>
+        <None Include="Resources\notification_100px.png"/>
+        <None Include="Resources\nirvana-nevermind-1474471263.png"/>
+        <None Include="Resources\mute_100px.png11.png"/>
+        <None Include="Resources\mute_100px.png"/>
+        <None Include="Resources\music_1001px.png"/>
+        <None Include="Resources\music_100px.png11.png"/>
+        <None Include="Resources\music_100px.png1.png"/>
+        <None Include="Resources\music_100px.png"/>
+        <None Include="Resources\migos-culture-2-album-art-2018-billboard-1240-compressed.png"/>
+        <None Include="Resources\microphone_100px.png1.png"/>
+        <None Include="Resources\microphone_100px.png"/>
+        <None Include="Resources\love_100px.png11.png"/>
+        <None Include="Resources\love_100px.png1.png"/>
+        <None Include="Resources\love_100px.png"/>
+        <None Include="Resources\love_100px.p11g.png"/>
+        <None Include="Resources\Logo.png"/>
+        <None Include="Resources\Group 18.png"/>
+        <None Include="Resources\envelope_100px.png1.png"/>
+        <None Include="Resources\envelope_100px.png"/>
+        <None Include="Resources\end_100px.png1.png"/>
+        <None Include="Resources\end_100px.png"/>
+        <None Include="Resources\email_open_100px.png1.png"/>
+        <None Include="Resources\email_open_100px.png"/>
+        <None Include="Resources\Drivers_License_by_Olivia_Rodrigo.png"/>
+        <None Include="Resources\downloading_updates_100px.png1.png"/>
+        <None Include="Resources\downloading_updates_100px.png"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Controller\"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <Import Project="packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')"/>
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+        <PropertyGroup>
+            <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+        </PropertyGroup>
+        <Error Condition="!Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))"/>
+    </Target>
 </Project>

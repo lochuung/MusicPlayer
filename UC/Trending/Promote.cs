@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicPlayer.Model;
-using NAudio.Wave;
 
 namespace MusicPlayer.UC.Trending
 {
     public partial class Promote : UserControl
     {
         public List<Music> PromoteMusics = new List<Music>();
+
         public Promote()
         {
             InitializeComponent();
@@ -23,32 +18,44 @@ namespace MusicPlayer.UC.Trending
 
         public void AddItem(Music music)
         {
+            var mainForm = (MusicPlayerForm)FindForm();
+            
             var item = new UC_Item();
             item.SetImage(music.ThumbnailM);
             item.SetTitle(music.Title);
             item.SetArtist(music.Artists);
+            
+            PromoteMusics.Add(music);
+            
             EventHandler clickHandle = (sender, e) =>
             {
-                MusicPlayerForm mainForm = (MusicPlayerForm)FindForm();
-                // remove if already exist
-                mainForm.musicList = mainForm.musicList.Where(m => m.Id != music.Id).ToList();
-                mainForm.musicList.Add(music);
-                mainForm.currentMusic = music;
-                mainForm.currentSongIndex = mainForm.musicList.Count - 1;
-                
-                mainForm.semaphore.WaitOne();
-                if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped) 
-                    mainForm.waveOut.Stop();
-                mainForm.semaphore.Release();
-                mainForm.PlayMusic();
+                mainForm.musicList = PromoteMusics;
+                int songIndex = PromoteMusics.Count - 1;
+                var thread = new Thread(() =>
+                {
+                    mainForm.Semaphore.WaitOne();
+                    mainForm.currentMusic = music;
+                    mainForm.currentSongIndex = songIndex;
+                    mainForm.Semaphore.Release();
+
+                    mainForm.Semaphore.WaitOne();
+                    if (mainForm.waveOut.PlaybackState != NAudio.Wave.PlaybackState.Stopped)
+                        mainForm.waveOut.Stop();
+                    mainForm.Semaphore.Release();
+                    // using main thread to play music
+                    mainForm.Invoke(new Action(() =>
+                    {
+                        mainForm.PlayMusic();
+                    }));
+                });
+                thread.Start();
             };
             item.Guna2Panel1.Click += clickHandle;
             item.Label13.Click += clickHandle;
             item.Label14.Click += clickHandle;
             item.Guna2PictureBox6.Click += clickHandle;
-            
+
             musicList.Controls.Add(item);
-            PromoteMusics.Add(music);
         }
     }
 }

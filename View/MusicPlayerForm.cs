@@ -15,18 +15,19 @@ namespace MusicPlayer
         private static readonly UC_Home _ucHome = new UC_Home();
         private static UC_Trending _ucTrending;
         private static UC_CurrentSong _ucCurrentSong;
-        
-        
+
+
         private ZingMp3Api api;
         public Music currentMusic;
         public int currentSongIndex;
         public List<Music> musicList = new List<Music>();
-        
+
         private MediaFoundationReader reader;
-        public WaveOutEvent waveOut = new WaveOutEvent();
-        private Thread streamingThread;
+
         // using semaphore to avoid multiple thread access to waveOut and currentMusic, currentSongIndex
-        public Semaphore semaphore = new Semaphore(2, 2);
+        public Semaphore Semaphore = new Semaphore(2, 2);
+        private Thread streamingThread;
+        public WaveOutEvent waveOut = new WaveOutEvent();
 
         public MusicPlayerForm()
         {
@@ -78,7 +79,7 @@ namespace MusicPlayer
             // genreLabel.Text = currentMusic.Genres;
             // composerLabel.Text = currentMusic.Composers;
             // this.thumbnail.Load(currentMusic.ThumbnailM);
-            Thread thread = new Thread(() =>
+            var thread = new Thread(() =>
             {
                 Invoke(new MethodInvoker(delegate { thumbnailImage.Load(currentMusic.ThumbnailM); }));
             });
@@ -107,9 +108,8 @@ namespace MusicPlayer
             endTime.Text = "00:00";
 
             var streaming = await api.GetStreamingUrl(currentMusic.Id);
-            
-            semaphore.WaitOne();
-            
+
+            Semaphore.WaitOne();
             reader = new MediaFoundationReader(streaming);
             if (waveOut == null)
             {
@@ -120,10 +120,10 @@ namespace MusicPlayer
                 waveOut.Stop();
                 waveOut.Dispose();
             }
+
             waveOut.Init(reader);
-            
-            semaphore.Release();
-            
+            Semaphore.Release();
+
             streamingThread = new Thread(() =>
             {
                 waveOut.Play();
@@ -131,8 +131,6 @@ namespace MusicPlayer
                 while (waveOut.PlaybackState == PlaybackState.Playing
                        || waveOut.PlaybackState == PlaybackState.Paused)
                 {
-                    // Console.WriteLine(reader.CurrentTime);
-                    // Console.WriteLine(waveOut.PlaybackState);
                     Invoke(new MethodInvoker(delegate
                     {
                         musicTrackBar.Maximum = (int)reader.TotalTime.TotalSeconds;
@@ -146,19 +144,24 @@ namespace MusicPlayer
                 // Load next song
                 if (repeatBtn.Checked)
                 {
-                    semaphore.WaitOne();
+                    Semaphore.WaitOne();
                     currentSongIndex++;
                     if (shuffleBtn.Checked)
                     {
                         var random = new Random();
                         currentSongIndex = random.Next(0, musicList.Count);
                     }
+
                     if (currentSongIndex >= musicList.Count) currentSongIndex = 0;
+                    Semaphore.Release();
 
                     currentMusic = musicList[currentSongIndex];
-                    semaphore.Release();
-                    LoadSongData();
-                    LoadStreaming();
+                    // load data and streaming at main thread
+                    waveOut.Stop();
+                    Invoke(new MethodInvoker(delegate
+                    {
+                        PlayMusic();
+                    }));
                 }
             });
             streamingThread.Start();
@@ -175,20 +178,16 @@ namespace MusicPlayer
             userControl.Width = containerPanel.Width;
             containerPanel.Controls.Add(userControl);
             // go to flow panel in user control and set width to container panel width
-            
+
             foreach (Control control in userControl.Controls)
-            {
                 if (control is FlowLayoutPanel)
                 {
                     control.Width = containerPanel.Width;
                     foreach (Control c in control.Controls)
-                    {
                         // subtract 30 to avoid horizontal scroll bar
                         c.Width = control.Width - 30;
-                    }
                     break;
                 }
-            }
         }
 
         private void UncheckAllButton()
@@ -216,6 +215,7 @@ namespace MusicPlayer
                 var jsonData = await api.GetTrendingData();
                 _ucTrending = new UC_Trending(jsonData);
             }
+
             ChangeUserControl(_ucTrending);
             UncheckAllButton();
             trendingBtn.Checked = true;
@@ -241,10 +241,7 @@ namespace MusicPlayer
 
         private void songBtn_Click(object sender, EventArgs e)
         {
-            if (_ucCurrentSong == null)
-            {
-                _ucCurrentSong = new UC_CurrentSong(currentMusic);
-            }
+            if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong(currentMusic);
             ChangeUserControl(_ucCurrentSong);
             UncheckAllButton();
             songBtn.Checked = true;
@@ -259,7 +256,8 @@ namespace MusicPlayer
         private void btnExitMainForm_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            if (streamingThread != null) streamingThread.Abort();
+            // exit all thread
+            Environment.Exit(0);
         }
 
         private void repeatBtn_Click(object sender, EventArgs e)
@@ -273,9 +271,9 @@ namespace MusicPlayer
             if (currentSongIndex < 0) currentSongIndex = musicList.Count - 1;
 
             currentMusic = musicList[currentSongIndex];
-            semaphore.WaitOne();
+            Semaphore.WaitOne();
             if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
-            semaphore.Release();
+            Semaphore.Release();
             PlayMusic();
         }
 
@@ -285,9 +283,9 @@ namespace MusicPlayer
             if (currentSongIndex >= musicList.Count) currentSongIndex = 0;
 
             currentMusic = musicList[currentSongIndex];
-            semaphore.WaitOne();
+            Semaphore.WaitOne();
             if (waveOut.PlaybackState != PlaybackState.Stopped) waveOut.Stop();
-            semaphore.Release();
+            Semaphore.Release();
             PlayMusic();
         }
 
@@ -295,11 +293,7 @@ namespace MusicPlayer
         {
             if (currentMusic == null) return;
             ShowPlayButton();
-            Thread thread = new Thread(() =>
-            {
-                PlayMusic();
-            });
-            thread.Start();
+            PlayMusic();
         }
 
         private void ShowPlayButton()

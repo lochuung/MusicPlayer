@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using MusicPlayer.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -7,8 +8,6 @@ namespace MusicPlayer.UC
 {
     public partial class UC_Trending : UserControl
     {
-        public string JsonData {  get; set; }
-
         public UC_Trending() : this("")
         {
         }
@@ -19,13 +18,15 @@ namespace MusicPlayer.UC
             InitializeComponent();
         }
 
-        private void UC_Trending_Load(object sender, System.EventArgs e)
+        public string JsonData { get; set; }
+
+        private void UC_Trending_Load(object sender, EventArgs e)
         {
             dynamic data = JsonConvert.DeserializeObject(JsonData);
             AddPromoteSongs(data.RTChart.promotes);
             AddTrendingSongs(data.RTChart.items);
         }
-        
+
         private void AddPromoteSongs(JArray promotes)
         {
             foreach (dynamic promote in promotes)

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MusicPlayer.Model;
 using MusicPlayer.Utils;
 using Newtonsoft.Json;
@@ -51,7 +50,7 @@ namespace MusicPlayer.MusicApi
         public string Ctime { get; set; }
 
         public WaitForm WaitForm { get; set; }
-        
+
         public MusicPlayerForm MusicPlayerForm { get; set; }
 
         public async Task<string> GetSongInfo(string id)

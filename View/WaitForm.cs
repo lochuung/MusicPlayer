@@ -1,11 +1,11 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace WaitFormExample
 {
     public partial class WaitForm : Form
     {
-        Form parentForm;
+        private readonly Form parentForm;
+
         public WaitForm()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace WaitFormExample
             // disable the parent form
             parentForm.Enabled = false;
         }
-        
+
         public void Hide()
         {
             // enable the parent form
