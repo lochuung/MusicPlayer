@@ -12,7 +12,7 @@ namespace MusicPlayer
 {
     public partial class MusicPlayerForm : Form
     {
-        private static readonly UC_Home _ucHome = new UC_Home();
+        private static UC_Home _ucHome;
         private static UC_Trending _ucTrending;
         private static UC_CurrentSong _ucCurrentSong;
 
@@ -32,16 +32,19 @@ namespace MusicPlayer
         public MusicPlayerForm()
         {
             InitializeComponent();
-            ChangeUserControl(_ucHome);
-            homeBtn.Checked = true;
-            repeatBtn.Checked = true;
         }
 
         private async void MusicPlayerForm_Load(object sender, EventArgs e)
         {
+            _ucHome = new UC_Home();
+            _ucCurrentSong = new UC_CurrentSong();
+            ChangeUserControl(_ucHome);
+            
             api = new ZingMp3Api(this);
             musicList = await api.GetTrendingSongs();
             currentMusic = musicList[0];
+            homeBtn.Checked = true;
+            repeatBtn.Checked = true;
             trendingBtn_Click(sender, e);
         }
 
@@ -169,11 +172,10 @@ namespace MusicPlayer
 
         private void ChangeUserControl(UserControl userControl)
         {
-            userControl.BringToFront();
-            if (containerPanel.Controls.Contains(userControl)) return;
             userControl.Dock = DockStyle.Fill;
             userControl.Width = containerPanel.Width;
             containerPanel.Controls.Add(userControl);
+            userControl.BringToFront();
             // go to flow panel in user control and set width to container panel width
 
             foreach (Control control in userControl.Controls)

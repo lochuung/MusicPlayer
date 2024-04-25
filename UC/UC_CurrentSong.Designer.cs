@@ -30,6 +30,7 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.currSong1 = new MusicPlayer.UC.CurrSong();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -38,6 +39,7 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.currSong1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +56,14 @@
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(8, 8);
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // currSong1
+            // 
+            this.currSong1.BackColor = System.Drawing.SystemColors.Control;
+            this.currSong1.Location = new System.Drawing.Point(17, 3);
+            this.currSong1.Name = "currSong1";
+            this.currSong1.Size = new System.Drawing.Size(1038, 753);
+            this.currSong1.TabIndex = 2;
             // 
             // UC_CurrentSong
             // 
@@ -72,5 +82,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private CurrSong currSong1;
     }
 }
