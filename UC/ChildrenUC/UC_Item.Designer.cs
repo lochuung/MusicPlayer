@@ -48,7 +48,7 @@
             this.Guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.Guna2Panel1.Name = "Guna2Panel1";
             this.Guna2Panel1.ShadowDecoration.BorderRadius = 10;
-            this.Guna2Panel1.Size = new System.Drawing.Size(329, 399);
+            this.Guna2Panel1.Size = new System.Drawing.Size(329, 419);
             this.Guna2Panel1.TabIndex = 0;
             // 
             // Label13
@@ -67,7 +67,7 @@
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Label14.Location = new System.Drawing.Point(40, 336);
+            this.Label14.Location = new System.Drawing.Point(40, 343);
             this.Label14.MaximumSize = new System.Drawing.Size(260, 0);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(80, 20);
@@ -96,7 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Guna2Panel1);
             this.Name = "UC_Item";
-            this.Size = new System.Drawing.Size(329, 399);
+            this.Size = new System.Drawing.Size(329, 419);
             this.Guna2Panel1.ResumeLayout(false);
             this.Guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guna2PictureBox6)).EndInit();

@@ -55,7 +55,7 @@ namespace MusicPlayer.UC
             this.albumPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.albumPanel.Location = new System.Drawing.Point(3, 3);
             this.albumPanel.Name = "albumPanel";
-            this.albumPanel.Size = new System.Drawing.Size(1193, 419);
+            this.albumPanel.Size = new System.Drawing.Size(1193, 494);
             this.albumPanel.TabIndex = 9;
             this.albumPanel.Visible = false;
             // 
@@ -65,12 +65,12 @@ namespace MusicPlayer.UC
             | System.Windows.Forms.AnchorStyles.Right)));
             this.albumItem.Location = new System.Drawing.Point(453, 9);
             this.albumItem.Name = "albumItem";
-            this.albumItem.Size = new System.Drawing.Size(329, 399);
+            this.albumItem.Size = new System.Drawing.Size(329, 485);
             this.albumItem.TabIndex = 0;
             // 
             // normalSection1
             // 
-            this.normalSection1.Location = new System.Drawing.Point(3, 428);
+            this.normalSection1.Location = new System.Drawing.Point(3, 503);
             this.normalSection1.Name = "normalSection1";
             this.normalSection1.Size = new System.Drawing.Size(1193, 530);
             this.normalSection1.TabIndex = 10;

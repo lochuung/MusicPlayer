@@ -61,7 +61,7 @@ namespace MusicPlayer.Utils
                 { "page", "1" },
                 { "segmentId", "-1" },
                 { "count", "30" },
-                { "sig", HashingUtils.HashParamNoId(HOME_PATH, api) }
+                { "sig", HashingUtils.HashParamHome(HOME_PATH, api) }
             };
             return await RequestUtils.GetResponse(api, HOME_PATH, param);
         }
