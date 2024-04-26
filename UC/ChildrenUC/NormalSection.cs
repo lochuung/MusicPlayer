@@ -32,8 +32,10 @@ namespace MusicPlayer.UC.ChildrenUC
 
             EventHandler clickHandle = (sender, e) =>
             {
+                mainForm.Semaphore.WaitOne();
                 mainForm.musicList = new List<Music>();
                 mainForm.musicList.AddRange(musics);
+                mainForm.Semaphore.Release();
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();

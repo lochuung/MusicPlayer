@@ -36,6 +36,7 @@ namespace MusicPlayer.UC
             {
                 albumPanel.Visible = false;
             }
+            normalSection1.mainForm = mainForm;
             normalSection1.ClearItems();
             foreach (var music in playlists) 
                 normalSection1.AddItem(music, 1);
