@@ -79,5 +79,33 @@ namespace MusicPlayer
             txbPassWord.Clear();
             txbUserName.Clear();
         }
+
+        private void txbUserName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            bool EmailExit = false;
+            var connectionString = "";
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "Select Email FROM Users Where Email = @Email";
+                using (var cmd = new SqlCommand(query,con))
+                {
+                    cmd.Parameters.AddWithValue("@Email", txbUserName.Text);
+                    int count = (int)cmd.ExecuteScalar();
+                    if(count > 0)
+                    {
+                        EmailExit = true;
+                    }
+                }
+            }
+            if(EmailExit)
+            {
+                errorProvider1.SetError(txbUserName, "");
+            }
+            else
+            {
+                errorProvider1.SetError(txbUserName, "Bạn nhập sai Email hoặc tài khoản chưa được đăng ký");
+            }
+        }
     }
 }
