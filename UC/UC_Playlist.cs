@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using MusicPlayer.Model;
 
 namespace MusicPlayer.UC
 {
@@ -25,7 +27,7 @@ namespace MusicPlayer.UC
             var playlists = mainForm.musicList;
             if (playlists == null || playlists.Count == 0) return;
             var album = mainForm.currentAlbum;
-            if (album != null && playlists == album.Musics)
+            if (album != null && IsAlbumList(playlists))
             {
                 albumPanel.Visible = true;
                 albumItem.SetTitle(album.Title);
@@ -40,6 +42,15 @@ namespace MusicPlayer.UC
             normalSection1.ClearItems();
             foreach (var music in playlists) 
                 normalSection1.AddItem(music, 1);
+        }
+        
+        private bool IsAlbumList(List<Music> musics)
+        {
+            if (musics.Count == 0) return false;
+            var album = musics[0].Album;
+            foreach (var music in musics)
+                if (music.Album != album) return false;
+            return true;
         }
     }
 }

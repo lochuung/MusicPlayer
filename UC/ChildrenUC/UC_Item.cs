@@ -12,7 +12,23 @@ namespace MusicPlayer.UC.ChildrenUC
 
         public void SetImage(string url)
         {
-            var thread = new Thread(() => { Guna2PictureBox6.Load(url); });
+            var thread = new Thread(() =>
+            {
+                bool isLoaded = false;
+                while (!isLoaded)
+                {
+                    try
+                    {
+                        Guna2PictureBox6.Load(url);
+                        isLoaded = true;
+                    }
+                    catch
+                    {
+                        isLoaded = false;
+                        Thread.Sleep(3000);
+                    }
+                }
+            });
             thread.Start();
         }
 
