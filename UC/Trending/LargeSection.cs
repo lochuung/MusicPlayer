@@ -16,10 +16,6 @@ namespace MusicPlayer.UC.Trending
             InitializeComponent();
         }
 
-        public Label Title { get; set; }
-
-        public FlowLayoutPanel MusicList { get; set; }
-
         public void AddItem(Music music)
         {
             var mainForm = (MusicPlayerForm)FindForm();

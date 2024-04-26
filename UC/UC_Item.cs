@@ -11,14 +11,6 @@ namespace MusicPlayer.UC
             InitializeComponent();
         }
 
-        public Guna2Panel Guna2Panel1 { get; set; }
-
-        public Label Label13 { get; set; }
-
-        public Label Label14 { get; set; }
-
-        public Guna2PictureBox Guna2PictureBox6 { get; set; }
-
         public void SetImage(string url)
         {
             var thread = new Thread(() => { Guna2PictureBox6.Load(url); });

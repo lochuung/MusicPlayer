@@ -79,5 +79,9 @@
         }
 
         #endregion
+        
+        public System.Windows.Forms.FlowLayoutPanel MusicList;
+        public Guna.UI2.WinForms.Guna2Panel Guna2Panel1;
+        public System.Windows.Forms.Label Title;
     }
 }

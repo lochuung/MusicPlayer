@@ -154,5 +154,6 @@
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2ImageButton likeBtn;
         private System.Windows.Forms.Label index;
+        public Guna.UI2.WinForms.Guna2ImageButton PlayBtn;
     }
 }

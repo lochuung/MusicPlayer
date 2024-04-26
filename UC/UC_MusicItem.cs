@@ -12,8 +12,6 @@ namespace MusicPlayer.UC
             InitializeComponent();
         }
 
-        public Guna2ImageButton PlayBtn { get; set; }
-
         public void ShowPlayBtn()
         {
             PlayBtn.Image = Resources.play_100px;

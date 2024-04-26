@@ -81,5 +81,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        public System.Windows.Forms.Label Title;
+        public System.Windows.Forms.FlowLayoutPanel MusicList;
     }
 }
