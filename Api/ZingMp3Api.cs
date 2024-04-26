@@ -53,6 +53,20 @@ namespace MusicPlayer.MusicApi
 
         public MusicPlayerForm MusicPlayerForm { get; set; }
 
+        public async Task<List<dynamic>> GetHomeData()
+        {
+            WaitForm.Show();
+
+            var response = await ZingMp3ApiUtils.GetHome(this);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
+            var data = new List<dynamic>();
+            foreach (var item in responseDeserializeObject.items) data.Add(item);
+
+            WaitForm.Hide();
+
+            return data;
+        }
+
         public async Task<string> GetSongInfo(string id)
         {
             WaitForm.Show();
@@ -115,7 +129,7 @@ namespace MusicPlayer.MusicApi
             WaitForm.Hide();
             return response;
         }
-        
+
         public async Task<List<Music>> GetMusicListFromAlbum(string albumId)
         {
             WaitForm.Show();
@@ -123,7 +137,7 @@ namespace MusicPlayer.MusicApi
             dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
             JArray songArray = responseDeserializeObject.song.items;
             var musics = new List<Music>();
-            
+
             foreach (dynamic song in songArray)
             {
                 if (song.streamingStatus != 1) continue;
@@ -135,7 +149,7 @@ namespace MusicPlayer.MusicApi
                 music.Thumbnail = song.thumbnail;
                 musics.Add(music);
             }
-            
+
             WaitForm.Hide();
             return musics;
         }

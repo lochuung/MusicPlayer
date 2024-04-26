@@ -14,9 +14,8 @@ namespace MusicPlayer.UC.ChildrenUC
         {
             var thread = new Thread(() =>
             {
-                bool isLoaded = false;
+                var isLoaded = false;
                 while (!isLoaded)
-                {
                     try
                     {
                         Guna2PictureBox6.Load(url);
@@ -27,7 +26,6 @@ namespace MusicPlayer.UC.ChildrenUC
                         isLoaded = false;
                         Thread.Sleep(3000);
                     }
-                }
             });
             thread.Start();
         }

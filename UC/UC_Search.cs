@@ -35,6 +35,7 @@ namespace MusicPlayer.UC
                 noResultLabel.Visible = true;
                 noResultLabel.Left = (Width - noResultLabel.Width) / 2;
             }
+
             if (json.counter.song > 0)
                 AddSongsResult(json.songs);
             else songSection.Visible = false;
@@ -82,7 +83,7 @@ namespace MusicPlayer.UC
                     Thumbnail = playlist.thumbnail,
                     ThumbnailM = playlist.thumbnailM
                 };
-                playlistSection.AddItem(album);
+                playlistSection.AddItem(album, false);
             }
         }
 

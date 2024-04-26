@@ -38,18 +38,20 @@ namespace MusicPlayer.UC
             {
                 albumPanel.Visible = false;
             }
+
             normalSection1.mainForm = mainForm;
             normalSection1.ClearItems();
-            foreach (var music in playlists) 
+            foreach (var music in playlists)
                 normalSection1.AddItem(music, 1);
         }
-        
+
         private bool IsAlbumList(List<Music> musics)
         {
             if (musics.Count == 0) return false;
             var album = musics[0].Album;
             foreach (var music in musics)
-                if (music.Album != album) return false;
+                if (music.Album != album)
+                    return false;
             return true;
         }
     }

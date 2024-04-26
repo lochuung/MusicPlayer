@@ -44,13 +44,16 @@ namespace MusicPlayer
             _ucSearch = new UC_Search();
             _ucPlaylist = new UC_Playlist();
             _ucPlaylist.mainForm = this;
-            ChangeUserControl(_ucHome);
 
             api = new ZingMp3Api(this);
+            var homeData = await api.GetHomeData();
+            _ucHome.homeData = homeData;
+
             musicList = new List<Music>();
             currentMusic = null;
             homeBtn.Checked = true;
             repeatBtn.Checked = true;
+            ChangeUserControl(_ucHome);
         }
 
         public void PlayMusic()
@@ -92,7 +95,7 @@ namespace MusicPlayer
                 Invoke(new MethodInvoker(delegate
                 {
                     // if connection is lost thumbnail will try load again every 3 seconds
-                    bool isLoaded = false;
+                    var isLoaded = false;
                     do
                     {
                         try
@@ -380,11 +383,8 @@ namespace MusicPlayer
         public async void LoadAlbum()
         {
             if (currentAlbum == null) return;
-            List<Music> musics = await api.GetMusicListFromAlbum(currentAlbum.Id);
-            foreach (var music in musics)
-            {
-                music.Album = currentAlbum;
-            }
+            var musics = await api.GetMusicListFromAlbum(currentAlbum.Id);
+            foreach (var music in musics) music.Album = currentAlbum;
             currentAlbum.Musics = musics;
             musicList = musics;
             currentSongIndex = 0;

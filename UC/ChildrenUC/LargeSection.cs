@@ -9,6 +9,7 @@ namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class LargeSection : UserControl
     {
+        public MusicPlayerForm mainForm;
         public List<BaseEntity> musics = new List<BaseEntity>();
 
         public LargeSection()
@@ -16,9 +17,10 @@ namespace MusicPlayer.UC.ChildrenUC
             InitializeComponent();
         }
 
-        public void AddItem(BaseEntity dto)
+        public void AddItem(BaseEntity dto, bool isScrollable = true)
         {
-            var mainForm = (MusicPlayerForm)FindForm();
+            if (mainForm == null)
+                mainForm = (MusicPlayerForm)FindForm();
 
             var item = new UC_Item();
             item.SetImage(dto.ThumbnailM);
@@ -63,8 +65,26 @@ namespace MusicPlayer.UC.ChildrenUC
             item.Guna2PictureBox6.Click += clickHandle;
 
             MusicList.Controls.Add(item);
+
+            if (!isScrollable)
+                SetNonScrollable();
         }
-        
+
+        private void SetNonScrollable()
+        {
+            // turn off auto scroll and show all items in flow layout panel
+            MusicList.AutoScroll = false;
+            MusicList.WrapContents = true;
+
+            // set height of flow layout panel
+            var itemHeight = new UC_Item().Height;
+            var height =
+                (int)Math.Floor((double)musics.Count * itemHeight) / 4 + itemHeight / 2
+                * (musics.Count % 4 == 0 ? 0 : 1);
+            Height = height + guna2Panel1.Height;
+            MusicList.Height = height;
+        }
+
         public void ClearItems()
         {
             MusicList.Controls.Clear();
