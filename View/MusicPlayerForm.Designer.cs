@@ -33,7 +33,6 @@
             this.currentListBtn = new Guna.UI2.WinForms.Guna2Button();
             this.songBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchPageBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.albumBtn = new Guna.UI2.WinForms.Guna2Button();
             this.releaseBtn = new Guna.UI2.WinForms.Guna2Button();
             this.trendingBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -41,7 +40,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnExitMainForm = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.searchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.songTitle = new System.Windows.Forms.Label();
             this.volumeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -71,7 +70,6 @@
             this.guna2Panel1.Controls.Add(this.currentListBtn);
             this.guna2Panel1.Controls.Add(this.songBtn);
             this.guna2Panel1.Controls.Add(this.searchPageBtn);
-            this.guna2Panel1.Controls.Add(this.albumBtn);
             this.guna2Panel1.Controls.Add(this.releaseBtn);
             this.guna2Panel1.Controls.Add(this.trendingBtn);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
@@ -102,11 +100,11 @@
             this.currentListBtn.Image = global::MusicPlayer.Properties.Resources.albums_100px;
             this.currentListBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.currentListBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.currentListBtn.Location = new System.Drawing.Point(32, 491);
+            this.currentListBtn.Location = new System.Drawing.Point(32, 338);
             this.currentListBtn.Name = "currentListBtn";
             this.currentListBtn.Size = new System.Drawing.Size(180, 45);
             this.currentListBtn.TabIndex = 8;
-            this.currentListBtn.Text = "List nhạc hiện tại";
+            this.currentListBtn.Text = "Playlist/Album";
             this.currentListBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.currentListBtn.Click += new System.EventHandler(this.currentListBtn_Click);
             // 
@@ -129,7 +127,7 @@
             this.songBtn.Image = global::MusicPlayer.Properties.Resources.microphone_100px;
             this.songBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.songBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.songBtn.Location = new System.Drawing.Point(32, 440);
+            this.songBtn.Location = new System.Drawing.Point(32, 389);
             this.songBtn.Name = "songBtn";
             this.songBtn.Size = new System.Drawing.Size(180, 45);
             this.songBtn.TabIndex = 7;
@@ -157,7 +155,7 @@
             this.searchPageBtn.Image = global::MusicPlayer.Properties.Resources.search_100px;
             this.searchPageBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchPageBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.searchPageBtn.Location = new System.Drawing.Point(32, 389);
+            this.searchPageBtn.Location = new System.Drawing.Point(32, 440);
             this.searchPageBtn.Name = "searchPageBtn";
             this.searchPageBtn.Size = new System.Drawing.Size(180, 45);
             this.searchPageBtn.TabIndex = 5;
@@ -165,34 +163,6 @@
             this.searchPageBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchPageBtn.UseTransparentBackground = true;
             this.searchPageBtn.Click += new System.EventHandler(this.searchPageBtn_Click);
-            // 
-            // albumBtn
-            // 
-            this.albumBtn.Animated = true;
-            this.albumBtn.BackColor = System.Drawing.Color.Transparent;
-            this.albumBtn.BorderRadius = 10;
-            this.albumBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.opened_folder_100px_png1;
-            this.albumBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.albumBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
-            this.albumBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.albumBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.albumBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.albumBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.albumBtn.FillColor = System.Drawing.Color.White;
-            this.albumBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.albumBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(180)))), ((int)(((byte)(195)))));
-            this.albumBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
-            this.albumBtn.Image = global::MusicPlayer.Properties.Resources.opened_folder_100px;
-            this.albumBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.albumBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.albumBtn.Location = new System.Drawing.Point(32, 338);
-            this.albumBtn.Name = "albumBtn";
-            this.albumBtn.Size = new System.Drawing.Size(180, 45);
-            this.albumBtn.TabIndex = 4;
-            this.albumBtn.Text = "Album";
-            this.albumBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.albumBtn.UseTransparentBackground = true;
-            this.albumBtn.Click += new System.EventHandler(this.albumBtn_Click);
             // 
             // releaseBtn
             // 
@@ -295,7 +265,7 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
             this.guna2Panel2.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel2.Controls.Add(this.btnExitMainForm);
-            this.guna2Panel2.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel2.Controls.Add(this.searchTextBox);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(244, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -335,32 +305,33 @@
             this.btnExitMainForm.TabIndex = 16;
             this.btnExitMainForm.Click += new System.EventHandler(this.btnExitMainForm_Click);
             // 
-            // guna2TextBox1
+            // searchTextBox
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.AutoRoundedCorners = true;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.BorderRadius = 20;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(84)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.IconLeft = global::MusicPlayer.Properties.Resources.search_100px_png1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(452, 16);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.PlaceholderText = "Tìm kiếm";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(395, 42);
-            this.guna2TextBox1.TabIndex = 0;
+            this.searchTextBox.Animated = true;
+            this.searchTextBox.AutoRoundedCorners = true;
+            this.searchTextBox.BorderColor = System.Drawing.Color.Gray;
+            this.searchTextBox.BorderRadius = 20;
+            this.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTextBox.DefaultText = "";
+            this.searchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
+            this.searchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(84)))), ((int)(((byte)(138)))));
+            this.searchTextBox.IconLeft = global::MusicPlayer.Properties.Resources.search_100px_png1;
+            this.searchTextBox.Location = new System.Drawing.Point(452, 16);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.PasswordChar = '\0';
+            this.searchTextBox.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.searchTextBox.PlaceholderText = "Tìm kiếm";
+            this.searchTextBox.SelectedText = "";
+            this.searchTextBox.Size = new System.Drawing.Size(395, 42);
+            this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyDown);
             // 
             // guna2Panel3
             // 
@@ -616,13 +587,12 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button homeBtn;
-        private Guna.UI2.WinForms.Guna2Button albumBtn;
         private Guna.UI2.WinForms.Guna2Button releaseBtn;
         private Guna.UI2.WinForms.Guna2Button trendingBtn;
         private Guna.UI2.WinForms.Guna2Button songBtn;
         private Guna.UI2.WinForms.Guna2Button searchPageBtn;
         private Guna.UI2.WinForms.Guna2Panel containerPanel;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox searchTextBox;
         private Guna.UI2.WinForms.Guna2Button btnExitMainForm;
         private Guna.UI2.WinForms.Guna2PictureBox thumbnailImage;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

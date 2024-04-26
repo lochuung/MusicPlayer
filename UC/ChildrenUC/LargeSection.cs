@@ -9,33 +9,35 @@ namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class LargeSection : UserControl
     {
-        public List<Music> musics = new List<Music>();
+        public List<BaseEntity> musics = new List<BaseEntity>();
 
         public LargeSection()
         {
             InitializeComponent();
         }
 
-        public void AddItem(Music music)
+        public void AddItem(BaseEntity dto)
         {
             var mainForm = (MusicPlayerForm)FindForm();
 
             var item = new UC_Item();
-            item.SetImage(music.ThumbnailM);
-            item.SetTitle(music.Title);
-            item.SetArtist(music.Artists);
+            item.SetImage(dto.ThumbnailM);
+            item.SetTitle(dto.Title);
+            item.SetArtist(dto.Artists);
 
-            musics.Add(music);
+            musics.Add(dto);
 
             var songIndex = musics.Count - 1;
 
             EventHandler clickHandle = (sender, e) =>
             {
-                mainForm.musicList = musics;
+                var musicList = new List<Music>();
+                foreach (var m in musics) musicList.Add((Music)m);
+                mainForm.musicList = musicList;
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();
-                    mainForm.currentMusic = music;
+                    mainForm.currentMusic = (Music)dto;
                     mainForm.currentSongIndex = songIndex;
                     mainForm.Semaphore.Release();
 
@@ -48,12 +50,25 @@ namespace MusicPlayer.UC.ChildrenUC
                 });
                 thread.Start();
             };
+            if (dto is Album)
+                clickHandle = (sender, e) =>
+                {
+                    var album = (Album)dto;
+                    mainForm.currentAlbum = album;
+                    mainForm.LoadAlbum();
+                };
             item.Guna2Panel1.Click += clickHandle;
             item.Label13.Click += clickHandle;
             item.Label14.Click += clickHandle;
             item.Guna2PictureBox6.Click += clickHandle;
 
             MusicList.Controls.Add(item);
+        }
+        
+        public void ClearItems()
+        {
+            MusicList.Controls.Clear();
+            musics.Clear();
         }
     }
 }

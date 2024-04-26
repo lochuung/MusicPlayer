@@ -1,8 +1,6 @@
-using System.IO;
-
 namespace MusicPlayer.Model
 {
-    public class Music
+    public class Music : BaseEntity
     {
         public Music()
         {
@@ -22,22 +20,8 @@ namespace MusicPlayer.Model
 
         public string Composers { get; set; }
 
-        public Stream ThumbnailStream { get; set; }
-
-        public Stream ThumbnailMStream { get; set; }
-
-        public string Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string Artists { get; set; }
-
         public string Genres { get; set; }
 
         public Album Album { get; set; }
-
-        public string ThumbnailM { get; set; }
-
-        public string Thumbnail { get; set; }
     }
 }

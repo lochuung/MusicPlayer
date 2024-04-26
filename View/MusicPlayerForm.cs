@@ -15,10 +15,12 @@ namespace MusicPlayer
         private static UC_Home _ucHome;
         private static UC_Trending _ucTrending;
         private static UC_CurrentSong _ucCurrentSong;
+        private static UC_Search _ucSearch;
         private static UC_Playlist _ucPlaylist;
 
 
         private ZingMp3Api api;
+        public Album currentAlbum;
         public Music currentMusic;
         public int currentSongIndex;
         public List<Music> musicList = new List<Music>();
@@ -39,10 +41,11 @@ namespace MusicPlayer
         {
             _ucHome = new UC_Home();
             _ucCurrentSong = new UC_CurrentSong();
+            _ucSearch = new UC_Search();
             _ucPlaylist = new UC_Playlist();
             _ucPlaylist.mainForm = this;
             ChangeUserControl(_ucHome);
-            
+
             api = new ZingMp3Api(this);
             musicList = new List<Music>();
             currentMusic = null;
@@ -86,7 +89,24 @@ namespace MusicPlayer
             // this.thumbnail.Load(currentMusic.ThumbnailM);
             var thread = new Thread(() =>
             {
-                Invoke(new MethodInvoker(delegate { thumbnailImage.Load(currentMusic.ThumbnailM); }));
+                Invoke(new MethodInvoker(delegate
+                {
+                    // if connection is lost thumbnail will try load again every 3 seconds
+                    bool isLoaded = false;
+                    do
+                    {
+                        try
+                        {
+                            thumbnailImage.Load(currentMusic.ThumbnailM);
+                            isLoaded = true;
+                        }
+                        catch (Exception e)
+                        {
+                            Thread.Sleep(3000);
+                            thumbnailImage.Load(currentMusic.ThumbnailM);
+                        }
+                    } while (!isLoaded);
+                }));
             });
             thread.Start();
 
@@ -196,7 +216,6 @@ namespace MusicPlayer
             homeBtn.Checked = false;
             trendingBtn.Checked = false;
             releaseBtn.Checked = false;
-            albumBtn.Checked = false;
             searchPageBtn.Checked = false;
             songBtn.Checked = false;
             currentListBtn.Checked = false;
@@ -216,6 +235,7 @@ namespace MusicPlayer
                 var jsonData = await api.GetTrendingData();
                 _ucTrending = new UC_Trending(jsonData);
             }
+
             UncheckAllButton();
             trendingBtn.Checked = true;
             ChangeUserControl(_ucTrending);
@@ -227,24 +247,20 @@ namespace MusicPlayer
             releaseBtn.Checked = true;
         }
 
-        private void albumBtn_Click(object sender, EventArgs e)
-        {
-            UncheckAllButton();
-            albumBtn.Checked = true;
-        }
-
         private void searchPageBtn_Click(object sender, EventArgs e)
         {
             UncheckAllButton();
             searchPageBtn.Checked = true;
+            if (_ucSearch == null) _ucSearch = new UC_Search();
+            ChangeUserControl(_ucSearch);
         }
 
         private void songBtn_Click(object sender, EventArgs e)
         {
-            if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong(currentMusic);
-            ChangeUserControl(_ucCurrentSong);
             UncheckAllButton();
             songBtn.Checked = true;
+            if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong(currentMusic);
+            ChangeUserControl(_ucCurrentSong);
         }
 
         private void currentListBtn_Click(object sender, EventArgs e)
@@ -343,14 +359,54 @@ namespace MusicPlayer
 
         private void muteBtn_Click(object sender, EventArgs e)
         {
-            waveOut.Volume = 0;
-            volumeTrackBar.Value = 0;
+            if (waveOut.Volume == 0)
+            {
+                waveOut.Volume = 1;
+                volumeTrackBar.Value = 100;
+            }
+            else
+            {
+                waveOut.Volume = 0;
+                volumeTrackBar.Value = 0;
+            }
         }
 
         private void volumeBtn_Click(object sender, EventArgs e)
         {
             waveOut.Volume = 1;
             volumeTrackBar.Value = 100;
+        }
+
+        public async void LoadAlbum()
+        {
+            if (currentAlbum == null) return;
+            List<Music> musics = await api.GetMusicListFromAlbum(currentAlbum.Id);
+            foreach (var music in musics)
+            {
+                music.Album = currentAlbum;
+            }
+            currentAlbum.Musics = musics;
+            musicList = musics;
+            currentSongIndex = 0;
+            // currentListBtn click
+            currentListBtn_Click(null, null);
+        }
+
+        private async void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (searchTextBox == null || searchTextBox.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập từ khóa tìm kiếm");
+                    return;
+                }
+
+                var searchData = await api.GetSearchData(searchTextBox.Text);
+                searchPageBtn_Click(sender, e);
+                _ucSearch.searchData = searchData;
+                _ucSearch.LoadData();
+            }
         }
     }
 }

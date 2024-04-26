@@ -2,22 +2,22 @@ using System.Collections.Generic;
 
 namespace MusicPlayer.Model
 {
-    public class Album
+    public class Album : BaseEntity
     {
         public Album()
         {
         }
 
-        public Album(string id, string title, List<Music> musics)
+        public Album(List<Music> musics)
         {
-            Id = id;
-            Title = title;
             Musics = musics;
         }
 
-        public string Id { get; set; }
-
-        public string Title { get; set; }
+        public Album(string id, string title, string thumbnail, string thumbnailM, string artists, List<Music> musics) :
+            base(id, title, thumbnail, thumbnailM, artists)
+        {
+            Musics = musics;
+        }
 
         public List<Music> Musics { get; set; }
     }

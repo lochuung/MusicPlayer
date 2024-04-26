@@ -107,5 +107,37 @@ namespace MusicPlayer.MusicApi
             WaitForm.Hide();
             return musics;
         }
+
+        public async Task<string> GetSearchData(string query)
+        {
+            WaitForm.Show();
+            var response = await ZingMp3ApiUtils.Search(this, query);
+            WaitForm.Hide();
+            return response;
+        }
+        
+        public async Task<List<Music>> GetMusicListFromAlbum(string albumId)
+        {
+            WaitForm.Show();
+            var response = await ZingMp3ApiUtils.GetPlaylistDetail(this, albumId);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
+            JArray songArray = responseDeserializeObject.song.items;
+            var musics = new List<Music>();
+            
+            foreach (dynamic song in songArray)
+            {
+                if (song.streamingStatus != 1) continue;
+                var music = new Music();
+                music.Id = song.encodeId;
+                music.Title = song.title;
+                music.Artists = song.artistsNames;
+                music.ThumbnailM = song.thumbnailM;
+                music.Thumbnail = song.thumbnail;
+                musics.Add(music);
+            }
+            
+            WaitForm.Hide();
+            return musics;
+        }
     }
 }

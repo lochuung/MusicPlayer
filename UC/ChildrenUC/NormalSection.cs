@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using MusicPlayer.Model;
+using MusicPlayer.Properties;
 using NAudio.Wave;
 
 namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class NormalSection : UserControl
     {
-        public List<Music> musics = new List<Music>();
         public MusicPlayerForm mainForm;
+        public List<Music> musics = new List<Music>();
 
         public NormalSection()
         {
             InitializeComponent();
         }
 
-        public void AddItem(Music music, int column = 3)
+        public void AddItem(Music music, int column = 3, bool isScrollable = false)
         {
-            if (mainForm == null)
-            {
-                mainForm = (MusicPlayerForm)FindForm();
-            }
+            if (mainForm == null) mainForm = (MusicPlayerForm)FindForm();
 
             var item = CreateMusicItem(music, musics.Count + 1);
 
@@ -33,7 +32,8 @@ namespace MusicPlayer.UC.ChildrenUC
 
             EventHandler clickHandle = (sender, e) =>
             {
-                mainForm.musicList = musics;
+                mainForm.musicList = new List<Music>();
+                mainForm.musicList.AddRange(musics);
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();
@@ -56,13 +56,18 @@ namespace MusicPlayer.UC.ChildrenUC
             item.label13.Click += clickHandle;
             item.label14.Click += clickHandle;
             item.guna2Panel1.Click += clickHandle;
-            
+
             // set item width
             var itemWidth = (MusicList.Width - 20) / column;
-            item.Width = itemWidth;
-            SetNonScrollable(column);
+            item.Width = itemWidth - (isScrollable ? 20 : 0);
+            var xLikeButtonLocation = item.likeBtn.Left;
+            var xlbl13Location = item.label13.Left;
+            item.label13.MaximumSize = new Size(xLikeButtonLocation - xlbl13Location, 0);
+            item.label14.MaximumSize = new Size(xLikeButtonLocation - xlbl13Location, 0);
+            if (!isScrollable)
+                SetNonScrollable(column);
         }
-        
+
         private UC_MusicItem CreateMusicItem(Music music, int index)
         {
             var item = new UC_MusicItem();
@@ -72,27 +77,21 @@ namespace MusicPlayer.UC.ChildrenUC
             item.SetIndex(index);
             var indexLength = item.index.Text.Length;
             if (indexLength == 1)
-            {
                 item.index.Left = 10;
-            }
             else if (indexLength == 2)
-            {
                 item.index.Left = 5;
-            }
             else
-            {
                 item.index.Left = 0;
-            }
 
             return item;
         }
-        
+
         public void ClearItems()
         {
             MusicList.Controls.Clear();
             musics.Clear();
         }
-        
+
         private void SetNonScrollable(int column = 3)
         {
             // turn off auto scroll and show all items in flow layout panel
@@ -116,7 +115,6 @@ namespace MusicPlayer.UC.ChildrenUC
                 {
                     Thread.Sleep(1000);
                     if (mainForm != null)
-                    {
                         mainForm.Invoke(new Action(() =>
                         {
                             // hightlight the current playing music
@@ -125,17 +123,16 @@ namespace MusicPlayer.UC.ChildrenUC
                                 var item = (UC_MusicItem)MusicList.Controls[i];
                                 if (mainForm.currentMusic != null && mainForm.currentMusic.Id == musics[i].Id)
                                 {
-                                    item.BackColor = System.Drawing.Color.FromArgb(193, 223, 246);
+                                    item.BackColor = Color.FromArgb(193, 223, 246);
                                     item.PlayBtn.Image = mainForm.playBtn.Image;
                                 }
                                 else
                                 {
-                                    item.PlayBtn.Image = Properties.Resources.play_100px;
-                                    item.BackColor = System.Drawing.Color.FromArgb(240, 243, 250);
+                                    item.PlayBtn.Image = Resources.play_100px;
+                                    item.BackColor = Color.FromArgb(240, 243, 250);
                                 }
                             }
                         }));
-                    }
                 }
             });
             thread.Start();
