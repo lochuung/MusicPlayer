@@ -1,5 +1,5 @@
 ﻿
-namespace MusicPlayer.UC
+namespace MusicPlayer.UC.ChildrenUC
 {
     partial class CurrSong
     {

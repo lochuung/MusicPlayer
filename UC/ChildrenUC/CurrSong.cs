@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MusicPlayer.UC
+namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class CurrSong : UserControl
     {

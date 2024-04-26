@@ -1,4 +1,6 @@
-﻿namespace MusicPlayer.UC
+﻿using MusicPlayer.UC.ChildrenUC;
+
+namespace MusicPlayer.UC
 {
     partial class UC_Home
     {
@@ -31,12 +33,12 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.uC_ItemWTH1 = new MusicPlayer.UC.UC_Item();
-            this.uC_ItemWTH2 = new MusicPlayer.UC.UC_Item();
-            this.uC_ItemWTH3 = new MusicPlayer.UC.UC_Item();
-            this.uC_Item8 = new MusicPlayer.UC.UC_Item();
-            this.uC_Item1 = new MusicPlayer.UC.UC_Item();
-            this.uC_Item2 = new MusicPlayer.UC.UC_Item();
+            this.uC_ItemWTH1 = new UC_Item();
+            this.uC_ItemWTH2 = new UC_Item();
+            this.uC_ItemWTH3 = new UC_Item();
+            this.uC_Item8 = new UC_Item();
+            this.uC_Item1 = new UC_Item();
+            this.uC_Item2 = new UC_Item();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();

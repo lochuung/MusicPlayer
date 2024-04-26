@@ -1,9 +1,8 @@
 ﻿using System.Threading;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
 using MusicPlayer.Properties;
 
-namespace MusicPlayer.UC
+namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class UC_MusicItem : UserControl
     {

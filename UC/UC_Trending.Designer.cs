@@ -1,4 +1,6 @@
-﻿namespace MusicPlayer.UC
+﻿using MusicPlayer.UC.ChildrenUC;
+
+namespace MusicPlayer.UC
 {
     partial class UC_Trending
     {
@@ -29,11 +31,11 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.promoteUC = new MusicPlayer.UC.Trending.LargeSection();
-            this.newRelease1 = new MusicPlayer.UC.Trending.NormalSection();
-            this.topVN = new MusicPlayer.UC.Trending.NormalSection();
-            this.topKR = new MusicPlayer.UC.Trending.NormalSection();
-            this.top100 = new MusicPlayer.UC.Trending.NormalSection();
+            this.promoteUC = new LargeSection();
+            this.newRelease1 = new NormalSection();
+            this.topVN = new NormalSection();
+            this.topKR = new NormalSection();
+            this.top100 = new NormalSection();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,10 +104,10 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Trending.LargeSection promoteUC;
-        private Trending.NormalSection newRelease1;
-        private Trending.NormalSection topVN;
-        private Trending.NormalSection topKR;
-        private Trending.NormalSection top100;
+        private LargeSection promoteUC;
+        private NormalSection newRelease1;
+        private NormalSection topVN;
+        private NormalSection topKR;
+        private NormalSection top100;
     }
 }

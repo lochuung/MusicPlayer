@@ -1,4 +1,4 @@
-﻿namespace MusicPlayer.UC
+﻿namespace MusicPlayer.UC.ChildrenUC
 {
     partial class UC_MusicItem
     {
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.index = new System.Windows.Forms.Label();
             this.likeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.PlayBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.index = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,8 +55,38 @@
             this.guna2Panel1.Size = new System.Drawing.Size(410, 102);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2PictureBox1.BorderRadius = 20;
+            this.guna2PictureBox1.Image = global::MusicPlayer.Properties.Resources.music_1001px;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(42, 16);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(66, 68);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // index
+            // 
+            this.index.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.index.AutoSize = true;
+            this.index.BackColor = System.Drawing.Color.Transparent;
+            this.index.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.index.Location = new System.Drawing.Point(4, 38);
+            this.index.MaximumSize = new System.Drawing.Size(220, 0);
+            this.index.Name = "index";
+            this.index.Size = new System.Drawing.Size(45, 25);
+            this.index.TabIndex = 13;
+            this.index.Text = "100";
+            // 
             // likeBtn
             // 
+            this.likeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.likeBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
             this.likeBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.love_100px_png1;
             this.likeBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
@@ -70,8 +100,10 @@
             this.likeBtn.Size = new System.Drawing.Size(44, 46);
             this.likeBtn.TabIndex = 12;
             // 
-            // playBtn
+            // PlayBtn
             // 
+            this.PlayBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PlayBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
             this.PlayBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.play_100px_png1;
             this.PlayBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
@@ -87,6 +119,8 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(115, 24);
@@ -98,6 +132,8 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -107,30 +143,6 @@
             this.label14.Size = new System.Drawing.Size(62, 15);
             this.label14.TabIndex = 9;
             this.label14.Text = "Đang tải...";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 20;
-            this.guna2PictureBox1.Image = global::MusicPlayer.Properties.Resources.music_1001px;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(42, 16);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(66, 68);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // index
-            // 
-            this.index.AutoSize = true;
-            this.index.BackColor = System.Drawing.Color.Transparent;
-            this.index.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.index.Location = new System.Drawing.Point(4, 38);
-            this.index.MaximumSize = new System.Drawing.Size(220, 0);
-            this.index.Name = "index";
-            this.index.Size = new System.Drawing.Size(45, 25);
-            this.index.TabIndex = 13;
-            this.index.Text = "100";
             // 
             // UC_MusicItem
             // 
@@ -148,12 +160,12 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2ImageButton likeBtn;
-        private System.Windows.Forms.Label index;
+        public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label13;
+        public Guna.UI2.WinForms.Guna2ImageButton likeBtn;
+        public System.Windows.Forms.Label index;
         public Guna.UI2.WinForms.Guna2ImageButton PlayBtn;
     }
 }

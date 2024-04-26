@@ -15,6 +15,7 @@ namespace MusicPlayer
         private static UC_Home _ucHome;
         private static UC_Trending _ucTrending;
         private static UC_CurrentSong _ucCurrentSong;
+        private static UC_Playlist _ucPlaylist;
 
 
         private ZingMp3Api api;
@@ -38,14 +39,15 @@ namespace MusicPlayer
         {
             _ucHome = new UC_Home();
             _ucCurrentSong = new UC_CurrentSong();
+            _ucPlaylist = new UC_Playlist();
+            _ucPlaylist.mainForm = this;
             ChangeUserControl(_ucHome);
             
             api = new ZingMp3Api(this);
-            musicList = await api.GetTrendingSongs();
-            currentMusic = musicList[0];
+            musicList = new List<Music>();
+            currentMusic = null;
             homeBtn.Checked = true;
             repeatBtn.Checked = true;
-            trendingBtn_Click(sender, e);
         }
 
         public void PlayMusic()
@@ -214,10 +216,9 @@ namespace MusicPlayer
                 var jsonData = await api.GetTrendingData();
                 _ucTrending = new UC_Trending(jsonData);
             }
-
-            ChangeUserControl(_ucTrending);
             UncheckAllButton();
             trendingBtn.Checked = true;
+            ChangeUserControl(_ucTrending);
         }
 
         private void releaseBtn_Click(object sender, EventArgs e)
@@ -248,6 +249,9 @@ namespace MusicPlayer
 
         private void currentListBtn_Click(object sender, EventArgs e)
         {
+            if (_ucPlaylist == null) _ucPlaylist = new UC_Playlist();
+            _ucPlaylist.LoadPlaylists();
+            ChangeUserControl(_ucPlaylist);
             UncheckAllButton();
             currentListBtn.Checked = true;
         }
@@ -266,8 +270,14 @@ namespace MusicPlayer
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            if (currentMusic == null) return;
             currentSongIndex--;
             if (currentSongIndex < 0) currentSongIndex = musicList.Count - 1;
+            if (shuffleBtn.Checked)
+            {
+                var random = new Random();
+                currentSongIndex = random.Next(0, currentSongIndex + 1);
+            }
 
             currentMusic = musicList[currentSongIndex];
             Semaphore.WaitOne();
@@ -278,8 +288,15 @@ namespace MusicPlayer
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
+            if (currentMusic == null) return;
             currentSongIndex++;
             if (currentSongIndex >= musicList.Count) currentSongIndex = 0;
+            if (shuffleBtn.Checked)
+            {
+                var random = new Random();
+                // [currentSongIndex, musicList.Count)
+                currentSongIndex = random.Next(0, musicList.Count - currentSongIndex) + currentSongIndex;
+            }
 
             currentMusic = musicList[currentSongIndex];
             Semaphore.WaitOne();

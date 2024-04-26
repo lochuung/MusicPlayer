@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MusicPlayer.Model;
-using MusicPlayer.UC.Trending;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -69,8 +68,6 @@ namespace MusicPlayer.UC
                 };
                 topVN.AddItem(music);
             }
-
-            SetNonScrollable(topVN);
         }
 
         private void AddTopKRSongs(JArray krSongs)
@@ -91,8 +88,6 @@ namespace MusicPlayer.UC
                 };
                 topKR.AddItem(music);
             }
-
-            SetNonScrollable(topKR);
         }
 
         private void AddTrendingSongs(JArray trending)
@@ -111,10 +106,8 @@ namespace MusicPlayer.UC
                     Thumbnail = promote.thumbnail,
                     ThumbnailM = promote.thumbnailM
                 };
-                top100.AddItem(music);
+                top100.AddItem(music, 1);
             }
-
-            SetNonScrollable(top100);
         }
 
         private void AddNewReleaseSongs(JArray newReleaseSongs)
@@ -135,22 +128,6 @@ namespace MusicPlayer.UC
                 };
                 newRelease1.AddItem(music);
             }
-
-            SetNonScrollable(newRelease1);
-        }
-
-        private void SetNonScrollable(NormalSection normalSection)
-        {
-            // turn off auto scroll and show all items in flow layout panel
-            normalSection.MusicList.AutoScroll = false;
-            normalSection.MusicList.WrapContents = true;
-
-            // set height of flow layout panel
-            var itemHeight = new UC_MusicItem().Height;
-            var height =
-                (int)Math.Floor((double)normalSection.musics.Count * itemHeight / 3.0) + itemHeight;
-            normalSection.Height = height + normalSection.Guna2Panel1.Height;
-            normalSection.MusicList.Height = height;
         }
     }
 }

@@ -630,7 +630,7 @@
         private System.Windows.Forms.Label songTitle;
         private Guna.UI2.WinForms.Guna2ImageButton prevBtn;
         private Guna.UI2.WinForms.Guna2ImageButton shuffleBtn;
-        private Guna.UI2.WinForms.Guna2ImageButton playBtn;
+        public Guna.UI2.WinForms.Guna2ImageButton playBtn;
         private Guna.UI2.WinForms.Guna2ImageButton nextBtn;
         private Guna.UI2.WinForms.Guna2ImageButton repeatBtn;
         private Guna.UI2.WinForms.Guna2ImageButton volumeBtn;

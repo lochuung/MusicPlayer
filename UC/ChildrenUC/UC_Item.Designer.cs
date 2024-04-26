@@ -1,4 +1,4 @@
-﻿namespace MusicPlayer.UC
+﻿namespace MusicPlayer.UC.ChildrenUC
 {
     partial class UC_Item
     {

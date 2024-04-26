@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using MusicPlayer.Model;
 using NAudio.Wave;
 
-namespace MusicPlayer.UC.Trending
+namespace MusicPlayer.UC.ChildrenUC
 {
     public partial class LargeSection : UserControl
     {
