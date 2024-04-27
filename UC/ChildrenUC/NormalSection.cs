@@ -32,10 +32,8 @@ namespace MusicPlayer.UC.ChildrenUC
 
             EventHandler clickHandle = (sender, e) =>
             {
-                mainForm.Semaphore.WaitOne();
                 mainForm.musicList = new List<Music>();
                 mainForm.musicList.AddRange(musics);
-                mainForm.Semaphore.Release();
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();
@@ -51,6 +49,9 @@ namespace MusicPlayer.UC.ChildrenUC
                     mainForm.Invoke(new Action(() => { mainForm.PlayMusic(); }));
                 });
                 thread.Start();
+                // if norsection is not in uc playlist then load playlist
+                if (mainForm._ucPlaylist.Visible == false)
+                    mainForm._ucPlaylist.LoadPlaylists();
             };
             item.PlayBtn.Click += clickHandle;
             item.index.Click += clickHandle;

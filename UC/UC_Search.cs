@@ -81,7 +81,8 @@ namespace MusicPlayer.UC
                     Title = playlist.title,
                     Artists = playlist.artistsNames,
                     Thumbnail = playlist.thumbnail,
-                    ThumbnailM = playlist.thumbnailM
+                    ThumbnailM = playlist.thumbnailM,
+                    ShortDescription = playlist.shortDescription
                 };
                 playlistSection.AddItem(album, false);
             }

@@ -25,7 +25,23 @@ namespace MusicPlayer.UC.ChildrenUC
 
         public void SetImage(string url)
         {
-            var thread = new Thread(() => { guna2PictureBox1.Load(url); });
+            var thread = new Thread(() =>
+            {
+                var isLoad = false;
+                do
+                {
+                    try
+                    {
+                        guna2PictureBox1.Load(url);
+                        isLoad = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } while (!isLoad);
+            });
             thread.Start();
         }
 

@@ -1,28 +1,32 @@
 ﻿using System;
 using System.Windows.Forms;
 using MusicPlayer.Model;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace MusicPlayer.UC
 {
     public partial class UC_Trending : UserControl
     {
-        public UC_Trending() : this("")
+        private readonly dynamic data;
+
+        public UC_Trending() : this(null)
         {
         }
 
-        public UC_Trending(string jsonData)
+        public UC_Trending(dynamic data)
         {
-            JsonData = jsonData;
+            this.data = data;
             InitializeComponent();
         }
 
-        public string JsonData { get; set; }
-
         private void UC_Trending_Load(object sender, EventArgs e)
         {
-            dynamic data = JsonConvert.DeserializeObject(JsonData);
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            if (data == null) return;
             AddPromoteSongs(data.RTChart.promotes);
             AddNewReleaseSongs(data.newRelease);
             AddTopVNSongs(data.weekChart.vn.items);

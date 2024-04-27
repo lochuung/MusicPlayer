@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MusicPlayer.Model;
 using MusicPlayer.Utils;
 using Newtonsoft.Json;
@@ -17,8 +18,12 @@ namespace MusicPlayer.MusicApi
 
         public ZingMp3Api(MusicPlayerForm musicPlayerForm)
         {
-            MusicPlayerForm = musicPlayerForm;
             WaitForm = new WaitForm(musicPlayerForm);
+            Task.Run(() =>
+            {
+                Application.Run(WaitForm);
+                WaitForm.Hide();
+            });
             Url = "https://zingmp3.vn";
             Version = "1.6.34";
             SecretKey = "2aa2d1c561e809b267f3638c4a307aab";
@@ -51,8 +56,6 @@ namespace MusicPlayer.MusicApi
 
         public WaitForm WaitForm { get; set; }
 
-        public MusicPlayerForm MusicPlayerForm { get; set; }
-
         public async Task<List<dynamic>> GetHomeData()
         {
             WaitForm.Show();
@@ -61,6 +64,41 @@ namespace MusicPlayer.MusicApi
             dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
             var data = new List<dynamic>();
             foreach (var item in responseDeserializeObject.items) data.Add(item);
+
+            WaitForm.Hide();
+
+            return data;
+        }
+        
+        public async Task<List<Music>> GetNewReleaseData()
+        {
+            WaitForm.Show();
+
+            var response = await ZingMp3ApiUtils.GetNewReleaseChart(this);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
+            var data = new List<Music>();
+            foreach (var item in responseDeserializeObject.items)
+            {
+                if (item.streamingStatus != 1) continue;
+                var music = new Music
+                {
+                    Id = item.encodeId,
+                    Title = item.title,
+                    Artists = item.artistsNames,
+                    Thumbnail = item.thumbnail,
+                    ThumbnailM = item.thumbnailM
+                };
+                music.Album = new Album
+                {
+                    Id = item.album.encodeId,
+                    Title = item.album.title,
+                    Artists = item.album.artistsNames,
+                    Thumbnail = item.album.thumbnail,
+                    ThumbnailM = item.album.thumbnailM,
+                    ShortDescription = item.album.sortDescription
+                };
+                data.Add(music);
+            }
 
             WaitForm.Hide();
 
@@ -87,12 +125,13 @@ namespace MusicPlayer.MusicApi
             return streamingUrl;
         }
 
-        public async Task<string> GetTrendingData()
+        public async Task<dynamic> GetTrendingData()
         {
             WaitForm.Show();
             var response = await ZingMp3ApiUtils.GetChartHome(this);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
             WaitForm.Hide();
-            return response;
+            return responseDeserializeObject;
         }
 
         public async Task<List<Music>> GetTrendingSongs()
@@ -112,9 +151,15 @@ namespace MusicPlayer.MusicApi
                 music.Artists = song.artistsNames;
                 music.ThumbnailM = song.thumbnailM;
                 music.Thumbnail = song.thumbnail;
-                music.Album = new Album();
-                music.Album.Id = song.album.encodeId;
-                music.Album.Title = song.album.title;
+                music.Album = new Album
+                {
+                    Id = song.album.encodeId,
+                    Title = song.album.title,
+                    Artists = song.album.artistsNames,
+                    Thumbnail = song.album.thumbnail,
+                    ThumbnailM = song.album.thumbnailM,
+                    ShortDescription = song.album.sortDescription
+                };
                 musics.Add(music);
             }
 

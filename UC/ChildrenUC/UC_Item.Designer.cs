@@ -67,7 +67,7 @@
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.Label14.Location = new System.Drawing.Point(40, 343);
+            this.Label14.Location = new System.Drawing.Point(40, 342);
             this.Label14.MaximumSize = new System.Drawing.Size(260, 0);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(80, 20);

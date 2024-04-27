@@ -5,12 +5,10 @@ using System.Threading;
 using System.Windows.Forms;
 using MusicPlayer.Model;
 using MusicPlayer.MusicApi;
-using MusicPlayer.Utils;
 using NAudio.Wave;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Utilities.BunifuSlider;
-using Image = System.Drawing.Image;
 
 namespace MusicPlayer
 {
@@ -225,9 +223,6 @@ namespace MusicPlayer
                 {
                     var cell = new DataGridViewImageCell();
                     cell.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                    var thmb = RequestUtils.GetStreamFromUrl(musicList[index].Thumbnail);
-                    // musicList[index].ThumbnailStream = thmb.Result;
-                    cell.Value = Image.FromStream(thmb.Result);
                     musicGridView.Rows[index].Cells[1] = cell;
 
                     // load genres and composers

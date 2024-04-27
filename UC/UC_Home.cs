@@ -31,14 +31,12 @@ namespace MusicPlayer.UC
                     largeSection.Title.Text = item.title;
                     foreach (var playlist in item.items)
                     {
-                        var artists = string.IsNullOrEmpty(playlist.sortDescription.ToString())
-                            ? playlist.artistsNames
-                            : playlist.sortDescription;
                         var album = new Album
                         {
                             Id = playlist.encodeId,
                             Title = playlist.title,
-                            Artists = artists,
+                            Artists = playlist.artistsNames,
+                            ShortDescription = playlist.sortDescription,
                             Thumbnail = playlist.thumbnail,
                             ThumbnailM = playlist.thumbnailM
                         };

@@ -24,13 +24,15 @@ namespace WaitFormExample
             // show the wait form
             base.Show();
             // disable the parent form
-            parentForm.Enabled = false;
+            if (parentForm != null)
+                parentForm.Enabled = false;
         }
 
         public void Hide()
         {
             // enable the parent form
-            parentForm.Enabled = true;
+            if (parentForm != null)
+                parentForm.Enabled = true;
             // hide the wait form
             base.Hide();
         }
