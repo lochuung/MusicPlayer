@@ -552,6 +552,12 @@
     <Compile Include="Utils\HashingUtils.cs" />
     <Compile Include="Utils\RequestUtils.cs" />
     <Compile Include="Utils\ZingMp3ApiUtils.cs" />
+    <Compile Include="View\ForgetPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForgetPW.Designer.cs">
+      <DependentUpon>ForgetPW.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -593,6 +599,18 @@
     </Compile>
     <Compile Include="View\MusicPlayerForm.Designer.cs">
       <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NewPW.Designer.cs">
+      <DependentUpon>NewPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecurityCode .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SecurityCode .Designer.cs">
+      <DependentUpon>SecurityCode .cs</DependentUpon>
     </Compile>
     <Compile Include="View\WaitForm.cs">
       <SubType>Form</SubType>
@@ -650,6 +668,9 @@
     <EmbeddedResource Include="UC\UC_Trending.resx">
       <DependentUpon>UC_Trending.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ForgetPW.resx">
+      <DependentUpon>ForgetPW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -670,6 +691,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MusicPlayerForm.resx">
       <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewPW.resx">
+      <DependentUpon>NewPW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SecurityCode .resx">
+      <DependentUpon>SecurityCode .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
