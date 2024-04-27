@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayerForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.currentListBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.playListBtn = new Guna.UI2.WinForms.Guna2Button();
             this.songBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchPageBtn = new Guna.UI2.WinForms.Guna2Button();
             this.releaseBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +67,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.currentListBtn);
+            this.guna2Panel1.Controls.Add(this.playListBtn);
             this.guna2Panel1.Controls.Add(this.songBtn);
             this.guna2Panel1.Controls.Add(this.searchPageBtn);
             this.guna2Panel1.Controls.Add(this.releaseBtn);
@@ -81,32 +81,32 @@
             this.guna2Panel1.Size = new System.Drawing.Size(244, 753);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // currentListBtn
+            // playListBtn
             // 
-            this.currentListBtn.Animated = true;
-            this.currentListBtn.BackColor = System.Drawing.Color.Transparent;
-            this.currentListBtn.BorderRadius = 10;
-            this.currentListBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.albums_100px_png1;
-            this.currentListBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.currentListBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
-            this.currentListBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.currentListBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.currentListBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.currentListBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.currentListBtn.FillColor = System.Drawing.Color.White;
-            this.currentListBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.currentListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(180)))), ((int)(((byte)(195)))));
-            this.currentListBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
-            this.currentListBtn.Image = global::MusicPlayer.Properties.Resources.albums_100px;
-            this.currentListBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.currentListBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.currentListBtn.Location = new System.Drawing.Point(32, 338);
-            this.currentListBtn.Name = "currentListBtn";
-            this.currentListBtn.Size = new System.Drawing.Size(180, 45);
-            this.currentListBtn.TabIndex = 8;
-            this.currentListBtn.Text = "Playlist/Album";
-            this.currentListBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.currentListBtn.Click += new System.EventHandler(this.currentListBtn_Click);
+            this.playListBtn.Animated = true;
+            this.playListBtn.BackColor = System.Drawing.Color.Transparent;
+            this.playListBtn.BorderRadius = 10;
+            this.playListBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.albums_100px_png1;
+            this.playListBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.playListBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
+            this.playListBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.playListBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.playListBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.playListBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.playListBtn.FillColor = System.Drawing.Color.White;
+            this.playListBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.playListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(180)))), ((int)(((byte)(195)))));
+            this.playListBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
+            this.playListBtn.Image = global::MusicPlayer.Properties.Resources.albums_100px;
+            this.playListBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.playListBtn.ImageSize = new System.Drawing.Size(25, 25);
+            this.playListBtn.Location = new System.Drawing.Point(32, 338);
+            this.playListBtn.Name = "playListBtn";
+            this.playListBtn.Size = new System.Drawing.Size(180, 45);
+            this.playListBtn.TabIndex = 8;
+            this.playListBtn.Text = "Playlist/Album";
+            this.playListBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.playListBtn.Click += new System.EventHandler(this.currentListBtn_Click);
             // 
             // songBtn
             // 
@@ -609,6 +609,6 @@
         private System.Windows.Forms.Label currentTime;
         private Guna.UI2.WinForms.Guna2TrackBar volumeTrackBar;
         private Guna.UI2.WinForms.Guna2TrackBar musicTrackBar;
-        private Guna.UI2.WinForms.Guna2Button currentListBtn;
+        public Guna.UI2.WinForms.Guna2Button playListBtn;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using MusicPlayer.Properties;
 
 namespace MusicPlayer
 {
@@ -26,10 +27,10 @@ namespace MusicPlayer
                 using (var con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    if (ptbEmail.Image == Properties.Resources.warning ||
-                        ptbSoDienThoai.Image == Properties.Resources.warning ||
-                        ptbMatKhau.Image == Properties.Resources.warning ||
-                        ptbNhapLaiMatKhau.Image == Properties.Resources.warning)
+                    if (ptbEmail.Image == Resources.warning ||
+                        ptbSoDienThoai.Image == Resources.warning ||
+                        ptbMatKhau.Image == Resources.warning ||
+                        ptbNhapLaiMatKhau.Image == Resources.warning)
                     {
                         MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -82,7 +83,7 @@ namespace MusicPlayer
             if (!string.IsNullOrEmpty(txbHoTen.Text))
             {
                 ptbHoTen.Visible = true;
-                ptbHoTen.Image = Properties.Resources.check; 
+                ptbHoTen.Image = Resources.check;
             }
             else
             {
@@ -92,20 +93,18 @@ namespace MusicPlayer
 
         private void txbEmail_Validated(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txbEmail.Text))
+            if (!string.IsNullOrEmpty(txbEmail.Text))
             {
                 ptbEmail.Visible = true;
-                ptbEmail.Image = Properties.Resources.check;
+                ptbEmail.Image = Resources.check;
             }
             else
             {
                 ptbEmail.Visible = true;
-                ptbEmail.Image = Properties.Resources.warning;
+                ptbEmail.Image = Resources.warning;
 
-                if(ptbEmail.Image == Properties.Resources.warning)
-                {
+                if (ptbEmail.Image == Resources.warning)
                     toolTip1.SetToolTip(ptbEmail, "Bạn chưa nhập Email hoặc Email đã được đăng ký trước đó !");
-                }
             }
         }
 
@@ -114,56 +113,47 @@ namespace MusicPlayer
             if (!string.IsNullOrEmpty(txbSdt.Text) && txbSdt.Text.StartsWith("0") && txbSdt.Text.Length == 10)
             {
                 ptbSoDienThoai.Visible = true;
-                ptbSoDienThoai.Image = Properties.Resources.check;
+                ptbSoDienThoai.Image = Resources.check;
             }
             else
             {
                 ptbSoDienThoai.Visible = true;
-                ptbSoDienThoai.Image = Properties.Resources.warning;
-                if(ptbSoDienThoai.Image == Properties.Resources.warning)
-                {
+                ptbSoDienThoai.Image = Resources.warning;
+                if (ptbSoDienThoai.Image == Resources.warning)
                     toolTip1.SetToolTip(ptbSoDienThoai, "Vui lòng nhập đúng sđt hoặc sđt đã được đăng ký trước đó !");
-                }
-                
             }
         }
 
         private void txbMatKhauDangKy_Validated(object sender, EventArgs e)
         {
-            string password = txbMatKhauDangKy.Text;
-            if(!string.IsNullOrWhiteSpace(password) && password.Replace(" ", "").Length >= 6 )
+            var password = txbMatKhauDangKy.Text;
+            if (!string.IsNullOrWhiteSpace(password) && password.Replace(" ", "").Length >= 6)
             {
                 ptbMatKhau.Visible = true;
-                ptbMatKhau.Image = Properties.Resources.check;
+                ptbMatKhau.Image = Resources.check;
             }
             else
             {
                 ptbMatKhau.Visible = true;
-                ptbMatKhau.Image = Properties.Resources.warning;
-                if(ptbMatKhau.Image == Properties.Resources.warning)
-                {
+                ptbMatKhau.Image = Resources.warning;
+                if (ptbMatKhau.Image == Resources.warning)
                     toolTip1.SetToolTip(ptbMatKhau, "Mật khẩu tối thiểu 6 ký tự và không chứa khoảng trắng !");
-                }
-                
             }
         }
 
         private void txbNhapLaiMatKhau_Validated(object sender, EventArgs e)
         {
-            if(txbMatKhauDangKy.Text == txbNhapLaiMatKhau.Text)
+            if (txbMatKhauDangKy.Text == txbNhapLaiMatKhau.Text)
             {
                 ptbNhapLaiMatKhau.Visible = true;
-                ptbNhapLaiMatKhau.Image = Properties.Resources.check;
+                ptbNhapLaiMatKhau.Image = Resources.check;
             }
             else
             {
                 ptbNhapLaiMatKhau.Visible = true;
-                ptbNhapLaiMatKhau.Image = Properties.Resources.warning;
-                if(ptbNhapLaiMatKhau.Image == Properties.Resources.warning)
-                {
+                ptbNhapLaiMatKhau.Image = Resources.warning;
+                if (ptbNhapLaiMatKhau.Image == Resources.warning)
                     toolTip1.SetToolTip(ptbNhapLaiMatKhau, "Vui lòng nhập đúng !");
-                }
-                
             }
         }
     }

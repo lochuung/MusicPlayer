@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicPlayer.Model;
 using MusicPlayer.MusicApi;
 using MusicPlayer.Properties;
 using MusicPlayer.UC;
 using NAudio.Wave;
+using WaitFormExample;
 
 namespace MusicPlayer
 {
     public partial class MusicPlayerForm : Form
     {
-        private static UC_Home _ucHome;
-        private static UC_Trending _ucTrending;
-        private static UC_CurrentSong _ucCurrentSong;
-        private static UC_Search _ucSearch;
-        private static UC_Playlist _ucPlaylist;
+        private UC_Home _ucHome;
+        private UC_Trending _ucTrending;
+        private UC_NewRelease _ucNewRelease;
+        private UC_CurrentSong _ucCurrentSong;
+        private UC_Search _ucSearch;
+        public UC_Playlist _ucPlaylist;
 
 
         private ZingMp3Api api;
@@ -39,21 +42,37 @@ namespace MusicPlayer
 
         private async void MusicPlayerForm_Load(object sender, EventArgs e)
         {
+            api = new ZingMp3Api(this);
+            
+            musicList = new List<Music>();
+            currentMusic = null;
+            repeatBtn.Checked = true;
+
             _ucHome = new UC_Home();
+            var homeData = await api.GetHomeData();
+            _ucHome.homeData = homeData;
+
+            _ucTrending = new UC_Trending(await api.GetTrendingData());
+            
+            _ucNewRelease = new UC_NewRelease(await api.GetNewReleaseData());
+
             _ucCurrentSong = new UC_CurrentSong();
             _ucSearch = new UC_Search();
             _ucPlaylist = new UC_Playlist();
             _ucPlaylist.mainForm = this;
-
-            api = new ZingMp3Api(this);
-            var homeData = await api.GetHomeData();
-            _ucHome.homeData = homeData;
-
-            musicList = new List<Music>();
-            currentMusic = null;
-            homeBtn.Checked = true;
-            repeatBtn.Checked = true;
-            ChangeUserControl(_ucHome);
+            
+            api.WaitForm.Show();
+            
+            AddUserControl(_ucHome);
+            AddUserControl(_ucTrending);
+            AddUserControl(_ucNewRelease);
+            AddUserControl(_ucSearch);
+            AddUserControl(_ucCurrentSong);
+            AddUserControl(_ucPlaylist);
+            
+            api.WaitForm.Hide();
+            
+            homeBtn_Click(sender, e);
         }
 
         public void PlayMusic()
@@ -103,24 +122,15 @@ namespace MusicPlayer
                             thumbnailImage.Load(currentMusic.ThumbnailM);
                             isLoaded = true;
                         }
-                        catch (Exception e)
+                        catch
                         {
-                            Thread.Sleep(3000);
-                            thumbnailImage.Load(currentMusic.ThumbnailM);
+                            MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     } while (!isLoaded);
                 }));
             });
             thread.Start();
-
-            // hightlight current song and clear highlight of other songs
-            // default theme color
-            // var color = musicGridView.RowsDefaultCellStyle.BackColor;
-            // for (int i = 0; i < musicGridView.Rows.Count; i++)
-            // {
-            //     musicGridView.Rows[i].DefaultCellStyle.BackColor = color;
-            // }
-            // musicGridView.Rows[currentSongIndex].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
         }
 
         private async void LoadStreaming()
@@ -195,12 +205,11 @@ namespace MusicPlayer
             nextBtn.Enabled = true;
         }
 
-        private void ChangeUserControl(UserControl userControl)
+        private void AddUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             userControl.Width = containerPanel.Width;
             containerPanel.Controls.Add(userControl);
-            userControl.BringToFront();
             // go to flow panel in user control and set width to container panel width
 
             foreach (Control control in userControl.Controls)
@@ -221,58 +230,76 @@ namespace MusicPlayer
             releaseBtn.Checked = false;
             searchPageBtn.Checked = false;
             songBtn.Checked = false;
-            currentListBtn.Checked = false;
+            playListBtn.Checked = false;
+            
+            _ucHome.Visible = false;
+            _ucTrending.Visible = false;
+            _ucNewRelease.Visible = false;
+            _ucSearch.Visible = false;
+            _ucCurrentSong.Visible = false;
+            _ucPlaylist.Visible = false;
         }
 
-        private void homeBtn_Click(object sender, EventArgs e)
+        private async void homeBtn_Click(object sender, EventArgs e)
         {
-            ChangeUserControl(_ucHome);
+            if (_ucHome == null)
+            {
+                _ucHome = new UC_Home();
+                _ucHome.homeData = await api.GetHomeData();
+            }
             UncheckAllButton();
             homeBtn.Checked = true;
+            _ucHome.Visible = true;
         }
 
         private async void trendingBtn_Click(object sender, EventArgs e)
         {
             if (_ucTrending == null)
             {
-                var jsonData = await api.GetTrendingData();
-                _ucTrending = new UC_Trending(jsonData);
+                var data = await api.GetTrendingData();
+
+                _ucTrending = new UC_Trending(data);
             }
 
             UncheckAllButton();
             trendingBtn.Checked = true;
-            ChangeUserControl(_ucTrending);
+            _ucTrending.Visible = true;
         }
 
-        private void releaseBtn_Click(object sender, EventArgs e)
+        private async void releaseBtn_Click(object sender, EventArgs e)
         {
+            if (_ucNewRelease == null)
+            {
+                var data = await api.GetNewReleaseData();
+                _ucNewRelease = new UC_NewRelease(data);
+            }
             UncheckAllButton();
             releaseBtn.Checked = true;
+            _ucNewRelease.Visible = true;
         }
 
         private void searchPageBtn_Click(object sender, EventArgs e)
         {
             UncheckAllButton();
-            searchPageBtn.Checked = true;
             if (_ucSearch == null) _ucSearch = new UC_Search();
-            ChangeUserControl(_ucSearch);
+            searchPageBtn.Checked = true;
+            _ucSearch.Visible = true;
         }
 
         private void songBtn_Click(object sender, EventArgs e)
         {
             UncheckAllButton();
-            songBtn.Checked = true;
             if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong(currentMusic);
-            ChangeUserControl(_ucCurrentSong);
+            songBtn.Checked = true;
+            _ucCurrentSong.Visible = true;
         }
 
         private void currentListBtn_Click(object sender, EventArgs e)
         {
             if (_ucPlaylist == null) _ucPlaylist = new UC_Playlist();
-            _ucPlaylist.LoadPlaylists();
-            ChangeUserControl(_ucPlaylist);
             UncheckAllButton();
-            currentListBtn.Checked = true;
+            playListBtn.Checked = true;
+            _ucPlaylist.Visible = true;
         }
 
         private void btnExitMainForm_Click(object sender, EventArgs e)
@@ -388,6 +415,7 @@ namespace MusicPlayer
             currentAlbum.Musics = musics;
             musicList = musics;
             currentSongIndex = 0;
+            _ucPlaylist.LoadPlaylists();
             // currentListBtn click
             currentListBtn_Click(null, null);
         }

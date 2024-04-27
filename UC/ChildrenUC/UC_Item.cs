@@ -23,8 +23,8 @@ namespace MusicPlayer.UC.ChildrenUC
                     }
                     catch
                     {
-                        isLoaded = false;
-                        Thread.Sleep(3000);
+                        MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             });
             thread.Start();

@@ -27,12 +27,24 @@ namespace MusicPlayer.UC
             var playlists = mainForm.musicList;
             if (playlists == null || playlists.Count == 0) return;
             var album = mainForm.currentAlbum;
-            if (album != null && IsAlbumList(playlists))
+            if (album != null && IsAlbumList(playlists, album))
             {
                 albumPanel.Visible = true;
-                albumItem.SetTitle(album.Title);
-                albumItem.SetImage(album.ThumbnailM);
-                albumItem.SetArtist(album.Artists);
+                albumTitle.Text = album.Title;
+                artists.Text = album.Artists;
+                ShortDescription.Text = album.ShortDescription;
+                var isLoaded = false;
+                while (!isLoaded)
+                    try
+                    {
+                        Guna2PictureBox6.Load(album.ThumbnailM);
+                        isLoaded = true;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
             }
             else
             {
@@ -45,10 +57,9 @@ namespace MusicPlayer.UC
                 normalSection1.AddItem(music, 1);
         }
 
-        private bool IsAlbumList(List<Music> musics)
+        private bool IsAlbumList(List<Music> musics, Album album)
         {
             if (musics.Count == 0) return false;
-            var album = musics[0].Album;
             foreach (var music in musics)
                 if (music.Album != album)
                     return false;

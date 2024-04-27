@@ -531,6 +531,12 @@
     <Compile Include="UC\UC_Home.Designer.cs">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_NewRelease.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_NewRelease.Designer.cs">
+      <DependentUpon>UC_NewRelease.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_Playlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -641,6 +647,9 @@
     <EmbeddedResource Include="UC\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_NewRelease.resx">
+      <DependentUpon>UC_NewRelease.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Playlist.resx">
       <DependentUpon>UC_Playlist.cs</DependentUpon>
     </EmbeddedResource>
@@ -698,6 +707,7 @@
     <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
     <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
     <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
+    <None Include="Resources\chart-new-release-vn.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\warning.png" />
     <None Include="Resources\home-7-128 %281%29.png" />

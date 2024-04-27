@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,7 +43,7 @@ namespace MusicPlayer.Utils
                 return tryAgain;
             }
 
-            if (ReloadConnection())
+            if (ReloadConnection(api))
             {
                 var tryAgain = await GetResponse(api, path, qs);
                 return tryAgain;
@@ -71,7 +70,7 @@ namespace MusicPlayer.Utils
                 return setCookieHeader.ToList()[1].ToString();
             }
 
-            if (ReloadConnection())
+            if (ReloadConnection(api))
             {
                 var tryAgain = await GetCookie(api);
                 return tryAgain;
@@ -80,28 +79,15 @@ namespace MusicPlayer.Utils
             throw new Exception(response.ErrorMessage);
         }
 
-        private static bool ReloadConnection()
+        private static bool ReloadConnection(ZingMp3Api api)
         {
-            var dialogResult = MessageBox.Show("Connection lost. Try again?", "Connection lost",
-                MessageBoxButtons.OK);
+            // show dialog in front of all windows
+            api.WaitForm.Hide();
+            var dialogResult =
+                MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             return dialogResult == DialogResult.OK;
-        }
-
-        public static async Task<Stream> GetStreamFromUrl(string url)
-        {
-            var client = new RestClient(url);
-
-            var response = await client.ExecuteAsync(new RestRequest());
-
-            if (response.IsSuccessful) return new MemoryStream(response.RawBytes);
-
-            if (ReloadConnection())
-            {
-                var tryAgain = await GetStreamFromUrl(url);
-                return tryAgain;
-            }
-
-            throw new Exception(response.ErrorMessage);
         }
     }
 }

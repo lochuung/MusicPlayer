@@ -152,7 +152,7 @@ namespace MusicPlayer.UC.ChildrenUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -162,7 +162,7 @@ namespace MusicPlayer.UC.ChildrenUC
             this.Controls.Add(this.lblTenBaiHat);
             this.Controls.Add(this.ptrImage);
             this.Name = "CurrSong";
-            this.Size = new System.Drawing.Size(1156, 753);
+            this.Size = new System.Drawing.Size(1263, 818);
             this.Load += new System.EventHandler(this.CurrSong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
