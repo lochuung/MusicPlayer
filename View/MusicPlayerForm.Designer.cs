@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayerForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.playListBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.songBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchPageBtn = new Guna.UI2.WinForms.Guna2Button();
             this.releaseBtn = new Guna.UI2.WinForms.Guna2Button();
             this.trendingBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -43,7 +42,6 @@
             this.searchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.songTitle = new System.Windows.Forms.Label();
-            this.volumeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.muteBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.endTime = new System.Windows.Forms.Label();
             this.currentTime = new System.Windows.Forms.Label();
@@ -68,7 +66,6 @@
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.playListBtn);
-            this.guna2Panel1.Controls.Add(this.songBtn);
             this.guna2Panel1.Controls.Add(this.searchPageBtn);
             this.guna2Panel1.Controls.Add(this.releaseBtn);
             this.guna2Panel1.Controls.Add(this.trendingBtn);
@@ -108,34 +105,6 @@
             this.playListBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.playListBtn.Click += new System.EventHandler(this.currentListBtn_Click);
             // 
-            // songBtn
-            // 
-            this.songBtn.Animated = true;
-            this.songBtn.BackColor = System.Drawing.Color.Transparent;
-            this.songBtn.BorderRadius = 10;
-            this.songBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.microphone_100px_png1;
-            this.songBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.songBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
-            this.songBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.songBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.songBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.songBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.songBtn.FillColor = System.Drawing.Color.White;
-            this.songBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.songBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(180)))), ((int)(((byte)(195)))));
-            this.songBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
-            this.songBtn.Image = global::MusicPlayer.Properties.Resources.microphone_100px;
-            this.songBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.songBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.songBtn.Location = new System.Drawing.Point(32, 389);
-            this.songBtn.Name = "songBtn";
-            this.songBtn.Size = new System.Drawing.Size(180, 45);
-            this.songBtn.TabIndex = 7;
-            this.songBtn.Text = "Bài hát hiện tại";
-            this.songBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.songBtn.UseTransparentBackground = true;
-            this.songBtn.Click += new System.EventHandler(this.songBtn_Click);
-            // 
             // searchPageBtn
             // 
             this.searchPageBtn.Animated = true;
@@ -155,7 +124,7 @@
             this.searchPageBtn.Image = global::MusicPlayer.Properties.Resources.search_100px;
             this.searchPageBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchPageBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.searchPageBtn.Location = new System.Drawing.Point(32, 440);
+            this.searchPageBtn.Location = new System.Drawing.Point(32, 389);
             this.searchPageBtn.Name = "searchPageBtn";
             this.searchPageBtn.Size = new System.Drawing.Size(180, 45);
             this.searchPageBtn.TabIndex = 5;
@@ -336,7 +305,6 @@
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.songTitle);
-            this.guna2Panel3.Controls.Add(this.volumeBtn);
             this.guna2Panel3.Controls.Add(this.muteBtn);
             this.guna2Panel3.Controls.Add(this.endTime);
             this.guna2Panel3.Controls.Add(this.currentTime);
@@ -363,22 +331,7 @@
             this.songTitle.Name = "songTitle";
             this.songTitle.Size = new System.Drawing.Size(0, 25);
             this.songTitle.TabIndex = 1;
-            // 
-            // volumeBtn
-            // 
-            this.volumeBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.volumeBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.settings_100px;
-            this.volumeBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.volumeBtn.Image = global::MusicPlayer.Properties.Resources.settings_100px_png1;
-            this.volumeBtn.ImageOffset = new System.Drawing.Point(0, 0);
-            this.volumeBtn.ImageRotate = 0F;
-            this.volumeBtn.ImageSize = new System.Drawing.Size(27, 27);
-            this.volumeBtn.Location = new System.Drawing.Point(991, 21);
-            this.volumeBtn.Name = "volumeBtn";
-            this.volumeBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.volumeBtn.Size = new System.Drawing.Size(44, 46);
-            this.volumeBtn.TabIndex = 13;
-            this.volumeBtn.Click += new System.EventHandler(this.volumeBtn_Click);
+            this.songTitle.Click += new System.EventHandler(this.songTitle_Click);
             // 
             // muteBtn
             // 
@@ -530,6 +483,7 @@
             this.artistsName.Name = "artistsName";
             this.artistsName.Size = new System.Drawing.Size(0, 20);
             this.artistsName.TabIndex = 2;
+            this.artistsName.Click += new System.EventHandler(this.artistsName_Click);
             // 
             // thumbnailImage
             // 
@@ -543,6 +497,7 @@
             this.thumbnailImage.TabIndex = 0;
             this.thumbnailImage.TabStop = false;
             this.thumbnailImage.Tag = "pause";
+            this.thumbnailImage.Click += new System.EventHandler(this.thumbnailImage_Click);
             // 
             // containerPanel
             // 
@@ -589,7 +544,6 @@
         private Guna.UI2.WinForms.Guna2Button homeBtn;
         private Guna.UI2.WinForms.Guna2Button releaseBtn;
         private Guna.UI2.WinForms.Guna2Button trendingBtn;
-        private Guna.UI2.WinForms.Guna2Button songBtn;
         private Guna.UI2.WinForms.Guna2Button searchPageBtn;
         private Guna.UI2.WinForms.Guna2Panel containerPanel;
         private Guna.UI2.WinForms.Guna2TextBox searchTextBox;
@@ -603,7 +557,6 @@
         public Guna.UI2.WinForms.Guna2ImageButton playBtn;
         private Guna.UI2.WinForms.Guna2ImageButton nextBtn;
         private Guna.UI2.WinForms.Guna2ImageButton repeatBtn;
-        private Guna.UI2.WinForms.Guna2ImageButton volumeBtn;
         private Guna.UI2.WinForms.Guna2ImageButton muteBtn;
         private System.Windows.Forms.Label endTime;
         private System.Windows.Forms.Label currentTime;

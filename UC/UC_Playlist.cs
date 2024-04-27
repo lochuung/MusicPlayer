@@ -33,6 +33,11 @@ namespace MusicPlayer.UC
                 albumTitle.Text = album.Title;
                 artists.Text = album.Artists;
                 ShortDescription.Text = album.ShortDescription;
+                //center item
+                albumTitle.Left = (albumPanel.Width - albumTitle.Width) / 2;
+                artists.Left = (albumPanel.Width - artists.Width) / 2;
+                Guna2PictureBox6.Left = (albumPanel.Width - Guna2PictureBox6.Width) / 2;
+                ShortDescription.Left = (albumPanel.Width - ShortDescription.Width) / 2;
                 var isLoaded = false;
                 while (!isLoaded)
                     try

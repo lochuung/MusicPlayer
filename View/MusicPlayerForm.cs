@@ -229,7 +229,7 @@ namespace MusicPlayer
             trendingBtn.Checked = false;
             releaseBtn.Checked = false;
             searchPageBtn.Checked = false;
-            songBtn.Checked = false;
+            // songBtn.Checked = false;
             playListBtn.Checked = false;
             
             _ucHome.Visible = false;
@@ -289,9 +289,10 @@ namespace MusicPlayer
         private void songBtn_Click(object sender, EventArgs e)
         {
             UncheckAllButton();
-            if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong(currentMusic);
-            songBtn.Checked = true;
+            if (_ucCurrentSong == null) _ucCurrentSong = new UC_CurrentSong();
+            // songBtn.Checked = true;
             _ucCurrentSong.Visible = true;
+            _ucCurrentSong.LoadData();
         }
 
         private void currentListBtn_Click(object sender, EventArgs e)
@@ -435,6 +436,21 @@ namespace MusicPlayer
                 _ucSearch.searchData = searchData;
                 _ucSearch.LoadData();
             }
+        }
+
+        private void thumbnailImage_Click(object sender, EventArgs e)
+        {
+            currentListBtn_Click(sender, e);
+        }
+
+        private void artistsName_Click(object sender, EventArgs e)
+        {
+            currentListBtn_Click(sender, e);
+        }
+
+        private void songTitle_Click(object sender, EventArgs e)
+        {
+            currentListBtn_Click(sender, e);
         }
     }
 }

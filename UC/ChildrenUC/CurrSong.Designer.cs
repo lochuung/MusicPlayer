@@ -35,7 +35,7 @@ namespace MusicPlayer.UC.ChildrenUC
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelAlbum = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
@@ -117,16 +117,16 @@ namespace MusicPlayer.UC.ChildrenUC
             this.label2.Text = "Ca sĩ : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // labelAlbum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(182, 636);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 23);
-            this.label3.TabIndex = 7;
-            this.label3.Text = ".......";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelAlbum.AutoSize = true;
+            this.labelAlbum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlbum.Location = new System.Drawing.Point(182, 636);
+            this.labelAlbum.Name = "labelAlbum";
+            this.labelAlbum.Size = new System.Drawing.Size(38, 23);
+            this.labelAlbum.TabIndex = 7;
+            this.labelAlbum.Text = ".......";
+            this.labelAlbum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // flowLayoutPanel1
             // 
@@ -154,7 +154,7 @@ namespace MusicPlayer.UC.ChildrenUC
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Button1);
@@ -173,13 +173,13 @@ namespace MusicPlayer.UC.ChildrenUC
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2PictureBox ptrImage;
-        private System.Windows.Forms.Label lblTenBaiHat;
-        private System.Windows.Forms.Label lblTenCaSi;
+        public Guna.UI2.WinForms.Guna2PictureBox ptrImage;
+        public System.Windows.Forms.Label lblTenBaiHat;
+        public System.Windows.Forms.Label lblTenCaSi;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label labelAlbum;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }
