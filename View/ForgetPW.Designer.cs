@@ -67,9 +67,9 @@ namespace MusicPlayer.View
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(24, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(603, 28);
+            this.label2.Size = new System.Drawing.Size(457, 28);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Vui lòng nhập email hoặc số di động để tìm kiếm tài khoản của bạn.";
+            this.label2.Text = "Vui lòng nhập email để tìm kiếm tài khoản của bạn.";
             // 
             // panel2
             // 
@@ -95,11 +95,11 @@ namespace MusicPlayer.View
             this.txbEmailOrSdt.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbEmailOrSdt.ForeColor = System.Drawing.Color.White;
             this.txbEmailOrSdt.HoverState.BorderColor = System.Drawing.Color.White;
-            this.txbEmailOrSdt.Location = new System.Drawing.Point(68, 316);
+            this.txbEmailOrSdt.Location = new System.Drawing.Point(29, 315);
             this.txbEmailOrSdt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txbEmailOrSdt.Name = "txbEmailOrSdt";
             this.txbEmailOrSdt.PasswordChar = '\0';
-            this.txbEmailOrSdt.PlaceholderText = "Email hoặc số điện thoại";
+            this.txbEmailOrSdt.PlaceholderText = "Email ";
             this.txbEmailOrSdt.SelectedText = "";
             this.txbEmailOrSdt.Size = new System.Drawing.Size(503, 55);
             this.txbEmailOrSdt.TabIndex = 33;

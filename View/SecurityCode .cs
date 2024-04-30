@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
 
 namespace MusicPlayer.View
 {
@@ -17,7 +19,7 @@ namespace MusicPlayer.View
         {
             InitializeComponent();
             forgetPW = new ForgetPW();
-            this.Controls.Add(forgetPW);
+            /*this.Controls.Add(forgetPW);*/
         }
 
         private void SecurityCode_Load(object sender, EventArgs e)
@@ -31,6 +33,21 @@ namespace MusicPlayer.View
             ForgetPW forget = new ForgetPW();
             forget.Show();
             this.Hide();
+        }
+
+        private void btnTiepTuc_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txbCode.Text))
+            {
+                lblNhapMa.Visible = true;
+                lblNhapMa.Show();
+            }
+            else
+            {
+                NewPW newPW = new NewPW();
+                newPW.Show();
+                this.Hide();
+            }
         }
     }
 }

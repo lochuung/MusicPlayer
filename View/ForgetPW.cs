@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Net;
 namespace MusicPlayer.View
 {
     public partial class ForgetPW : Form
@@ -44,9 +46,13 @@ namespace MusicPlayer.View
                         var count = (int)cmd.ExecuteScalar();
                         if(count > 0)
                         {
+                            var title = "FineMuSic";
+                            var body = "Mã code: .....";
+                            SendMail(title, body);
                             SecurityCode securityCode = new SecurityCode();
                             securityCode.Show();
                             this.Hide();
+                            
                         }
                         else
                         {
@@ -68,5 +74,29 @@ namespace MusicPlayer.View
             }
             
         }
+        private void SendMail(string title, string body)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("manhtuong24.2004@gmail.com");
+                message.To.Add(new MailAddress(txbEmailOrSdt.Text));
+                message.Subject = title;
+                message.Body = body;
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("manhtuong24.2004@gmail.com", "manhtuongne2004");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Err: " + ex.Message);
+            }
+        }
+
     }
 }

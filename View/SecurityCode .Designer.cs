@@ -41,6 +41,7 @@ namespace MusicPlayer.View
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnTiepTuc = new Guna.UI2.WinForms.Guna2Button();
+            this.lblNhapMa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,6 +192,18 @@ namespace MusicPlayer.View
             this.btnTiepTuc.Size = new System.Drawing.Size(145, 45);
             this.btnTiepTuc.TabIndex = 40;
             this.btnTiepTuc.Text = "Tiếp tục ";
+            this.btnTiepTuc.Click += new System.EventHandler(this.btnTiepTuc_Click);
+            // 
+            // lblNhapMa
+            // 
+            this.lblNhapMa.AutoSize = true;
+            this.lblNhapMa.ForeColor = System.Drawing.Color.Red;
+            this.lblNhapMa.Location = new System.Drawing.Point(25, 410);
+            this.lblNhapMa.Name = "lblNhapMa";
+            this.lblNhapMa.Size = new System.Drawing.Size(122, 17);
+            this.lblNhapMa.TabIndex = 41;
+            this.lblNhapMa.Text = "Vui lòng nhập mã ";
+            this.lblNhapMa.Visible = false;
             // 
             // SecurityCode
             // 
@@ -198,6 +211,7 @@ namespace MusicPlayer.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(669, 573);
+            this.Controls.Add(this.lblNhapMa);
             this.Controls.Add(this.btnTiepTuc);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel2);
@@ -233,5 +247,6 @@ namespace MusicPlayer.View
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnTiepTuc;
+        private System.Windows.Forms.Label lblNhapMa;
     }
 }

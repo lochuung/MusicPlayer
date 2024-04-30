@@ -29,5 +29,12 @@ namespace MusicPlayer
             formRegister.Show();
             Hide();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.ForgetPW forgetPW = new View.ForgetPW();
+            forgetPW.Show();
+            this.Hide();
+        }
     }
 }
