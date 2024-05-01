@@ -1,17 +1,18 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using MusicPlayer.Properties;
 
 namespace MusicPlayer.Database
 {
     internal class DBConnection
     {
-        private static string saPassword = "123456";
+        private static readonly string saPassword = "123456";
 
-        private static string connectString =
+        private static readonly string connectString =
             $"Data Source=HUULOCCODER\\SQLEXPRESS;Initial Catalog=FineMusic;User ID=sa;Password=${saPassword};" +
-            $"Encrypt=True;";
-        
+            "Encrypt=True;";
+
+        private static DBConnection instance;
+
         private readonly SqlConnection sqlConn;
         private SqlDataAdapter da;
         private DataSet ds;
@@ -20,19 +21,14 @@ namespace MusicPlayer.Database
         {
             sqlConn = new SqlConnection(connectString);
         }
-        
-        private static DBConnection instance;
-        
+
         public static DBConnection GetInstance()
         {
-            if (instance == null)
-            {
-                instance = new DBConnection();
-            }
-            
+            if (instance == null) instance = new DBConnection();
+
             return instance;
         }
-        
+
         public DataTable Execute(string sqlStr)
         {
             sqlConn.Open();

@@ -559,39 +559,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Uc_AddUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_AddUser.Designer.cs">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.Designer.cs">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.Designer.cs">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bin.cs" />
     <Compile Include="Database\DBConnection.cs" />
     <Compile Include="Database\Entity\LikePlaylist.cs" />
     <Compile Include="Database\Entity\User.cs" />
     <Compile Include="Database\Entity\Verify.cs" />
     <Compile Include="Database\MusicDbContext.cs" />
     <Compile Include="Database\MusicDbContextFactory.cs" />
-    <Compile Include="Function.cs" />
     <Compile Include="Api\ZingMp3Api.cs" />
-    <Compile Include="Migrations\20240501085423_Initial.cs" />
-    <Compile Include="Migrations\20240501085423_Initial.Designer.cs">
-      <DependentUpon>20240501085423_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20240501100347_Initial.cs" />
+    <Compile Include="Migrations\20240501100347_Initial.Designer.cs">
+      <DependentUpon>20240501100347_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MusicDbContextModelSnapshot.cs" />
-    <Compile Include="ModelView\MusicPlayerModelView.cs" />
     <Compile Include="Model\Album.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\Music.cs" />
@@ -677,12 +656,6 @@
     <Compile Include="View\ForgetPW.Designer.cs">
       <DependentUpon>ForgetPW.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -694,12 +667,6 @@
     </Compile>
     <Compile Include="View\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormUsers.Designer.cs">
-      <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoadFormUsers.cs">
       <SubType>Form</SubType>
@@ -725,11 +692,9 @@
     <Compile Include="View\NewPW.Designer.cs">
       <DependentUpon>NewPW.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SecurityCode .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SecurityCode .Designer.cs">
-      <DependentUpon>SecurityCode .cs</DependentUpon>
+    <Compile Include="View\SecurityCode.cs" />
+    <Compile Include="View\SecurityCode.Designer.cs">
+      <DependentUpon>SecurityCode.cs</DependentUpon>
     </Compile>
     <Compile Include="View\WaitForm.cs">
       <SubType>Form</SubType>
@@ -737,15 +702,6 @@
     <Compile Include="View\WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\Uc_AddUser.resx">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_Profile.resx">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_ViewUser.resx">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -796,17 +752,11 @@
     <EmbeddedResource Include="View\ForgetPW.resx">
       <DependentUpon>ForgetPW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormUsers.resx">
-      <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoadFormUsers.resx">
       <DependentUpon>LoadFormUsers.cs</DependentUpon>
@@ -820,13 +770,12 @@
     <EmbeddedResource Include="View\NewPW.resx">
       <DependentUpon>NewPW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SecurityCode .resx">
-      <DependentUpon>SecurityCode .cs</DependentUpon>
+    <EmbeddedResource Include="View\SecurityCode.resx">
+      <DependentUpon>SecurityCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="appsettings.json" />
     <None Include="App_Plugins\Tabulate\Backoffice\tabulate.js.map" />
     <None Include="App_Plugins\Tabulate\package.manifest" />
     <None Include="packages.config" />
@@ -851,7 +800,6 @@
     <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
     <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
     <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
-    <Content Include="Scripts\FineMusic.sql" />
     <None Include="Resources\chart-new-release-vn.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\warning.png" />
@@ -862,14 +810,6 @@
     <None Include="Resources\positive-dynamic-24.png" />
     <None Include="Resources\positive-dynamic-24 %281%29.png" />
     <None Include="FMMusic.png" />
-    <Content Include="Images\126.gif" />
-    <Content Include="Images\next.png" />
-    <Content Include="Images\play-button.png" />
-    <Content Include="Images\play.png" />
-    <Content Include="Images\pause.png" />
-    <Content Include="Images\previous.png" />
-    <Content Include="Images\volume-mute.png" />
-    <Content Include="Images\volume-up-interface-symbol.png" />
     <Content Include="libs\Bunifu\Bunifu.Licensing.dll" />
     <Content Include="libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll" />
     <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll" />
@@ -968,9 +908,6 @@
     <None Include="Resources\Drivers_License_by_Olivia_Rodrigo.png" />
     <None Include="Resources\downloading_updates_100px.png1.png" />
     <None Include="Resources\downloading_updates_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />

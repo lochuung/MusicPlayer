@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
+using MusicPlayer.Database;
 
 namespace MusicPlayer
 {
@@ -28,51 +30,29 @@ namespace MusicPlayer
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            /*if (txbUserName.Text == "tuong" && txbPassWord.Text == "1")
+            if (txbUserName.Text == "" || txbPassWord.Text == "")
             {
-                FormAdmin formAdmin = new FormAdmin();
-                formAdmin.Show();
-                this.Hide();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txbUserName.Clear();
-                txbPassWord.Clear();
-            }*/
-            var connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
-            using (var con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                var query = string.Format("SELECT * FROM Users WHERE Email = '{0}' AND MatKhau = '{1}'",
-                    txbUserName.Text, txbPassWord.Text);
 
-                using (var cmd = new SqlCommand(query, con))
+            using (var context = new MusicDbContext())
+            {
+                var user = from u in context.Users
+                    where u.Email == txbUserName.Text && u.Password == txbPassWord.Text
+                    select u;
+                if (user.Any())
                 {
-                    //cmd.Parameters.AddWithValue("@Email", txbUserName.Text);
-                    //cmd.Parameters.AddWithValue("@MatKhau", txbPassWord.Text);
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            var HoTen = reader["HoTen"].ToString();
-                            var formUsers = new FormUsers(HoTen);
-                            formUsers.Show();
-                            Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai", "Erros", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                            clearAll();
-                        }
-                    }
+                    MessageBox.Show("Đăng nhập thành công");
+                    var mainForm = new MusicPlayerForm();
+                    mainForm.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
                 }
             }
-
-            var load = new LoadFormUsers();
-            load.Show();
-            Hide();
         }
 
         public void clearAll()
@@ -83,24 +63,14 @@ namespace MusicPlayer
 
         private void txbUserName_Validating(object sender, CancelEventArgs e)
         {
-            var EmailExit = false;
-            var connectionString = "";
-            using (var con = new SqlConnection(connectionString))
+            if (string.IsNullOrEmpty(txbUserName.Text))
             {
-                con.Open();
-                var query = "Select Email FROM Users Where Email = @Email";
-                using (var cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Email", txbUserName.Text);
-                    var count = (int)cmd.ExecuteScalar();
-                    if (count > 0) EmailExit = true;
-                }
+                errorProvider1.SetError(txbUserName, "Vui lòng nhập tên đăng nhập");
             }
-
-            if (EmailExit)
-                errorProvider1.SetError(txbUserName, "");
             else
-                errorProvider1.SetError(txbUserName, "Bạn nhập sai Email hoặc tài khoản chưa được đăng ký");
+            {
+                errorProvider1.SetError(txbUserName, null);
+            }
         }
     }
 }

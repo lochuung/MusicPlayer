@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using MusicPlayer.Database;
+using MusicPlayer.Database.Entity;
+
 namespace MusicPlayer.View
 {
     public partial class ForgetPW : Form
@@ -30,50 +33,38 @@ namespace MusicPlayer.View
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            int dem = 0;
-            var connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UserFM;Integrated Security=True";
-            try
+            if (string.IsNullOrEmpty(txbEmailOrSdt.Text))
             {
-                using (var con = new SqlConnection(connectionString))
+                MessageBox.Show("Vui lòng nhập email!");
+                return;
+            }
+
+            using (var context = new MusicDbContext())
+            {
+                var user = from u in context.Users
+                           where u.Email == txbEmailOrSdt.Text
+                           select u;
+                if (user.Count() == 0)
                 {
-                    con.Open();
-                    string query = "Select Count(*) from Users where Email = @Email";
-                    using (var cmd = new SqlCommand(query,con))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", txbEmailOrSdt.Text);
-                        var count = (int)cmd.ExecuteScalar();
-                        if(count > 0)
-                        {
-                            email = txbEmailOrSdt.Text;
-                            var title = "FineMuSic";
-                            var body = "Mã code: .....";
-                            SendMail(title, body);
-                            SecurityCode securityCode = new SecurityCode(email);
-                            securityCode.Show();
-                            this.Hide();
-                            
-                        }
-                        else
-                        {
-                            dem++;
-                            MessageBox.Show("Vui lòng nhập đúng Email", "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
-                        if(dem >= 3)
-                        {
-                            MainForm mainForm = new MainForm();
-                            mainForm.Show();
-                            this.Hide();
-                        }
-                    }
+                    MessageBox.Show("Email không tồn tại!");
+                    return;
                 }
+                email = txbEmailOrSdt.Text;
+                string code = Guid.NewGuid().ToString();
+                SendMail("FineMusic - Mã đặt lại mật khẩu", code);
+                MessageBox.Show("Mã đặt lại mật khẩu đã được gửi đến email của bạn!");
+                Verify verify = new Verify
+                {
+                    Code = code,
+                    UserId = user.First().UserId
+                };
+                context.Verifies.Add(verify);
+                context.SaveChanges();
+                
+                SecurityCode securityCode = new SecurityCode(this);
+                securityCode.Show();
+                this.Hide();
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
         }
         private void SendMail(string title, string code)
         {
@@ -85,8 +76,10 @@ namespace MusicPlayer.View
                 message.From = new MailAddress("Hotel.HL.BB@gmail.com");
                 message.To.Add(new MailAddress(email));
                 message.Subject = title;
-                message.Body = $"< html >< body >< h1 > FineMusic </ h1 >" +
-                               $"< span ><b> ${code}</b> là mã đặt lại mật khẩu FineMusic của bạn </ p ></ body ></ html > ";
+                // html body
+                message.IsBodyHtml = true;
+                message.Body = $"<h1> FineMusic </h1>" +
+                               $"<span><b>{code}</b> là mã đặt lại mật khẩu FineMusic của bạn </p>";
 
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
@@ -100,33 +93,6 @@ namespace MusicPlayer.View
             {
                 MessageBox.Show("err: " + ex.Message);
             }
-           /* try
-            {
-                MailMessage message = new MailMessage();
-                SmtpClient smtp = new SmtpClient();
-
-                message.From = new MailAddress("tuongporo9x2004@gmail.com");
-                message.To.Add(new MailAddress("manhtuong24.2004@gmail.com"));
-                message.Subject = title;
-                message.Body = body;
-                message.IsBodyHtml = true;
-                message.Body = "< html >< body >< h1 > FineMusic </ h1 >< p > MaCode là mã đặt lại mật khẩu FineMusic của bạn </ p ></ body ></ html > ";
-
-                smtp.Port = 587;
-                smtp.Host = "smtp.gmail.com";
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-
-                smtp.Credentials = new NetworkCredential("tuongporo9x2004@gmail.com", "strongwall2004");
-
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-                smtp.Send(message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Err: " + ex.Message);
-            }*/
         }
 
     }

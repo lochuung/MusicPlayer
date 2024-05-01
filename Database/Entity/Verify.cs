@@ -13,10 +13,10 @@ namespace MusicPlayer.Database.Entity
         public string Code { get; set; }
 
         [Required]
-        public DateTime CreatedDate { get; set; } 
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         [Required]
-        public DateTime ExpiredDate { get; set; } 
+        public DateTime ExpiredDate { get; set; } = DateTime.Now.AddMinutes(5);
 
         // Foreign Key and Navigation Property for User-Verify relationship
         public int UserId { get; set; }

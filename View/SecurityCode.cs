@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
+using MusicPlayer.Database;
 
 namespace MusicPlayer.View
 {
@@ -26,7 +27,7 @@ namespace MusicPlayer.View
         public SecurityCode(ForgetPW forgetPW)
         {
             InitializeComponent();
-            forgetPW = new ForgetPW();
+            email = forgetPW.Email;
             string emailsdt = forgetPW.EmailorSdtText;
             lblEmail.Text = emailsdt;
             lblEmail.Visible = true;
@@ -57,7 +58,25 @@ namespace MusicPlayer.View
             }
             else
             {
-                NewPW newPW = new NewPW();
+                using (var context = new MusicDbContext())
+                {
+                    var verify = from v in context.Verifies
+                                 where v.Code == txbCode.Text && v.User.Email == email
+                                 select v;
+                    if (verify.Count() == 0)
+                    {
+                        MessageBox.Show("Mã không hợp lệ!");
+                        return;
+                    }
+                    if (verify.First().ExpiredDate < DateTime.Now)
+                    {
+                        MessageBox.Show("Mã đã hết hạn!");
+                        return;
+                    }
+                    context.Verifies.Remove(verify.First());
+                    context.SaveChanges();
+                }
+                NewPW newPW = new NewPW(email);
                 newPW.Show();
                 this.Hide();
             }

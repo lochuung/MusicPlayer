@@ -10,16 +10,11 @@ namespace MusicPlayer.Database
     {
         public MusicDbContext CreateDbContext(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
             
             var optionsBuilder = new DbContextOptionsBuilder<MusicDbContext>();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("FineMusicDatabase") ?? throw new InvalidOperationException());
+            optionsBuilder.UseSqlServer(Properties.Settings.Default.ConnectionString ?? throw new InvalidOperationException());
             
             return new MusicDbContext(optionsBuilder.Options);
-            
         }
     }
 }

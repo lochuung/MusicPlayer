@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+using MusicPlayer.Database;
 
 namespace MusicPlayer.View
 {
     public partial class NewPW : Form
     {
         Regex regex = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$");
+        private string email;
+
+        public NewPW(string email)
+        {
+            InitializeComponent();
+            this.email = email;
+        }
+
         public NewPW()
         {
             InitializeComponent();
@@ -54,34 +63,39 @@ namespace MusicPlayer.View
 
         private void btnDangKyTaiKhoan_Click(object sender, EventArgs e)
         {
-            /*string email = txbEmail.Text;
-            string matKhauMoi = txbMatKhauMoi.Text;
+             string matKhauMoi = txbMatKhauMoi.Text;
 
-            bool capNhatThanhCong = CapNhatMatKhau(email, matKhauMoi);
+             bool capNhatThanhCong = CapNhatMatKhau(email, matKhauMoi);
 
-            if (capNhatThanhCong)
-            {
-                MessageBox.Show("Cập nhật mật khẩu mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật mật khẩu mới thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+             if (capNhatThanhCong)
+             {
+                 MessageBox.Show("Cập nhật mật khẩu mới thành công!", 
+                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+             }
+             else
+             {
+                 MessageBox.Show("Cập nhật mật khẩu mới thất bại!", "" +
+                                                                    "Lỗi", 
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
         }
         private bool CapNhatMatKhau(string email, string matKhauMoi)
         {
-            var connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UserFM;Integrated Security=True";
-            using (var con = new SqlConnection(connectionString))
+            using (var context = new MusicDbContext())
             {
-                con.Open();
-                string query = "UPDATE Users SET MatKhau = @MatKhauMoi WHERE Email = @Email";
-                using (var cmd = new SqlCommand(query, con))
+                var user = from u in context.Users
+                           where u.Email == email
+                           select u;
+                if (user.Count() == 0)
                 {
-                    cmd.Parameters.AddWithValue("@MatKhauMoi", matKhauMoi);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    return false;
                 }
+                user.First().Password = matKhauMoi;
+                context.SaveChanges();
+                return true;
             }
         }
     }

@@ -25,10 +25,10 @@ namespace MusicPlayer.UC.ChildrenUC
             var item = new UC_Item();
             item.SetImage(dto.ThumbnailM);
             item.SetTitle(dto.Title);
-            item.SetArtist(dto is Album 
-                           && !string.IsNullOrEmpty(((Album)dto).ShortDescription) 
-                ? ((Album)dto).ShortDescription : 
-                dto.Artists);
+            item.SetArtist(dto is Album
+                           && !string.IsNullOrEmpty(((Album)dto).ShortDescription)
+                ? ((Album)dto).ShortDescription
+                : dto.Artists);
 
             musics.Add(dto);
 

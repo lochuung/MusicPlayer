@@ -1,16 +1,27 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.IO;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MusicPlayer.Database.Entity;
 
 namespace MusicPlayer.Database
 {
     public class MusicDbContext : DbContext
     {
-        protected MusicDbContext()
+        public  MusicDbContext() : base()
         {
         }
 
         public MusicDbContext(DbContextOptions options) : base(options)
         {
+        }
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            
+            optionsBuilder.UseSqlServer(Properties.Settings.Default.ConnectionString 
+                                        ?? throw new InvalidOperationException());
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -18,6 +29,7 @@ namespace MusicPlayer.Database
             modelBuilder.Entity<User>(e =>
             {
                 e.HasKey(u => u.UserId);
+                e.Property(u => u.UserId).UseIdentityColumn(1, 1);
                 e.HasIndex(u => u.Email).IsUnique();
                 e.HasIndex(u => u.PhoneNumber).IsUnique();
                 
@@ -34,6 +46,7 @@ namespace MusicPlayer.Database
             
             modelBuilder.Entity<Verify>(e =>
             {
+                e.Property(v => v.VerifyId).UseIdentityColumn(1, 1);
                 e.HasKey(v => v.VerifyId);
                 e.HasIndex(v => v.Code).IsUnique();
                 
@@ -45,6 +58,7 @@ namespace MusicPlayer.Database
             
             modelBuilder.Entity<LikePlaylist>(e =>
             {
+                e.Property(lp => lp.Id).UseIdentityColumn(1, 1);
                 e.HasKey(lp => lp.Id);
                 e.HasIndex(lp => lp.MusicCode).IsUnique();
                 
