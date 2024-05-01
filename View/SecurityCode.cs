@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Mail;
-using System.Net;
 using MusicPlayer.Database;
 
 namespace MusicPlayer.View
 {
     public partial class SecurityCode : Form
     {
+        private readonly string email;
         private ForgetPW forgetPW;
-        private string email;
 
         public SecurityCode(string email)
         {
@@ -24,11 +16,12 @@ namespace MusicPlayer.View
             this.email = email;
             lblEmail.Text = email;
         }
+
         public SecurityCode(ForgetPW forgetPW)
         {
             InitializeComponent();
             email = forgetPW.Email;
-            string emailsdt = forgetPW.EmailorSdtText;
+            var emailsdt = forgetPW.EmailorSdtText;
             lblEmail.Text = emailsdt;
             lblEmail.Visible = true;
             lblEmail.Show();
@@ -44,14 +37,14 @@ namespace MusicPlayer.View
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            ForgetPW forget = new ForgetPW();
+            var forget = new ForgetPW();
             forget.Show();
-            this.Hide();
+            Hide();
         }
 
         private void btnTiepTuc_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txbCode.Text))
+            if (string.IsNullOrEmpty(txbCode.Text))
             {
                 lblNhapMa.Visible = true;
                 lblNhapMa.Show();
@@ -61,24 +54,27 @@ namespace MusicPlayer.View
                 using (var context = new MusicDbContext())
                 {
                     var verify = from v in context.Verifies
-                                 where v.Code == txbCode.Text && v.User.Email == email
-                                 select v;
+                        where v.Code == txbCode.Text && v.User.Email == email
+                        select v;
                     if (verify.Count() == 0)
                     {
                         MessageBox.Show("Mã không hợp lệ!");
                         return;
                     }
+
                     if (verify.First().ExpiredDate < DateTime.Now)
                     {
                         MessageBox.Show("Mã đã hết hạn!");
                         return;
                     }
+
                     context.Verifies.Remove(verify.First());
                     context.SaveChanges();
                 }
-                NewPW newPW = new NewPW(email);
+
+                var newPW = new NewPW(email);
                 newPW.Show();
-                this.Hide();
+                Hide();
             }
         }
     }

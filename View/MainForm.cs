@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MusicPlayer.View;
 
 namespace MusicPlayer
 {
@@ -32,9 +33,9 @@ namespace MusicPlayer
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            View.ForgetPW forgetPW = new View.ForgetPW();
+            var forgetPW = new ForgetPW();
             forgetPW.Show();
-            this.Hide();
+            Hide();
         }
     }
 }

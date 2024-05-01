@@ -18,7 +18,7 @@ namespace MusicPlayer.Model
         {
             Musics = musics;
         }
-        
+
         public string ShortDescription { get; set; }
 
         public List<Music> Musics { get; set; }

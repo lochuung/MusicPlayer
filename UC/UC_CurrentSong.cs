@@ -1,11 +1,11 @@
 ﻿using System.Windows.Forms;
-using MusicPlayer.Model;
 
 namespace MusicPlayer.UC
 {
     public partial class UC_CurrentSong : UserControl
     {
         private static MusicPlayerForm mainForm;
+
         public UC_CurrentSong()
         {
             InitializeComponent();
@@ -16,7 +16,7 @@ namespace MusicPlayer.UC
             if (mainForm == null) mainForm = (MusicPlayerForm)FindForm();
             if (mainForm.currentMusic == null) return;
             var currentMusic = mainForm.currentMusic;
-            bool isLoaded = false;
+            var isLoaded = false;
             do
             {
                 try
@@ -30,6 +30,7 @@ namespace MusicPlayer.UC
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } while (!isLoaded);
+
             currSong1.lblTenBaiHat.Text = currentMusic.Title;
             currSong1.lblTenCaSi.Text = currentMusic.Artists;
             currSong1.labelAlbum.Text = currentMusic.Album.Title;

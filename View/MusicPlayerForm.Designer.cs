@@ -55,6 +55,7 @@
             this.artistsName = new System.Windows.Forms.Label();
             this.thumbnailImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.containerPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.loveMusic = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.loveMusic);
             this.guna2Panel1.Controls.Add(this.playListBtn);
             this.guna2Panel1.Controls.Add(this.searchPageBtn);
             this.guna2Panel1.Controls.Add(this.releaseBtn);
@@ -507,6 +509,34 @@
             this.containerPanel.Size = new System.Drawing.Size(1038, 584);
             this.containerPanel.TabIndex = 3;
             // 
+            // loveMusic
+            // 
+            this.loveMusic.Animated = true;
+            this.loveMusic.BackColor = System.Drawing.Color.Transparent;
+            this.loveMusic.BorderRadius = 10;
+            this.loveMusic.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.love_100px_png1;
+            this.loveMusic.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.loveMusic.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
+            this.loveMusic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.loveMusic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.loveMusic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.loveMusic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.loveMusic.FillColor = System.Drawing.Color.White;
+            this.loveMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.loveMusic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(180)))), ((int)(((byte)(195)))));
+            this.loveMusic.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
+            this.loveMusic.Image = global::MusicPlayer.Properties.Resources.love_100px;
+            this.loveMusic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.loveMusic.ImageSize = new System.Drawing.Size(25, 25);
+            this.loveMusic.Location = new System.Drawing.Point(32, 440);
+            this.loveMusic.Name = "loveMusic";
+            this.loveMusic.Size = new System.Drawing.Size(180, 45);
+            this.loveMusic.TabIndex = 9;
+            this.loveMusic.Text = "Nhạc yêu thích";
+            this.loveMusic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.loveMusic.UseTransparentBackground = true;
+            this.loveMusic.Click += new System.EventHandler(this.loveMusic_Click);
+            // 
             // MusicPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -563,5 +593,6 @@
         private Guna.UI2.WinForms.Guna2TrackBar volumeTrackBar;
         private Guna.UI2.WinForms.Guna2TrackBar musicTrackBar;
         public Guna.UI2.WinForms.Guna2Button playListBtn;
+        private Guna.UI2.WinForms.Guna2Button loveMusic;
     }
 }

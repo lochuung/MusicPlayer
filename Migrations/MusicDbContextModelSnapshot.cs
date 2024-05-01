@@ -19,7 +19,7 @@ namespace MusicPlayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MusicPlayer.Database.Entity.LikePlaylist", b =>
+            modelBuilder.Entity("MusicPlayer.Database.Entity.LikeMusic", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,19 +30,16 @@ namespace MusicPlayer.Migrations
 
                     b.Property<string>("MusicCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MusicCode")
-                        .IsUnique();
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("LikePlaylists");
+                    b.ToTable("LikeMusic");
                 });
 
             modelBuilder.Entity("MusicPlayer.Database.Entity.User", b =>
@@ -117,7 +114,7 @@ namespace MusicPlayer.Migrations
                     b.ToTable("Verifies");
                 });
 
-            modelBuilder.Entity("MusicPlayer.Database.Entity.LikePlaylist", b =>
+            modelBuilder.Entity("MusicPlayer.Database.Entity.LikeMusic", b =>
                 {
                     b.HasOne("MusicPlayer.Database.Entity.User", "User")
                         .WithMany("LikePlaylists")

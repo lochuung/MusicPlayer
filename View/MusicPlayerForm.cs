@@ -1,38 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MusicPlayer.Database;
+using MusicPlayer.Database.Entity;
 using MusicPlayer.Model;
 using MusicPlayer.MusicApi;
 using MusicPlayer.Properties;
 using MusicPlayer.UC;
 using NAudio.Wave;
-using WaitFormExample;
 
 namespace MusicPlayer
 {
     public partial class MusicPlayerForm : Form
     {
-        private UC_Home _ucHome;
-        private UC_Trending _ucTrending;
-        private UC_NewRelease _ucNewRelease;
         private UC_CurrentSong _ucCurrentSong;
-        private UC_Search _ucSearch;
+        private UC_Home _ucHome;
+        private UC_NewRelease _ucNewRelease;
         public UC_Playlist _ucPlaylist;
+        private UC_Search _ucSearch;
+        private UC_Trending _ucTrending;
 
 
         private ZingMp3Api api;
         public Album currentAlbum;
         public Music currentMusic;
         public int currentSongIndex;
+
+        // database
+        public MusicDbContext dbContext;
         public List<Music> musicList = new List<Music>();
+        public List<Music> loveMusicList = new List<Music>();
 
         private MediaFoundationReader reader;
 
         // using semaphore to avoid multiple thread access to waveOut and currentMusic, currentSongIndex
         public Semaphore Semaphore = new Semaphore(2, 2);
         private Thread streamingThread;
+
+        public User user;
         public WaveOutEvent waveOut = new WaveOutEvent();
 
         public MusicPlayerForm()
@@ -40,10 +48,17 @@ namespace MusicPlayer
             InitializeComponent();
         }
 
+        public MusicPlayerForm(int userId)
+        {
+            InitializeComponent();
+            dbContext = new MusicDbContext();
+            user = dbContext.Users.FirstOrDefault(u => u.UserId == userId);
+        }
+
         private async void MusicPlayerForm_Load(object sender, EventArgs e)
         {
             api = new ZingMp3Api(this);
-            
+
             musicList = new List<Music>();
             currentMusic = null;
             repeatBtn.Checked = true;
@@ -53,25 +68,25 @@ namespace MusicPlayer
             _ucHome.homeData = homeData;
 
             _ucTrending = new UC_Trending(await api.GetTrendingData());
-            
+
             _ucNewRelease = new UC_NewRelease(await api.GetNewReleaseData());
 
             _ucCurrentSong = new UC_CurrentSong();
             _ucSearch = new UC_Search();
             _ucPlaylist = new UC_Playlist();
             _ucPlaylist.mainForm = this;
-            
+
             api.WaitForm.Show();
-            
+
             AddUserControl(_ucHome);
             AddUserControl(_ucTrending);
             AddUserControl(_ucNewRelease);
             AddUserControl(_ucSearch);
             AddUserControl(_ucCurrentSong);
             AddUserControl(_ucPlaylist);
-            
+
             api.WaitForm.Hide();
-            
+
             homeBtn_Click(sender, e);
         }
 
@@ -231,7 +246,7 @@ namespace MusicPlayer
             searchPageBtn.Checked = false;
             // songBtn.Checked = false;
             playListBtn.Checked = false;
-            
+
             _ucHome.Visible = false;
             _ucTrending.Visible = false;
             _ucNewRelease.Visible = false;
@@ -247,6 +262,7 @@ namespace MusicPlayer
                 _ucHome = new UC_Home();
                 _ucHome.homeData = await api.GetHomeData();
             }
+
             UncheckAllButton();
             homeBtn.Checked = true;
             _ucHome.Visible = true;
@@ -273,6 +289,7 @@ namespace MusicPlayer
                 var data = await api.GetNewReleaseData();
                 _ucNewRelease = new UC_NewRelease(data);
             }
+
             UncheckAllButton();
             releaseBtn.Checked = true;
             _ucNewRelease.Visible = true;
@@ -451,6 +468,47 @@ namespace MusicPlayer
         private void songTitle_Click(object sender, EventArgs e)
         {
             currentListBtn_Click(sender, e);
+        }
+
+        private async void loveMusic_Click(object sender, EventArgs e)
+        {
+            LoadLoveMusic();
+            
+            musicList = loveMusicList;
+            currentSongIndex = 0;
+            currentMusic = loveMusicList.Count() != 0 ? musicList[currentSongIndex]
+                    : currentMusic;
+            _ucPlaylist.LoadPlaylists();
+            currentListBtn_Click(sender, e);
+        }
+
+        public void LoadLoveMusic()
+        {
+            // load love music to current list
+            var loveMusic = from p in dbContext.LikePlaylists
+                where p.UserId == user.UserId
+                select p;
+            if (user.LikePlaylists == null)
+            {
+                user.LikePlaylists = loveMusic.ToList();
+            }
+            
+            loveMusicList.Clear();
+            
+            foreach (var likePlaylist in loveMusic)
+            {
+                if (loveMusicList.Any(m => m.Id == likePlaylist.MusicCode)) continue;
+                Task.Run(async () =>
+                {
+                    var music = await api.GetSongInfo(likePlaylist.MusicCode);
+                    loveMusicList.Add(music);
+                    _ucPlaylist.Invoke(new Action(() =>
+                    {
+                        if (musicList == loveMusicList)
+                            _ucPlaylist.LoadPlaylists();
+                    }));
+                });
+            }
         }
     }
 }

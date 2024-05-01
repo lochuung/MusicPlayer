@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using MusicPlayer.Database;
@@ -34,7 +33,7 @@ namespace MusicPlayer
                 ClearAll();
                 return;
             }
-            
+
             try
             {
                 using (var context = new MusicDbContext())
@@ -42,15 +41,15 @@ namespace MusicPlayer
                     // check exist
                     var email = txbEmail.Text;
                     var userCheck = from u in context.Users
-                                    where u.Email == email || u.PhoneNumber == txbSdt.Text
-                                    select u;
+                        where u.Email == email || u.PhoneNumber == txbSdt.Text
+                        select u;
                     if (userCheck.Count() > 0)
                     {
                         MessageBox.Show("Email hoặc số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         return;
                     }
-                    
+
                     var user = new User
                     {
                         FullName = txbHoTen.Text,
@@ -61,7 +60,7 @@ namespace MusicPlayer
                     };
                     context.Users.Add(user);
                     context.SaveChanges();
-                    MessageBox.Show("Đăng ký thành công!", 
+                    MessageBox.Show("Đăng ký thành công!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAll();
                 }
@@ -164,6 +163,5 @@ namespace MusicPlayer
                 toolTip1.SetToolTip(ptbNhapLaiMatKhau, "Vui lòng nhập đúng !");
             }
         }
-
     }
 }

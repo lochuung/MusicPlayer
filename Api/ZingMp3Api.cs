@@ -69,7 +69,7 @@ namespace MusicPlayer.MusicApi
 
             return data;
         }
-        
+
         public async Task<List<Music>> GetNewReleaseData()
         {
             WaitForm.Show();
@@ -105,12 +105,32 @@ namespace MusicPlayer.MusicApi
             return data;
         }
 
-        public async Task<string> GetSongInfo(string id)
+        public async Task<Music> GetSongInfo(string id)
         {
             WaitForm.Show();
             var response = await ZingMp3ApiUtils.GetSongInfo(this, id);
+            dynamic responseDeserializeObject = JsonConvert.DeserializeObject(response);
+            var song = new Music
+            {
+                Id = responseDeserializeObject.encodeId,
+                Title = responseDeserializeObject.title,
+                Artists = responseDeserializeObject.artistsNames,
+                Thumbnail = responseDeserializeObject.thumbnail,
+                ThumbnailM = responseDeserializeObject.thumbnailM,
+                Album = responseDeserializeObject.album != null
+                    ? new Album
+                    {
+                        Id = responseDeserializeObject.album.encodeId,
+                        Title = responseDeserializeObject.album.title,
+                        Artists = responseDeserializeObject.album.artistsNames,
+                        Thumbnail = responseDeserializeObject.album.thumbnail,
+                        ThumbnailM = responseDeserializeObject.album.thumbnailM,
+                        ShortDescription = responseDeserializeObject.album.sortDescription
+                    }
+                    : null
+            };
             WaitForm.Hide();
-            return response;
+            return song;
         }
 
         public async Task<string> GetStreamingUrl(string id)

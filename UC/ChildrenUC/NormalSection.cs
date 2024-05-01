@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using MusicPlayer.Database.Entity;
 using MusicPlayer.Model;
 using MusicPlayer.Properties;
 using NAudio.Wave;
+using Umbraco.Core;
 
 namespace MusicPlayer.UC.ChildrenUC
 {
@@ -28,8 +31,6 @@ namespace MusicPlayer.UC.ChildrenUC
             MusicList.Controls.Add(item);
             musics.Add(music);
 
-            var musicIndex = musics.Count - 1;
-
             EventHandler clickHandle = (sender, e) =>
             {
                 mainForm.musicList = new List<Music>();
@@ -38,6 +39,7 @@ namespace MusicPlayer.UC.ChildrenUC
                 {
                     mainForm.Semaphore.WaitOne();
                     mainForm.currentMusic = music;
+                    var musicIndex = mainForm.musicList.FindIndex(x => x.Id == music.Id);
                     mainForm.currentSongIndex = musicIndex;
                     mainForm.Semaphore.Release();
 
@@ -59,6 +61,37 @@ namespace MusicPlayer.UC.ChildrenUC
             item.label13.Click += clickHandle;
             item.label14.Click += clickHandle;
             item.guna2Panel1.Click += clickHandle;
+
+            // like button click event
+            item.likeBtn.Click += (sender, e) =>
+            {
+                if (item.likeBtn.Checked)
+                {
+                    item.likeBtn.Checked = false;
+                    if (mainForm.user.LikePlaylists != null)
+                        mainForm.user.LikePlaylists.RemoveAll(x => x.MusicCode == music.Id);
+                    mainForm.dbContext.SaveChanges();
+                }
+                else
+                {
+                    item.likeBtn.Checked = true;
+                    var likePlaylist = new LikeMusic
+                    {
+                        UserId = mainForm.user.UserId,
+                        MusicCode = music.Id
+                    };
+                    var checkExist = mainForm.user.LikePlaylists
+                        .Where(x => x.MusicCode == music.Id).ToList();
+                    if (checkExist.Count > 0)
+                        return;
+                    if (mainForm.user.LikePlaylists == null)
+                        mainForm.user.LikePlaylists = new List<LikeMusic>();
+                    mainForm.user.LikePlaylists.Add(likePlaylist);
+                    mainForm.dbContext.SaveChanges();
+                }
+                
+                mainForm.LoadLoveMusic();
+            };
 
             // set item width
             var itemWidth = (MusicList.Width - 20) / column;
@@ -134,6 +167,15 @@ namespace MusicPlayer.UC.ChildrenUC
                                     item.PlayBtn.Image = Resources.play_100px;
                                     item.BackColor = Color.FromArgb(240, 243, 250);
                                 }
+
+                                if (mainForm.user.LikePlaylists == null)
+                                    continue;
+
+                                if (mainForm.user.LikePlaylists
+                                        .Where(x => x.MusicCode == musics[i].Id).ToList().Count > 0)
+                                    item.likeBtn.Checked = true;
+                                else
+                                    item.likeBtn.Checked = false;
                             }
                         }));
                 }

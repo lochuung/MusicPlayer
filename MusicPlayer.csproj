@@ -560,15 +560,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DBConnection.cs" />
-    <Compile Include="Database\Entity\LikePlaylist.cs" />
+    <Compile Include="Database\Entity\LikeMusic.cs" />
     <Compile Include="Database\Entity\User.cs" />
     <Compile Include="Database\Entity\Verify.cs" />
     <Compile Include="Database\MusicDbContext.cs" />
     <Compile Include="Database\MusicDbContextFactory.cs" />
     <Compile Include="Api\ZingMp3Api.cs" />
-    <Compile Include="Migrations\20240501100347_Initial.cs" />
-    <Compile Include="Migrations\20240501100347_Initial.Designer.cs">
-      <DependentUpon>20240501100347_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20240501123941_Initial.cs" />
+    <Compile Include="Migrations\20240501123941_Initial.Designer.cs">
+      <DependentUpon>20240501123941_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MusicDbContextModelSnapshot.cs" />
     <Compile Include="Model\Album.cs" />
@@ -812,39 +812,6 @@
     <None Include="Resources\positive-dynamic-24.png" />
     <None Include="Resources\positive-dynamic-24 %281%29.png" />
     <None Include="FMMusic.png" />
-    <Content Include="libs\Bunifu\Bunifu.Licensing.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
     <None Include="Resources\dashboard_layout_100px.png1.png" />
     <None Include="Resources\Cardi_B_-_Up.png" />
     <None Include="Resources\briefcase_300px.png" />

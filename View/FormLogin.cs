@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using MusicPlayer.Database;
@@ -44,7 +43,7 @@ namespace MusicPlayer
                 if (user.Any())
                 {
                     MessageBox.Show("Đăng nhập thành công");
-                    var mainForm = new MusicPlayerForm();
+                    var mainForm = new MusicPlayerForm(user.First().UserId);
                     mainForm.Show();
                     Hide();
                 }
@@ -64,13 +63,9 @@ namespace MusicPlayer
         private void txbUserName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txbUserName.Text))
-            {
                 errorProvider1.SetError(txbUserName, "Vui lòng nhập tên đăng nhập");
-            }
             else
-            {
                 errorProvider1.SetError(txbUserName, null);
-            }
         }
     }
 }
