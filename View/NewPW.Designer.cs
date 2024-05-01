@@ -74,6 +74,7 @@ namespace MusicPlayer.View
             this.btnDangKyTaiKhoan.Size = new System.Drawing.Size(145, 45);
             this.btnDangKyTaiKhoan.TabIndex = 43;
             this.btnDangKyTaiKhoan.Text = "Xác nhận";
+            this.btnDangKyTaiKhoan.Click += new System.EventHandler(this.btnDangKyTaiKhoan_Click);
             // 
             // txbMatKhauMoi
             // 

@@ -15,6 +15,12 @@ namespace MusicPlayer.View
 {
     public partial class ForgetPW : Form
     {
+        private string email;
+
+        public string Email
+        {
+            get { return email; }
+        }
         public ForgetPW()
         {
             InitializeComponent();
@@ -33,23 +39,24 @@ namespace MusicPlayer.View
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             int dem = 0;
-            var connectionString = "";
+            var connectionString = "Data Source=LAPTOP-3N644IDG;Initial Catalog=UserFM;Integrated Security=True";
             try
             {
                 using (var con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "Select Email from Users where Email = @Email";
+                    string query = "Select Count(*) from Users where Email = @Email";
                     using (var cmd = new SqlCommand(query,con))
                     {
                         cmd.Parameters.AddWithValue("@Email", txbEmailOrSdt.Text);
                         var count = (int)cmd.ExecuteScalar();
                         if(count > 0)
                         {
+                            email = txbEmailOrSdt.Text;
                             var title = "FineMuSic";
                             var body = "Mã code: .....";
                             SendMail(title, body);
-                            SecurityCode securityCode = new SecurityCode();
+                            SecurityCode securityCode = new SecurityCode(email);
                             securityCode.Show();
                             this.Hide();
                             
@@ -76,26 +83,33 @@ namespace MusicPlayer.View
         }
         private void SendMail(string title, string body)
         {
-            try
+           /* try
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("manhtuong24.2004@gmail.com");
-                message.To.Add(new MailAddress(txbEmailOrSdt.Text));
+
+                message.From = new MailAddress("tuongporo9x2004@gmail.com");
+                message.To.Add(new MailAddress("manhtuong24.2004@gmail.com"));
                 message.Subject = title;
                 message.Body = body;
+                message.IsBodyHtml = true;
+                message.Body = "< html >< body >< h1 > FineMusic </ h1 >< p > MaCode là mã đặt lại mật khẩu FineMusic của bạn </ p ></ body ></ html > ";
+
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("manhtuong24.2004@gmail.com", "manhtuongne2004");
+
+                smtp.Credentials = new NetworkCredential("tuongporo9x2004@gmail.com", "strongwall2004");
+
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
                 smtp.Send(message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Err: " + ex.Message);
-            }
+            }*/
         }
 
     }

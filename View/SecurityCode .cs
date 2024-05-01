@@ -15,17 +15,30 @@ namespace MusicPlayer.View
     public partial class SecurityCode : Form
     {
         private ForgetPW forgetPW;
-        public SecurityCode()
+        private string email;
+
+        public SecurityCode(string email)
+        {
+            InitializeComponent();
+            this.email = email;
+            lblEmail.Text = email;
+        }
+        public SecurityCode(ForgetPW forgetPW)
         {
             InitializeComponent();
             forgetPW = new ForgetPW();
+            string emailsdt = forgetPW.EmailorSdtText;
+            lblEmail.Text = emailsdt;
+            lblEmail.Visible = true;
+            lblEmail.Show();
+
             /*this.Controls.Add(forgetPW);*/
         }
 
         private void SecurityCode_Load(object sender, EventArgs e)
         {
-            string emailsdt = forgetPW.EmailorSdtText;
-            lblEmail.Text = emailsdt;
+            /*string emailsdt = forgetPW.EmailorSdtText;
+            lblEmail.Text = emailsdt;*/
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

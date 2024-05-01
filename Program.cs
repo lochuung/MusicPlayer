@@ -14,7 +14,7 @@ namespace MusicPlayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 /*<<<<<<< HEAD*/
-            Application.Run(new View.NewPW());
+            Application.Run(new View.ForgetPW());
 /*=======*/
           /*  Application.Run(new MusicPlayerForm());*/
 /*>>>>>>> 0fce398abddbc293c9f68101b15940c24acdfb23*/

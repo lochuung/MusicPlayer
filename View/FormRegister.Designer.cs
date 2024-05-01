@@ -72,8 +72,8 @@ namespace MusicPlayer
             this.btnDangKyTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKyTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDangKyTaiKhoan.HoverState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDangKyTaiKhoan.HoverState.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnDangKyTaiKhoan.Location = new System.Drawing.Point(205, 661);
+            this.btnDangKyTaiKhoan.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnDangKyTaiKhoan.Location = new System.Drawing.Point(205, 653);
             this.btnDangKyTaiKhoan.Name = "btnDangKyTaiKhoan";
             this.btnDangKyTaiKhoan.Size = new System.Drawing.Size(255, 49);
             this.btnDangKyTaiKhoan.TabIndex = 20;
