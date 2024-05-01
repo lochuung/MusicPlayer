@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS FineMusic;
+USE FineMusic;
+CREATE TABLE Users
+(
+    HoTen NVARCHAR(100) NULL,
+    NamSinh date NOT NULL,
+    Email NVARCHAR(50) PRIMARY KEY,
+    SoDienThoai NVARCHAR(15) NOT NULL,
+    MatKhau NVARCHAR(50) NOT NULL
+);

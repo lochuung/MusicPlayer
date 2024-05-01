@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
@@ -64,7 +56,9 @@ namespace MusicPlayer.View
                         else
                         {
                             dem++;
-                            MessageBox.Show("Vui lòng nhập đúng Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Vui lòng nhập đúng Email", "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                         }
                         if(dem >= 3)
                         {
@@ -81,8 +75,31 @@ namespace MusicPlayer.View
             }
             
         }
-        private void SendMail(string title, string body)
+        private void SendMail(string title, string code)
         {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+
+                message.From = new MailAddress("Hotel.HL.BB@gmail.com");
+                message.To.Add(new MailAddress(email));
+                message.Subject = title;
+                message.Body = $"< html >< body >< h1 > FineMusic </ h1 >" +
+                               $"< span ><b> ${code}</b> là mã đặt lại mật khẩu FineMusic của bạn </ p ></ body ></ html > ";
+
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("Hotel.HL.BB@gmail.com", "ucfocygvvxbawius");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("err: " + ex.Message);
+            }
            /* try
             {
                 MailMessage message = new MailMessage();
