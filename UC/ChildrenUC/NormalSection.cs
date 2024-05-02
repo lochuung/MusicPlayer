@@ -88,9 +88,9 @@ namespace MusicPlayer.UC.ChildrenUC
                         mainForm.user.LikePlaylists = new List<LikeMusic>();
                     mainForm.user.LikePlaylists.Add(likePlaylist);
                     mainForm.dbContext.SaveChanges();
-                }
                 
-                mainForm.LoadLoveMusic();
+                    mainForm.LoadLoveMusic();
+                }
             };
 
             // set item width
