@@ -95,7 +95,7 @@ namespace MusicPlayer.View
             this.txbMatKhauMoi.Location = new System.Drawing.Point(47, 337);
             this.txbMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
-            this.txbMatKhauMoi.PasswordChar = '\0';
+            this.txbMatKhauMoi.PasswordChar = '*';
             this.txbMatKhauMoi.PlaceholderText = "Mật khẩu mới";
             this.txbMatKhauMoi.SelectedText = "";
             this.txbMatKhauMoi.Size = new System.Drawing.Size(439, 55);

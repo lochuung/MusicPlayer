@@ -145,6 +145,7 @@ namespace MusicPlayer
             // 
             // ptbHoTen
             // 
+            this.ptbHoTen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ptbHoTen.ImageRotate = 0F;
             this.ptbHoTen.Location = new System.Drawing.Point(518, 215);
             this.ptbHoTen.Name = "ptbHoTen";
@@ -155,6 +156,7 @@ namespace MusicPlayer
             // 
             // ptbMatKhau
             // 
+            this.ptbMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ptbMatKhau.ImageRotate = 0F;
             this.ptbMatKhau.Location = new System.Drawing.Point(518, 520);
             this.ptbMatKhau.Name = "ptbMatKhau";
@@ -165,6 +167,7 @@ namespace MusicPlayer
             // 
             // ptbNhapLaiMatKhau
             // 
+            this.ptbNhapLaiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ptbNhapLaiMatKhau.ImageRotate = 0F;
             this.ptbNhapLaiMatKhau.Location = new System.Drawing.Point(518, 594);
             this.ptbNhapLaiMatKhau.Name = "ptbNhapLaiMatKhau";
@@ -175,6 +178,7 @@ namespace MusicPlayer
             // 
             // ptbSoDienThoai
             // 
+            this.ptbSoDienThoai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ptbSoDienThoai.ImageRotate = 0F;
             this.ptbSoDienThoai.Location = new System.Drawing.Point(518, 372);
             this.ptbSoDienThoai.Name = "ptbSoDienThoai";
@@ -185,6 +189,7 @@ namespace MusicPlayer
             // 
             // ptbEmail
             // 
+            this.ptbEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ptbEmail.ImageRotate = 0F;
             this.ptbEmail.Location = new System.Drawing.Point(518, 293);
             this.ptbEmail.Name = "ptbEmail";

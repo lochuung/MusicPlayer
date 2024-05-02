@@ -85,12 +85,13 @@ namespace MusicPlayer
             this.txbPassWord.Location = new System.Drawing.Point(150, 265);
             this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.PasswordChar = '\0';
+            this.txbPassWord.PasswordChar = '*';
             this.txbPassWord.PlaceholderForeColor = System.Drawing.Color.White;
             this.txbPassWord.PlaceholderText = "Mật khẩu";
             this.txbPassWord.SelectedText = "";
             this.txbPassWord.Size = new System.Drawing.Size(299, 48);
             this.txbPassWord.TabIndex = 13;
+            this.txbPassWord.Validating += new System.ComponentModel.CancelEventHandler(this.txbPassWord_Validating);
             // 
             // txbUserName
             // 
@@ -170,9 +171,9 @@ namespace MusicPlayer
             this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(88)))));
             this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(151, 343);
+            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(131, 343);
             this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(43, 23);
+            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(55, 25);
             this.guna2ToggleSwitch1.TabIndex = 18;
             this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.guna2ToggleSwitch1.UncheckedState.BorderThickness = 2;
@@ -184,9 +185,9 @@ namespace MusicPlayer
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(200, 347);
+            this.label1.Location = new System.Drawing.Point(192, 348);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 19);
             this.label1.TabIndex = 19;
@@ -197,12 +198,13 @@ namespace MusicPlayer
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(369, 349);
+            this.linkLabel1.Location = new System.Drawing.Point(362, 349);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(109, 17);
             this.linkLabel1.TabIndex = 20;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu ";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // errorProvider1
             // 

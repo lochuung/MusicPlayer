@@ -10,7 +10,7 @@ using MusicPlayer.Database;
 namespace MusicPlayer.Migrations
 {
     [DbContext(typeof(MusicDbContext))]
-    [Migration("20240501123941_Initial")]
+    [Migration("20240502055345_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

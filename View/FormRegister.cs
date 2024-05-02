@@ -34,41 +34,43 @@ namespace MusicPlayer
                 return;
             }
 
-            try
-            {
-                using (var context = new MusicDbContext())
-                {
-                    // check exist
-                    var email = txbEmail.Text;
-                    var userCheck = from u in context.Users
-                        where u.Email == email || u.PhoneNumber == txbSdt.Text
-                        select u;
-                    if (userCheck.Count() > 0)
-                    {
-                        MessageBox.Show("Email hoặc số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        return;
-                    }
 
-                    var user = new User
-                    {
-                        FullName = txbHoTen.Text,
-                        Email = txbEmail.Text,
-                        PhoneNumber = txbSdt.Text,
-                        Birthday = dtRegister.Value,
-                        Password = txbMatKhauDangKy.Text
-                    };
-                    context.Users.Add(user);
-                    context.SaveChanges();
-                    MessageBox.Show("Đăng ký thành công!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAll();
-                }
-            }
-            catch (Exception)
+            using (var context = new MusicDbContext())
             {
-                MessageBox.Show("Vui lòng nhập đúng thông tin !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // check exist
+                var email = txbEmail.Text;
+                var userCheck = from u in context.Users
+                                where u.Email == email || u.PhoneNumber == txbSdt.Text
+                                select u;
+                if (userCheck.Count() > 0)
+                {
+                    MessageBox.Show("Email hoặc số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
+
+                var user = new User
+                {
+                    FullName = txbHoTen.Text,
+                    Email = txbEmail.Text,
+                    PhoneNumber = txbSdt.Text,
+                    Birthday = dtRegister.Value,
+                    Password = txbMatKhauDangKy.Text
+                };
+                context.Users.Add(user);
+                context.SaveChanges();
+                MessageBox.Show("Đăng ký thành công!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearAll();
             }
+
+            /*try
+            {
+            }*/
+            /*catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập đúng !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         public void ClearAll()

@@ -67,5 +67,20 @@ namespace MusicPlayer
             else
                 errorProvider1.SetError(txbUserName, null);
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.ForgetPW forgetPW = new View.ForgetPW();
+            forgetPW.Show();
+            this.Hide();
+        }
+
+        private void txbPassWord_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPassWord.Text))
+                errorProvider1.SetError(txbPassWord, "Vui lòng nhập tên đăng nhập");
+            else
+                errorProvider1.SetError(txbPassWord, null);
+        }
     }
 }
