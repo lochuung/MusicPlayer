@@ -78,7 +78,7 @@ namespace MusicPlayer
         private void txbPassWord_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txbPassWord.Text))
-                errorProvider1.SetError(txbPassWord, "Vui lòng nhập tên đăng nhập");
+                errorProvider1.SetError(txbPassWord, "Vui lòng nhập mật khẩu");
             else
                 errorProvider1.SetError(txbPassWord, null);
         }

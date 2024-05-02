@@ -48,7 +48,6 @@ namespace MusicPlayer.View
                 Email = txbEmailOrSdt.Text;
                 var code = Guid.NewGuid().ToString();
                 SendMail("FineMusic - Mã đặt lại mật khẩu", code);
-                MessageBox.Show("Mã đặt lại mật khẩu đã được gửi đến email của bạn!");
                 var verify = new Verify
                 {
                     Code = code,

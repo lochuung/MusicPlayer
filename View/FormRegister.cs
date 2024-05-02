@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MusicPlayer.Database;
 using MusicPlayer.Database.Entity;
@@ -9,6 +10,7 @@ namespace MusicPlayer
 {
     public partial class FormRegister : Form
     {
+        private readonly Regex regex = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$");
         public FormRegister()
         {
             InitializeComponent();
@@ -138,7 +140,7 @@ namespace MusicPlayer
         private void txbMatKhauDangKy_Validated(object sender, EventArgs e)
         {
             var password = txbMatKhauDangKy.Text;
-            if (!string.IsNullOrWhiteSpace(password) && password.Replace(" ", "").Length >= 6)
+            if (regex.Match(password).Success)
             {
                 ptbMatKhau.Visible = true;
                 ptbMatKhau.Image = Resources.check;
@@ -147,7 +149,9 @@ namespace MusicPlayer
             {
                 ptbMatKhau.Visible = true;
                 ptbMatKhau.Image = Resources.warning;
-                toolTip1.SetToolTip(ptbMatKhau, "Mật khẩu tối thiểu 6 ký tự và không chứa khoảng trắng !");
+                toolTip1.SetToolTip(ptbMatKhau, "Mật khẩu tối thiểu 6 ký tự" +
+                    " và chứa kí tự đặc biệt hoặc kí tự in hoa !");
+
             }
         }
 

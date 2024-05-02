@@ -59,7 +59,7 @@ namespace MusicPlayer
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.HoverState.BorderColor = System.Drawing.Color.PaleTurquoise;
             this.btnDangNhap.HoverState.FillColor = System.Drawing.Color.SteelBlue;
-            this.btnDangNhap.Location = new System.Drawing.Point(169, 407);
+            this.btnDangNhap.Location = new System.Drawing.Point(169, 386);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(267, 57);
             this.btnDangNhap.TabIndex = 14;
@@ -171,9 +171,9 @@ namespace MusicPlayer
             this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(88)))));
             this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(131, 343);
+            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(144, 336);
             this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(55, 25);
+            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(50, 25);
             this.guna2ToggleSwitch1.TabIndex = 18;
             this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
             this.guna2ToggleSwitch1.UncheckedState.BorderThickness = 2;
@@ -187,7 +187,7 @@ namespace MusicPlayer
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(192, 348);
+            this.label1.Location = new System.Drawing.Point(200, 342);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 19);
             this.label1.TabIndex = 19;
@@ -197,8 +197,8 @@ namespace MusicPlayer
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(362, 349);
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.linkLabel1.Location = new System.Drawing.Point(245, 457);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(109, 17);
             this.linkLabel1.TabIndex = 20;

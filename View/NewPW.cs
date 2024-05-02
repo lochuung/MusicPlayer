@@ -78,6 +78,13 @@ namespace MusicPlayer.View
 
         private bool CapNhatMatKhau(string email, string matKhauMoi)
         {
+            if (!regex.Match(matKhauMoi).Success)
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu đúng định dạng!", "" +
+                                                                   "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             using (var context = new MusicDbContext())
             {
                 var user = from u in context.Users
