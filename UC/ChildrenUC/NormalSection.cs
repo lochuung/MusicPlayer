@@ -80,6 +80,8 @@ namespace MusicPlayer.UC.ChildrenUC
                         UserId = mainForm.user.UserId,
                         MusicCode = music.Id
                     };
+                    if (mainForm.user.LikePlaylists == null)
+                        mainForm.user.LikePlaylists = new List<LikeMusic>();
                     var checkExist = mainForm.user.LikePlaylists
                         .Where(x => x.MusicCode == music.Id).ToList();
                     if (checkExist.Count > 0)
