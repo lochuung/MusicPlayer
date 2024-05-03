@@ -136,9 +136,10 @@ namespace MusicPlayer.View
             // 
             // lblEmail
             // 
+            this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(336, 377);
+            this.lblEmail.Location = new System.Drawing.Point(296, 377);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(139, 50);
             this.lblEmail.TabIndex = 38;

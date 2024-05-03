@@ -90,5 +90,11 @@ namespace MusicPlayer.View
                 MessageBox.Show("err: " + ex.Message);
             }
         }
+        private string GenerateRandomCode()
+        {
+            Random random = new Random();
+            int code = random.Next(10000, 99999);
+            return code.ToString();
+        }
     }
 }

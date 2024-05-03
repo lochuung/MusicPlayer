@@ -42,7 +42,6 @@ namespace MusicPlayer
                     select u;
                 if (user.Any())
                 {
-                    MessageBox.Show("Đăng nhập thành công");
                     var mainForm = new MusicPlayerForm(user.First().UserId);
                     mainForm.Show();
                     Hide();
