@@ -1,6 +1,8 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
+using MusicPlayer.Database;
 
 namespace MusicPlayer
 {
@@ -27,56 +29,57 @@ namespace MusicPlayer
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            /*if (txbUserName.Text == "tuong" && txbPassWord.Text == "1")
+            if (txbUserName.Text == "" || txbPassWord.Text == "")
             {
-                FormAdmin formAdmin = new FormAdmin();
-                formAdmin.Show();
-                this.Hide();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txbUserName.Clear();
-                txbPassWord.Clear();
-            }*/
-            var connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
-            using (var con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                var query = string.Format("SELECT * FROM Users WHERE Email = '{0}' AND MatKhau = '{1}'",
-                    txbUserName.Text, txbPassWord.Text);
 
-                using (var cmd = new SqlCommand(query, con))
+            using (var context = new MusicDbContext())
+            {
+                var user = from u in context.Users
+                    where u.Email == txbUserName.Text && u.Password == txbPassWord.Text
+                    select u;
+                if (user.Any())
                 {
-                    //cmd.Parameters.AddWithValue("@Email", txbUserName.Text);
-                    //cmd.Parameters.AddWithValue("@MatKhau", txbPassWord.Text);
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            var HoTen = reader["HoTen"].ToString();
-                            var formUsers = new FormUsers(HoTen);
-                            formUsers.Show();
-                            Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai", "Erros", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                            clearAll();
-                        }
-                    }
+                    var mainForm = new MusicPlayerForm(user.First().UserId);
+                    mainForm.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
                 }
             }
-            LoadFormUsers load = new LoadFormUsers();
-            load.Show();
-            this.Hide();
         }
 
         public void clearAll()
         {
             txbPassWord.Clear();
             txbUserName.Clear();
+        }
+
+        private void txbUserName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbUserName.Text))
+                errorProvider1.SetError(txbUserName, "Vui lòng nhập tên đăng nhập");
+            else
+                errorProvider1.SetError(txbUserName, null);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.ForgetPW forgetPW = new View.ForgetPW();
+            forgetPW.Show();
+            this.Hide();
+        }
+
+        private void txbPassWord_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPassWord.Text))
+                errorProvider1.SetError(txbPassWord, "Vui lòng nhập mật khẩu");
+            else
+                errorProvider1.SetError(txbPassWord, null);
         }
     }
 }

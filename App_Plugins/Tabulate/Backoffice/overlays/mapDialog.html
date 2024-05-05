@@ -1,19 +1,25 @@
 <umb-editor-view>
-    <umb-editor-header name="model.title"
-                       name-locked="true"
-                       hide-alias="true"
+    <umb-editor-header hide-alias="true"
+                       hide-description="true"
                        hide-icon="true"
-                       hide-description="true">
+                       name="model.title"
+                       name-locked="true">
     </umb-editor-header>
 
     <umb-editor-container>
         <umb-box>
             <div class="tabulate umb-box-content" ng-controller="Tabulate.MapDialog.Controller as vm">
                 <div id="map"></div>
-                <p><localize key="tabulate_repositionMarkerDescription"></localize></p>
+                <p>
+                    <localize key="tabulate_repositionMarkerDescription"></localize>
+                </p>
                 <div class="geocoded-property">
-                    <label><strong><localize key="tabulate_latitude"></localize>:</strong> {{ model.lat }}</label>
-                    <label><strong><localize key="tabulate_longitude"></localize>:</strong> {{ model.lng }}</label>
+                    <label><strong>
+                        <localize key="tabulate_latitude"></localize>
+                        :</strong> {{ model.lat }}</label>
+                    <label><strong>
+                        <localize key="tabulate_longitude"></localize>
+                        :</strong> {{ model.lng }}</label>
                 </div>
             </div>
         </umb-box>
@@ -21,16 +27,16 @@
 
     <umb-editor-footer>
         <umb-editor-footer-content-right>
-            <umb-button type="button"
+            <umb-button action="model.close()"
                         button-style="link"
                         label-key="general_close"
-                        action="model.close()">
+                        type="button">
             </umb-button>
 
-            <umb-button type="button"
+            <umb-button action="model.submit(model)"
                         button-style="success"
                         label-key="general_submit"
-                        action="model.submit(model)">
+                        type="button">
             </umb-button>
         </umb-editor-footer-content-right>
     </umb-editor-footer>

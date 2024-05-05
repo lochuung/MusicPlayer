@@ -1,11 +1,16 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using MusicPlayer.Database;
+using MusicPlayer.Database.Entity;
+using MusicPlayer.Properties;
 
 namespace MusicPlayer
 {
     public partial class FormRegister : Form
     {
+        private readonly Regex regex = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$");
         public FormRegister()
         {
             InitializeComponent();
@@ -20,47 +25,54 @@ namespace MusicPlayer
 
         private void btnDangKyTaiKhoan_Click(object sender, EventArgs e)
         {
-            var connectionString = "Data Source=MSI;Initial Catalog=MusicFM;Integrated Security=True";
-            try
+            if (ptbEmail.Image == Resources.warning ||
+                ptbSoDienThoai.Image == Resources.warning ||
+                ptbMatKhau.Image == Resources.warning ||
+                ptbNhapLaiMatKhau.Image == Resources.warning)
             {
-                using (var con = new SqlConnection(connectionString))
+                MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ClearAll();
+                return;
+            }
+
+
+            using (var context = new MusicDbContext())
+            {
+                // check exist
+                var email = txbEmail.Text;
+                var userCheck = from u in context.Users
+                                where u.Email == email || u.PhoneNumber == txbSdt.Text
+                                select u;
+                if (userCheck.Count() > 0)
                 {
-                    con.Open();
-                    if (txbHoTen.Text == "" ||
-                        txbEmail.Text == "" ||
-                        !txbSdt.Text.StartsWith("0") ||
-                        txbMatKhauDangKy.Text == "" ||
-                        txbMatKhauDangKy.Text != txbNhapLaiMatKhau.Text)
-                    {
-                        MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        ClearAll();
-                    }
-                    else
-                    {
-                        var query = @"INSERT INTO Users ([HoTen],[NamSinh],[Email],[SoDienThoai],[MatKhau]) 
-                                       VALUES (@HoTen, @NamSinh, @Email, @SoDienThoai, @MatKhau)";
-
-                        using (var cmd = new SqlCommand(query, con))
-                        {
-                            cmd.Parameters.AddWithValue("@HoTen", txbHoTen.Text);
-                            cmd.Parameters.AddWithValue("@Email", txbEmail.Text);
-                            cmd.Parameters.AddWithValue("@NamSinh", dtRegister.Text);
-                            cmd.Parameters.AddWithValue("@SoDienThoai", txbSdt.Text);
-                            cmd.Parameters.AddWithValue("@MatKhau", txbMatKhauDangKy.Text);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        MessageBox.Show("Đăng ký thành công !", "Thông báo", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        ClearAll();
-                    }
+                    MessageBox.Show("Email hoặc số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
                 }
+
+                var user = new User
+                {
+                    FullName = txbHoTen.Text,
+                    Email = txbEmail.Text,
+                    PhoneNumber = txbSdt.Text,
+                    Birthday = dtRegister.Value,
+                    Password = txbMatKhauDangKy.Text
+                };
+                context.Users.Add(user);
+                context.SaveChanges();
+                MessageBox.Show("Đăng ký thành công!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearAll();
             }
-            catch (Exception)
+
+            /*try
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+            /*catch (Exception)
+            {
+                MessageBox.Show("Vui lòng nhập đúng !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         public void ClearAll()
@@ -75,7 +87,87 @@ namespace MusicPlayer
 
         private void btnExitDangNhap_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
+        }
+
+        private void txbHoTen_Validated(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txbHoTen.Text))
+            {
+                ptbHoTen.Visible = true;
+                ptbHoTen.Image = Resources.check;
+            }
+            else
+            {
+                ptbHoTen.Visible = false;
+            }
+        }
+
+        private void txbEmail_Validated(object sender, EventArgs e)
+        {
+            var email = txbEmail.Text;
+            if (!string.IsNullOrWhiteSpace(email) && email.Contains("@") && email.Contains(".com"))
+            {
+                ptbEmail.Visible = true;
+                ptbEmail.Image = Resources.check;
+            }
+            else
+            {
+                ptbEmail.Visible = true;
+                ptbEmail.Image = Resources.warning;
+                toolTip1.SetToolTip(ptbEmail, "Vui lòng nhập đúng email !");
+            }
+        }
+
+        private void txbSdt_Validated(object sender, EventArgs e)
+        {
+            var phoneNumber = txbSdt.Text;
+            if (!string.IsNullOrWhiteSpace(phoneNumber) && phoneNumber.Length == 10)
+            {
+                ptbSoDienThoai.Visible = true;
+                ptbSoDienThoai.Image = Resources.check;
+            }
+            else
+            {
+                ptbSoDienThoai.Visible = true;
+                ptbSoDienThoai.Image = Resources.warning;
+                toolTip1.SetToolTip(ptbSoDienThoai, "Vui lòng nhập đúng số điện thoại !");
+            }
+        }
+
+        private void txbMatKhauDangKy_Validated(object sender, EventArgs e)
+        {
+            var password = txbMatKhauDangKy.Text;
+            if (regex.Match(password).Success)
+            {
+                ptbMatKhau.Visible = true;
+                ptbMatKhau.Image = Resources.check;
+            }
+            else
+            {
+                ptbMatKhau.Visible = true;
+                ptbMatKhau.Image = Resources.warning;
+                toolTip1.SetToolTip(ptbMatKhau, "Mật khẩu tối thiểu 6 ký tự" +
+                    " và chứa kí tự đặc biệt hoặc kí tự in hoa !");
+
+            }
+        }
+
+        private void txbNhapLaiMatKhau_Validated(object sender, EventArgs e)
+        {
+            if (txbMatKhauDangKy.Text == txbNhapLaiMatKhau.Text && !string.IsNullOrEmpty(txbNhapLaiMatKhau.Text))
+            {
+                ptbNhapLaiMatKhau.Visible = true;
+                ptbNhapLaiMatKhau.Image = Resources.check;
+            }
+            else
+            {
+                ptbNhapLaiMatKhau.Visible = true;
+                ptbNhapLaiMatKhau.Image = Resources.warning;
+                toolTip1.SetToolTip(ptbNhapLaiMatKhau, "Vui lòng nhập đúng !");
+            }
         }
     }
 }

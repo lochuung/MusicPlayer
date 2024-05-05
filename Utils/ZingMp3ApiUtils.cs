@@ -12,7 +12,7 @@ namespace MusicPlayer.Utils
 
         private static readonly string HOME_PATH = "/api/v2/page/get/home";
 
-        private static readonly string TOP100_PATH = "/api/v2/page/get/top100";
+        private static readonly string TOP100_PATH = "/api/v2/page/get/top-100";
 
         private static readonly string CHART_HOME_PATH = "/api/v2/page/get/chart-home";
 
@@ -61,7 +61,7 @@ namespace MusicPlayer.Utils
                 { "page", "1" },
                 { "segmentId", "-1" },
                 { "count", "30" },
-                { "sig", HashingUtils.HashParamNoId(HOME_PATH, api) }
+                { "sig", HashingUtils.HashParamHome(HOME_PATH, api) }
             };
             return await RequestUtils.GetResponse(api, HOME_PATH, param);
         }

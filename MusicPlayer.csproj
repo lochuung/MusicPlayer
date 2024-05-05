@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -233,8 +234,92 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.0-preview.2.24128.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient, Version=1.13.20136.2, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.SqlClient.1.1.3\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.Design.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.Relational.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.SqlServer.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Memory.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Binder.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.FileExtensions.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Json.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.3.1.32\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Abstractions.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Physical.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileSystemGlobbing.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.9.0.0-preview.3.24172.9\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.5.5.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.5.5.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.5.5.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.5.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.5.5.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -343,9 +428,17 @@
     <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.dll</HintPath>
@@ -354,8 +447,12 @@
       <HintPath>packages\Umbraco.SqlServerCE.4.0.0.1\lib\net472\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.5.5.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="System.IO" />
     <Reference Include="System.Linq.Expressions" />
@@ -429,6 +526,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -461,55 +559,102 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Uc_AddUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_AddUser.Designer.cs">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_Profile.Designer.cs">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Uc_ViewUser.Designer.cs">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bin.cs" />
     <Compile Include="Database\DBConnection.cs" />
-    <Compile Include="FormUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUsers.Designer.cs">
-      <DependentUpon>FormUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Function.cs" />
-    <Compile Include="LoadFormUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoadFormUsers.Designer.cs">
-      <DependentUpon>LoadFormUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Database\Entity\LikeMusic.cs" />
+    <Compile Include="Database\Entity\User.cs" />
+    <Compile Include="Database\Entity\Verify.cs" />
+    <Compile Include="Database\MusicDbContext.cs" />
+    <Compile Include="Database\MusicDbContextFactory.cs" />
     <Compile Include="Api\ZingMp3Api.cs" />
+    <Compile Include="Migrations\20240502063511_Initial.cs" />
+    <Compile Include="Migrations\20240502063511_Initial.Designer.cs">
+      <DependentUpon>20240502063511_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MusicDbContextModelSnapshot.cs" />
+    <Compile Include="Model\Album.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
+    <Compile Include="Model\Music.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="UC\ChildrenUC\CurrSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\CurrSong.Designer.cs">
+      <DependentUpon>CurrSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\NormalSection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\NormalSection.Designer.cs">
+      <DependentUpon>NormalSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\LargeSection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\LargeSection.Designer.cs">
+      <DependentUpon>LargeSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\UC_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\UC_Item.Designer.cs">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\UC_MusicItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ChildrenUC\UC_MusicItem.Designer.cs">
+      <DependentUpon>UC_MusicItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_CurrentSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_CurrentSong.Designer.cs">
+      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_NewRelease.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_NewRelease.Designer.cs">
+      <DependentUpon>UC_NewRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Playlist.Designer.cs">
+      <DependentUpon>UC_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Search.Designer.cs">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Trending.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Trending.Designer.cs">
+      <DependentUpon>UC_Trending.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\HashingUtils.cs" />
     <Compile Include="Utils\RequestUtils.cs" />
     <Compile Include="Utils\ZingMp3ApiUtils.cs" />
-    <Compile Include="View\FormAdmin.cs">
+    <Compile Include="View\ConstraintPW.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="View\ConstraintPW.Designer.cs">
+      <DependentUpon>ConstraintPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ForgetPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForgetPW.Designer.cs">
+      <DependentUpon>ForgetPW.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
@@ -523,31 +668,42 @@
     <Compile Include="View\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="WaitForm.cs">
+    <Compile Include="View\LoadFormUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WaitForm.Designer.cs">
+    <Compile Include="View\LoadFormUsers.Designer.cs">
+      <DependentUpon>LoadFormUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MusicPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MusicPlayerForm.Designer.cs">
+      <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NewPW.Designer.cs">
+      <DependentUpon>NewPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SecurityCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SecurityCode.Designer.cs">
+      <DependentUpon>SecurityCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\Uc_AddUser.resx">
-      <DependentUpon>Uc_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_Profile.resx">
-      <DependentUpon>Uc_Profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Uc_ViewUser.resx">
-      <DependentUpon>Uc_ViewUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUsers.resx">
-      <DependentUpon>FormUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoadFormUsers.resx">
-      <DependentUpon>LoadFormUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -556,9 +712,46 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="UC\ChildrenUC\CurrSong.resx">
+      <DependentUpon>CurrSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ChildrenUC\NormalSection.resx">
+      <DependentUpon>NormalSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ChildrenUC\LargeSection.resx">
+      <DependentUpon>LargeSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ChildrenUC\UC_Item.resx">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ChildrenUC\UC_MusicItem.resx">
+      <DependentUpon>UC_MusicItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_CurrentSong.resx">
+      <DependentUpon>UC_CurrentSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_NewRelease.resx">
+      <DependentUpon>UC_NewRelease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Playlist.resx">
+      <DependentUpon>UC_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Search.resx">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Trending.resx">
+      <DependentUpon>UC_Trending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConstraintPW.resx">
+      <DependentUpon>ConstraintPW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ForgetPW.resx">
+      <DependentUpon>ForgetPW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -566,7 +759,22 @@
     <EmbeddedResource Include="View\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WaitForm.resx">
+    <EmbeddedResource Include="View\LoadFormUsers.resx">
+      <DependentUpon>LoadFormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MusicPlayerForm.resx">
+      <DependentUpon>MusicPlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewPW.resx">
+      <DependentUpon>NewPW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SecurityCode.resx">
+      <DependentUpon>SecurityCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App_Plugins\Tabulate\Backoffice\tabulate.js.map" />
@@ -593,54 +801,92 @@
     <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
     <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
     <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
-    <Content Include="Images\126.gif" />
-    <Content Include="Images\next.png" />
-    <Content Include="Images\play-button.png" />
-    <Content Include="Images\play.png" />
-    <Content Include="Images\pause.png" />
-    <Content Include="Images\previous.png" />
-    <Content Include="Images\volume-mute.png" />
-    <Content Include="Images\volume-up-interface-symbol.png" />
-    <Content Include="libs\Bunifu\Bunifu.Licensing.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.1.5.3.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGradientPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuGroupBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSlider.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuSnackbar.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
-    <Content Include="libs\Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\chart-new-release-vn.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\home-7-128 %281%29.png" />
+    <None Include="Resources\home-7-128.png" />
+    <None Include="Resources\positive-dynamic-128 %281%29.png" />
+    <None Include="Resources\positive-dynamic-128.png" />
+    <None Include="Resources\positive-dynamic-24.png" />
+    <None Include="Resources\positive-dynamic-24 %281%29.png" />
+    <None Include="FMMusic.png" />
+    <None Include="Resources\dashboard_layout_100px.png1.png" />
+    <None Include="Resources\Cardi_B_-_Up.png" />
+    <None Include="Resources\briefcase_300px.png" />
+    <None Include="Resources\audio_100px.png1.png" />
+    <None Include="Resources\audio_100px.png" />
+    <None Include="Resources\artworks-UeR6NTfa9JPHA0c3-7uaXOA-t500x500.png" />
+    <None Include="Resources\albums_100px.png1.png" />
+    <None Include="Resources\albums_100px.png" />
+    <None Include="Resources\add_100px.png1.png" />
+    <None Include="Resources\add_100px.png" />
+    <None Include="Resources\a9df459bfd64368b8f5069c4685e2cc4.png" />
+    <None Include="Resources\220px-Ed_Sheeran_Perfect_Single_cover.png" />
+    <None Include="Resources\91YkqYA1BWL._AC_SX522_.png" />
+    <None Include="Resources\24kGoldn_-_Mood.png" />
+    <None Include="Resources\time_machine_100px.png1.png" />
+    <None Include="Resources\time_machine_100px.png" />
+    <None Include="Resources\The_Weeknd_-_Blinding_Lights.png" />
+    <None Include="Resources\Taylor-Swift-Lover-album-art-2019-billboard-1240-compressed.png" />
+    <None Include="Resources\skip_to_start_100px.png1.png" />
+    <None Include="Resources\skip_to_start_100px.png" />
+    <None Include="Resources\shuffle_100px.png1.png" />
+    <None Include="Resources\shuffle_100px.png" />
+    <None Include="Resources\settings_100px.png1.png" />
+    <None Include="Resources\settings_100px.png" />
+    <None Include="Resources\search_100px.png1.png" />
+    <None Include="Resources\search_100px.png" />
+    <None Include="Resources\repeat_100px.png1.png" />
+    <None Include="Resources\repeat_100px.png" />
+    <None Include="Resources\radio_100px.png1.png" />
+    <None Include="Resources\radio_100px.png" />
+    <None Include="Resources\Popularsongmika.png" />
+    <None Include="Resources\pop.png" />
+    <None Include="Resources\play_100px.png1.png" />
+    <None Include="Resources\play_100px.png" />
+    <None Include="Resources\pause_100px.png1.png" />
+    <None Include="Resources\pause_100px.png" />
+    <None Include="Resources\opened_folder_100px.png1.png" />
+    <None Include="Resources\opened_folder_100px.png" />
+    <None Include="Resources\notification_100px.png1.png" />
+    <None Include="Resources\notification_100px.png" />
+    <None Include="Resources\nirvana-nevermind-1474471263.png" />
+    <None Include="Resources\mute_100px.png11.png" />
+    <None Include="Resources\mute_100px.png" />
+    <None Include="Resources\music_1001px.png" />
+    <None Include="Resources\music_100px.png11.png" />
+    <None Include="Resources\music_100px.png1.png" />
+    <None Include="Resources\music_100px.png" />
+    <None Include="Resources\migos-culture-2-album-art-2018-billboard-1240-compressed.png" />
+    <None Include="Resources\microphone_100px.png1.png" />
+    <None Include="Resources\microphone_100px.png" />
+    <None Include="Resources\love_100px.png11.png" />
+    <None Include="Resources\love_100px.png1.png" />
+    <None Include="Resources\love_100px.png" />
+    <None Include="Resources\love_100px.p11g.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\Group 18.png" />
+    <None Include="Resources\envelope_100px.png1.png" />
+    <None Include="Resources\envelope_100px.png" />
+    <None Include="Resources\end_100px.png1.png" />
+    <None Include="Resources\end_100px.png" />
+    <None Include="Resources\email_open_100px.png1.png" />
+    <None Include="Resources\email_open_100px.png" />
+    <None Include="Resources\Drivers_License_by_Olivia_Rodrigo.png" />
+    <None Include="Resources\downloading_updates_100px.png1.png" />
+    <None Include="Resources\downloading_updates_100px.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.EntityFrameworkCore.Design.3.1.32\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
   </Target>
+  <Import Project="packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>
