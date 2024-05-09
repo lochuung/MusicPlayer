@@ -39,6 +39,8 @@ namespace MusicPlayer.View
             this.label1 = new System.Windows.Forms.Label();
             this.btnThongTinPw = new Guna.UI2.WinForms.Guna2Button();
             this.lblStrPw = new System.Windows.Forms.Label();
+            this.btnShow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHide = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,12 +173,51 @@ namespace MusicPlayer.View
             this.lblStrPw.Text = "Mật khẩu mạnh";
             this.lblStrPw.Visible = false;
             // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
+            this.btnShow.BorderRadius = 10;
+            this.btnShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShow.FillColor = System.Drawing.Color.Empty;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
+            this.btnShow.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnShow.Location = new System.Drawing.Point(433, 349);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(44, 31);
+            this.btnShow.TabIndex = 46;
+            this.btnShow.Visible = false;
+            // 
+            // btnHide
+            // 
+            this.btnHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
+            this.btnHide.BorderRadius = 10;
+            this.btnHide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHide.FillColor = System.Drawing.Color.Empty;
+            this.btnHide.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHide.ForeColor = System.Drawing.Color.White;
+            this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
+            this.btnHide.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHide.Location = new System.Drawing.Point(433, 349);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(44, 31);
+            this.btnHide.TabIndex = 47;
+            // 
             // NewPW
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(9)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(669, 553);
+            this.Controls.Add(this.btnHide);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lblStrPw);
             this.Controls.Add(this.btnThongTinPw);
             this.Controls.Add(this.btnDangKyTaiKhoan);
@@ -207,5 +248,7 @@ namespace MusicPlayer.View
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnThongTinPw;
         private System.Windows.Forms.Label lblStrPw;
+        private Guna.UI2.WinForms.Guna2Button btnShow;
+        private Guna.UI2.WinForms.Guna2Button btnHide;
     }
 }

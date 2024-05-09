@@ -644,6 +644,12 @@
     <Compile Include="Utils\HashingUtils.cs" />
     <Compile Include="Utils\RequestUtils.cs" />
     <Compile Include="Utils\ZingMp3ApiUtils.cs" />
+    <Compile Include="View\ChangePW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangePW.Designer.cs">
+      <DependentUpon>ChangePW.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ConstraintPW.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -746,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Trending.resx">
       <DependentUpon>UC_Trending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChangePW.resx">
+      <DependentUpon>ChangePW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConstraintPW.resx">
       <DependentUpon>ConstraintPW.cs</DependentUpon>

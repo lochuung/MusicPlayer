@@ -11,7 +11,10 @@ namespace MusicPlayer
         public FormLogin()
         {
             InitializeComponent();
+            btnHide.Click += btnHide_Click;
+            btnShow.Click += btnShow_Click;
         }
+
 
         /* public event EventHandler<string> UserLoggedIn;
          protected virtual void onUserLoggedIn(string email)
@@ -80,6 +83,21 @@ namespace MusicPlayer
                 errorProvider1.SetError(txbPassWord, "Vui lòng nhập mật khẩu");
             else
                 errorProvider1.SetError(txbPassWord, null);
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            btnHide.Visible = false;
+            btnShow.Visible = true;
+            txbPassWord.UseSystemPasswordChar = false;
+            txbPassWord.PasswordChar = '\0';
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+            btnHide.Visible = true;
+            txbPassWord.UseSystemPasswordChar = true;
         }
     }
 }

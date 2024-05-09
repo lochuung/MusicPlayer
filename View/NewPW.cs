@@ -15,6 +15,8 @@ namespace MusicPlayer.View
         {
             InitializeComponent();
             this.email = email;
+            btnHide.Click += btnHide_Click;
+            btnShow.Click += btnShow_Click;
         }
 
         public NewPW()
@@ -95,6 +97,20 @@ namespace MusicPlayer.View
                 context.SaveChanges();
                 return true;
             }
+        }
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            btnHide.Visible = false;
+            btnShow.Visible = true;
+            txbMatKhauMoi.UseSystemPasswordChar = false;
+            txbMatKhauMoi.PasswordChar = '\0';
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+            btnHide.Visible = true;
+            txbMatKhauMoi.UseSystemPasswordChar = true;
         }
     }
 }

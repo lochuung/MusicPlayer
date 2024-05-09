@@ -14,6 +14,8 @@ namespace MusicPlayer
         public FormRegister()
         {
             InitializeComponent();
+            btnHide.Click += btnHide_Click;
+            btnShow.Click += btnShow_Click;
         }
 
         private void btnExitFormRegister_Click(object sender, EventArgs e)
@@ -168,6 +170,20 @@ namespace MusicPlayer
                 ptbNhapLaiMatKhau.Image = Resources.warning;
                 toolTip1.SetToolTip(ptbNhapLaiMatKhau, "Vui lòng nhập đúng !");
             }
+        }
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            btnHide.Visible = false;
+            btnShow.Visible = true;
+            txbMatKhauDangKy.UseSystemPasswordChar = false;
+            txbMatKhauDangKy.PasswordChar = '\0';
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+            btnHide.Visible = true;
+            txbMatKhauDangKy.UseSystemPasswordChar = true;
         }
     }
 }

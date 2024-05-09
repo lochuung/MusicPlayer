@@ -50,6 +50,8 @@ namespace MusicPlayer
             this.txbMatKhauDangKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnShow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHide = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHoTen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).BeginInit();
@@ -369,12 +371,51 @@ namespace MusicPlayer
             this.txbEmail.TabIndex = 16;
             this.txbEmail.Validated += new System.EventHandler(this.txbEmail_Validated);
             // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.White;
+            this.btnShow.BorderRadius = 10;
+            this.btnShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShow.FillColor = System.Drawing.Color.White;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
+            this.btnShow.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnShow.Location = new System.Drawing.Point(448, 501);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(44, 31);
+            this.btnShow.TabIndex = 40;
+            this.btnShow.Visible = false;
+            // 
+            // btnHide
+            // 
+            this.btnHide.BackColor = System.Drawing.Color.White;
+            this.btnHide.BorderRadius = 10;
+            this.btnHide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHide.FillColor = System.Drawing.Color.Empty;
+            this.btnHide.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHide.ForeColor = System.Drawing.Color.White;
+            this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
+            this.btnHide.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHide.Location = new System.Drawing.Point(448, 501);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(44, 31);
+            this.btnHide.TabIndex = 41;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(684, 765);
+            this.Controls.Add(this.btnHide);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.ptbHoTen);
             this.Controls.Add(this.ptbMatKhau);
             this.Controls.Add(this.ptbNhapLaiMatKhau);
@@ -428,5 +469,7 @@ namespace MusicPlayer
         private Guna.UI2.WinForms.Guna2PictureBox ptbMatKhau;
         private Guna.UI2.WinForms.Guna2PictureBox ptbHoTen;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Guna.UI2.WinForms.Guna2Button btnShow;
+        private Guna.UI2.WinForms.Guna2Button btnHide;
     }
 }
