@@ -195,7 +195,7 @@ namespace MusicPlayer
             this.btnHide.ForeColor = System.Drawing.Color.White;
             this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
             this.btnHide.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHide.Location = new System.Drawing.Point(397, 274);
+            this.btnHide.Location = new System.Drawing.Point(392, 274);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(44, 31);
             this.btnHide.TabIndex = 21;
@@ -214,7 +214,7 @@ namespace MusicPlayer
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
             this.btnShow.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnShow.Location = new System.Drawing.Point(493, 274);
+            this.btnShow.Location = new System.Drawing.Point(392, 274);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(44, 31);
             this.btnShow.TabIndex = 22;
