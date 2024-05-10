@@ -513,7 +513,7 @@ namespace MusicPlayer
 
         private void changePW_Click(object sender, EventArgs e)
         {
-            var changePW = new View.ChangePW();
+            var changePW = new View.ChangePW(user.Email);
             changePW.ShowDialog();
         }
     }

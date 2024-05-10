@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayerForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.changePW = new Guna.UI2.WinForms.Guna2Button();
             this.loveMusic = new Guna.UI2.WinForms.Guna2Button();
             this.playListBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchPageBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -56,7 +57,6 @@
             this.artistsName = new System.Windows.Forms.Label();
             this.thumbnailImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.containerPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.changePW = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -81,6 +81,29 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(244, 753);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // changePW
+            // 
+            this.changePW.BackColor = System.Drawing.Color.White;
+            this.changePW.BorderRadius = 10;
+            this.changePW.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.changePW.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.changePW.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.changePW.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.changePW.FillColor = System.Drawing.Color.White;
+            this.changePW.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.changePW.ForeColor = System.Drawing.Color.Black;
+            this.changePW.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
+            this.changePW.Image = ((System.Drawing.Image)(resources.GetObject("changePW.Image")));
+            this.changePW.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.changePW.ImageSize = new System.Drawing.Size(25, 25);
+            this.changePW.Location = new System.Drawing.Point(32, 645);
+            this.changePW.Name = "changePW";
+            this.changePW.Size = new System.Drawing.Size(180, 45);
+            this.changePW.TabIndex = 10;
+            this.changePW.Text = "Đổi mật khẩu ";
+            this.changePW.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.changePW.Click += new System.EventHandler(this.changePW_Click);
             // 
             // loveMusic
             // 
@@ -538,28 +561,6 @@
             this.containerPanel.Name = "containerPanel";
             this.containerPanel.Size = new System.Drawing.Size(1038, 584);
             this.containerPanel.TabIndex = 3;
-            // 
-            // changePW
-            // 
-            this.changePW.BackColor = System.Drawing.Color.White;
-            this.changePW.BorderRadius = 10;
-            this.changePW.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.changePW.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.changePW.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.changePW.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.changePW.FillColor = System.Drawing.Color.White;
-            this.changePW.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.changePW.ForeColor = System.Drawing.Color.Black;
-            this.changePW.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
-            this.changePW.Image = ((System.Drawing.Image)(resources.GetObject("changePW.Image")));
-            this.changePW.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.changePW.ImageSize = new System.Drawing.Size(25, 25);
-            this.changePW.Location = new System.Drawing.Point(32, 645);
-            this.changePW.Name = "changePW";
-            this.changePW.Size = new System.Drawing.Size(180, 45);
-            this.changePW.TabIndex = 10;
-            this.changePW.Text = "Đổi mật khẩu ";
-            this.changePW.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // MusicPlayerForm
             // 
