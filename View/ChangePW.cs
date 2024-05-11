@@ -16,6 +16,7 @@ namespace MusicPlayer.View
     {
         private readonly string email;
         private readonly Regex regex = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$");
+        private bool isValid = false;
         public ChangePW()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace MusicPlayer.View
                 lblStrPw.Text = "Mật khẩu mạnh";
                 lblStrPw.Visible = true;
                 lblStrPw.Show();
+                isValid = true;
             }
             else if (!string.IsNullOrWhiteSpace(txbNewPw.Text) && txbNewPw.Text.Replace(" ", "").Length >= 6)
             {
@@ -52,6 +54,7 @@ namespace MusicPlayer.View
                     lblStrPw.Text = "Mật khẩu trung bình";
                     lblStrPw.Visible = true;
                     lblStrPw.Show();
+                    isValid = false;
                 }
             }
             else
@@ -59,6 +62,7 @@ namespace MusicPlayer.View
                 lblStrPw.Text = "Mật khẩu yếu ";
                 lblStrPw.Visible = true;
                 lblStrPw.Show();
+                isValid = false;
             }
         }
 
