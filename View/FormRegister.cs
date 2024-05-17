@@ -11,11 +11,37 @@ namespace MusicPlayer
     public partial class FormRegister : Form
     {
         private readonly Regex regex = new Regex(@"^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$");
+        
+        private User user;
         public FormRegister()
         {
             InitializeComponent();
             btnHide.Click += btnHide_Click;
             btnShow.Click += btnShow_Click;
+        }
+
+        public FormRegister(User user)
+        {
+            this.user = user;
+            InitializeComponent();
+            btnHide.Click += btnHide_Click;
+            btnShow.Click += btnShow_Click;
+        }
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+            if (user == null) return;
+            txbHoTen.Text = user.FullName;
+            txbEmail.Text = user.Email;
+            txbSdt.Text = user.PhoneNumber;
+            dtRegister.Value = user.Birthday;
+            txbMatKhauDangKy.Hide();
+            txbNhapLaiMatKhau.Hide();
+            label3.Hide();
+            label4.Hide();
+            btnHide.Hide();
+            btnShow.Hide();
+            btnDangKyTaiKhoan.Text = "Cập nhật";
         }
 
         private void btnExitFormRegister_Click(object sender, EventArgs e)
@@ -27,10 +53,11 @@ namespace MusicPlayer
 
         private void btnDangKyTaiKhoan_Click(object sender, EventArgs e)
         {
-            if (ptbEmail.Image == Resources.warning ||
+            if (ptbHoTen.Image == Resources.warning ||
+                ptbEmail.Image == Resources.warning ||
                 ptbSoDienThoai.Image == Resources.warning ||
-                ptbMatKhau.Image == Resources.warning ||
-                ptbNhapLaiMatKhau.Image == Resources.warning)
+                user == null && (ptbMatKhau.Image == Resources.warning ||
+                                 ptbNhapLaiMatKhau.Image == Resources.warning))
             {
                 MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -46,6 +73,32 @@ namespace MusicPlayer
                 var userCheck = from u in context.Users
                                 where u.Email == email || u.PhoneNumber == txbSdt.Text
                                 select u;
+                // update
+                if (this.user != null)
+                {
+                    // validate email and phone number
+                    if (userCheck.Count() > 0 && 
+                        (userCheck.First().Email != this.user.Email 
+                         || userCheck.First().PhoneNumber != this.user.PhoneNumber)
+                        )
+                    {
+                        MessageBox.Show("Email hoặc số điện thoại đã tồn tại ở tài khoản khác!", 
+                            "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        return;
+                    }
+                    
+                    this.user.FullName = txbHoTen.Text;
+                    this.user.Email = txbEmail.Text;
+                    this.user.PhoneNumber = txbSdt.Text;
+                    this.user.Birthday = dtRegister.Value;
+                    context.SaveChanges();
+                    MessageBox.Show("Cập nhật thành công!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    return;
+                }
+                
                 if (userCheck.Count() > 0)
                 {
                     MessageBox.Show("Email hoặc số điện thoại đã tồn tại!", "Thông báo", MessageBoxButtons.OK,

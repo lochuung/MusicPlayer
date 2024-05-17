@@ -438,6 +438,7 @@ namespace MusicPlayer
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
+            this.Load += new System.EventHandler(this.FormRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbHoTen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMatKhau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhapLaiMatKhau)).EndInit();

@@ -512,9 +512,15 @@ namespace MusicPlayer
         }
 
         private void changePW_Click(object sender, EventArgs e)
+            {
+                var changePW = new View.ChangePW(user.Email);
+                changePW.ShowDialog();
+        }
+
+        private void editInfo_Click(object sender, EventArgs e)
         {
-            var changePW = new View.ChangePW(user.Email);
-            changePW.ShowDialog();
+            var RegisterForm = new FormRegister(user);
+            RegisterForm.ShowDialog();
         }
     }
 }

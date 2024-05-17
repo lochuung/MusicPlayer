@@ -810,6 +810,7 @@
     <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
     <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
     <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
+    <None Include="Resources\Lock.png" />
     <None Include="Resources\chart-new-release-vn.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\warning.png" />
