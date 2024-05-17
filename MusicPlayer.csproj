@@ -832,6 +832,7 @@
     <Content Include="App_Plugins\Tabulate\Backoffice\tabulate.js" />
     <Content Include="App_Plugins\Tabulate\Backoffice\views\tabulate.html" />
     <Content Include="App_Plugins\Tabulate\Lang\en-US.xml" />
+<<<<<<< HEAD
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -845,6 +846,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+=======
+    <None Include="Resources\Lock.png" />
+>>>>>>> cc5b35d9db4dff9a656fa3ed7a801c766ce17a46
     <None Include="Resources\chart-new-release-vn.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\warning.png" />

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicPlayerForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.editInfo = new Guna.UI2.WinForms.Guna2Button();
             this.changePW = new Guna.UI2.WinForms.Guna2Button();
             this.loveMusic = new Guna.UI2.WinForms.Guna2Button();
             this.playListBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -67,6 +68,7 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.editInfo);
             this.guna2Panel1.Controls.Add(this.changePW);
             this.guna2Panel1.Controls.Add(this.loveMusic);
             this.guna2Panel1.Controls.Add(this.playListBtn);
@@ -82,6 +84,29 @@
             this.guna2Panel1.Size = new System.Drawing.Size(244, 753);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // editInfo
+            // 
+            this.editInfo.BackColor = System.Drawing.Color.White;
+            this.editInfo.BorderRadius = 10;
+            this.editInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.editInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.editInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.editInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.editInfo.FillColor = System.Drawing.Color.White;
+            this.editInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.editInfo.ForeColor = System.Drawing.Color.Black;
+            this.editInfo.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
+            this.editInfo.Image = ((System.Drawing.Image)(resources.GetObject("editInfo.Image")));
+            this.editInfo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.editInfo.ImageSize = new System.Drawing.Size(25, 25);
+            this.editInfo.Location = new System.Drawing.Point(32, 594);
+            this.editInfo.Name = "editInfo";
+            this.editInfo.Size = new System.Drawing.Size(180, 45);
+            this.editInfo.TabIndex = 11;
+            this.editInfo.Text = "Sửa thông tin";
+            this.editInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.editInfo.Click += new System.EventHandler(this.editInfo_Click);
+            // 
             // changePW
             // 
             this.changePW.BackColor = System.Drawing.Color.White;
@@ -94,7 +119,7 @@
             this.changePW.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.changePW.ForeColor = System.Drawing.Color.Black;
             this.changePW.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(86)))), ((int)(((byte)(142)))));
-            this.changePW.Image = ((System.Drawing.Image)(resources.GetObject("changePW.Image")));
+            this.changePW.Image = global::MusicPlayer.Properties.Resources.Lock;
             this.changePW.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.changePW.ImageSize = new System.Drawing.Size(25, 25);
             this.changePW.Location = new System.Drawing.Point(32, 645);
@@ -110,7 +135,7 @@
             this.loveMusic.Animated = true;
             this.loveMusic.BackColor = System.Drawing.Color.Transparent;
             this.loveMusic.BorderRadius = 10;
-            this.loveMusic.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.love_100px_png1;
+            this.loveMusic.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage")));
             this.loveMusic.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.loveMusic.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.loveMusic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -138,7 +163,7 @@
             this.playListBtn.Animated = true;
             this.playListBtn.BackColor = System.Drawing.Color.Transparent;
             this.playListBtn.BorderRadius = 10;
-            this.playListBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.albums_100px_png1;
+            this.playListBtn.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage1")));
             this.playListBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.playListBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.playListBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -165,7 +190,7 @@
             this.searchPageBtn.Animated = true;
             this.searchPageBtn.BackColor = System.Drawing.Color.Transparent;
             this.searchPageBtn.BorderRadius = 10;
-            this.searchPageBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.search_100px_png1;
+            this.searchPageBtn.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage2")));
             this.searchPageBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchPageBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.searchPageBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -193,7 +218,7 @@
             this.releaseBtn.Animated = true;
             this.releaseBtn.BackColor = System.Drawing.Color.Transparent;
             this.releaseBtn.BorderRadius = 10;
-            this.releaseBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.music_100px_png1;
+            this.releaseBtn.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage3")));
             this.releaseBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.releaseBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.releaseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -221,7 +246,7 @@
             this.trendingBtn.Animated = true;
             this.trendingBtn.BackColor = System.Drawing.Color.Transparent;
             this.trendingBtn.BorderRadius = 10;
-            this.trendingBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.positive_dynamic_128;
+            this.trendingBtn.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage4")));
             this.trendingBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.trendingBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.trendingBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -261,7 +286,7 @@
             this.homeBtn.Animated = true;
             this.homeBtn.BackColor = System.Drawing.Color.Transparent;
             this.homeBtn.BorderRadius = 10;
-            this.homeBtn.CustomImages.HoveredImage = global::MusicPlayer.Properties.Resources.home_7_128__1_;
+            this.homeBtn.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage5")));
             this.homeBtn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.homeBtn.CustomImages.ImageSize = new System.Drawing.Size(25, 25);
             this.homeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -391,7 +416,7 @@
             // muteBtn
             // 
             this.muteBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.muteBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.mute_100px_png11;
+            this.muteBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.muteBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.muteBtn.Image = global::MusicPlayer.Properties.Resources.mute_100px;
             this.muteBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -451,7 +476,7 @@
             // shuffleBtn
             // 
             this.shuffleBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.shuffleBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.shuffle_100px_png1;
+            this.shuffleBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.shuffleBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.shuffleBtn.Image = global::MusicPlayer.Properties.Resources.shuffle_100px;
             this.shuffleBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -467,7 +492,7 @@
             // playBtn
             // 
             this.playBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.playBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.play_100px_png1;
+            this.playBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.playBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.playBtn.Image = global::MusicPlayer.Properties.Resources.play_100px;
             this.playBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -483,7 +508,7 @@
             // nextBtn
             // 
             this.nextBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.nextBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.end_100px_png1;
+            this.nextBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.nextBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.nextBtn.Image = global::MusicPlayer.Properties.Resources.end_100px;
             this.nextBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -499,7 +524,7 @@
             // repeatBtn
             // 
             this.repeatBtn.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.repeatBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.repeat_100px_png1;
+            this.repeatBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.repeatBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.repeatBtn.Image = global::MusicPlayer.Properties.Resources.repeat_100px;
             this.repeatBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -515,7 +540,7 @@
             // prevBtn
             // 
             this.prevBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.prevBtn.HoverState.Image = global::MusicPlayer.Properties.Resources.skip_to_start_100px_png1;
+            this.prevBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.prevBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.prevBtn.Image = global::MusicPlayer.Properties.Resources.skip_to_start_100px;
             this.prevBtn.ImageOffset = new System.Drawing.Point(0, 0);
@@ -589,6 +614,8 @@
             this.ResumeLayout(false);
 
         }
+
+        private Guna.UI2.WinForms.Guna2Button editInfo;
 
         #endregion
 

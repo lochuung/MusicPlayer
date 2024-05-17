@@ -46,15 +46,22 @@ namespace MusicPlayer.View
                 }
 
                 Email = txbEmailOrSdt.Text;
-                var code = Guid.NewGuid().ToString();
-                SendMail("FineMusic - Mã đặt lại mật khẩu", code);
+                
+                User firstUser = user.First();
+                string code;
+                do
+                {
+                    code = GenerateRandomCode();
+                } while (context.Verifies.Any(v => v.Code == code && v.UserId == firstUser.UserId));
                 var verify = new Verify
                 {
                     Code = code,
-                    UserId = user.First().UserId
+                    UserId = firstUser.UserId
                 };
                 context.Verifies.Add(verify);
                 context.SaveChanges();
+                
+                SendMail("FineMusic - Mã đặt lại mật khẩu", code);
 
                 var securityCode = new SecurityCode(this);
                 securityCode.Show();
@@ -74,8 +81,8 @@ namespace MusicPlayer.View
                 message.Subject = title;
                 // html body
                 message.IsBodyHtml = true;
-                message.Body = "<h1> FineMusic </h1>" +
-                               $"<span><b>{code}</b> là mã đặt lại mật khẩu FineMusic của bạn </p>";
+                message.Body =
+                   $"<p><h1>{code}</h1> là mã đặt lại mật khẩu FineMusic của bạn</p>";
 
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
@@ -92,9 +99,14 @@ namespace MusicPlayer.View
         }
         private string GenerateRandomCode()
         {
-            Random random = new Random();
-            int code = random.Next(10000, 99999);
-            return code.ToString();
+            var random = new Random();
+            var code = "";
+            for (var i = 0; i < 6; i++)
+            {
+                code += random.Next(0, 9).ToString();
+            }
+
+            return code;
         }
     }
 }
