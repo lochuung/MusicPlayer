@@ -37,7 +37,7 @@ namespace MusicPlayer
         private MediaFoundationReader reader;
 
         // using semaphore to avoid multiple thread access to waveOut and currentMusic, currentSongIndex
-        public Semaphore Semaphore = new Semaphore(2, 2);
+        public Semaphore Semaphore = new Semaphore(1, 1);
         private Thread streamingThread;
 
         public User user;
@@ -472,17 +472,15 @@ namespace MusicPlayer
 
         private async void loveMusic_Click(object sender, EventArgs e)
         {
-            LoadLoveMusic();
+            await LoadLoveMusic();
             
             musicList = loveMusicList;
             currentSongIndex = 0;
-            currentMusic = loveMusicList.Count() != 0 ? musicList[currentSongIndex]
-                    : currentMusic;
             _ucPlaylist.LoadPlaylists();
             currentListBtn_Click(sender, e);
         }
 
-        public void LoadLoveMusic()
+        public async Task LoadLoveMusic()
         {
             // load love music to current list
             var loveMusic = from p in dbContext.LikePlaylists
@@ -494,11 +492,11 @@ namespace MusicPlayer
             }
             
             loveMusicList.Clear();
+            List<Task> tasks = new List<Task>();
             
             foreach (var likePlaylist in loveMusic)
             {
-                if (loveMusicList.Any(m => m.Id == likePlaylist.MusicCode)) continue;
-                Task.Run(async () =>
+                Task task = Task.Run(async () =>
                 {
                     var music = await api.GetSongInfo(likePlaylist.MusicCode);
                     loveMusicList.Add(music);
@@ -508,7 +506,13 @@ namespace MusicPlayer
                             _ucPlaylist.LoadPlaylists();
                     }));
                 });
+                tasks.Add(task);
             }
+            
+            await Task.WhenAll(tasks);
+            
+            // remove duplicate music from id
+            loveMusicList = loveMusicList.GroupBy(x => x.Id).Select(x => x.First()).ToList();
         }
 
         private void changePW_Click(object sender, EventArgs e)

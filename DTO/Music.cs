@@ -3,7 +3,7 @@ using MusicPlayer.MusicApi;
 
 namespace MusicPlayer.Model
 {
-    public class Music : BaseEntity
+    public class Music : BaseDTO
     {
         public Music()
         {

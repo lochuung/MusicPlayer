@@ -1,12 +1,12 @@
 ﻿namespace MusicPlayer.Model
 {
-    public class BaseEntity
+    public class BaseDTO
     {
-        public BaseEntity()
+        public BaseDTO()
         {
         }
 
-        public BaseEntity(string id, string title, string thumbnail, string thumbnailM, string artists)
+        public BaseDTO(string id, string title, string thumbnail, string thumbnailM, string artists)
         {
             Id = id;
             Title = title;

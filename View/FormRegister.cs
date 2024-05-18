@@ -53,16 +53,24 @@ namespace MusicPlayer
 
         private void btnDangKyTaiKhoan_Click(object sender, EventArgs e)
         {
-            if (ptbHoTen.Image == Resources.warning ||
-                ptbEmail.Image == Resources.warning ||
-                ptbSoDienThoai.Image == Resources.warning ||
-                user == null && (ptbMatKhau.Image == Resources.warning ||
-                                 ptbNhapLaiMatKhau.Image == Resources.warning))
+            if (String.IsNullOrEmpty(txbHoTen.Text) ||
+                String.IsNullOrEmpty(txbEmail.Text) ||
+                String.IsNullOrEmpty(txbSdt.Text))
             {
-                MessageBox.Show("Vui lòng nhập đúng thông tin", "Thông báo", MessageBoxButtons.OK,
+                MessageBox.Show("Vui lòng nhập đúng thông tin!", "Thông báo", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                ClearAll();
                 return;
+            }
+
+            if (user == null)
+            {
+                if (txbMatKhauDangKy.Text != txbNhapLaiMatKhau.Text || String.IsNullOrEmpty(txbMatKhauDangKy.Text)
+                    || String.IsNullOrEmpty(txbNhapLaiMatKhau.Text))
+                {
+                    MessageBox.Show("Mật khẩu phải giống nhau", "Thông báo", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
             }
 
 

@@ -33,22 +33,23 @@ namespace MusicPlayer.UC.ChildrenUC
 
             EventHandler clickHandle = (sender, e) =>
             {
-                mainForm.musicList = new List<Music>();
-                mainForm.musicList.AddRange(musics);
                 var thread = new Thread(() =>
                 {
                     mainForm.Semaphore.WaitOne();
-                    mainForm.currentMusic = music;
+                    mainForm.musicList = new List<Music>();
+                    mainForm.musicList.Clear();
+                    mainForm.musicList.AddRange(musics);
                     var musicIndex = mainForm.musicList.FindIndex(x => x.Id == music.Id);
                     mainForm.currentSongIndex = musicIndex;
-                    mainForm.Semaphore.Release();
-
-                    mainForm.Semaphore.WaitOne();
-                    if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped)
-                        mainForm.waveOut.Stop();
+                    mainForm.currentMusic = mainForm.musicList[musicIndex];
                     mainForm.Semaphore.Release();
                     // using main thread to play music
-                    mainForm.Invoke(new Action(() => { mainForm.PlayMusic(); }));
+                    mainForm.Invoke(new Action(() =>
+                    {
+                        if (mainForm.waveOut.PlaybackState != PlaybackState.Stopped)
+                            mainForm.waveOut.Stop();
+                        mainForm.PlayMusic();
+                    }));
                 });
                 thread.Start();
                 // if norsection is not in uc playlist then load playlist

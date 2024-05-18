@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace MusicPlayer.Model
 {
-    public class Album : BaseEntity
+    public class Album : BaseDTO
     {
         public Album()
         {

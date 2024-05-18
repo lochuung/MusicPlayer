@@ -25,9 +25,9 @@ namespace MusicPlayer.UC
                     isLoaded = true;
                 }
                 catch
-                {
-                    MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                { 
+                     if (MessageBox.Show("Vui lòng kiểm tra lại kết nối mạng", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK);
                 }
             } while (!isLoaded);
 

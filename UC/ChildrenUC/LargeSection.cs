@@ -10,14 +10,14 @@ namespace MusicPlayer.UC.ChildrenUC
     public partial class LargeSection : UserControl
     {
         public MusicPlayerForm mainForm;
-        public List<BaseEntity> musics = new List<BaseEntity>();
+        public List<BaseDTO> musics = new List<BaseDTO>();
 
         public LargeSection()
         {
             InitializeComponent();
         }
 
-        public void AddItem(BaseEntity dto, bool isScrollable = true)
+        public void AddItem(BaseDTO dto, bool isScrollable = true)
         {
             if (mainForm == null)
                 mainForm = (MusicPlayerForm)FindForm();

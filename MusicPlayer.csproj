@@ -571,9 +571,9 @@
       <DependentUpon>20240502063511_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MusicDbContextModelSnapshot.cs" />
-    <Compile Include="Model\Album.cs" />
-    <Compile Include="Model\BaseEntity.cs" />
-    <Compile Include="Model\Music.cs" />
+    <Compile Include="DTO\Album.cs" />
+    <Compile Include="DTO\BaseDTO.cs" />
+    <Compile Include="DTO\Music.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="UC\ChildrenUC\CurrSong.cs">
       <SubType>UserControl</SubType>
