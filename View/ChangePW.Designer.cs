@@ -61,7 +61,7 @@ namespace MusicPlayer.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(208, 155);
+            this.label1.Location = new System.Drawing.Point(207, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 40);
             this.label1.TabIndex = 32;
@@ -83,7 +83,7 @@ namespace MusicPlayer.View
             this.txbPwNow.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPwNow.ForeColor = System.Drawing.Color.White;
             this.txbPwNow.HoverState.BorderColor = System.Drawing.Color.White;
-            this.txbPwNow.Location = new System.Drawing.Point(141, 242);
+            this.txbPwNow.Location = new System.Drawing.Point(141, 200);
             this.txbPwNow.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txbPwNow.Name = "txbPwNow";
             this.txbPwNow.PasswordChar = '*';
@@ -108,7 +108,7 @@ namespace MusicPlayer.View
             this.txbNewPw.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNewPw.ForeColor = System.Drawing.Color.White;
             this.txbNewPw.HoverState.BorderColor = System.Drawing.Color.White;
-            this.txbNewPw.Location = new System.Drawing.Point(141, 323);
+            this.txbNewPw.Location = new System.Drawing.Point(141, 283);
             this.txbNewPw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txbNewPw.Name = "txbNewPw";
             this.txbNewPw.PasswordChar = '*';
@@ -134,7 +134,7 @@ namespace MusicPlayer.View
             this.txbRePw.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbRePw.ForeColor = System.Drawing.Color.White;
             this.txbRePw.HoverState.BorderColor = System.Drawing.Color.White;
-            this.txbRePw.Location = new System.Drawing.Point(141, 430);
+            this.txbRePw.Location = new System.Drawing.Point(141, 399);
             this.txbRePw.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txbRePw.Name = "txbRePw";
             this.txbRePw.PasswordChar = '*';
@@ -155,7 +155,7 @@ namespace MusicPlayer.View
             this.btnThongTinPw.ForeColor = System.Drawing.Color.Black;
             this.btnThongTinPw.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnThongTinPw.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnThongTinPw.Location = new System.Drawing.Point(532, 323);
+            this.btnThongTinPw.Location = new System.Drawing.Point(529, 283);
             this.btnThongTinPw.Name = "btnThongTinPw";
             this.btnThongTinPw.Size = new System.Drawing.Size(51, 55);
             this.btnThongTinPw.TabIndex = 45;
@@ -167,7 +167,7 @@ namespace MusicPlayer.View
             this.lblStrPw.AutoSize = true;
             this.lblStrPw.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStrPw.ForeColor = System.Drawing.Color.Red;
-            this.lblStrPw.Location = new System.Drawing.Point(147, 393);
+            this.lblStrPw.Location = new System.Drawing.Point(147, 355);
             this.lblStrPw.Name = "lblStrPw";
             this.lblStrPw.Size = new System.Drawing.Size(133, 23);
             this.lblStrPw.TabIndex = 46;
@@ -189,7 +189,7 @@ namespace MusicPlayer.View
             this.btnDangKyTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.btnDangKyTaiKhoan.HoverState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnDangKyTaiKhoan.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnDangKyTaiKhoan.Location = new System.Drawing.Point(240, 527);
+            this.btnDangKyTaiKhoan.Location = new System.Drawing.Point(241, 478);
             this.btnDangKyTaiKhoan.Name = "btnDangKyTaiKhoan";
             this.btnDangKyTaiKhoan.Size = new System.Drawing.Size(145, 45);
             this.btnDangKyTaiKhoan.TabIndex = 47;
@@ -229,7 +229,7 @@ namespace MusicPlayer.View
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
             this.btnShow.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnShow.Location = new System.Drawing.Point(444, 335);
+            this.btnShow.Location = new System.Drawing.Point(441, 296);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(44, 31);
             this.btnShow.TabIndex = 49;
@@ -248,7 +248,7 @@ namespace MusicPlayer.View
             this.btnHide.ForeColor = System.Drawing.Color.White;
             this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
             this.btnHide.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHide.Location = new System.Drawing.Point(444, 335);
+            this.btnHide.Location = new System.Drawing.Point(441, 296);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(44, 31);
             this.btnHide.TabIndex = 50;
@@ -258,7 +258,7 @@ namespace MusicPlayer.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(669, 635);
+            this.ClientSize = new System.Drawing.Size(669, 553);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnExitMainForm);
